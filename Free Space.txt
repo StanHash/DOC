@@ -1,0 +1,6 @@
+Free Space at B2A604 of size D59FC
+Free Space at E47180 of size 98E80
+Free Space at EF2F18 of size 50E8
+Free Space at EFB2E0 of size E4D20
+Free Space at FE4000 of size 1B000
+Free Space at FFFF00 of size 100

@@ -1,0 +1,29 @@
+
+Format: RoutinePtr : ChunkPtr
+
+(08078D6C):08078D86:
+	Hardcoded Class checks for lots of stuff
+
+(080347D4):08034810:
+	Hardcoded Class check for Demon King & Manakete2
+
+(080180CC):
+	Gorgon Egg Checks
+
+(080183FC):
+	Phantom Check
+
+(0802A730:SetupBattleWeaponData) : 0802A872:
+	Item checks for Magic Swords
+
+(08016B8C:IsItemCoveringRange):
+	Item Table is read directly for range
+
+(0802AABC:BattleLoadAttack) : 0802AB18:
+	Hardcoded check for legendary weapons
+
+0802B62C:
+	Donkey Kong Check (Item HP Halving & Poison)
+
+080812D8:
+	Dancer Class Id Check

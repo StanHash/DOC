@@ -1,0 +1,7 @@
+Action Struct field 16 (byte) is used to know what to do after loading a suspend:
+    0 is player phase
+    1 is player phase before action (which is also used before traps and is thus the cause of the enemy control glitch)
+    2 is computer phase
+    3 is berserk phase
+    4 is during arena fight
+    9 is during phase switch

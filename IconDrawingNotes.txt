@@ -1,0 +1,48 @@
+all offsets are FE8U as always
+
+02026E10 is an indexed array of icon ids (0x20 entries). The Index in the array corresponds to the VRAM "slot" the icon graphics occupies.
+
+Icon Root Tile Index = 0x300 - (slot+1)*4
+Which means that item icons take at most tiles 0x280 to 0x300 excluded (0x80 tiles for 0x20 possible simultaneous icons)
+
+That ones cool, simple system that works. The other one is less cool I'd say
+
+02026A90 is an array of *224* 4 bytes long structs that dictates usage and other stuff for *each single icon*
+
+There's two problems that arise here:
+	1. the array having 224 entries, it means that the game supports only 224 icons max. (Reyson's fix works around that tho)
+	2. only 2 of the 4 bytes of the array appear to be used
+
+DrawIcon: // Out is r0, IconID is r1, UnknownParameter is r2
+{
+	if (IconID < 0) {
+		Out[0] = 0;
+		Out[1] = 0;
+		Out[0x20 + 0] = 0;
+		Out[0x20 + 1] = 0;
+	} else {
+		short TileIndex = GetIconTileIndex(IconID) + UnknownParameter;
+		
+		Out[0x00 + 0] = TileIndex + 0;
+		Out[0x00 + 1] = TileIndex + 1;
+		Out[0x20 + 0] = TileIndex + 2;
+		Out[0x20 + 1] = TileIndex + 3;
+	}
+}
+
+GetIconTileIndex: // IconID is r0, IconInfoArray is 02026A90
+{
+	IconInfo* info = (IconInfoArray + IconID*4);
+	
+	if (info->gfxIndex) {
+		if (info->usageCount < 0xFF)
+			info->usageCount++;
+	} else {
+		info->usageCount++;
+		info->gfxIndex = (GetIconGfxIndex(IconID) + 1);
+		
+		RegisterTileGfx(IconGraphics + 0x80 * IconID, 0x6000000 + GetIconGfxTileIndex(info->gfxIndex), 0x80);
+	}
+	
+	return GetIconGfxTileIndex(info->gfxIndex);
+}

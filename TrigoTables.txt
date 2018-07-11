@@ -1,0 +1,17 @@
+FE8U
+
+080D759C: Lookup Table for cos      (0x100 -> 0 -> -0x100 -> 0 -> 0x100)
+080D751C: Lookup Table for sin (0 -> 0x100 -> 0 -> -0x100 -> 0)
+
+they overlap.
+
+Values (results) are signed shorts ranging from -0x1000 to 0x1000 inclusive
+Indexes (angles) are ranged 0 to 0x100 exclusive (table size are 0x200 each)
+
+So:
+	pTable + (2 * 0x00):  value for  0     (+0x1000, 0)
+	pTable + (2 * 0x40):  value for  pi/2  (0, +0x1000)
+	pTable + (2 * 0x80):  value for  pi    (-0x1000, 0)
+	pTable + (2 * 0xC0):  value for -pi/2  (0, -0x1000)
+
+I couldn't find any proper cos/sin routine yet

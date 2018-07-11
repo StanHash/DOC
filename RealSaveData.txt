@@ -1,0 +1,76 @@
+
+080A3064 | GetSaveDataLocation
+080A3130 | SaveLocalEventIndexes
+080A3150 | SaveGlobalEventIndexes
+080A3170 | LoadLocalEventIds
+080A3198 | LoadGlobalEventIds
+080A31E4 | SaveConvoyItems
+080A326C | LoadConvoyItems
+080A5010 | SaveGame
+080A5128 | LoadGame
+
+0203ECF4 table format:
+	bit 0-6   | Chapter Id
+	bit 7-15  | Turn count (capped at 500)
+	bit 16-31 | Time (saved as (in-game time/180)) (capped at 60000)
+
+Save 1 SRAM Offset: 3FC4
+Save 2 SRAM Offset: 4D8C
+Save 3 SRAM Offset: 5B54
+
+SAVE (not Suspend!) DATA: (total size: DC8)
+	000 -> 04C | Chapter Data (0x4C)
+	04C -> 778 | Saved Units  (51 * 0x24) (size: 0x72C)
+	778 -> 780 | RNG State?
+	780 -> 79C | free? (not that exciting since thats a whopping 0x1C (28) bytes)
+	79C -> 84C | Convoy Items
+	84C -> CAC | BWL Entries (size 0x460)
+	CAC -> D6C | Chapter turn count/time data (array in RAM at 0203ECF4) (size 0xC0)
+	D88 -> D8C | Word at 0203EDB4 (size 0x04)
+	D6C -> D85 | Global Events
+	D8C -> ??? | TODO: check (080A70B0 (arg r0 = SRAM out, r1 = 03005280), same as Suspend+0x1F44)
+	DB0 -> DC8 | 030017AC, size 0x18, Same as Suspend+0xAE0
+
+080A533C | SaveUnit      | Arguments: r0 = Unit, r1 = Target SRAM
+080A5794 | LoadSavedUnit | Arguments: r0 = Source SRAM, r1 = Unit
+
+SAVE (not Suspend!) UNIT: (size: 0x24)
+	00 | word
+		bit 0-6   | Class Index (7 bits) max 0x7F
+		bit 7-11  | Level       (5 bits) max 31
+		bit 12-18 | Exp         (7 bits) max 127
+		bit 19-24 | x pos       (6 bits) max 63 // why does it save this tho (probably because of prep screen?)
+		bit 25-30 | y pos       (6 bits) max 63
+		bit 31    | set if dead
+	04 | word
+		bit 0     | set if not deployed
+		bit 1     | set if solo anim 1
+		bit 2     | set if solo anim 2
+		bit 3     | set if metis tome
+		bit 4     | set if "something about not being drawn? Checked at 34298, 27262, amongst others"
+		bit 5     | set if "no idea, but is checked at 34298"
+		bit 6     | set if not deployed in previous chapter
+		bit 7-11  | free?
+		bit 12-17 | Max HP      (6 bits) max 63
+		bit 18-22 | Pow         (5 bits) max 31
+		bit 23-27 | Skl         (5 bits) max 31
+		bit 28-31 | Spd (lo)    (4 bits)
+	08 | word
+		bit 0     | Spd (hi)    (1 bit ) max 31
+		bit 1-5   | Def         (5 bits) max 31
+		bit 6-10  | Res         (5 bits) max 31
+		bit 11-15 | Lck         (5 bits) max 31
+		bit 16-20 | Con Bonus   (5 bits) max 31
+		bit 21-25 | Mov Bonus   (5 bits) max 31 // Free bit here! (Suspend data uses only 4)
+		bit 26-31 | Item 1 (lo) (6 bits)
+	0C | word
+		bit 0-7   | Item 1 (hi) (8 bits)
+		bit 8-21  | Item 2      (14 bits)
+		bit 22-31 | Item 3 (lo) (10 bits)
+	10 | word
+		bit 0-3   | Item 3 (hi) (4 bits)
+		bit 4-17  | Item 4      (14 bits)
+		bit 18-31 | Item 5      (14 bits)
+	14 | byte     | Char Index  (8 bits) max 0xFF
+	15 | 8 bytes  | Weapon Ranks
+	1D | 7 bytes  | Support Levels

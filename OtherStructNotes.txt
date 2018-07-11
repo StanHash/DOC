@@ -1,0 +1,48 @@
+
+GAMECTRL:
+	29 | byte  | next action index? (set by MoveToChapter event codes)
+	2A | byte  | next chapter id?
+
+6C_08A39210 (Shop):
+	2C | word   | pointer to visiting unit struct (if 0, then this is a prep screen shop preview)
+	30 | shorts | Array of items for sale (20 max)
+	other stuff whatever
+	61 | byte   | shop type byte (0 = Armory, 1 = Vendor, 2 = Secret)
+
+Portrait Table Entry Struct:
+	POIN apMug apMug+0x1624 apMug+0x1604 apMug+0x1004; WORD 0x00000000; BYTE aXMouth aYMouth aXEye aYEye; WORD aEyeControl;
+	     0     4            8            C                  10               14      15      16    17          18
+
+6C_08591154 & 6C_0859118C (E_FACE):
+	2C | word | pointer to portrait table entry
+
+6C_08591AC0 & 6C_08591AF8 (Event Engine):
+	42 | byte | 
+
+6C_0859E1B8 (BB): // This 6C manages the help text that scolls below the screen
+	2C | word | pointer to text buffer
+
+6C_089A2938:
+	58 | word  | 0 (Some Sound Index)
+	5C | word  | 0
+	60 | word  | 0
+	64 | short | 0 (Some Range)
+	66 | short | 0
+
+6C_0859E13C:
+	
+// Almost definitely manages camera movement
+6C_0859A548 (GENS):
+	2C | short | Stored by callee, Some Real Camera Pos ? (Target?) X
+	2E | short | Stored by callee, Some Real Camera Pos ? (Target?) Y
+	30 | short | Stored by callee, Some Real Camera Pos ? X
+	32 | short | Stored by callee, Some Real Camera Pos ? Y
+	34 | short | Stored by callee, Some X
+	36 | short | Stored by callee, Some Y
+	38 | short | Difference between 2C/2E and 30/32
+	3A | 
+	3C | word  | Struct is destroyed when equals 0
+	40 | byte  | 0 if 38 is xDiff, 1 if 38 is yDiff
+
+6C_whatever (E_PLAYERPHASE):
+	Label 4 is called on unit canto when the chapter is fow (redraws fog?), Label 1 is called otherwise

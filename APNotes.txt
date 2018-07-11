@@ -1,0 +1,98 @@
+FE8U
+
+AP is the name I'll give to the RAM struct initialized with the "Other Pointer" in the Moving Map Sprite table. With time I discovered that it was used in some other cases, like the prep menu/warp move unit cursor. The big thing is that is can be used to animate shit, using a definition in ROM (we back to the MMS "Other Pointer") (see ROMAP).
+
+AP: (Size: 0x28) Array of 20 of those located at 03000108
+	00 | word  | Pointer to AP Data
+	04 | word  | Pointer to Frame Data Ref (from AP Data)
+	08 | word  | Pointer to Current Anim Data (Start, where you go back on loop)
+	0C | word  | Pointer to Current Anim Data (Cursor)
+	10 | word  | Pointer to Current Frame/OAM Data
+	14 | word  | Pointer to Current Rot/Scale Data
+	18 | short | Cycle Timer
+	1A | short | Cycle Time Step (0x100 is one frame)
+	1C | short | Sub frame time offset or something
+	1E | short | OAM Index?
+	20 | byte  | bool defining whether gfx needs update
+	21 | byte  | Rotation/Scale OAM Index
+	22 | short | OAM Extra Data (Tile Index Root & OAM2 Stuff)
+	24 | word  | Gfx Pointer
+
+AP Data:
+	00 | short | Relative Offset to Frame Data Ref Array
+	02 | short | Relative Offset to Anim Data Ref Array
+	
+	AP Data Ref Arrays:
+		Arrays of shorts that are relative offsets (relative *to the array*) to the relevant data
+	
+	Anim Data:
+		Arrays of pairs of shorts:
+			00 | short | cycle time of this anim frame
+		if cycle time is non 0:
+			02 | short | Frame index of this anim frame
+		if cycle time is 0:
+			02 | short | 0 = Error, 1 = End/Free Anim/AP, FFFF = Loop back to start of Anim, other = same as with std cycle
+	
+	Frame Data:
+		Your standard OAM Data (first short is number of parts, then array of three shorts that define base OAM data for that part)
+		OR, when the top bit of the first short is set, then the OAM Data is at FrameData + 2 + [first short ignoring the top bit], the part before it is used to do some trigonometry and shit, so I guess that thing handles transformations as well? neat
+		Ok so Rot Scale Data:
+			First short: count (with the top bit set as mentionned).
+			Then array of three shorts:
+				00 | short | alpha
+				02 | short | xScale
+				04 | short | yScale
+
+ROUTINES:
+	0800927C | AP_New | Creates a new AP
+		Arguments: r0 = Source AP Data, r1 = OAM Index? idk
+		Returns:   r0 = AP Pointer
+	
+	080092A4 | AP_Free | Frees/Deletes/Ends a AP
+		Arguments: r0 = AP
+		Returns:   nothing
+	
+	080092BC | AP_Update | Updates AP Logic and Graphics
+		Arguments: r0 = AP, r1 = display x, r2 = display y
+		Returns:   0 on error, 1 otherwise
+	
+	08009518 | AP_SetAnim | Sets Anim of AP
+		Arguments: r0 = AP, r1 = Anim Index
+		Returns:   nothing
+	
+	08009548 | AP_SetAPData | Sets (Changes) AP Data of AP
+		Arguments: r0 = AP, r1 = AP Data
+		Returns:   nothing
+	
+	Other routines that seem to only be used internally:
+		08009260:AP_ClearAll
+		080092E4:AP_RegisterGraphics
+		08009340:AP_Exec
+		08009430:AP_QueueRotScaleData
+		08009568:AP_QueueTileGfx
+		08009674:AP_Load
+		08009698:AP_ExecOneFrame
+		080096B8:AP_Init
+		080096F0:AP_Alloc
+
+AP Proc: (Code at 0859168C)
+	50 | word | AP Pointer
+	54 | word | X
+	58 | word | Y
+	
+	ROUTINES:
+		08009718 | APProc_Start | Makes a new 6C in thread 3 that wraps a AP
+			Arguments: r0 = Source AP, r1 = X, r2 = Y, r3 = Tile Root, [sp] = Anim index, [sp+4] = OAM Index
+			Returns:   r0 = AP Wrapper 6C Pointer
+		
+		08009798 | APProc_SetParameters | Sets AP Parameters
+			Arguments: r0 = AP Wrapper 6C Pointer, r1 = X, r2 = Y, r3 = Tile Root
+		
+		080097B4 | APProc_Delete | delet
+			Arguments: r0 = AP Wrapper 6C Pointer
+		
+		080097C0 | APProc_DeleteAll | delets all
+			Arguments: none
+		
+		080097D0 | APProcExists | Returns 1 if one exists, 0 otherwise
+			Returns: result

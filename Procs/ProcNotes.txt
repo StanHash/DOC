@@ -1,0 +1,137 @@
+Ok, so each 6C Struct is essentially some interpreter state. And the interpretation is forwarded when calling Exec6C. When calling Exec6C, two things can happen: either the "loop routine" is set (field 0xC), and it will call that loop routine (arg: r0 = Struct Ptr), either it isn't set, and will call Run6CCode, which will read the code to execute and interpret it (See later).
+
+6C Struct Header: (Size: 0x29 out of 0x6C)
+	type  | pos | desc
+	----- | --- | ----
+	word  |   0 | Pointer to start of code (I used to misrefer this as "struct type")
+	word  |   4 | Pointer to code cursor
+	word  |   8 | Pointer to Destructor routine (called when struct is destroyed)
+	word  |   C | Pointer to Loop Routine (this is called instead of code when it is not null)
+	word  |  10 | Pointer to name (Probably for debug purpose. Still set in FE8. /!\ Never cleared)
+	word  |  14 | Pointer to Parent 6C (If Struct is Main 6C, Main 6C Array Index instead)
+	word  |  18 | Pointer to First Child Struct (0 if none)
+	word  |  1C | Pointer to Previous Struct (0 if first)
+	word  |  20 | Pointer to Next Struct (0 if last)
+	short |  24 | Sleep Timer (each call to the sleep loop decrements it, the sleep loop will clear itself when this reaches 0)
+	byte  |  26 | Mark (Code 000F stores sarg to this byte, used by various routines)
+	byte  |  27 | Some kind of bitfield (see below for known bits)
+	byte  |  28 | Block Counter (Won't exec self if not 0)
+	----- |  29 | 0x43 Bytes (16 Words + 3 bytes) of "user" space
+
+Field 27 Bitfield: (Needs more research)
+	1 = ?
+	2 = If is set, it means the struct is "blocking" the parent struct (Parent Block Counter will be decreased on destruction). Set when Create6CBlocking is called.
+	4 = ??? (bit set when code 0012 is called, unset at the end of 6C construction)
+	8 = Somethig related to children (read at 08002E46)
+
+Exec6C Routine Locations: (Arguments: r0 = Struct Pointer; Returns: nothing)
+	0800456C (wraps 08004510) in FE7J
+	08004690 in FE7U
+	08002E84 (wraps 08002E28) in FE8U
+
+	(Note that this Exec6C is a wrapper routine: it simply checks if r0 is not a null pointer before calling the true Exec6C routine)
+
+Run6CCode Routine Locations: (Arguments: r0 = Struct Pointer; Returns: nothing)
+	08004A60 in FE7J
+	08003394 in FE8U
+
+The Structs are linked together to form some kind of tree structure. When interpretation is called for one 6C, it recursively calls the interpretation for the next 6C, then itself, and then the first child 6C. "Main" Structs pointers are stored in the "Main 6C Array" (6 entries). Those 6 "Main" Structs are directly called through the code, usually in the main loop routine.
+
+Main 6C Array Locations:
+	02026A28 in FE7J
+	02026A30 in FE7U
+	02026A70 in FE8U
+
+FE8U:080152F4 (a main update routine) 6C Exec Order:
+	Main 1 => Usually blank
+	Main 2 => Logic Stuff (Skipped if byte FE8U:0202BCB1 is not 0)
+	Main 3 => Main Stuff (GameControl is here), The Main Menu seems to only use this one
+	Main 5 => Sometimes Graphics Stuff?
+	Main 4 => Event Engine Probably Maybe Not Idunno?
+	(VBlankIntrWait)
+
+Main 0 seems to be executed in some exception handler?
+
+6C Code: The code is similar to Events in that each identifier represents a routine to call in a table (routine table at FE8U:085879D8). Unlike Events tho, code length is fixed (8 bytes) and same goes for arguments. Format is as follows: [2 bytes: code index] [2 bytes: sarg] [4 bytes: larg] (sarg and larg are staying btw, 'not changing that). All codes except 0000 (End) will forward the current code position (unless noted otherwise), that is setting CodeCursor = CodeCursor+8. "Yeilding" means that the code will end the current interpretation and resume when next called (allowing the game to do other stuff meanwhile) (See why I started calling those Fibers?).
+
+Call Codes:
+	code sarg   larg   | (code is code id, sarg = short argument, larg = long argument)
+	---- ---- --------
+	0000 0000 00000000 | End (Deletes Self)
+	0001 0000 pppppppp | Set Name Pointer (larg) (Thankfully used in FE8, not in other games)
+	0002 0000 pppppppp | Call Routine (larg) (Argument: r0 = Struct Ptr)
+	0003 0000 pppppppp | Set Loop routine (larg) And Yield
+	0004 0000 pppppppp | Set Destructor (larg)
+	0005 0000 pppppppp | Call new Child 6C (larg)
+	0006 0000 pppppppp | Call new Child 6C (larg) And Yield
+	0007 0000 pppppppp | Call new Global 6C (larg)
+	0008 0000 pppppppp | Continue only if struct of type (larg) exists, Yields without forwarding otherwise
+	0009 0000 pppppppp | Delete all struct of given type (larg)
+	000A 0000 pppppppp | Clear callback for all struct of given type (larg)
+	000B nnnn 00000000 | Defines Label (sarg) (doesn't do anything by itself)
+	000C nnnn 00000000 | Goto Label (sarg)
+	000D 0000 pppppppp | Jump code to pointer
+	000E nnnn 00000000 | Sleep for given duration (sarg) (Sets callback to 0x08003290 (Sleep Callback))
+	000F 00nn 00000000 | Store Byte (sarg) to Field 26 in Struct (unknown use yet, maybe for passing data to routines?)
+	0010 0000 00000000 | Yeild (Stops exectution until next call to interpreter)
+	0011 0000 00000000 | Delete Self if at least one other struct of same type exists
+	0012 0000 00000000 | Set bit 4 in Field 27
+	0013 0000 00000000 | Continue (Does nothing)
+	0014 0000 pppppppp | Call Routine (larg). If Routine returns 1, yield without forwarding, continue otherwise
+	0015 0000 00000000 | Continue (Does nothing)
+	0016 0000 pppppppp | Call Routine (larg). If Routine returns 0, yield, continue otherwise.
+	0017 0000 00000000 | Delete all other instances of same type
+	0018 nnnn pppppppp | Call Routine (larg) with r0 = sarg & r1 = struct (as opposed to r0 = struct)
+	0019 0000 00000000 | Same as 000B whithout being reckognized by 000C (joins 0013 and 0015 in the effectively useless club)
+
+Call Code Routine Table:
+	FE7J: 08BBFD28
+	FE7U:    ??
+	FE8U: 085879D8
+
+6C Related RAM Offsets:
+	Name      |   FE7J   |   FE7U   |   FE8U   | Desc
+	---------   --------   --------   --------
+	PoolOf6C  | 02024E20 |          | 02024E68 | Size: (0x40 * 0x6C). This is where 6Cs are located and allocated.
+	Lookup6C  | 02026920 |          | 02026968 | Size: (0x40 * 0x04). Lookup table used by 6C allocation routine(s). Allocated Structs are first. Null-terminated.
+	Alloc6CIt | 02026A24 |          | 02026A6C | Pointer to the next available slot in the Lookup6C table.
+	MainArray | 02026A28 | 02026A30 | 02026A70 | Size: (0x07 * 0x04). Main 6C Array. Last 2 entries are unused (but set to null with the others).
+
+6C Related Routine Locations:
+	Name                |   FE6    |   FE7J   |   FE7U   |   FE8U   | Desc
+	-------------------   --------   --------   --------
+	Reset6CEngine       | 08003A04 | 080042FC | 08004420 | 08002C08 | Zeroes all 6C headers in Pool. Called on game startup.
+	Create6C            | 08003A04 | 08004370 | 08004494 | 08002C7C | Allocates a new 6C with code pointer (field 0x00&0x04) set to argument (A:r0). Parent is argument (A:r1)
+	Create6CBlocking    | 08003AD8 | 080043D4 | 080044F8 | 08002CE0 | Calls Create6C, sets 6C (R:r0) field 27 bit 2. Increments 6C (R:r0) parent (field 0x14) Block Counter.
+	Delete6C            | 08003B54 | 08004404 | 08004528 | 08002D10 | Calls Delete6C for 6C (A:r0) children. Calls 6C (A:r0) Destructor (field 0x08). Calls Free6C.
+	Delete6C (Wrapper)  | 08003C28 | 08004460 | 08004584 | 08002D6C | Calls Isolate6C then Delete6C
+	Allocate6C          | 08003C54 | 08004478 | 0800459C | 08002D84 | Increments Alloc6CIt, returns pointer to next free 6C
+	Free6C              | 08003C80 | 08004488 | 080045AC | 08002D94 | Wierd, but I assume it frees the 6C (A:r0)
+	InsertMain6C        | 08003CA8 | 08004498 | 080045BC | 08002DA4 | Sets 6C (A:r0) as first Main 6C in array index (A:r1) after linking previous first main accordingly.
+	InsertChild6C       | 08003CF4 | 080044B8 | 080045DC | 08002DC8 | Sets 6C (A:r0) as first child of 6C (A:r1) after linking related 6Cs accordingly.
+	Isolate6C           | 08003D2C | 080044CC | 080045F0 | 08002DE0 | Clears 6C (A:r0) Parent, Next & Previous fields (after linking them accordingly). Called during destruction.
+	Exec6C (Wrapper)    | 08003DB0 | 0800456C | 08004690 | 08002E84 | (See above)
+	Exec6C              | 08003E44 | 08004510 | 08004634 | 08002E28 | (See above)
+	ClearLoop           | 08003E60 | 0800457C | 080046A0 | 08002E94 | Sets 6C (A:r0) Loop Routine (field 0xC) to null (used by Loop routines to break loops)
+	Find6C              | 08003E7C | 08004584 | 080046A8 | 08002E9C | Returns first 6C (R:r0) whose code start pointer (field 0x0) matches argument (A:r0)
+	Find6CRunning       | 08003EC4 | 080045A4 | 080046C8 | 08002EC4 | Same as Find6C, except it will skip 6Cs that are not currently running (Block Counter (field 0x28) != 0)
+	Find6CByMark        | 08003F18 | 080045D0 | 080046F4 | 08002EF4 | Returns first 6C (R:r0) whose Mark (field 0x26) matches argument (A:r0)
+	Goto6CLabel         | 08003F6C | 080045FC | 08004720 | 08002F24 | Sets 6C (A:r0) code cursor (field 0x04) to after the first label (code 0x0B:sarg) matching argument (A:r1) (*)
+	Goto6CPointer       | 08003FC4 | 08004634 | 08004758 | 08002F5C | Sets 6C (A:r0) code cursor (field 0x04) to argument (A:r1). Clears 6C loop routine (field 0x0C)
+	Set6CMark           | 08003FE8 | 0800463C | 08004760 | 08002F64 | Sets 6C (A:r0) Mark (field 0x26) to argument (A:r1)
+	Set6CDestructor     | 08004018 | 08004644 | 08004768 | 08002F6C | Sets 6C (A:r0) Destructor routine (field 0x08) to argument (A:r1)
+	ForAll6C            | 08004034 | 08004648 | 0800476C | 08002F70 | Executes routine (A:r0) for each existing 6C (r0 passes the 6C pointer)
+	ForEach6C           | 08004078 | 08004670 | 08004794 | 08002F98 | Executes routine (A:r0) for each 6C whose code pointer matches argument (A:r1) (r0 passes the 6C pointer)
+	ForEach6CMarked		| 080040C4 |          | 080047BC | 08002FC0 | Included for the sake of completeness. Doesn't seem to be ever used (at least in FE8U)
+	BlockEach6CMarked   | 08004114 | 080046C4 | 080047E8 | 08002FEC | Increments Block Counter (field 0x28) for each 6C whose mark (field 0x26) matches argument (A:r0)
+	UnblockEach6CMarked | 0800417C | 080046E8 | 0800480C | 08003014 | Decrements Block Counter (field 0x28) for each 6C whose mark (field 0x26) matches argument (A:r0)
+	DeleteEach6CMarked  | 080041E4 | 08004710 | 08004834 | 08003040 | Deletes each 6C whose mark (field 0x26) matches argument (A:r0)
+	Delete6C (Wrapper)  | 08004230 | 0800473C | 08004860 | 0800306C | Calls Delete6C. Called only by DeleteEach6C
+	DeleteEach6C        | 08004248 | 08004748 | 0800486C | 08003078 | Deletes each 6C whose code pointer matches argument (A:r0)
+	ClearLoop (Wrapper) | 08004264 | 08004758 | 0800487C | 08003088 | Calls ClearLoop. Called only by ClearEach6CLoop
+	ClearEach6CLoop     | 0800427C | 08004764 | 08004888 | 08003094 | Clears Loop Routine (field 0x0C) for each 6C whose code pointer matches argument (A:r0)
+	ForAll6CFollowing   | 08004298 | 08004774 | 08004898 | 080030A4 | Executes routine (A:r1) for 6C (A:r0). Recursively calls ForAll6CFollowing for 6C (A:r0) Next & First Child.
+	[Routines Pointed By the Code Routine table are here] (See above)
+	etc
+
+(*) Search in code begins at code start (field 0x00) and ends at first end encounter (code 0x00)

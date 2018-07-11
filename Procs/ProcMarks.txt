@@ -1,0 +1,14 @@
+
+Set using 6C code $F, used to "categorize" some 6Cs?
+
+1 : MLVCHC, E_MOVELIMITVIEW, VBlank 6C, MAPTASK
+2 : E_BMAPMAIN, E_PLAYERPHASE, DEBMON (!)
+3 : 
+4 : MOVEUNIT
+5 : 
+6 : Event Engines
+7 : 
+8 : Most Gmap stuff (WM stuff)
+9 : 
+A : efxSpellCast, efxWeaponIcon, efxStatusUnit, efxFlashUnitEffectEnd, efxFlashUnit, efxHPBarColorChange, efxFlashHPBar, efxStatusCHG, you get the idea
+B : Game Control

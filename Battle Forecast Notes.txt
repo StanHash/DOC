@@ -1,0 +1,14 @@
+
+Proc State for Code at 0859E520 (BKSEL):
+	00-28 | Header
+	2C    | word  | 
+	32    | byte  | Display mode (1 = Standard, 2 = Detailed)
+	33    | byte  | 1 when gfx are ready? (set to 0 in constructor, set to 1 in the gfx loading routine)
+	34    | byte  | 
+	35    | byte  | 1 when unit is on the left, 0 when in the middle & -1 when right
+	36    | byte  | 
+	38-3F | Text Struct
+	50    | byte  | Subject Hit Count
+	51    | byte  | Target Hit Count
+	52    | byte  | Subject Effective Bool
+	53    | byte  | Target Effective Bool

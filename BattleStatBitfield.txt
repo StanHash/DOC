@@ -1,0 +1,11 @@
+
+struct at FE8U:0203A4D4 short field 00
+    & 0x01  = ?
+    & 0x02  = simulation (no RNs will be rolled)
+    & 0x04  = ?
+    & 0x08  = ballista
+    & 0x10  = ?
+    & 0x20  = arena
+    & 0x40  = ?
+    & 0x80  = map animations
+    & 0x100 = promotion?

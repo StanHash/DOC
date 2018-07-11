@@ -1,0 +1,22 @@
+All offsets and routines are for FE8U
+
+The range display displays squares:
+	from the move map:  if the tile is >=0 (? might want further investigation)
+	from the range map: if the tile is non 0
+
+Range Display Type bitfield:
+	 &0x01 | Move  Squares are Blue
+	 &0x02 | Range Squares are Red
+	 &0x04 | Range Squares are Green
+	 &0x10 | Range Squares are Blue
+
+/!\ if you don't specify Range square color, you'll want the range map to be empty, otherwise you'll get rainbow tiles (tm). (May apply to move tiles too?)
+
+ROUTINES:
+	0801DA98 | DisplayMoveRangeGraphics | Creates relevant 6C and sets relevant stuff in game data
+				Arguments: r0 = type bitfield (see above)
+				Returns:   nothing
+	
+	0801DACC | HideMoveRangeGraphics | Deletes relevant 6C and all that stuff
+				Arguments: nothing
+				Returns:   nothing

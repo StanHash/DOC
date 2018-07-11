@@ -1,0 +1,12 @@
+
+
+ID 0x00: Never set
+ID 0x01
+ID 0x02
+ID 0x03
+ID 0x04: Change Map Music
+ID 0x05
+ID 0x06
+
+ID 0x84: Set during Beginning events, unset at the end
+0802766E: Check for ID 0x84

@@ -1,0 +1,69 @@
+
+6C_089A2C48 (MOVEUNIT):
+	2C | word  | Unit Struct Pointer (0 if none)
+	30 | word  | pointer to TCS
+	34 | word  | pointer to some move command list (see MOVEUNIT Command Buffer)
+	38 | word  | pointer to somewhere in VRAM
+	3C | byte  | Next/Current Sprite Frame Index
+	3E | byte  | Boolean, if set, the MOVEUNIT will make the camera follow the unit (Or the opposite idr)
+	3F | byte  | MOVEUNIT State, dictates which routine to call on idle among other things:
+			0: Nothing
+			1: Nothing (With Move Command Exec)
+			2: Moving (With Move Command Exec)
+			3: Waiting (short 48 holds the timer value) (With Move Command Exec)
+			4: Immediately switches to State 2
+			5: Waiting for something to finish (Waiting for 6C_89A2968 to not exist anymore, I don't know yet what that is)
+			6: Nothing (will make 807924C return absolute position instead of camera-relative (screen) position, So I guess it's used for UI display and stuff?)
+	40 | byte  | Related to Movement Speed? (0 initially) (80797D4 sets this to 1) (80797DC sets this to 0)
+	41 | byte  | Class Index / Map Sprite Entry (The fact that it is used as class index too annoys me)
+	42 | byte  | Current Direction byte? (0xB initially) (Stored in routine at 08078694)
+	43 | byte  | Something? (Initialized at 0xFE/-2 if another MOVEUNIT instance exists, 0 otherwise. Incremented in routine at 8078D6C)
+	44 | byte  | Related to Movement Speed? (0 initially) (8079B10 sets this to 1)
+	46 | short | OAM priority mask (0x800 initially)
+	48 | short | When Moving, Incremented by Movement Speed, added to positions and then finally cleared. State 3 (3F = 3) Decrements it and sets State to 2 when reaches 0
+	4A | short | If bit 7 is set, it will not play any sound/create any 6C_89A2938 while moving the unit
+	4C | short | x*256
+	4E | short | y*256
+	50 | short | added to x? (0 initially)
+	52 | short | added to y? (0 initially)
+
+MOVEUNIT Extra Data: (8078898 deals with that)
+	00 | byte  | Extra Data index
+	01 | byte  | ?
+	02 | short | obj tile index
+	04 | byte  | Next Command Index
+	05+        | A list of 60? "Move Command" bytes
+	?? | word  | MOVEUNIT pointer
+
+// Used when displaying rescuing units/dropped units, probably to block execution of main logic or something idk
+6C_0859AD88 (KOIDO): 
+	2C | word  | facing direction (0-3) (yes, 4 bytes for this)
+	30 | word  | pointer to Unit Struct
+	34 | word  | pointer to MOVEUNIT 6C
+	38 |
+	39 |
+	3A |
+	3C | byte  | Initialized at 0 or 2
+
+Battle Anim Struct:
+	00 | 4*0x14 | 4 Battle Anim Unit Structs
+	
+Battle Anim Unit Structs:
+	00 | word  | pointer to Unit Struct
+	04 | word  | pointer to Battle Unit Struct
+	08 | word  | pointer to MOVEUNIT
+	0C | byte  | maximum HP for HP bar
+	0D | byte  | initial HP for HP bar
+Moving Map Sprite Table:
+	Pointer 1: See 08009674.s
+
+For "The Confusing Struct", see TCSNotes.txt
+
+SMS Data: (not MOVEUNIT but whatever)
+	00 | word  | Next/Prev?
+	04 | short | X pos
+	06 | short | Y pos
+	08 | short | OAM2 Data (Tile Index & Palette)
+	0A | unused?
+	0B | byte  | SMS Size?, +0x40 = Shake, +0x80 = Hide
+

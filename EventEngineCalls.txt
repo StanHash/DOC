@@ -1,0 +1,26 @@
+
+CheckForEvents (FE8U:08082EC4):
+	Arguments: r0 = Initial Event Check Buffer
+	Returns: r0 = Event Check Buffer Pointer for first callable event (0 if none)
+
+CallEventsFromBuffer (FE8U:08082E80):
+	Arguments: r0 = Event Check Buffer, r1 = Passed Argument to Event Engine Call
+	Returns: nothing
+	
+	Will call the events corresponding the output of CheckForEvents
+
+Event Check Buffer Struct: (pointer passed to event check routines, usually allocated on the stack)
+	00 | word | pointer to current event definition (in ROM usually)
+	04 | word | zeroed at the start of checks, outputs event code pointer
+	08 | word | zeroed at the start of checks, outputs event id to set
+	0C | word | outputs command Id?
+	10 | 
+	14 | 
+	18 | byte | input unit x position
+	19 | byte | input unit y position
+
+Event Check Table Entry:
+	00 | word | pointer to check routine (Call info: Argument r0 = Event Check Buffer, routine is intended to fill buffer upon success)
+	04 | word | size in words of the event code
+
+Event Check Table: FE8U:089E84F4

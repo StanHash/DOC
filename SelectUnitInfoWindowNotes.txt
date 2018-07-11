@@ -1,0 +1,14 @@
+
+
+6C defined at 0859E13C (Unit Info Window):
+	2C | word    | Unit Struct pointer
+	30 | 8 bytes | Text Struct
+	38 | 8 bytes | Text Struct
+	40 | 8 bytes | Text Struct
+	48 | 8 bytes | Text Struct
+	50 | 8 bytes | Text Struct
+	58 | 8 bytes | Text Struct
+	60 | byte    | Window Tile X
+	61 | byte    | Window Tile Y
+	62 | byte    | idk
+	63 | byte    | Unit Name Text Local X Origin

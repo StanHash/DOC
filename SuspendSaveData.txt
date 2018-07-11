@@ -1,0 +1,95 @@
+Savedata Notes:
+
+Routines that are interesting:
+	080A5A48:SAVE_MOTHEFUCKING_GAME
+
+SAVE STRUCT:
+	+0x00   | 0x4C bytes if Chapter Data
+	+0x4C   | 0x38 bytes of Action Struct (First 6 bytes are current RN State)
+	+0x84   | 51*0x34      = 0xA5C bytes of Player Units           (See SAVE UNIT STRUCT for details)
+	+0xAE0  | 
+	+0xB14  | (50+10)*0x34 = 0xC30 bytes of Enemy then Other Units (See SAVE UNIT STRUCT for details)
+	+0x1744 | 0x200 bytes of Traps
+	+0x1944 | 0xB0 bytes of convoy item data (first 0x63 bytes are 1 byte = 1 item, next 0x4D are 6 bits = 1 item use)
+	+0x19F4 | 0x460 bytes of BWL Data
+	+0x1E54 | 0xC0 bytes if ???? (Straight copy from 203ECF4)
+	+0x1F14 | 0x10 bytes of some generated data
+	+0x1F24 | 0x19 bytes of global event data
+	+0x1F3D | 0x05 bytes of local event data
+	+0x1F44 | 
+	+0x1F68 | 
+	+0x1F74 | 0x04 bytes of the event counter
+
+SAVE UNIT STRUCT: (Size: 0x34) (Reverse Engineered from routine 080A5E10:ConvertUnitStructToSaveUnitStruct)
+	0x00 | byte  | Character Index
+	0x01 | byte  | Class Index
+	0x02 | byte bitfield:
+			bit 00-06 (7 bits): AI1
+			bit 07    (1 bit ): Unit Status Index Higher 1 bit
+	0x03 | byte  | Rescued Unit Index
+	0x04 | word  | Unit State (field 0x0C in unit struct)
+	0x08 | short bitfield:
+			bit 00-07 (1 byte): Item #1 Index
+			bit 08-13 (6 bits): Item #1 Uses
+			bit 14    (1 bit ): Support Obtained Bit 2
+			bit 15    (1 bit ): Support Obtained Bit 3
+	0x0A | short bitfield:
+			bit 00-07 (1 byte): Item #2 Index
+			bit 08-13 (6 bits): Item #2 Uses
+			bit 14    (1 bit ): Support Obtained Bit 4
+			bit 15    (1 bit ): Support Obtained Bit 5
+	0x0C | short bitfield:
+			bit 00-07 (1 byte): Item #3 Index
+			bit 08-13 (6 bits): Item #3 Uses
+			bit 14    (1 bit ): Support Obtained Bit 6
+			bit 15    (1 bit ): Support Obtained Bit 7
+	0x0E | byte  | Unit max HP
+	0x0F | byte  | Unit cur HP
+	0x10 | byte  | Exp Amount
+	0x11 | byte  | Unit Struct Field 0x0A
+	0x12 | byte  | Sword Rank
+	0x13 | byte  | Lance Rank
+	0x14 | byte  | Axe   Rank
+	0x15 | byte  | Bow   Rank
+	0x16 | byte  | Staff Rank
+	0x17 | byte  | Anima Rank
+	0x18 | byte  | Light Rank
+	0x19 | byte  | Dark  Rank
+	0x1A | byte  | Support Level 1
+	0x1B | byte  | Support Level 2
+	0x1C | byte  | Support Level 3
+	0x1D | byte  | Support Level 4
+	0x1E | byte  | Support Level 5
+	0x1F | byte  | Support Level 6
+	0x20 | byte  | Support Level 7
+	0x21 | byte  | AI1 Data
+	0x22 | byte  | AI2
+	0x23 | byte  | AI2 Data
+	0x24 | word bitfield:
+			bit 00-04 (5 bits): Unit current Level (thus max 31)
+			bit 05-10 (6 bits): Unit current x position (thus max 63)
+			bit 10-16 (6 bits): Unit current y position (thus max 63)
+			bit 17-21 (5 bits): Unit power stat
+			bit 22-26 (5 bits): Unit skill stat
+			bit 27-31 (5 bits): Unit speed stat
+	0x28 | word bitfield:
+			bit 00-04 (5 bits): Unit defense stat
+			bit 05-09 (5 bits): Unit resistance stat
+			bit 10-14 (5 bits): Unit luck stat
+			bit 15-19 (5 bits): Unit con bonus
+			bit 20-22 (3 bits): Unit Status Index Lower 3 bits
+			bit 23-25 (3 bits): Unit Status Duration
+			bit 26-28 (3 bits): Unit Torch Duration
+			bit 29-31 (3 bits): Unit PureWater Duration
+	0x2C | word bitfield:
+			bit 00-03 (4 bits): Unit mov bonus
+			bit 04-11 (1 byte): Item #4 Index
+			bit 12-17 (6 bits): Item #4 Uses
+			bit 18-25 (1 byte): Item #5 Index
+			bit 26-31 (6 bits): Item #5 Uses
+	0x30 | byte bitfield:
+			bit 00-06 (7 bits): Current Riding Ballista Index
+			bit 07    (1 bit ): Support Obtained Bit 1
+	0x31 | byte  | Unit Struct Field 0x46
+	0x32 | short | AI3&4
+

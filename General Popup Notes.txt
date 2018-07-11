@@ -1,0 +1,75 @@
+
+
+Some related 6C (Item Got Manager):
+	54 | word | unit
+	58 | word | item
+
+Popup 6C (anims off?):
+	2C | word  | pointer to "popup definition"
+	30 | word  | timer (when reaches 0, closes popup, if negative, waits for button press)
+	34 | byte  | tile X
+	35 | byte  | tile Y
+	36 | byte  | popup window style?
+	37 | byte  | tile X again
+	38 | byte  | tile Y again
+	39 | byte  | tile width
+	3A | byte  | tile height (3?)
+	3B | byte  | text color
+	3E | short | icon id?
+	40 | short | icon obj tile index
+	42 | byte  | icon palette id (out)
+	44 | byte  | icon x?
+	46 | short | gfx len?
+	48 | short | Sound Id to Play
+	
+	NOTE: in my rework, I use 4C+ for other stuff:
+		4C | word | Icon Adder (Args: r0 = Popup 6C, r1 = Icon short, r2 = local x)
+		50 | word | Icon Updater 6C
+
+Popup 6C OAM Updater (for Icon Obj):
+	2C | word  | x
+	30 | word  | y
+	4A | short | OAM2
+	NOTE: I redo this completely in my rework
+
+"popup definitions":
+	It's just a list of "Components". One component is 8 byte long and is composed of one "Code" and one "Argument" (each of those is a word)
+	
+	Popup Component Codes:
+		00 | END
+		01 | SPACE; Argument = Size in pixels
+		02 | RAW ITEM NAME
+		03 | "Some " + Item Name (well, depends on item)
+		04 | "some " + Item Name (same)
+		05 | String of character name
+		06 | String; Argument: Text ID
+		07 | String; Argument: String Pointer
+		08 | Change color; Argument: Color ID
+		09 | Icon (Item)
+		0A | Icon (Weapon Type)
+		0B | Number String
+		0C | Sets sound to play; Argument: Sound ID
+	
+	Relevant RAM offsets:
+		030005F0: pointer to relevant Unit Struct
+		030005F4: item short / weapon type index
+		030005F8: number word
+
+==========================================================================================================================================================
+BATTLE ANIMS ON POPUP (because those are different for some reason (Actually the reason is probably because the BG/Obj layout during battle is different))
+
+02020140 is where Popup 6C pointers seem to be stored
+
+ekrPopup: (Anims On Popup)
+	2C | short | Counter (incremented by 1 each frame a popup is up)
+	2E | short | Counter End Value
+	44 | word  | W-Rank up Item Short
+	48 | word  | Weapon broke Item Short
+	4C | word  | W-Rank up Item Short (2)
+	50 | word  | Weapon broke Item Short (2)
+	60 | word  | AIS
+
+ekrPopup2:
+	44 | word | W-Rank up Weapon type?
+	48 | word | Same???????
+	60 | word | AIS

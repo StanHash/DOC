@@ -1,0 +1,31 @@
+
+
+Trade Menu Proc Code: (FE8U:0859BB1C)
+    PROC_CALL(LockGameLogic)
+    PROC_SLEEP(0)
+    PROC_WHILE_EXISTS(gProc_CameraMovement)
+    PROC_CALL(0x802D794) // inits item windows and text + unit faces
+    PROC_CALL(0x802D2E0) // inits the little transparent brown boxes with the unit names on them
+    PROC_START_CHILD(0x859BB04)
+PROC_LABEL(101)
+    PROC_CALL(0x802E140)
+    PROC_CALL2(0x802DAFC)
+    PROC_SLEEP(0)
+PROC_LABEL(0)
+    PROC_CALL(0x802D820)
+    PROC_LOOP(0x802D834)
+PROC_LABEL(1)
+    PROC_CALL(0x802D918)
+    PROC_LOOP(0x802D980)
+    PROC_CALL(0x802DAAC)
+    PROC_GOTO(0)
+PROC_LABEL(2)
+    PROC_CALL(0x802DB48)
+    PROC_CALL(ClearBG0BG1)
+    PROC_CALL(UnlockGameLogic)
+    PROC_END
+
+Trade Menu Proc State Layout:
+    0-29 | proc header
+    2C   | word | trading unit
+    30   | word | traded with unit

@@ -1,0 +1,81 @@
+All offsets and routines are for FE8U
+
+TARGET STUFF:
+	The target list is located at 0203DDEC, is 0x300 bytes (0x40 entries max), and is an array of "targets". It is used by a number of things, including target selection.
+	
+	The Target Selection logic allows making the player select a target from the ones in the list.
+	
+	Target Struct (Target List Entry): (size: 0xC)
+		00 | byte | target x
+		01 | byte | target y
+		02 | byte | target allegience byte
+		03 | byte | target trap type? (seems to be used as extra data in general)
+		04 | word | pointer to next Target Struct
+		08 | word | pointer to prev Target Struct
+	
+	Related routines:
+		0804F8BC | AddTarget | Adds Target to the list
+					Arguments: r0 = x, r1 = y, r2 = Unit Index, r3 = Extra/Trap Id? (I don't think the game cares in general)
+					Returns:   nothing
+		
+		0804FD28 | GetTargetListSize | Gets list size (used to check for empty lists in usability routines)
+					Arguments: nothing
+					Returns:   r0 = Number of entries in the list
+		
+		0804FD34 | GetTarget | Gets Target Struct by Index
+					Arguments: r0 = Target Index
+					Returns:   r0 = Target Struct for given Index (= pTargetList + i*sizeof(TargetStruct))
+		
+		0804F8A4 | InitTargets | Inits Target List (and clears it)
+					Arguments: r0 = x, r1 = y (the position is used internally for sorting later)
+					Returns:   nothing
+	
+	Before using the target selection, you need to setup the list. This is done by first initializing it, and then adding the targets you want.
+	
+	BONUS ROUTINES:
+		08024F70 | ForEachAdjacentUnit | Goes through all units adjacent to position and calls routine with unit struct as argument
+					Arguments: r0 = x, r1 = y, r2 = Routine pointer (takes Unit Struct as argument)
+					Returns:   nothing
+		
+		08024EAC | ForEachUnitInRange | Goes through all units that are on a non-null tile on the Range Map and calls routine
+					Arguments: r0 = Routine pointer (takes Unit Struct as argument)
+					Returns:   nothing
+
+Struct for 6C at 085B655C (Target Selection) (size: it's a 6C Struct):
+	2C | word  | pointer to Target Selection Routine List (see below)
+	30 | word  | pointer to Target Struct
+	34 | byte  | Apparently some bitfield:
+		& 0x01 | blocks 6C thread 2
+		& 0x06 | doesn't update cursor graphics? (Months later: wait why 0x06?)
+	(35-37)
+	38 | word  | pointer to routine. If non 0, this will be called instead of the one set in the routine list for A Press
+
+Target Selection Routine List:
+	00 | word | pointer to routine called on construction (Usually constructs the related BB 6C)
+	04 | word | pointer to routine called on destruction
+	08 | word | pointer to routine called on construction too (after the 00 one)
+	0C | word | pointer to routine called on target change and on construction (last in both cases)
+	10 | word | pointer to routine called on target change only (called first)
+	14 | word | pointer to routine called on selection (A press)
+	18 | word | pointer to routine called on cancel (B press)
+	1C | word | pointer to routine called on help (R press)
+	
+	The last five routines takes those arguments:
+		r0 = Target Selection 6C (useful for creating Blocking Children I guess?), r1 = Target Struct (the useful one)
+	
+	Those last three routines return a bitfield:
+		& 0x01 | Ignores camera movement & cursor drawing for current frame when set
+		& 0x02 | Ends target selection when set
+		& 0x04 | Plays beep sound (sound Id 0x6A) when set
+		& 0x08 | Plays boop sound (sound Id 0x6B) when set
+		& 0x10 | Clears BG0 & BG1 when set
+		& 0x20 | Deletes Face #0
+
+ROUTINES:
+	0804FA3C | NewTargetSelection | Creates a new target selection 6C and everything (target list must be setup)
+				Arguments: r0 = pointer to routine list
+				Returns:   r0 = Target Selection 6C
+	
+	0804FAA4 | NewTargetSelection_Specialized | Same as above, but the A Press routine from the list gets overwritten by the one given as arg
+				Arguments: r0 = pointer to routine list, r1 = routine to call on A Press (replaces one in list)
+				Returns:   r0 = Target Selection 6C

@@ -1,0 +1,6 @@
+
+
+Common Fields in Spell Anim 6Cs:
+	29 | byte  | Something (initially a bool?)
+	2C | short | Timer/Frame counter
+	5C | word  | Main Linked AIS Ptr

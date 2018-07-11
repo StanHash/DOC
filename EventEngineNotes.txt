@@ -1,0 +1,123 @@
+/!\ FE8 ONLY HERE
+
+Event Code Format: (Size: 2 (short))
+	bit 0-7   : CodeID    | Event Code Id, valid range are 00-xx and 80-yy (xx and yy are size of some routine arrays)
+	bit 8-11  : CodeSize  | Event Instruction size. If the Event Routine returns 0 or 2, the event cursor will advance by this value times 2
+	bit 12-15 : CodeParam | Depends (read by routines usually) (usually defines what behaviour is to be had)
+
+Event Code Format: (Condensed)
+	0xCCSP
+		0xCC is CodeID
+		0x0S is CodeSize
+		0x0P is CodeParam
+	Example 0x2A21:
+		CodeID    = 0x2A (Move to Chapter codes)
+		CodeSize  = 0x02 (2 shorts aka a word)
+		CodeParam = 0x01
+
+Event Routine return value:
+	0: Event cursor added to set value (see Event Code Format) and Continue Execution
+	2: Event cursor added to set value (see Event Code Format) and Yield
+	3: Yield
+	5: Kill the Event Engine
+	Anything else: Continue Execution
+
+6C_08591AC0 & 6C_08591AF8 (Event Engine):
+	2C | word  | some routine pointer
+	30 | word  | some event pointer
+	34 | word  | some other event pointer
+	38 | word  | current event cursor
+	3C | short | Event State Bits:
+					bit 0 (& 0x01): 
+					bit 1 (& 0x02): 
+					bit 2 (& 0x04): Currently Skipping? (like when start is pressed or something)
+					bit 3 (& 0x08): 
+	3E | short | Timer for STAL codes
+	42 | byte  | 
+	48 | word  | UNIT pointer
+
+MuCtr 6C:
+	2C | word  | Unit Struct pointer
+	30 | word  | MOVEUNIT pointer
+	34 | word  | Event Move Buffer pointer
+	38 | short | Event Move Buffer Entry Count
+
+EVENT CODES:
+	ID 00 "Null"
+		Does Nothing, returns 0
+	
+	ID 01 "End"
+		If Event bit 0 is set:
+			returns 5 (Ends event execution)
+		
+		Subcode 0001b "ENDB"
+			Clears Event Call Stack
+		Else "ENDA"
+			Nothing specific
+		
+		Goes back to last event call
+		
+		return 5 if no return (End event exec)
+		return 1 otherwise (Continue)
+	
+	ID 02 "Event ID & Event Bit manipulation":
+		Subcode 0000b "EVBIT_F <bit>"
+			Clears event bit <bit>
+		
+		Subcode 1000b "EVBIT_T <bit>"
+			Sets event bit <bit>
+		
+		Subcode 0001b "ENUF <evid>"
+			Unsets event id <evid>
+		
+		Subcode 1001b "ENUT <evid>"
+			Sets event id <evid>
+		
+		return 0 (Advance & Continue)
+	
+	ID 03 "Event ID & Event Bit Check":
+		Subcode 0000b "CHECK_EVBIT <bit>:2"
+			Slot C = State of event bit <bit>
+		
+		Subcode 0001b "CHECK_EVENTID <evid>:2"
+			Slot C = State of event id <evid>
+		
+		return 0 (Advance & Continue)
+	
+	ID 04 "Random Number Generation":
+		All "RANDOMNUMBER <max>:2"
+			Slot C = Random Integer in range 0 to <max> inclusive
+		
+		return 0 (Advance & Continue)
+	
+	ID 05 "Slot Set":
+		All "SVAL <slot>:2 <value>:4"
+			Slot <slot> = <value>
+		
+		return 0 (Advance & Continue)
+	
+	ID 06 "Slot Operations":
+		Subcode 0: SADD
+		Subcode 1: SSUB
+		Subcode 2: SMUL
+		Subcode 3: SDIV
+		Subcode 4: SMOD?
+		Subcode 5: SAND
+		Subcode 6: SORR
+		Subcode 7: SXOR
+		Subcode 8: SLSL
+		Subcode 9: SLSR
+		Other: return 6 (Continue)
+		
+		"<op> <param>:2"
+		
+		<param>:
+			bit 0-3:  Dest Slot
+			bit 4-7:  LSorc Slot
+			bit 8-11: RSorc Slot
+		
+		Execututes operation between values in LSorc and RSorc, stores result in Dest
+		return 0 (Advance & Continue)
+	
+	10 | EVBIT_MODIFY
+	2A | MNCH, MNC2, MNC3, MNTS

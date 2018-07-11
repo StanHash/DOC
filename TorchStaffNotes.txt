@@ -1,0 +1,255 @@
+08029ED8     NewTorchStaffSelection
+
+There don't seem to be any usage of the internal 6C storage space for the thing... ~~waste of space~~
+
+0859BA38 Run6C_TorchTargetPosSelection:
+	_6C_CALL(BlockGameLogic+1)
+	_6C_CALL(TorchTargetPosSelect_Init+1)
+	
+	_6C_WHILE_EXISTS(Run6C_GENS) // That's the camera 6C basically
+	
+	_6C_LOOP(TorchTargetSelection_Loop+1)
+	
+	_6C_CALL(TorchWarp_OnConfirm+1)
+	_6C_GOTO(0x64)
+	
+	_6C_LABEL(0x63)
+	_6C_CALL(TorchWarp_OnCancel+1)
+	
+	_6C_LABEL(0x64)
+	_6C_CALL(UnblockGameLogic+1)
+	_6C_END
+
+TorchTargetPosSelect_Init: { // 08029D98
+	EnableRangeDisplay();
+	MakeBottomHelpText(GetText(0x87C)); // Loads Text in Buffer, then creates BB 6C
+	
+	if (ShouldMoveCamera(ActiveUnit.x, ActiveUnit.y))
+		MoveCamera(ActiveUnit.x, ActiveUnit.y);
+}
+
+TorchTargetSelection_Loop: { // 08029DF0
+	int rangeTile = RangeMap[Cursor.y][Cursor.x];
+	
+	UpdateCursorMovement();
+	
+	if (APress) {
+		if (rangeTile) {
+			if (ShouldPlaySound())
+				PlaySound(0x6A);
+			
+			Break6CLoop(this);
+			
+			ActionStruct.targetX = Cursor.x;
+			ActionStruct.targetY = Cursor.y;
+			
+			// EndItemEffectSelectionThing();
+			ActionStruct.actionId = 3; // Staff/Item/Etc
+			HideRangeGfx();
+			
+			return;
+		} else {
+			if (ShouldPlaySound())
+				PlaySound(0x6C);
+		}
+	}
+	
+	if (BPress) {
+		ClearBG(BG2);
+		EnableBG(BG2);
+		
+		Goto6C(this, 0x63);
+		
+		if (ShouldPlaySound())
+			PlaySound(0x6B);
+	}
+	
+	SomethingCursorGfx(CursorDisplay.x, CursorDisplay.y, 1);
+}
+
+======================================================================================================================
+===================================================== ACTUAL ASM =====================================================
+======================================================================================================================
+
+ROM:08029D98     TorchTargetPosSelect_Init:
+ROM:08029D98 000                 PUSH    {R4,R5,LR}
+ROM:08029D9A 00C                 MOVS    R5, R0
+ROM:08029D9C 00C                 LDR     R2, =pGameDataStruct
+ROM:08029D9E 00C                 LDRB    R1, [R2,#(pSomeRangeDisplayBitfield - 0x202BCB0)] @ bit 1 = when range is displayed, bit 2 = when moving?
+ROM:08029DA0 00C                 MOVS    R0, #1
+ROM:08029DA2 00C                 ORRS    R0, R1
+ROM:08029DA4 00C                 STRB    R0, [R2,#(pSomeRangeDisplayBitfield - 0x202BCB0)] @ bit 1 = when range is displayed, bit 2 = when moving?
+ROM:08029DA6 00C                 LDR     R0, =0x87C
+ROM:08029DA8 00C                 BL      GetTextInStandardBuffer @ Arguments: r0 = Text Id
+ROM:08029DA8                                             @ Returns: r0 = Standard Text Buffer
+ROM:08029DA8
+ROM:08029DAC 00C                 MOVS    R1, R0
+ROM:08029DAE 00C                 MOVS    R0, R5
+ROM:08029DB0 00C                 BL      MakeNew6CBB
+ROM:08029DB0
+ROM:08029DB4 00C                 LDR     R4, =ppActiveUnit
+ROM:08029DB6 00C                 LDR     R1, [R4]
+ROM:08029DB8 00C                 MOVS    R0, #UnitStruct.xPos
+ROM:08029DBA 00C                 LDRSB   R0, [R1,R0]
+ROM:08029DBC 00C                 LDRB    R1, [R1,#UnitStruct.yPos]
+ROM:08029DBE 00C                 LSLS    R1, R1, #0x18
+ROM:08029DC0 00C                 ASRS    R1, R1, #0x18
+ROM:08029DC2 00C                 BL      ShouldMoveCameraPosSomething @ Arguments: r0 = x, r1 = y
+ROM:08029DC2
+ROM:08029DC6 00C                 LSLS    R0, R0, #0x18
+ROM:08029DC8 00C                 CMP     R0, #0
+ROM:08029DCA 00C                 BEQ     End
+ROM:08029DCA
+ROM:08029DCC 00C                 LDR     R0, [R4]
+ROM:08029DCE 00C                 MOVS    R1, #UnitStruct.xPos
+ROM:08029DD0 00C                 LDRSB   R1, [R0,R1]
+ROM:08029DD2 00C                 MOVS    R2, #UnitStruct.yPos
+ROM:08029DD4 00C                 LDRSB   R2, [R0,R2]
+ROM:08029DD6 00C                 MOVS    R0, R5
+ROM:08029DD8 00C                 BL      EnsureCameraOntoPosition @ r0 = caller 6C, r1 = map x, r2 = map y
+ROM:08029DD8                                             @ returns: r0 = 1 if a GENS has been created
+ROM:08029DD8
+ROM:08029DDC
+ROM:08029DDC     End:
+ROM:08029DDC 00C                 POP     {R4,R5}
+ROM:08029DDE 004                 POP     {R0}
+ROM:08029DE0 000                 BX      R0
+
+
+ROM:08029DF0     TorchTargetSelection_Loop:
+ROM:08029DF0 000                 PUSH    {R4-R6,LR}
+ROM:08029DF2 010                 MOVS    R6, R0
+ROM:08029DF4 010                 LDR     R5, =pGameDataStruct
+ROM:08029DF6 010                 MOVS    R0, #0x14
+ROM:08029DF8 010                 LDRSH   R2, [R5,R0]
+ROM:08029DFA 010                 MOVS    R1, #0x16
+ROM:08029DFC 010                 LDRSH   R0, [R5,R1]
+ROM:08029DFE 010                 LDR     R1, =ppMapRangeRows
+ROM:08029E00 010                 LDR     R1, [R1]
+ROM:08029E02 010                 LSLS    R0, R0, #2
+ROM:08029E04 010                 ADDS    R0, R0, R1
+ROM:08029E06 010                 LDR     R0, [R0]
+ROM:08029E08 010                 ADDS    R0, R0, R2
+ROM:08029E0A 010                 LDRB    R4, [R0]
+ROM:08029E0C 010                 BL      UpdatePPCursorMovement
+ROM:08029E0C
+ROM:08029E10 010                 LDR     R0, =ppKeyStatus
+ROM:08029E12 010                 LDR     R0, [R0]
+ROM:08029E14 010                 LDRH    R1, [R0,#8]
+ROM:08029E16 010                 MOVS    R0, #1
+ROM:08029E18 010                 ANDS    R0, R1
+ROM:08029E1A 010                 CMP     R0, #0
+ROM:08029E1C 010                 BEQ     NoAPress
+ROM:08029E1C
+ROM:08029E1E 010                 CMP     R4, #0
+ROM:08029E20 010                 BEQ     NotInRange
+ROM:08029E20
+ROM:08029E22 010                 LDR     R0, =pChapterDataStruct
+ROM:08029E24 010                 ADDS    R0, #0x41
+ROM:08029E26 010                 LDRB    R0, [R0]
+ROM:08029E28 010                 LSLS    R0, R0, #0x1E
+ROM:08029E2A 010                 CMP     R0, #0
+ROM:08029E2C 010                 BLT     loc_8029E34
+ROM:08029E2C
+ROM:08029E2E 010                 MOVS    R0, #0x6A
+ROM:08029E30 010                 BL      PlaySound
+ROM:08029E30
+ROM:08029E34
+ROM:08029E34     loc_8029E34:
+ROM:08029E34 010                 MOVS    R0, R6
+ROM:08029E36 010                 BL      Clear6CLoop
+ROM:08029E36
+ROM:08029E3A 010                 LDR     R1, =pActionStruct
+ROM:08029E3C 010                 LDRH    R0, [R5,#0x14]
+ROM:08029E3E 010                 STRB    R0, [R1,#(pActionStruct.xPos2 - 0x203A958)]
+ROM:08029E40 010                 LDRH    R0, [R5,#0x16]
+ROM:08029E42 010                 STRB    R0, [R1,#(pActionStruct.yPos2 - 0x203A958)]
+ROM:08029E44 010                 LDR     R0, =ppActiveUnit
+ROM:08029E46 010                 LDR     R0, [R0]
+ROM:08029E48 010                 BL      EndItemEffectSelectionThing
+ROM:08029E48
+ROM:08029E4C 010                 B       End
+ROM:08029E4C
+ROM:08029E4C     @ ---------------------------------------------------------------------------
+ROM:08029E68
+ROM:08029E68     NotInRange:
+ROM:08029E68 010                 LDR     R0, =pChapterDataStruct
+ROM:08029E6A 010                 ADDS    R0, #0x41
+ROM:08029E6C 010                 LDRB    R0, [R0]
+ROM:08029E6E 010                 LSLS    R0, R0, #0x1E
+ROM:08029E70 010                 CMP     R0, #0
+ROM:08029E72 010                 BLT     NoAPress
+ROM:08029E72
+ROM:08029E74 010                 MOVS    R0, #0x6C
+ROM:08029E76 010                 BL      PlaySound
+ROM:08029E76
+ROM:08029E7A
+ROM:08029E7A     NoAPress:
+ROM:08029E7A 010                 LDR     R0, =ppKeyStatus
+ROM:08029E7C 010                 LDR     R0, [R0]
+ROM:08029E7E 010                 LDRH    R1, [R0,#8]
+ROM:08029E80 010                 MOVS    R0, #2
+ROM:08029E82 010                 ANDS    R0, R1
+ROM:08029E84 010                 CMP     R0, #0
+ROM:08029E86 010                 BEQ     NoBPress
+ROM:08029E86
+ROM:08029E88 010                 LDR     R0, =pBG2MapDataBuffer
+ROM:08029E8A 010                 MOVS    R1, #0
+ROM:08029E8C 010                 BL      FillBGTileMap   @ Arguments: r0 = BG Tile Map Buffer Pointer, r1 = (short) Tile to fill
+ROM:08029E8C
+ROM:08029E90 010                 MOVS    R0, #4
+ROM:08029E92 010                 BL      EnableBackgroundByMask @ Arguments: r0 = Mask
+ROM:08029E92
+ROM:08029E96 010                 MOVS    R0, R6
+ROM:08029E98 010                 MOVS    R1, #0x63
+ROM:08029E9A 010                 BL      Goto6CLabel
+ROM:08029E9A
+ROM:08029E9E 010                 LDR     R0, =pChapterDataStruct
+ROM:08029EA0 010                 ADDS    R0, #0x41
+ROM:08029EA2 010                 LDRB    R0, [R0]
+ROM:08029EA4 010                 LSLS    R0, R0, #0x1E
+ROM:08029EA6 010                 CMP     R0, #0
+ROM:08029EA8 010                 BLT     NoBPress
+ROM:08029EA8
+ROM:08029EAA 010                 MOVS    R0, #0x6B
+ROM:08029EAC 010                 BL      PlaySound
+ROM:08029EAC
+ROM:08029EB0
+ROM:08029EB0     NoBPress:
+ROM:08029EB0 010                 LDR     R1, =pGameDataStruct
+ROM:08029EB2 010                 MOVS    R2, #0x20
+ROM:08029EB4 010                 LDRSH   R0, [R1,R2]
+ROM:08029EB6 010                 MOVS    R2, #0x22
+ROM:08029EB8 010                 LDRSH   R1, [R1,R2]
+ROM:08029EBA 010                 MOVS    R2, #1
+ROM:08029EBC 010                 BL      IWantToGuessThisIsCursorGfxRelated @ Arguments: r0 = x, r1 = y, r2 = ?
+ROM:08029EBC
+ROM:08029EC0
+ROM:08029EC0     End:
+ROM:08029EC0 010                 POP     {R4-R6}
+ROM:08029EC2 004                 POP     {R0}
+ROM:08029EC4 000                 BX      R0
+
+
+ROM:08029ED8     NewTorchStaffSelection:
+ROM:08029ED8 000                 PUSH    {LR}
+ROM:08029EDA 004                 LDR     R0, =Run6C_TorchTargetPosSelection
+ROM:08029EDC 004                 MOVS    R1, #3
+ROM:08029EDE 004                 BL      New6C           @ Arguments: r0 = 6C Code Pointer, r1 = Parent 6C
+ROM:08029EDE
+ROM:08029EE2 004                 LDR     R0, =pChapterDataStruct
+ROM:08029EE4 004                 ADDS    R0, #0x41
+ROM:08029EE6 004                 LDRB    R0, [R0]
+ROM:08029EE8 004                 LSLS    R0, R0, #0x1E
+ROM:08029EEA 004                 CMP     R0, #0
+ROM:08029EEC 004                 BLT     End
+ROM:08029EEC
+ROM:08029EEE 004                 MOVS    R0, #0x6A
+ROM:08029EF0 004                 BL      PlaySound
+ROM:08029EF0
+ROM:08029EF4
+ROM:08029EF4     End:
+ROM:08029EF4 004                 POP     {R0}
+ROM:08029EF6 000                 BX      R0
+
+

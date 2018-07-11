@@ -1,0 +1,59 @@
+FE8U DEBUG REMNANTS NOTES
+
+Routines related to debug seem to be located around 0x01C000
+
+0801C090 is the Debug Startup routine, the following EA code will replace the standard one with it:
+	ORG 0x000AD8
+		BL(0x01C090)
+Seems to work 100% well
+
+0859D040: Map Debug Menu Def
+0801BB1C calls that, but seems to also be a menu effect routine (takes Menu 6C as r0, returns 1 etc)
+08033468 calls that, but seems to be for prep screen?
+
+This replaces the guide menu command with the map debug menu:
+	ORG 0x59CEC0
+		POIN (0x04F448+1) // always usable
+		WORD 0            // no fancy drawing
+		POIN (0x01BB1C+1) // calls the map debug menu
+
+will not work in no$ because of the following:
+	6C at 0859AA5C (blank, deletes itself immediately) seems to be looked for by a bunch of debug routines, so I think it's safe to assume this used to be some "debug manager", but now is removed.
+
+Known 6C 0859AA5C Fields:
+	58 | word  | weather id (0 => 0, 1 => 6, 2 => 1, 3 => 2, 4 => 4, 5 => 3, 6 => 5)
+	64 | short | Display DBG Boolean
+	66 | short | Display Debug Info Boolean
+
+ONE DAY LATER, I have the prototype version on hand (thank lin again) (I will refer the prototype rom as FE8P and the standard game as FE8U):
+
+First main difference: optimization level of asm is way lower (to be expected).
+
+The missing 6C is called "DEBMON", and does a bunch of stuff
+
+it is constructed in 6C thread 3 at FE8P:08042E06 (equivalent to FE8U:0803102A, but nothing there)
+Same for somewhere in FE8U:08030E04 (Chapter Setup) (FE8P:08042B6C)
+
+FE8P:08015CB4 (Routine that makes the phase controller 6Cs) is quite different from its conterpart FE8U:08015450: It possesses checks to make the different phases player controlled or just plain skipped.
+
+TWO DAYS LATER, I found stuff related to the debug print screen and such in the standard FE8U rom
+
+I'll refer as DBG the debug text buffer that is basically where is printed all of the debug text (in raw ascii)
+It's 0x2000 bytes (!) long, and there's 0x20 bytes used per line. for a total of 0x100 lines possible
+
+0800378C | Loads Debug Font (BG)    | Arguments: r0 = BG Index (2), r1 = Tile Offset (0 for default)
+08003804 | Displays String to BG    | Arguments: r0 = Output Tile Root, r1 = String pointer
+0800394C | Prints Dec Number to DBG | Arguments: r0 = Number, r1 = Digit count to display
+080039B4 | Prints Hex Number to DBG | Arguments: r0 = Number, r1 = Digit count to display
+080039D0 | Prints String to DBG     | Arguments: r0 = String pointer (will understand newlines!)
+08003A3C | Displays DBG text on BG2 | Arguments: none
+08003ABC | Displaus DBG text on BG2 and handles V-Scroll | Arguments: r0 = current key presses, r1 = new key presses
+
+08003B24 | Loads Debug Font (OBJ)   | Arguments: r0 = OBJ Tile Offset (negative => default), r1 = OBJ Palette Index
+08003BB0 | Prints String as OBJ     | Arguments: r0 = x, r1 = y, r2 = String pointer
+08003BFC | Prints Dec Number as OBJ | Arguments: r0 = x, r1 = y, r2 = Number, r3 = Digit count to display
+08003C20 | Prints Hex Number as OBJ | Arguments: r0 = x, r1 = y, r2 = Number, r3 = Digit count to display
+08003C44 | Another Print idk        | idk
+
+ACTUAL FINDING IN THE PROTOTYPE VERSION: Pressing B + R + Left (with Left being the last press) will bring up the debug console output (aka display DBG).
+^ This is managed by DEBMON

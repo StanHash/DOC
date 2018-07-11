@@ -1,0 +1,265 @@
+FE8E! (just kidding it's FE8U)
+
+About VBlank:
+	the routines that are known to be VBlank Handlers are:
+		080152A4, used in 99% of cases
+		0808DAE4, minimalistic, maybe used on error?
+	
+	The following is the general logic of the fist routine:
+		global/game clock is incremented
+		<sound stuff idk>
+		6C thread #0 is called
+		Primary OAM Flush
+		if byte at 0202BCB0 is non zero:
+			IO Registers Flush
+			BG Maps & Palettes Flush
+			Tile Graphics Flush
+			Secondary OAM Flush
+		<sound stuff idk>
+
+IO Registers:
+	03003080 is a struct containing various "buffers" for values sent to various IO Registers on VBlank
+
+	Struct Mapping:
+		From          | type  | To
+		------------- | ----- | --------
+		03003080 + 00 | short | 04000000 (DISPCNT  / LCD Control)
+		03003080 + 04 | short | 04000004 (DISPSTAT / General LCD Status)
+		03003080 + 0C | short | 04000008 (BG0CNT   / BG0 Control)
+		03003080 + 10 | short | 0400000A (BG1CNT   / BG1 Control)
+		03003080 + 14 | short | 0400000C (BG2CNT   / BG2 Control)
+		03003080 + 18 | short | 0400000E (BG3CNT   / BG3 Control)
+		03003080 + 1C | vec2* | 04000010 (BG0HOFS  / BG0 X-Offset; BG0VOFS  / BG0 Y-Offset)
+		03003080 + 20 | vec2  | 04000014 (BG1HOFS  / BG1 X-Offset; BG1VOFS  / BG1 Y-Offset)
+		03003080 + 24 | vec2  | 04000018 (BG2HOFS  / BG2 X-Offset; BG2VOFS  / BG2 Y-Offset)
+		03003080 + 28 | vec2  | 0400001C (BG3HOFS  / BG3 X-Offset; BG3VOFS  / BG3 Y-Offset)
+		03003080 + 2C | short | 04000040 (WIN0H    / Window 0 Horizontal Dimensions)
+		03003080 + 2E | short | 04000042 (WIN1H    / Window 1 Horizontal Dimensions)
+		03003080 + 30 | short | 04000044 (WIN0V    / Window 0 Vertical Dimensions)
+		03003080 + 32 | short | 04000046 (WIN1V    / Window 1 Vertical Dimensions)
+		03003080 + 34 | short | 04000048 (WININ    / Inside of Window 0 and 1)
+		03003080 + 36 | short | 0400004A (WINOUT   / Inside of OBJ Window & Outside of Windows)
+		03003080 + 38 | short | 0400004C (MOSAIC   / Mosaic Size)
+		03003080 + 3C | short | 04000050 (BLDCNT   / Color Special Effects Selection)
+		03003080 + 44 | short | 04000052 (BLDALPHA / Alpha Blending Coefficients)
+		03003080 + 46 | short | 04000054 (BLDY     / Brightness (Fade-In/Out) Coefficient)
+		03003080 + 48 | short | 04000020 (BG2PA    / BG2 Rotation/Scaling Parameter A (dx))
+		03003080 + 4A | short | 04000022 (BG2PB    / BG2 Rotation/Scaling Parameter B (dmx))
+		03003080 + 4C | short | 04000024 (BG2PC    / BG2 Rotation/Scaling Parameter C (dy))
+		03003080 + 4E | short | 04000026 (BG2PD    / BG2 Rotation/Scaling Parameter D (dmy))
+		03003080 + 50 | word  | 04000028 (BG2X     / BG2 Reference Point X-Coordinate)
+		03003080 + 54 | word  | 0400002C (BG2Y     / BG2 Reference Point Y-Coordinate)
+		03003080 + 58 | short | 04000030 (BG3PA    / BG3 Rotation/Scaling Parameter A (dx))
+		03003080 + 5A | short | 04000032 (BG3PB    / BG3 Rotation/Scaling Parameter B (dmx))
+		03003080 + 5C | short | 04000034 (BG3PC    / BG3 Rotation/Scaling Parameter C (dy))
+		03003080 + 5E | short | 04000036 (BG3PD    / BG3 Rotation/Scaling Parameter D (dmy))
+		03003080 + 60 | word  | 04000038 (BG3X     / BG3 Reference Point X-Coordinate)
+		03003080 + 64 | word  | 0400003C (BG3Y     / BG3 Reference Point Y-Coordinate)
+
+	(*) vec2 here means a pair of shorts (usually meaning some position)
+	
+	ROUTINES:
+		08000E9C | FlushLCDControl | DON'T CALL THIS YOURSELF (called on VBlank); Does the magic
+				Arguments: nothing
+				Returns:   nothing
+		
+		08000F44 | GetBackgroundControlBufferPtr
+		08000F8C | GetBackgroundTileDataOffset
+		08000FDC | SetBackgroundTileDataOffset
+		08001004 | SetBackgroundMapDataOffset
+		0800104C | SetBackgroundScreenSize
+		
+		0800148C | SetupBackgroundPosition
+				Arguments: r0 = BG Index, r1 = x, r2 = y
+				Returns:   nothing
+
+BG Map Buffers:
+	02024CA8 is an array of 4 pointers (one for each BG) that contain where in VRAM will the BG Maps be written to.
+	Those are not important.
+	
+	The important ones are:
+		02022CA8 | BG0 Map Buffer
+		020234A8 | BG1 Map Buffer
+		02023CA8 | BG2 Map Buffer
+		020244A8 | BG3 Map Buffer
+	
+	This is where you write your tile graphics. Reminder of how the format works:
+		One tile is a short, theres 0x20 tiles per row (so 0x40 bytes).
+		To compute the offset for one tile in the map buffer given its (x, y) pos: offset = 2*x + 0x40*y
+		Tile Format: (taken from gbatek)
+			bit 0-9   | Tile Number     (0-1023)
+			bit 10    | Horizontal Flip (0=Normal, 1=Mirrored)
+			bit 11    | Vertical Flip   (0=Normal, 1=Mirrored)
+			bit 12-15 | Palette Number  (0-15)
+	
+	0300000D is a byte:
+		bit 0 | (bool) BG0 Map to be updated
+		bit 1 | (bool) BG1 Map to be updated
+		bit 2 | (bool) BG2 Map to be updated
+		bit 3 | (bool) BG3 Map to be updated
+	
+	ROUTINES:
+		08001220 | FillBGMap | Fills BG Map with given value
+				Arguments: r0 = BG Map (Buffer) Pointer, r1 = value (word)
+				Returns:   nothing
+		
+		08001C4C | GetBGMapBuffer | Gets BG Map Buffer for given BG
+				Arguments: r0 = BG Index
+				Returns:   r0 = BG Map Buffer pointer
+		
+		08001FAC | EnableBackgroundSyncByMask | Sets BGs to be updated (Will not unset others)
+				Arguments: r0 = BG Mask (see 0300000D)
+				Returns:   nothing
+		
+		08001FBC | EnableBackgroundSyncById | Sets BG to be updated
+				Arguments: r0 = BG Index
+				Returns:   nothing
+		
+		0800114C | FlushBackgrounds | DON'T CALL THIS YOURSELF (called on VBlank); Sends the BG Maps to VRAM, and the palettes to palette RAM
+				Arguments: nothing
+				Returns:   nothing
+
+Tile Graphics:
+	02024CDC is an array of 0x20 entries of structures defining what tiles graphics are to be sent to VRAM
+	
+	Tile Registry Struct: (size: 0xC)
+		00 | word  | source pointer / fill value
+		04 | word  | destination (VRAM) pointer
+		08 | short | size of graphics (bytes)
+		0A | short | mode? is 0 when size isn't a multiple of 0x20, is 2 for fill (not copy)
+	
+	ROUTINES:
+		08001FE0 | ClearTileRigistry | Clears array
+				Arguments: nothing
+				Returns:   nothing
+		
+		08002014 | RegisterTileGraphics | Adds an entry to the array
+				Arguments: r0 = Source gfx (uncompressed!), r1 = Destination pointer, r2 = size (bytes)
+				Returns:   nothing
+		
+		08002054 | RegisterFillTile | Adds an entry to the array (fill mode); Used mostly to clear tiles
+				Arguments: r0 = *word* to fill with, r1 = Destination pointer, r2 = size (bytes)
+				Returns:   nothing
+		
+		08001240 | RegisterBlankTile
+				Arguments: r0 = Tile index
+				Returns:   nothing
+		
+		08012FF4 | RegisterObjectTileGraphics | Register tile graphics suitable for OBJ tiles (done by calling RegisterTileGraphics multiple times)
+				Arguments: r0 = Source gfx (uncompressed), r1 = Target pointer, r2 = Tile Width, r3 = Tile Height
+				Returns:   nothing
+		
+		08002088 | FlushTiles | DON'T CALL THIS YOURSELF (called on VBlank); Sends the tile data to VRAM/wherever you told it to
+				Arguments: nothing
+				Returns:   nothing
+
+Palettes:
+	020228A8 is the whole palette buffer
+	0300000E is a byte (bool) that tells the game whether the palette RAM needs to be updated
+	
+	It is directly memcopied to the Palette RAM on VBlank except in one case:
+		030030E8 is a byte that contains a color value difference. Essentially, when non null, it will map *all* colors in *all* palettes the following way:
+			(r, g, b) => (r + x, g + x, b + x); With values being kept in [0, 31] range of course
+		It's probably used for fading in/out
+	
+	Palette Copy is done in the same routine as the background maps copy
+	
+	ROUTINES:
+		08000DB8 | CopyToPaletteBuffer | Copies palette to buffer and sets updated palette flag
+				Arguments: r0 = source pointer, r1 = destination offset, r2 = size (0x20 per full palette)
+				Returns:   nothing
+
+Object Attributes (raw buffers):
+	OAM Buffers are a bit more complex: there are 2, and their size varies. I'll call them primary and secondary, refering to the order they are flushed (even if the "secondary" OAM buffer seems to be the prominent one).
+	
+	The whole OAM buffer is located at 03003140
+	
+	03000020 | word  | pointer to start of secondary buffer
+	03000024 | word  | pointer to target VRAM/OAM for secondary buffer
+	03000028 | short | starting index for secondary OAM (aka primary OAM size) (seems to be never read?)
+	0300002A | short | size (in number of entries) of secondary OAM buffer (0x80 - start)
+	
+	03000030 | word  | pointer to start of primary buffer (0x03003140)
+	03000034 | word  | pointer to target VRAM/OAM for primary buffer (0x07000000)
+	03000038 | short | starting index for primary OAM (0) (seems to be never read?)
+	0300003A | short | size (in number of entries) of primary OAM buffer (can be 0!)
+	
+	The only real variable here is the size of the primary OAM buffer, all the other values are either constant or dependant on that size. This is apparent when calling the routine that sets all those values up (SetupOAMBufferSplice, see below)
+	
+	Primary OAM in game seem to be used exclusively by weather effects?
+
+	Additionally, somes useful pointers (iterators) that are used by various routines that queue OAM data:
+		03003070 | word  | pointer to next free entry in primary OAM buffer (can overflow into secondary!)
+		03003744 | word  | pointer to next free entry in secondary OAM buffer (can overflow into unsafe memory!)
+		03004158 | word  | pointer for writing Rotation/Scale data to OAM buffer (only used by AIS afaik)
+		0300312C | short | current Rotation/Scale data index (used in conjonction with the above)
+
+	ROM OAM DATA: (can be not in ROM, but usually is in ROM)
+		Those are similar but different to the ones FEditor/EM/FEBuilder/AA/etc will generate for Animation data/AIS (those I have specified in my AIS notes, so if you are interested go check there), as in they allow you to define Object "compounds" that are independant to the overall layout of VRAM. 
+		
+		00  | short | Number of entries
+		02+ | Entries as follow:
+			00 | short | base OAM0 data (y coord, various flags, shape)
+			02 | short | base OAM1 data (x coord, flips, size)
+			04 | short | base OAM2 data (tile index, priority, palette index)
+		
+		coordinates, tile indexes & palette indexes are best used while considering a *local* system (as I said, ignoring the overall VRAM layout), since you will be able to specify the "base" values for those "dynamically" later.
+		
+		You use those with routines that will compute and put the actual Object Attributes data to buffers (PushToPrimaryOAM, PushToSecondaryOAM), or with other systems that use those at their core (like "Intermediate OAM Buffers" (see relevant section)).
+	
+	ROUTINES:
+		0800217C | FlushPrimaryOAM   | DON'T CALL THIS YOURSELF (called on VBlank); Sends primary OAM buffer data to actual OAM
+		08002138 | FlushSecondaryOAM | DON'T CALL THIS YOURSELF (called on VBlank); Sends secondary OAM buffer data to actual OAM
+				Arguments: nothing
+				Returns:   nothing
+		
+		08002BCC | PushToPrimaryOAM   | Pushes data to primary OAM.   Actually calls routine stored in IWRAM (pointed by 03004154, originally at 08000534, ARM)
+		08002BB8 | PushToSecondaryOAM | Pushes data to secondary OAM. Actually calls routine stored in IWRAM (pointed by 03003130, originally at 08000494, ARM)
+				Arguments: r0 = base x coord, r1 = base y coord, r2 = pointer to OAM Data, r3 = base OAM2 (tile/palette index)
+				Returns:   nothing
+		
+		080021B0 | WriteOAMRotScaleData | Writes Rotation/Scale data for a fixed index
+				Arguments: r0 = index, r1 = PA, r2 = PB, r3 = PC, [sp+0] = PD
+				Returns:   nothing
+		
+		080020FC | SetupOAMBufferSplice | Sets up OAM buffers
+				Arguments: r0 = Size (in number of entries) of Primary buffer
+
+Object Attributes (Intermediate buffers):
+	In addition to the "raw" OAM buffers, there's a system that allow the game systems to register OAM Data to an intermediate buffer. The main thing about those is that they seem to work with some priority system (similarly but again different to what AISs do), allowing to have some control over the layering of Objects over each other I guess.
+	
+	All entries are pushed to *secondary* buffers.
+	
+	Intermediate OAM Entry Struct:
+		00 | word  | Next Entry (yes this is linked list)
+		04 | short | base x coordinate
+		06 | short | base y coordinate
+		08 | short | base OAM2 data (tile index & palette index)
+		0A | 2 bytes padding
+		0C | word  | pointer to ROM OAM Data (see above, "Object Attributes (raw buffers)" section)
+	
+	02029D8C is an array of 128 of those.
+
+	0202A58C is an array of 16 "root nodes". They are actual entries but they don't have any ROM OAM Data pointer set, which in effect prevent them to be flushed to raw buffer. In other words, they are "handles" to specific parts of the entire linked list (since they are accessible, that means you can choose where to insert your object attributes, allowing for control on draw order).
+	
+	Each root node is initialized with their next root node as next entry. Except for entries 0xC and 0xF, whose next pointer are null. This means there are in fact *two* linked lists, that are in fact pushed to raw buffers are different times (0x0-0xC before call to 6C thread #4, 0xD-0xF after).
+	
+	ROUTINES:
+		08005458 | FlushIntermediateOAMBuffer | DON'T CALL THIS YOURSELF (called in main loop); push to secondary raw OAM buffer
+				Arguments: nothing
+				Returns:   nothing
+		
+		08005428 | RegisterObject | (ye idk names anymore) Registers object attributes to intermediate buffers
+				Arguments: r0 = root node index, r1 = base x coord, r2 = base y coord, r3 = ROM OAM Data pointer, [sp+0] = base OAM2 data
+				Returns:   nothing
+		
+		080053E8 | RegisterObjectSafe | I don't see any difference with the above, except that x & y are truncated properly (it's "Safe")
+				Arguemnts: r0 = root node index, r1 = base x coord, r2 = base y coord, r3 = ROM OAM Data pointer, [sp+0] = base OAM2 data
+				Returns:   nothing
+		
+		080053A4 | ClearIntermediateOAMBuffer | DON'T CALL THIS YOURSELF (called in main loop); resets buffers
+				Arguments: nothing
+				Returns:   nothing
+
+
+Voilà

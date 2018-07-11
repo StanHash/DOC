@@ -1,0 +1,25 @@
+
+
+
+Game Data Struct, Located at 0202BCB0 (FE8U):
+	00 | byte  | ?
+	01 | byte  | 6C Main 2 Skip Counted (Main 2 6C Exec will be skipped if this is non 0)
+	02 | byte  | ??
+	03 | byte  | GameData State bitfield
+			& 0x01 : 
+			& 0x02 : 
+			& 0x04 : 
+			& 0x08 : 
+			& 0x10 : 
+			& 0x20 : 
+			& 0x40 : When set, prevents things like gaining wexp, leveling up or recieving support bonuses (Link Arena Flag Maybe?)
+			& 0x80 : 
+	04 | short | VerticalCounter (IOReg:04000006) state at the end of the last main loop iteration
+	0C | word  | Current Real Camera Pos?
+	10 | word  | ??
+	14 | word  | Target Map Camera Pos?
+	18 | word  | ??
+	1C | word  | Another Real Camera Pos?
+	20 | word  | ANOTHER Real Camera Pos.
+	24 | word  | Some Real Camera *Offset* (Used When Setting Up Backgrounds)
+	

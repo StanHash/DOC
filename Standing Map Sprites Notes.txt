@@ -1,0 +1,8 @@
+FE8U
+
+I'll use the term SMS for Standing Map Sprite
+
+There's a bunch of systems overlapping each others here, but the core thing is pretty straightforward:
+at 02033F40 is an array of 0xD0 bytes indexed by SMS Index. It's either 0xFF or the "Tile Index" of the Obj graphics in the buffer
+
+at 02034010 begins an array of 3 0x2000 (!) bytes long buffers for the SMS tile sheet, one for each frame.

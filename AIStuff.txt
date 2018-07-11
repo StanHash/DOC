@@ -1,0 +1,71 @@
+offsets are FE8U
+
+Big thankies to Teraspark!
+
+0203AA04 is some kind of "AI Data" struct.
+
+AI Data:
+    0203AA04 + 00 | ? bytes | AI controlled unit index list
+    0203AA04 + 74 | word    | Pointer to the current entry in the above list
+    0203AA04 + 78 | byte    | Next CPORDER routine index (table at 085A7F94)
+    0203AA04 + 79 | byte    | Next CPDECIDE routine index (table at 085A7F9C)
+    0203AA04 + 7A | byte    | 1 if the second movement map is readable as the "danger" map (0 if not)
+    0203AA04 + 7B | byte    | AI config bits
+        & 1: ?
+        & 2: prevents AI controlled units from moving?
+        & 4: berserk AI
+        & 8: ?
+    0203AA04 + 7C | ?
+    0203AA04 + 85 | byte    | highest movement of any blue unit
+    
+    0203AA04 + 90 | Ai "Decision" data
+    0203AA04 + 90 + 00 | byte | decision type
+        0: just move?
+        1: attack target (according to Tera)
+        2: ?
+        3: steal from target (according to Tera) (confirmed)
+        4: destroy/loot village (according to Tera)
+        5: use staff (according to Tera)
+        6: open chest (according to Tera)
+        7:
+    0203AA04 + 90 + 01 | byte | unit index
+    0203AA04 + 90 + 02 | byte | x movement position
+    0203AA04 + 90 + 03 | byte | y movement position
+    0203AA04 + 90 + 04 | ?
+    0203AA04 + 90 + 06 | byte | target unit index
+    0203AA04 + 90 + 07 | byte | used item index
+    0203AA04 + 90 + 08 | byte | second x position ?
+    0203AA04 + 90 + 09 | byte | second y position ?
+    0203AA04 + 90 + 0A | byte | 1 if a decision has been taken, 0 otherwise.
+    
+AI Battle Decition Weight Table:
+    This table is a list of bytes that play the role of multipliers combat prediction weights
+    All weight values are summed up and compared to other possible combats for finding what is the best fight to pick.
+    
+    An entry is 20 (0x14) bytes
+    00 | byte | += this * (battleHit * (attack - defense) / 100) [max 40]
+    01 | byte | += this * (20 - targetCurrentHp) [min 0]
+    02 | byte | += this * (some number depending on how many allies are around the target position) [max 10]
+    03 | byte | += this * (value at + 08 (it's actually at + 08 + i with i being the result of 0803BF4C, but that routine should be able to return non-zero value given how it's configured (in FE8))) [max 20]
+    04 | byte | += this * turnNumber
+    05 | byte | same as 00 but for damage taken, except -= 10 if target has no weapon
+    06 | byte | += this * tileDanger (the Ai system has this whole thing where each tile has a given "danger" value)
+    07 | byte | same as 01 but for subject current hp
+    08 | byte array (see 03)
+
+
+AI SCRIPTING:
+    one instruction is 16 bytes
+    byte +00 of each instruction is instruction type
+    
+    INSTRUCTION TYPE #00: Conditional Goto
+        +00 | byte | fixed 0
+        +01 | byte | comparison type (0 = BHI, 1 = BHS, 2 = BEQ, 3 = BLS, 4 = BLO, 5 = BNE)
+        +02 | byte | 
+        +03 | byte | target label index
+        +04 | word | constant right operand
+        +08 | word | pointer to left operand (byte)
+    
+    INSTRUCTION TYPE #1C: Label
+        +00 | byte | fixed 1C
+        +03 | byte | label index

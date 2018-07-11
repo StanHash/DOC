@@ -1,0 +1,16 @@
+
+Teq Doq has Better Notes
+
+Routines:
+	080A481C:BWL_AddTilesMoved      | Arguments: r0 = Char Id, r1 = Tiles moved
+	080A4A34:BWL_AddFavoritismValue | Arguments: r0 = Char Id, r1 = Value
+
+BWL Entry:
+	bits  8-24 (16) | "Favoritism Value"? (0x4000 cap)
+	bits 24-32 (8)  | Total amount of moves (200 cap)
+	bits 32-40 (8)  | Total stat screen views (200 cap)
+	bits 56-62 (6)  | 
+	bits 62-72 (10) | Total tiles moved? (1000 cap)
+	bits 76-88 (12) | Total exp gained?  (4000 cap)
+	
+	bits 112- | apparently I didn't care about finishing this

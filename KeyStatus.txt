@@ -1,0 +1,25 @@
+VOCAB:
+	Pressed  = Current == 1
+	Released = Current == 0
+	Press    = (Current == 1 && Previous == 0)
+	Release  = (Current == 0 && Previous == 1)
+	
+	Tick     = 1 When TickDownCounter reaches 0 (Downcounter is reset to NextTickDelay), 0 Otherwise
+
+KeyStatusBuffer Struct Locations:
+	FE7U: [08B857F8] = 02024C78
+	FE8U: [0858791C] = 02024CC0
+
+KeyStatusBuffer Struct Fields:
+	0x00 | byte  | FirstTickDelay
+	0x01 | byte  | NextTickDelay
+	0x02 | byte  | TickDownCounter (decreased by one each frame, reset to FirstTickDelay when Presses change and NextTickDelay when reaches 0)
+	0x03 | unused byte
+	0x04 | short | Current
+	0x06 | short | TickPresses: 1 For Press|Tick&Pressed, 0 Otherwise
+	0x08 | short | NewPresses:  1 For Press, 0 Otherwise
+	0x0A | short | Previous
+	0x0C | short | LastPressState: Current, but set only if NewPresses is not null
+	0x0E | short | 1 for Release (A B L R Only), 0 Otherwise
+	0x10 | short | Another NewPresses?
+	0x12 | short | Time since last Non-Start Non-Select Button was pressed

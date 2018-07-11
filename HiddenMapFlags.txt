@@ -1,0 +1,5 @@
+
+
+Map rows pointer at FE8U:0202E4EC (the one after the vision one) maps to each tile a set of flags:
+	&0x01 <=> A unit is hidden here
+	&0x02 <=> A trap is hidden here?

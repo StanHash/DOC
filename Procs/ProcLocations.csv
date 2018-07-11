@@ -1,0 +1,23 @@
+Name (FE8 Internal),Name (Stan),FE6 loc,FE7J loc,FE7U loc,FE8J loc,FE8U loc,Usual Parent
+GAMECTRL,GameControl,-,8C01744,8B924BC,-,85916D4,Root#3
+E_BMAPMAIN,MainMapLogic,-,8C01DBC,-,-,859A1F0,Root#2
+E_PLAYERPHASE,PlayerPhaseLogic,-,8C02630,-,-,859AAD8,PlayerPhaseLogic
+E_MOVELIMITVIEW,MoveRangeGfx,-,8C02870,-,-,859AD50,Root#4
+MAPTASK,?,-,8C05464,-,-,859D908,Root#4
+MOVEUNIT,MovingUnitGfx,-,8D64F4C,-,-,89A2C48,Root#5
+savemenu,MainMenuLogic,-,8DAD3A4,-,-,8A200B8,GameControl
+E_Menu,Menu,-,8C09BF4,-,-,85B64D0,Root#3
+-,MenuCommand,-,8C09C34,-,-,85B6510,Menu
+-,?,-,-,-,-,8588284,Menu
+PI,GoalBox,-,8D8B2D8,-,-,8A019E4,Root#3
+TI,TerrainBox,-,8D8B1A0,-,-,8A018AC,Root#3
+UI1,MinimugBox,-,8D8B200,-,-,8A0190C,Root#3
+-,TargetSelection,-,-,-,-,85B655C,Root#3
+BB,BottomHelpTextGfx,-,-,-,-,859E1B8,Various
+BKSEL,BattlePreview,-,-,-,-,859E520,Root#3
+,?,-,-,-,-,-,
+,?,-,-,-,-,-,
+,?,-,-,-,-,-,
+,?,-,-,-,-,-,
+,?,-,-,-,-,-,
+,?,-,-,-,-,-,
