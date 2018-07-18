@@ -1,0 +1,11 @@
+
+at FE8U:0859DBA0 is a pointer to FE8U:0203A990, which is the struct containing movement arrow related stuff.
+
+Movement Arrow Data Layout:
+	+29 | byte       | last cursor x pos
+	+2A | byte       | last cursor y pos
+	+2B | byte       | Active Unit Remaining Movement (In vanilla: ClassBase+MoveBonus-AlreadyMovedAmount)
+	+2C | sbyte      | last entry index of the point arrays
+	+2D | sbyte[20?] | array of point x coords
+	+41 | sbyte[20?] | array of point y coords
+	+55 | sbyte[20?] | array of point movement costs
