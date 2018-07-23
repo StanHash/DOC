@@ -1,0 +1,39 @@
+FE8U:030000D0 is an array of 3 Text Data for Dialogue Text (see Drawing Text Notes)
+FE8U:030000F0 is Font Data for Dialogue Text (see Drawing Text Notes)
+
+FE8U:0859133C is a pointer to FE8U:03000048, which is the "state" struct for the Dialogue system engine thing.
+
+Dialogue Struct Layout: (FE8U:03000048)
+    +00 | word    | character iterating pointer (aka the pointer to the next character/text code)
+    +04 | word    | 
+    +08 | byte    | default text color id?
+    +09 | ubyte   | current/next display line?
+    +0A | ubyte   | number of lines displayed (aka number of FE8U:030000D0 text data used)
+    +0B | ubyte   | line index of current top line?
+    +0C | byte    | 
+    +0D | byte    | 
+    +0E | byte    | tile width of the text box?
+    +0F | sbyte   | 
+    +10 | byte    | 
+    +11 | byte    | current active face position index (0xFF for none)
+    +12 | byte    | when non-zero, text is displayed instantly (set when user presses a button mid-scroll)
+    +13 | byte    | delay between character display
+    +14 | byte    | frame counted for character display
+    +15 | byte    | set when text has been drawn?
+    +16 | byte    | 
+    +17 | byte    | 
+    +18 | word[8] | Face proc pointer array (one for each possible face position?)
+    +38 | word    | 
+    +3C | word    | a number
+    +80 | short   | config bitfield/dialogue flags
+                & 0x001 | 
+                & 0x002 | 
+                & 0x004 | disallow skipping through user input
+                & 0x008 | disallow fast-forwarding through user input
+                & 0x010 | 
+                & 0x020 | don't do graphics automatically?
+                & 0x040 | no sounds?
+                & 0x080 | is some other kind of dialogue? Things are displayed differently and sounds change.
+                & 0x100 | 
+    +82 | byte    | 
+    +83 | byte    | 
