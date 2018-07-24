@@ -1,82 +1,84 @@
 
 
 AIStruct: (Size: 0x48)
-	type  | pos | desc
-	----- | --- | ----
-	short |  00 | Some bitfield
-	short |  02 | x screen position
-	short |  04 | y screen position
-	short |  06 | delay timer
-	short |  08 | 
-	short |  0A | AIS depth (opposite of priority: the higher the depth, the later the AIS will be in the linked list)
-	short |  0C | Some bitfield
-			+0x0200 | Left Unit AIS
-			Last nibble has special meaning:
-				0x00 = No Command
-				0x01 = 
-	short |  0E | 
-	short |  10 | 
-	
-	byte  |  13 | current frame index
-	byte  |  14 | 
-	byte  |  15 | current command index
-	
-	word  |  20 | current frame pointer
-	word  |  24 | start frame pointer
-	
-	word  |  30 | OAM start?????
-	word  |  34 | previous AIS
-	word  |  38 | next AIS
-	word  |  3C | current OAM Data pointer
+    +00 | short    | Some bitfield
+    +02 | short    | x screen position
+    +04 | short    | y screen position
+    +06 | short    | delay timer
+    +08 | short    | 
+    +0A | short    | AIS depth (opposite of priority: the higher the depth, the later the AIS will be in the linked list)
+    +0C | short    | Some bitfield
+            & 0x0100 | 
+            & 0x0200 | left unit AIS (mirrored?)
+            & 0xF000 | commands?
+            & 0x1000 | has commands?
+    +0E | short    | round index?
+    +10 | short    | 
+    +12 | byte     | 
+    +13 | byte     | current frame index
+    +14 | byte     | queued command count
+    +15 | byte[11] | command queue
+    +20 | word     | current frame pointer
+    +24 | word     | start frame pointer
+    
+    +30 | word     | OAM start?????
+    +34 | word     | previous AIS
+    +38 | word     | next AIS
+    +3C | word     | current OAM Data pointer
+    +40 | word     | 
+    +44 | word     | ekrUnitMainMini state (not proc!) pointer when relevant (0 otherwise)
 
 Frame Data:
-	bit 31 set:
-		bit 30 set:
-			bit 0-27 is pointer
-			bit 28 is 0: pointer is to routine, call routine with AIS as argument
-			bit 28 is 1: pointer is to frame data, sets cursor to said pointer, sets delay to 1
-			bit 29 is not 0: do nothing (error?)
-		bit 30 not set:
-			bit 24-29 is control code:
-				cc0:
-				cc1: (Hide)
-					sets AIS short 0 to 0
-				cc2: (GotoStart)
-					sets current frame pointer to start frame pointer
-				cc3: (Move)
-					bit 0-7   is signed addition to xPos
-					bit 8-15  is signed addition to yPos
-					bit 16-23 is new delay
-				cc4: (Wait)
-					bit 0-15 is new delay
-				cc5:
-				cc6:
-	bit 31 not set:
-		(bit 2-27 << 2) is pointer to OAM
-		(bit 0-1) + (bit 28-30 << 2) is next delay
+    bit 31 set:
+        bit 30 set:
+            bit 0-27 is pointer
+            bit 28 is 0: pointer is to routine, call routine with AIS as argument
+            bit 28 is 1: pointer is to frame data, sets cursor to said pointer, sets delay to 1
+            bit 29 is not 0: do nothing (error?)
+        bit 30 not set:
+            bit 24-29 is control code:
+                cc0:
+                cc1: (Hide)
+                    sets AIS short 0 to 0
+                cc2: (GotoStart)
+                    sets current frame pointer to start frame pointer
+                cc3: (Move)
+                    bit 0-7   is signed addition to xPos
+                    bit 8-15  is signed addition to yPos
+                    bit 16-23 is new delay
+                cc4: (Wait)
+                    bit 0-15 is new delay
+                cc5:
+                cc6:
+    bit 31 not set:
+        (bit 2-27 << 2) is pointer to OAM
+        (bit 0-1) + (bit 28-30 << 2) is next delay
 
 Frame Data: (the way everyone seems to know)
-	0x80%%%%%%: halts, sets field C short nibble 3 to 4
-	0x81%%%%%%: hide/delet
-	0x82%%%%%%: restart (current frame pointer = starting frame pointer)
-	0x83ddyyxx: move graphics to relative position (xx, yy) and wait dd frames
-	0x84%%dddd: wait dddd frames
-	0x85%%%%%%: ????
-	0x86%%%%%%: apparently important
-	0xCppppppp: call routine at ppppppp (r0 = AIS)
-	0xDppppppp: goto frame at ppppppp
+    0x80%%%%%%: halts, sets field C short nibble 3 to 4
+    0x81%%%%%%: hide/delet
+    0x82%%%%%%: restart (current frame pointer = starting frame pointer)
+    0x83ddyyxx: move graphics to relative position (xx, yy) and wait dd frames
+    0x84%%dddd: wait dddd frames
+    0x85%%%%cc: command! (cc = command identifier)
+    0x86%%%%%%: apparently important
+    0xCppppppp: call routine at ppppppp (r0 = AIS)
+    0xDppppppp: goto frame at ppppppp
+
+Commands:
+    Hextator's Doc/Media/Games/Console/NGBA/Fire Emblem/Game Doc/Graphics/Battle Animations/0x85 Command Usage.txt
 
 Rot Scale OAM Data:
-	00 | short | Number of Rot Scale Data (only read on first entry)
-	02 | short | fixed 0xFFFF to mark Rot Scale Data (only read on first entry)
-	04 | short | PA
-	06 | short | PB
-	08 | short | PC
-	0A | short | PD
-	0C | Next Entry, or First Actual OAM Data entry if last Rot Scale Entry
+    00 | short | Number of Rot Scale Data (only read on first entry)
+    02 | short | fixed 0xFFFF to mark Rot Scale Data (only read on first entry)
+    04 | short | PA
+    06 | short | PB
+    08 | short | PC
+    0A | short | PD
+    0C | Next Entry, or First Actual OAM Data entry if last Rot Scale Entry
 Actual OAM Data:
-	00 | word  | 1 = terminator, else base value for OAM0 & 1 combined (notably will check for rot scale bit) (not for coordinates!)
-	04 | short | base value for OAM2 (ignores priority bits)
-	06 | short | local x offset (signed)
-	08 | short | local y offset (signed)
-	0C | Next Entry
+    00 | word  | 1 = terminator, else base value for OAM0 & 1 combined (notably will check for rot scale bit) (not for coordinates!)
+    04 | short | base value for OAM2 (ignores priority bits)
+    06 | short | local x offset (signed)
+    08 | short | local y offset (signed)
+    0C | Next Entry

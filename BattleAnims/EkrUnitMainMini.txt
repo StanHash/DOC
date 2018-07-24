@@ -1,0 +1,23 @@
+
+
+Proc code for ekrUnitMainMini at FE8U:085B9DC4
+
+ekrUnitMainMini Proc Struct:
+    +5C | pointer to state (see below)
+
+STATE STRUCT (not Proc state!):
+    +00 | byte  | initialized bool?
+    +02 | short | (starting?) x position
+    +04 | short | (starting?) y position
+    +0A | short | (goes to [AIS+12])
+    +0E | short | base gfx tile index
+    +10 | short | gfx palette index
+    +14 | word  | AIS #1 pointer
+    +18 | word  | AIS #2 pointer
+    +1C | word  | pointer to Decompressed Sheet graphics
+    +20 | word  | pointer to Decompressed Palette(s?)
+    +24 | word  | pointer to Decompressed OAM data
+    +30 | word  | pointer to some config?
+    +34 | word  | ekrUnitMainMini proc pointer
+
+

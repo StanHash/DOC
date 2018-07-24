@@ -1,39 +1,39 @@
 
 Battle Anim Round Types:
-	0 Hit 2 (Close)
-	1 Crit 2 (Close)
-	2 Non-Crit 2 (Far)
-	3 Crit 2 (Far)
-	4 Miss (Close) (Also promotion)
-	5 Miss (Far)
-	6 Hit (Close)
-	7 It's a mistery! (I can't find any way it would be set)
-	8 Hit (Far)
-	9 Miss 2 (Close)
+    0 Hit 2 (Close)
+    1 Crit 2 (Close)
+    2 Non-Crit 2 (Far)
+    3 Crit 2 (Far)
+    4 Miss (Close) (Also promotion)
+    5 Miss (Far)
+    6 Hit (Close)
+    7 It's a mistery! (I can't find any way it would be set)
+    8 Hit (Far)
+    9 Miss 2 (Close)
 
 Don't mind this that's from the teq doq:
-	Byte 0x0:
-		0x01 Critical
-		0x02 Miss
-		0x04 
-		0x08 
-		0x10 Brave
-		0x20 
-		0x40 Poison
-		0x80 Devil
-	Byte 0x1:
-		0x01 Steal HP
-		0x02 
-		0x04 Triangle attack
-		0x08 Lethality
-		0x10 
-		0x20 Petrified
-		0x40 Sure Shot
-		0x80 Great Shield
-	Byte 0x2:
-		0x01 Pierce
-		0x02 
-		0x04 
-		0x08 End Battle
-		0x10 
-		0x80 Which one of the guys is the initiator
+    Byte 0x0:
+        0x01 Critical
+        0x02 Miss
+        0x04 
+        0x08 
+        0x10 Brave
+        0x20 
+        0x40 Poison
+        0x80 Devil
+    Byte 0x1:
+        0x01 Steal HP
+        0x02 
+        0x04 Triangle attack
+        0x08 Lethality
+        0x10 
+        0x20 Petrified
+        0x40 Sure Shot
+        0x80 Great Shield
+    Byte 0x2:
+        0x01 Pierce
+        0x02 
+        0x04 
+        0x08 End Battle
+        0x10 
+        0x80 Which one of the guys is the initiator
