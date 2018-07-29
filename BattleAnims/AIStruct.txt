@@ -1,19 +1,32 @@
 
+At the very start of EWRAM (0x2000000) is an array of four AIS pointers that are fairly important:
+    +00 | word | Left unit front layer AIS pointer
+    +04 | word | Left unit back layer AIS pointer
+    +08 | word | Right unit front layer AIS pointer
+    +0C | word | Right unit back layer AIS pointer
 
 AIStruct: (Size: 0x48)
     +00 | short    | Some bitfield
+            & 0x0002 | hidden
+            & 0x0008 | frame execution/delay countdown paused
     +02 | short    | x screen position
     +04 | short    | y screen position
     +06 | short    | delay timer
     +08 | short    | 
     +0A | short    | AIS depth (opposite of priority: the higher the depth, the later the AIS will be in the linked list)
     +0C | short    | Some bitfield
-            & 0x0100 | 
-            & 0x0200 | left unit AIS (mirrored?)
+            & 0x0100 | is back layer AIS?
+            & 0x0200 | is left unit AIS?
             & 0xF000 | commands?
             & 0x1000 | has commands?
-    +0E | short    | round index?
-    +10 | short    | 
+            & 0x2000 | sheet graphics needs update?
+            & 0x4000 | 
+    +0E | short    | next round index?
+    +10 | short    | Some other biffield?
+            & 0x0002 | 
+            & 0x0004 | 
+            & 0x4000 | Don't update sheet graphics?
+            & 0x8000 | Ready to start next round animations?
     +12 | byte     | 
     +13 | byte     | current frame index
     +14 | byte     | queued command count

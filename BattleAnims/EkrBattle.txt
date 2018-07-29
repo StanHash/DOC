@@ -1,0 +1,11 @@
+
+ekrBattle Proc State:
+    +29 | byte | 
+    +2C | word | some timer going up
+    +54 | word | 1 if battle quote?
+
+ekrGauge 6C Struct:
+    +29 | byte  | 
+    +2A | byte  | 
+    +3A | short | 
+    +4C | word  | 

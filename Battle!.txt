@@ -56,14 +56,3 @@ Item Map Anim Proc Routines:
 	08081594 | Moves camera on subject
 	080815C0 | Moves camera on target
 	080815EC | Moves camera somewhere
-
-ekrBattle Proc State:
-	2C | word | some timer going up
-	54 | word | 1 if battle quote?
-
-ekrGauge 6C Struct:
-	29 | byte  | 
-	2A | byte  | 
-	3A | short | 
-	4C | word  | 
-	

@@ -7,11 +7,21 @@ Battle Anim Round Types:
     4 Miss (Close) (Also promotion)
     5 Miss (Far)
     6 Hit (Close)
-    7 It's a mistery! (I can't find any way it would be set)
+    7 Standing (never set to the round type array itself, only exists indirectly through a hardcoded reference to the lookup described below)
     8 Hit (Far)
     9 Miss 2 (Close)
 
-Don't mind this that's from the teq doq:
+at FE8U:080DAEF0, there is a lookup table that maps one of the indices above to the following struct:
+    +00 | byte | Front layer frame index
+    +01 | byte | Front layer AIS draw depth (higher values means in front, so typically hight value than [+03])
+    +02 | byte | Back layer frame index
+    +03 | byte | Back layer AIS draw depth (^, so typically lower value than [+01])
+
+The frame indices follow the "modes" that battle anim scripters are familiar with (with everything shifted down one, some mode 1 corresponds to index 0)
+
+
+
+///// Don't mind this that's from the teq doq:
     Byte 0x0:
         0x01 Critical
         0x02 Miss
