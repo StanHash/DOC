@@ -1,0 +1,10 @@
+Address      Function                             Instruction                      
+-------      --------                             -----------                      
+ROM:08018410 UnitKill                             CMP     R0, #ClassPhantom
+ROM:08018EDE sub_8018EB8                          CMP     R0, #ClassPhantom
+ROM:080240F6 ArenaCommandUsability                CMP     R0, #ClassPhantom
+ROM:0802523E TryAddUnitToTradeTargetList          CMP     R0, #ClassPhantom
+ROM:08025246 TryAddUnitToTradeTargetList          CMP     R0, #ClassPhantom
+ROM:08025366 TryAddUnitToRescueTargetList         CMP     R0, #ClassPhantom
+ROM:0802536E TryAddUnitToRescueTargetList         CMP     R0, #ClassPhantom
+ROM:0803122E ChapterEndUnitCleanup                CMP     R0, #ClassPhantom
