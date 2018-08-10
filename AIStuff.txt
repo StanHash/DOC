@@ -27,7 +27,7 @@ AI Data:
         4: destroy/loot village (according to Tera)
         5: use staff (according to Tera)
         6: open chest (according to Tera)
-        7:
+        7: DANCE (acutally doesn't do anything but display the cursor on target for a few frames)
     0203AA04 + 90 + 01 | byte | unit index
     0203AA04 + 90 + 02 | byte | x movement position
     0203AA04 + 90 + 03 | byte | y movement position

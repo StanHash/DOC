@@ -1,7 +1,7 @@
 Savedata Notes:
 
 Routines that are interesting:
-	080A5A48:SAVE_MOTHEFUCKING_GAME
+	080A5A48:SaveSuspendedGame
 
 SAVE STRUCT:
 	+0x00   | 0x4C bytes if Chapter Data
