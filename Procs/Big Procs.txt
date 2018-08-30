@@ -1,0 +1,8 @@
+Just for fun, comparing the length in instructions of some big procs:
+    (GMap Main/World Map) (FE8U:08A3DD08): 184 instructions
+    SALLYCURSOR (FE8U:859DBBC): 176 instructions
+    GAMECTRL (FE8U:085916D4): 122 instructions
+    E_BMAPMAIN (FE8U:0859A438): 73 instructions
+    E_PLAYERPHASE (FE8U:0859AAD8): 66 instructions
+
+Totally the most useful of notes.

@@ -1,29 +1,53 @@
 
-Format: RoutinePtr : ChunkPtr
+Eids:
+    ID 0x00: Never set
+    ID 0x01: All enemies defeated?
+    ID 0x02: Boss defeated
+    ID 0x03: Win
+    ID 0x04: Change Map Music
+    ID 0x05: idr
+    ID 0x06: idr
+
+    ID 0x84: Set during Beginning events, unset at the end; When set, blinking icons on map sprites don't display
+    0802766E: Check for ID 0x84
 
 (08078D6C):08078D86:
-	Hardcoded Class checks for lots of stuff
+    Hardcoded Class checks for lots of stuff
 
 (080347D4):08034810:
-	Hardcoded Class check for Demon King & Manakete2
+    Hardcoded Class check for Demon King & Manakete2
 
 (080180CC):
-	Gorgon Egg Checks
+    Gorgon Egg Checks
 
 (080183FC):
-	Phantom Check
+    Phantom Check
 
 (0802A730:SetupBattleWeaponData) : 0802A872:
-	Item checks for Magic Swords
+    Item checks for Magic Swords
 
 (08016B8C:IsItemCoveringRange):
-	Item Table is read directly for range
+    Item Table is read directly for range
 
 (0802AABC:BattleLoadAttack) : 0802AB18:
-	Hardcoded check for legendary weapons
+    Hardcoded check for legendary weapons
 
 0802B62C:
-	Donkey Kong Check (Item HP Halving & Poison)
+    Donkey Kong Check (Item HP Halving & Poison)
 
 080812D8:
-	Dancer Class Id Check
+    Dancer Class Id Check
+
+8040C6A:
+    Rogue Class Id Check
+
+Address  Function                             Instruction                      
+-------  --------                             -----------                      
+08018410 UnitKill                             CMP     R0, #ClassPhantom
+08018EDE sub_8018EB8                          CMP     R0, #ClassPhantom
+080240F6 ArenaCommandUsability                CMP     R0, #ClassPhantom
+0802523E TryAddUnitToTradeTargetList          CMP     R0, #ClassPhantom
+08025246 TryAddUnitToTradeTargetList          CMP     R0, #ClassPhantom
+08025366 TryAddUnitToRescueTargetList         CMP     R0, #ClassPhantom
+0802536E TryAddUnitToRescueTargetList         CMP     R0, #ClassPhantom
+0803122E ChapterEndUnitCleanup                CMP     R0, #ClassPhantom
