@@ -22,10 +22,12 @@ AIStruct: (Size: 0x48)
             & 0x2000 | sheet graphics needs update?
             & 0x4000 | 
     +0E | short    | next round index
-    +10 | short    | Some other biffield?
+    +10 | short    | Some other biffield
+            & 0x0001 | Set when ready to dodge? On hit?
             & 0x0002 | 
             & 0x0004 | 
             & 0x0020 | 
+            & 0x0040 | 
             & 0x4000 | Don't update sheet graphics?
             & 0x8000 | Ready to start next round animations?
     +12 | byte     | current round type

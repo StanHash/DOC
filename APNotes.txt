@@ -1,5 +1,7 @@
 FE8U
 
+See also decomp files src/ap.c and include/ap.h.
+
 AP is the name I'll give to the RAM struct initialized with the "Other Pointer" in the Moving Map Sprite table. With time I discovered that it was used in some other cases, like the prep menu/warp move unit cursor. The big thing is that is can be used to animate shit, using a definition in ROM (we back to the MMS "Other Pointer") (see ROMAP).
 
 AP: (Size: 0x28) Array of 20 of those located at 03000108

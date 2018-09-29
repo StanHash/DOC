@@ -1,0 +1,20 @@
+See "0x85 Command Usage.txt" in the FE Ditor doc for friendlier descriptions. Here's it's going to be quite technical.
+
+c00:
+    do nothing
+
+c01:
+
+c02: (backward(?) dodge)
+    if [AIS+$10] & 1:
+        [AIS+$10] &= ~1 // unset bit 1
+        AIS.frame++ // goto next frame
+
+c18: (forward dodge)
+    if [AIS+$10] & 1:
+        [AIS+$10] &= ~1 // unset bit 1
+        AIS.frame++ // goto next frame
+        AIS.oam2base = (AIS.oam2base & $F3FF) | $0400 // set lowest hardware priority (will be drawn in front)
+        AIS.priority = 140 // set higher AIS priority (will be drawn after, thus in front)
+        // priority stuff may be backwards idr
+        AISArray_Sort()

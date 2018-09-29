@@ -1,102 +1,115 @@
-FE8U as always
+addresses are FE8U as always
 
 (I'll refer as String the null-terminated ascii representation of text)
 (I'll refer as Text the visual representation/the tile graphics of a String)
 
 Font Struct (size 0x18):
-	00 | word  | root output VRAM pointer
-	04 | word  | pointer to glyphs
-	08 | word  | pointer to glyph drawing routine (ex: 08004218+1, 08004268+1)
-	0C | word  | pointer to current VRAM tile offset getter (ex: 080041E8+1)
-	10 | short | base value for text tiles (containing base tile index & palette mask)
-	12 | short | current tile index (local/relative to root)
-	14 | short | palette index
-	16 | byte  | idk (set from byte at 02028E74, which is initialized at 1 at the start of the game and never changed again. My guess is that it denotes whenever to use Japanses (Shift-JS, 0) or English (ascii, 1) string format, since it is checked in various routines related to strings and glyphs)
-	17 | byte  | idk
+    +00 | word  | root output VRAM pointer
+    +04 | word  | pointer to glyphs
+    +08 | word  | pointer to glyph drawing routine (ex: 08004218+1, 08004268+1)
+    +0C | word  | pointer to current VRAM tile offset getter (ex: 080041E8+1)
+    +10 | short | base value for text tiles (containing base tile index & palette mask)
+    +12 | short | current tile index (local/relative to root)
+    +14 | short | palette index
+    +16 | byte  | idk (set from byte at 02028E74, which is initialized at 1 at the start of the game and never changed again. My guess is that it denotes whenever to use Japanses (Shift-JS, 0) or English (ascii, 1) string format, since it is checked in various routines related to strings and glyphs)
+    +17 | byte  | idk
 
 Default font struct at 02028E58
 
 Text Struct (size 0x08):
-	00 | short | start tile index (relative to Font root)
-	02 | byte  | current local x cursor (in pixels)
-	03 | byte  | current text color id
-	04 | byte  | Text tile width (usually only half the actual used tile amount!)
-	05 | byte  | (bool) Uses Double Buffer
-	06 | byte  | current buffer id (0 or 1)
-	07 | byte  | idk (maybe unused? initialized to 0)
+    +00 | short | start tile index (relative to Font root)
+    +02 | byte  | current local x cursor (in pixels)
+    +03 | byte  | current text color id
+    +04 | byte  | Text tile width (usually only half the actual used tile amount!)
+    +05 | byte  | (bool) Uses Double Buffer
+    +06 | byte  | current buffer id (0 or 1)
+    +07 | byte  | idk (maybe unused? initialized to 0)
 
 FONT ROUTINES:
-	08003D38 | SetFont | Sets which font to use for the subsequent Text compuations & drawings
-		Arguments: r0 = Font Struct pointer (0 for default)
+    08003D38 | SetFont | Sets which font to use for the subsequent Text compuations & drawings
+        Arguments: r0 = Font Struct pointer (0 for default)
 
-	08003CF4 | SetFontGlyphSet | Sets Glyph set for current font
-		Arguments: r0 = 0 for UI Font, 1 for Dialogue font
+    08003CF4 | SetFontGlyphSet | Sets Glyph set for current font
+        Arguments: r0 = 0 for UI Font, 1 for Dialogue font
 
-	080043A8 | Font_LoadForUI | Loads Palette & sets glyph set for UI Font
-		Arguments: none (uses current font)
+    080043A8 | Font_LoadForUI | Loads Palette & sets glyph set for UI Font
+        Arguments: none (uses current font)
 
-	080043E8 | Font_LoadForDialogue | Loads Palette & sets glyph set for Dialogue Font
-		Arguments: none (uses current font)
+    080043E8 | Font_LoadForDialogue | Loads Palette & sets glyph set for Dialogue Font
+        Arguments: none (uses current font)
 
-	08003CB8 | Font_InitForUI | Inits font for UI drawing, and sets the font as current
-		Arguments: r0 = Font Struct (0 for default), r1 = VRAM Root pointer, r2 = VRAM Root Index, r3 = Palette Index
+    08003CB8 | Font_InitForUI | Inits font for UI drawing, and sets the font as current
+        Arguments: r0 = Font Struct (0 for default), r1 = VRAM Root pointer, r2 = VRAM Root Index, r3 = Palette Index
 
-	08003C94 | Font_InitDefault | Inits default font with default parameters (UI, VRAM Root 0x6001000, palette id 0)
-		Arguments: none
+    08003C94 | Font_InitDefault | Inits default font with default parameters (UI, VRAM Root 0x6001000, palette id 0)
+        Arguments: none
 
 TEXT ROUTINES: (make sure you're having the right font set before using those!)
-	08003D5C | Text_Init | Inits Text for current font (and clears it)
-		Arguments: r0 = Address to create Text Struct at, r1 = Text Tile Width
-	
-	08003D84 | Text_Allocate | Same as Text_Init, but doesn't clear (faster, but beware of leftover garbage graphics)
-		Arguments: r0 = Text Struct, r1 = Text Tile Width
-	
-	08003DAC | InitTextBatch | calls Text_Init for a bunch of text structs
-		Arguments: r0 = pointer to batch definition (see below)
-	
-	08003DC8 | Text_Clear | clears text (clears previously drawn tile graphics & resets x cursor & color)
-		Arguments: r0 = Text Struct
-	
-	08003E50 | Text_GetXCursor
-	08003E54 | Text_SetXCursor
-	08003E58 | Text_Advance | Advances x cursor/appends space/whatever
-	08003E60 | Text_SetColorId
-	08003E64 | Text_GetColorId
-	
-	08003E68 | Text_SetParameters
-		Arguments: r0 = Text Struct, r1 = cursor, r2 = color id
-	
-	08003E70 | Text_Draw | Draws text on backgroud tile data, switches buffers when applicable
-		Arguments: r0 = Text Struct, r1 = Output Tile Root
-	
-	08003EBC | Text_DrawBlank | Draws a blank rect on background tile data, where the given text would have been drawn
-		Arguments: r0 = Text Struct, r1 = Output Tile Root
-	
-	08004004 | Text_AppendString | Appends String to Text graphics
-		Arguments: r0 = Text Struct, r1 = String pointer
-	
-	08004074 | Text_AppendDecNumber | Appends Number as decimal to Text graphics
-		Arguments: r0 = Text Struct, r1 = Number
-	
-	08004144 | Text_AppendNumberOr2Dashes | Same as above, except 0xFF will display "--"
-		Arguments: r0 = Text Struct, r1 = Number (or 0xFF for "--")
-	
-	08004480 | Text_InsertString | Inserts String on Text
-		Arguments: r0 = Text Struct, r1 = Cursor Start to insert to, r2 = Color Id, r3 = String pointer
-	
-	080044A4 | Text_InsertNumberOr2Dashes | Inserts Dec Number or 2 dashes on Text
-		Arguments: r0 = Text Struct, r1 = Cursor Start to insert to, r2 = Color Id, r3 = Number (or 0xFF for "--")
+    08003D5C | Text_Init | Inits Text for current font (and clears it)
+        Arguments: r0 = Address to create Text Struct at, r1 = Text Tile Width
+    
+    08003D84 | Text_Allocate | Same as Text_Init, but doesn't clear (faster, but beware of leftover garbage graphics)
+        Arguments: r0 = Text Struct, r1 = Text Tile Width
+    
+    08003DAC | InitTextBatch | calls Text_Init for a bunch of text structs
+        Arguments: r0 = pointer to batch definition (see below)
+    
+    08003DC8 | Text_Clear | clears text (clears previously drawn tile graphics & resets x cursor & color)
+        Arguments: r0 = Text Struct
+    
+    08003E50 | Text_GetXCursor
+    08003E54 | Text_SetXCursor
+    08003E58 | Text_Advance | Advances x cursor/appends space/whatever
+    08003E60 | Text_SetColorId
+    08003E64 | Text_GetColorId
+    
+    08003E68 | Text_SetParameters
+        Arguments: r0 = Text Struct, r1 = cursor, r2 = color id
+    
+    08003E70 | Text_Draw | Draws text on backgroud tile data, switches buffers when applicable
+        Arguments: r0 = Text Struct, r1 = Output Tile Root
+    
+    08003EBC | Text_DrawBlank | Draws a blank rect on background tile data, where the given text would have been drawn
+        Arguments: r0 = Text Struct, r1 = Output Tile Root
+    
+    08004004 | Text_AppendString | Appends String to Text graphics
+        Arguments: r0 = Text Struct, r1 = String pointer
+    
+    08004074 | Text_AppendDecNumber | Appends Number as decimal to Text graphics
+        Arguments: r0 = Text Struct, r1 = Number
+    
+    08004144 | Text_AppendNumberOr2Dashes | Same as above, except 0xFF will display "--"
+        Arguments: r0 = Text Struct, r1 = Number (or 0xFF for "--")
+    
+    08004480 | Text_InsertString | Inserts String on Text
+        Arguments: r0 = Text Struct, r1 = Cursor Start to insert to, r2 = Color Id, r3 = String pointer
+    
+    080044A4 | Text_InsertNumberOr2Dashes | Inserts Dec Number or 2 dashes on Text
+        Arguments: r0 = Text Struct, r1 = Cursor Start to insert to, r2 = Color Id, r3 = Number (or 0xFF for "--")
 
 UTILITY ROUTINES:
-	08003EDC | GetStringTextWidth | Returns length of given string as drawn text given current font
-		Arguments: r0 = String pointer (null terminated ofc)
-	
-	08003F90 | GetStringTextCenteredPos | Returns pos of Text for the given string to be center given arg length
-		Arguments: r0 = tile width, r1 = String pointer
-	
-	0800443C | DrawTextInline | Draws text on screen without *needing* a text struct
-		Arguments: r0 = Text Struct (0 for temporary), r1 = Output tile pointer root, r2 = color id, r3 = local x start, [sp] = tile width, [sp+4] = String pointer
+    08003EDC | GetStringTextWidth | Returns length of given string as drawn text given current font
+        Arguments: r0 = String pointer (null terminated ofc)
+    
+    08003F90 | GetStringTextCenteredPos | Returns pos of Text for the given string to be center given arg length
+        Arguments: r0 = tile width, r1 = String pointer
+    
+    0800443C | DrawTextInline | Draws text on screen without *needing* a text struct
+        Arguments: r0 = Text Struct (0 for temporary), r1 = Output tile pointer root, r2 = color id, r3 = local x start, [sp] = tile width, [sp+4] = String pointer
 
 Text Batch definition: (size: 8 bytes, 3 bytes padding at the end)
-	00 | word | pointer to RAM text struct (0 = end of batch)
-	04 | byte | tile size
+    +00 | word | pointer to RAM text struct (0 = end of batch)
+    +04 | byte | tile size
+
+GLYPHS:
+    the "pointer to glyphs" in the font struct is a pointer to an array of (255, probably) pointers to glyph datas. This is indexed by character (or, in case of multibyte character encoding, by first byte of character).
+    
+    Glyph Data:
+        +00 | word     | pointer to next glyph in string (for multibyte character encoding)
+        +04 | byte     | second byte of character (for multibyte character encoding)
+        +05 | byte     | width of glyph
+        +08 | 2bpp gfx | 16x16 2bpp image of glyph (should be 0x40 bytes)
+    
+    for multibyte character encoding (Shift-JIS, in japanese versions of the game); the game will compare the second byte of character with [Glyph+04]; and check for glyph [Glyph+00] if that fails.
+    
+    If it finds no glyph for a character (aka a null pointer); It will redo the seach for character 

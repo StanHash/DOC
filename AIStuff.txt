@@ -1,6 +1,6 @@
-offsets are FE8U
+addresses are FE8U
 
-Big thankies to Teraspark!
+Big thankies to Teraspark for his doc!
 
 0203AA04 is some kind of "AI Data" struct.
 
@@ -20,14 +20,14 @@ AI Data:
     
     0203AA04 + 90 | Ai "Decision" data
     0203AA04 + 90 + 00 | byte | decision type
-        0: just move?
+        0: do nothing/just move
         1: attack target (according to Tera)
-        2: ?
+        2: escape?
         3: steal from target (according to Tera) (confirmed)
         4: destroy/loot village (according to Tera)
         5: use staff (according to Tera)
         6: open chest (according to Tera)
-        7: DANCE (acutally doesn't do anything but display the cursor on target for a few frames)
+        7: dance (acutally doesn't do anything but display the cursor on target for a few frames)
     0203AA04 + 90 + 01 | byte | unit index
     0203AA04 + 90 + 02 | byte | x movement position
     0203AA04 + 90 + 03 | byte | y movement position
@@ -46,7 +46,7 @@ AI Battle Decition Weight Table:
     00 | byte | += this * (battleHit * (attack - defense) / 100) [max 40]
     01 | byte | += this * (20 - targetCurrentHp) [min 0]
     02 | byte | += this * (some number depending on how many allies are around the target position) [max 10]
-    03 | byte | += this * (value at + 08 (it's actually at + 08 + i with i being the result of 0803BF4C, but that routine should be able to return non-zero value given how it's configured (in FE8))) [max 20]
+    03 | byte | += this * (value at + 08 (it's actually at + 08 + i with i being the result of 0803BF4C, but that routine shouldn't be able to return non-zero value given how it's configured (in FE8))) [max 20]
     04 | byte | += this * turnNumber
     05 | byte | same as 00 but for damage taken, except -= 10 if target has no weapon
     06 | byte | += this * tileDanger (the Ai system has this whole thing where each tile has a given "danger" value)
@@ -58,14 +58,194 @@ AI SCRIPTING:
     one instruction is 16 bytes
     byte +00 of each instruction is instruction type
     
-    INSTRUCTION TYPE #00: Conditional Goto
-        +00 | byte | fixed 0
+    INSTRUCTION $00: Conditional Goto
+        +00 | byte | fixed $00
         +01 | byte | comparison type (0 = BHI, 1 = BHS, 2 = BEQ, 3 = BLS, 4 = BLO, 5 = BNE)
-        +02 | byte | 
-        +03 | byte | target label index
+        +03 | byte | target label index (if 0, target is the start of the script)
         +04 | word | constant right operand
         +08 | word | pointer to left operand (byte)
+        
+        Will jump to the instruction *after* the label (the label has no handler, so trying to execute that will fail)
     
-    INSTRUCTION TYPE #1C: Label
-        +00 | byte | fixed 1C
-        +03 | byte | label index
+    INSTRUCTION $01: (ASM) Function Call
+        +00 | byte | fixed $01
+        +08 | word | function pointer (signature : int(int); result is bool that dictates whether the script ended)
+        +0C | word | (fixed) function argument (r0)
+    
+    INSTRUCTION $02: Change Unit AI script (and set script cursor to 0)
+        +00 | byte | fixed $02
+        +01 | byte | AI1 script identifier (0xFF for no change)
+        +02 | byte | AI2 script identifier (0xFF for no change)
+    
+    INSTRUCTION $03: Unconditional Goto
+        +00 | byte | fixed $03
+        +03 | byte | target label index
+        
+        Follows same jump rules as $00
+    
+    INSTRUCTION $04: Try Offensive Action on specific character
+        +00 | byte | fixed $04
+        +01 | byte | percentage chance of anything happening
+        +04 | word | character id
+        
+        Will try to do a standard staff action; and then, if it fails, and if the specified character is alive and non rescued, will try and do an offensive action on that character (if enemy)
+        
+        Will set byte [AiData+86] to 1 if the character isn't on the battle map; 3 if it is but rescued.
+    
+    INSTRUCTION $05: Try Standard Action
+        +00 | byte | fixed $05
+        +01 | byte | percentage chance of anything happening
+        +08 | word | optional pointer to null-terminated list of u16 character ids (target blacklist)
+    
+        Will try to do a standard staff action; and then, if it fails, a standard offensive action.
+        
+        If the blacklist pointer is non-null, will not target characters in that list
+    
+    INSTRUCTION $06: Do Nothing
+        +00 | byte | fixed $06
+        
+        Handler does nothing except increment the script cursor
+    
+    INSTRUCTION $07: Try Standard Action (In Place)
+        +00 | byte | fixed $07
+        +01 | byte | percentage chance of anything happening
+        
+        Will try to do a standard staff action; and then, if it fails, a standard offensive action.
+        The unit will not move.
+    
+    INSTRUCTION $08: Try Standard Action on specific class
+        +00 | byte | fixed $08
+        +01 | byte | percentage change of anything happening
+        +04 | word | class id
+        
+        Will try to do a standard staff action; and then, if it fails, a standard offensive action.
+        
+        Staff action can target everyone BUT enemies with the specified class; Offensive action can only target enemies with specified class.
+    
+    INSTRUCTION $09: Try Staff Action
+        +00 | byte | fixed $09
+    
+        Will (only) try to do a standard staff action.
+    
+    INSTRUCTION $0A: Try Staff Action
+        +00 | byte | fixed $0A
+        
+        Exact same as $09
+        
+    INSTRUCTION $0B: Try Staff Action
+        +00 | byte | fixed $0B
+        
+        Exact same as $09 and $0A
+    
+    INSTRUCTION $0C: Try Moving towards set point
+        +00 | byte | fixed $0C
+        +01 | byte | point X position
+        +02 | byte | point Y position
+        +03 | byte | safety level threshold (0xFF = don't care)
+        
+        Tries to move unit towards set point.
+        
+        Will only advance script cursor if the unit reached that point.
+    
+    INSTRUCTION $0D: Try Moving towards character until in range
+        +00 | byte | fixed $0D
+        +02 | byte | safety level threshold (0xFF = don't care)
+        +04 | word | character id
+        
+        Note: I'm not really that sure this one is kind of confusing
+        
+        Will try to move towards the specified character; Unless the unit is already in reaching range of it.
+        
+        Upon failure, will set [AiData+86] to:
+            1 if character is dead or non deployed
+            2 if character is in reaching range
+            3 if character is rescued
+            4 if character is unreachable
+        
+        Upon failure, will not end the script.
+        
+    INSTRUCTION $0E: Do Nothing
+        +00 | byte | fixed $0E
+        
+        Exact same as $06
+    
+    INSTRUCTION $0F: Try Moving towards unit with class
+        +00 | byte | fixed $0F
+        +02 | byte | safety level threshold (0xFF = don't care)
+        +04 | word | class id
+        
+        Will try moving towards *any* unit of specified class
+    
+    INSTRUCTION $10: Try Do Special Items; or moving towards looting point and loot
+        +00 | byte | fixed $10
+        +03 | byte | number of sucessful loots before advancing script (0 = no limit) (uses [Unit+46] byte)
+        
+        Tries to do a Standard Special Item Action (Open Doors or use Antitoxins)
+        
+        If that fails, moves towards closest loot point (village, or chest if holding a chest key/lockpick).
+        If reached loot point, do the looting.
+        
+        If special item action or looting succeeded, and [+03] byte is non-zero, increments [Unit+46] and if [Unit+46] == [+03]; continue script.
+    
+    INSTRUCTION $11: Try move towards "safe" tile
+        +00 | byte | fixed $11
+        
+        Will try and move unit towards the safest tile it can find (checks the ai danger map)
+    
+    INSTRUCTION $12: Try move towards enemy
+        +00 | byte | fixed $12
+        +02 | byte | safety level threshold (0xFF = don't care)
+        +08 | word | optional pointer to null-terminated list of u16 character ids (blacklist)
+    
+        Will try to move towards enemy units.
+        
+        If the blacklist pointer is non-null, will not move towards characters in that list
+
+    INSTRUCTION $13: TODO
+        +00 | byte | fixed $13
+    
+    INSTRUCTION $14: Do Nothing
+        +00 | byte | fixed $14
+    
+        Exact same as $06 and $0E
+    
+    INSTRUCTION $15: Do Nothing
+        +00 | byte | fixed $15
+        
+        Exact same as $06, $0E and $14
+    
+    INSTRUCTION $16: TODO
+        +00 | byte | fixed $16
+    
+    INSTRUCTION $17: Try move towards closest escape point
+        +00 | byte | fixed $17
+        
+        Sets unit Ai flag 3 (escape flag), which means that this command will only be called once; since the escape flag makes the specific escape handler take priority over script execution
+    
+    INSTRUCTION $18: TODO
+        +00 | byte | fixed $18
+    
+    INSTRUCTION $19: try move towards specified terrain tiles
+        +00 | byte   | fixed $19
+        +03 | byte[] | null-terminated list of terrain ids
+        
+        Will try to move towards closest tile with terrain id in the list.
+        
+        If can't reach terrain, sets [AiData+86] to 4
+    
+    INSTRUCTION $1A: try move towards specified terrain tiles
+        +00 | byte | fixed $1A
+        +08 | word | pointer to null-terminated list of terrain ids
+        
+        Same behavior as $19 (the change is in the parameters: expects pointer instead of inline list)
+    
+    INSTRUCTION $1B: NoOp
+        +00 | byte | fixed $1B
+        
+        Unlike $06, $0E and $14; This doesn't end the script.
+    
+    INSTRUCTION $1C: Label
+        +00 | byte | fixed $1C
+        +03 | byte | label index (useless if 0, see $00: Conditional Goto)
+        
+        Has no handler; So it isn't much of a valid instruction and more of a "mark" (this is in contrast to Proc Scripts and Events where label instructions are valid no-ops).

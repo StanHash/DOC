@@ -1,4 +1,4 @@
-FE8U:030000D0 is an array of 3 Text Data for Dialogue Text (see Drawing Text Notes)
+FE8U:030000D0 is an array of 3(?) Text Data for Dialogue Text (see Drawing Text Notes)
 FE8U:030000F0 is Font Data for Dialogue Text (see Drawing Text Notes)
 
 FE8U:0859133C is a pointer to FE8U:03000048, which is the "state" struct for the Dialogue system engine thing.
