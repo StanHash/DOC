@@ -1,0 +1,69 @@
+FE8U
+
+This is something I should have kept proper notes on ages ago but I didn't and I eventually lost the little I had :/
+Let's try to do this properly this time!
+
+Note: MU = MOVEUNIT = proc handling displaying a moving map sprite (see MOVEUNITNotes.txt and decomp/src/mu.c).
+
+Basically, map animations work with "actors". This is what I will call the units displayed bumping each other. Each actor has a linked battle unit and MU. The battle unit is one of either the subject and target. The MU usually displays the battle unit, but can also not be doing so (in the case of triange attacks). There is room for 4 actors, indexed 0 to 3.
+
+at 0203E1F0 is the "master" map animation data struct:
+    +00 | array of 4 MapAnimActorData (size: $14) (one per actor):
+        +00 | word  | pointer to battle unit
+        +04 | word  | another pointer to battle unit?
+        +08 | word  | pointer to MU
+        +0C | byte  | maximum Hp
+        +0D | byte  | current (displayed) Hp
+        +0E | short | ?
+        +10 | byte  | ?
+        +11 | byte  | ?
+        +12 | byte  | ?
+        +13 | byte  | ?
+    +50 | word  | pointer to next displayed round data
+    +54 | word  | pointer to item map animation proc script/code
+    +58 | byte  | current round attacking actor id
+    +59 | byte  | current round defending actor id
+    +5A | short | current displayed round bits [00-15] (big bitfield)
+    +5C | byte  | current displayed round bits [19-23] (other bitfield, bit 22 is 0 for subject attacking, 1 otherwise)
+    +5D | byte  | current displayed round bits [24-31] (aka damage)
+    +5E | byte  | actor count as defined in the spell assoc table
+    +5F | byte  | a bool? a timer?
+    +60 | byte  | some x position
+    +61 | byte  | some y position
+    +62 | byte  | ?
+
+Map Anim Battle Proc Code (089A3508):
+    CALL  08015360 @ Lock Main Game Logic Thread
+    CALL  0807A800 @ Reset Font?
+    SLEEP 1
+    CALL  0807A940 @ "MapAnim_MoveCameraOntoSubject"
+    SLEEP 2
+    CALL  0807ABB8 @ "MapAnim_CallBattleQuoteEvents"
+    WHILE 0800D1B0 @ Wait for the Battle Event Engine to stop existing
+    SLEEP 5
+    CALL  0807ACAC @ idk sets up MOVEUNITs maybe (here is where manakete becomes big for instance)
+    CALL  0807B464 @ sets up MOVEUNIT facing
+    SLEEP 1
+    CALL  0807AADC @ idk most things still but I know that it creates the battle info window 6C
+    SLEEP 15
+LABEL 0
+    LOOP  0807A894 @ "MapAnim_PrepareNextBattleRound", will jump the 6C code to 089A35B0 (End of any map anim) if no rounds left
+    LOOP  0807A8F0 @ "MapAnim_DisplayRoundAnim", will read the item spell assoc 6C pointer and call that (defaults to 089A4764)
+    SLEEP 1
+    CALL  0807A904 @ "MapAnim_ShowPoisonEffectIfAny", wierdly specific
+    SLEEP 1
+    SLEEP 5
+    GOTO  0
+
+Item Map Anim Proc Routines:
+    080813F8 | Starts the fast moving anim thing for Subject MMS (will halt 20 frames later); Used by Standard attack & Steal
+    080814D4 | Moves Subject MMS towards target one pixel
+    08081534 | Moves Subject MMS away from target one pixel
+    0808161C | Displays Hit and all given current round (taking misses, crits, devil hits, no damages etc into account)
+    08081914 | Waits for something that's been started in the routine above to finish
+    0807ACD0 | Plays Steal Sound?
+    08081278 | Starts Idle animation for Subject MMS (ends 30 frames later); Used by just about all staves
+    0808129C | Reverse of the above?
+    08081594 | Moves camera on subject
+    080815C0 | Moves camera on target
+    080815EC | Moves camera somewhere

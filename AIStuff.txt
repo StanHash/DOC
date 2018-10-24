@@ -21,13 +21,19 @@ AI Data:
     0203AA04 + 90 | Ai "Decision" data
     0203AA04 + 90 + 00 | byte | decision type
         0: do nothing/just move
-        1: attack target (according to Tera)
+        1: attack target/combat
         2: escape?
-        3: steal from target (according to Tera) (confirmed)
-        4: destroy/loot village (according to Tera)
-        5: use staff (according to Tera)
-        6: open chest (according to Tera)
+        3: steal from target
+        4: destroy/loot village
+        5: use staff
+        6: open chest
         7: dance (acutally doesn't do anything but display the cursor on target for a few frames)
+        8: talk?
+        9: ride ballista?
+        A: exit ballista?
+        B: some combat???
+        C: DK summon?
+        D: pick?
     0203AA04 + 90 + 01 | byte | unit index
     0203AA04 + 90 + 02 | byte | x movement position
     0203AA04 + 90 + 03 | byte | y movement position

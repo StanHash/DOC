@@ -20,39 +20,3 @@ Main Battle Proc State:
 	54 | word  | Currently dissapearing MOVEUNIT pointer
 	64 | short | Unit #1 Index
 	66 | short | Unit #2 Index
-
-Map Anim Battle Proc Code (089A3508):
-	CALL  08015360 @ Lock Main Game Logic Thread
-	CALL  0807A800 @ Reset Font?
-	SLEEP 1
-	CALL  0807A940 @ "MapAnim_MoveCameraOntoSubject"
-	SLEEP 2
-	CALL  0807ABB8 @ "MapAnim_CallBattleQuoteEvents"
-	WHILE 0800D1B0 @ Wait for the Battle Event Engine to stop existing
-	SLEEP 5
-	CALL  0807ACAC @ idk sets up MOVEUNITs maybe (here is where manakete becomes big for instance)
-	CALL  0807B464 @ sets up MOVEUNIT facing
-	SLEEP 1
-	CALL  0807AADC @ idk most things still but I know that it creates the battle info window 6C
-	SLEEP 15
-LABEL 0
-	LOOP  0807A894 @ "MapAnim_PrepareNextBattleRound", will jump the 6C code to 089A35B0 (End of any map anim) if no rounds left
-	LOOP  0807A8F0 @ "MapAnim_DisplayRoundAnim", will read the item spell assoc 6C pointer and call that (defaults to 089A4764)
-	SLEEP 1
-	CALL  0807A904 @ "MapAnim_ShowPoisonEffectIfAny", wierdly specific
-	SLEEP 1
-	SLEEP 5
-	GOTO  0
-
-Item Map Anim Proc Routines:
-	080813F8 | Starts the fast moving anim thing for Subject MMS (will halt 20 frames later); Used by Standard attack & Steal
-	080814D4 | Moves Subject MMS towards target one pixel
-	08081534 | Moves Subject MMS away from target one pixel
-	0808161C | Displays Hit and all given current round (taking misses, crits, devil hits, no damages etc into account)
-	08081914 | Waits for something that's been started in the routine above to finish
-	0807ACD0 | Plays Steal Sound?
-	08081278 | Starts Idle animation for Subject MMS (ends 30 frames later); Used by just about all staves
-	0808129C | Reverse of the above?
-	08081594 | Moves camera on subject
-	080815C0 | Moves camera on target
-	080815EC | Moves camera somewhere
