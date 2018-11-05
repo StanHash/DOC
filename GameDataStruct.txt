@@ -1,25 +1,28 @@
+FE8U
 
-
-
-Game Data Struct, Located at 0202BCB0 (FE8U):
-	00 | byte  | ?
-	01 | byte  | 6C Main 2 Skip Counted (Main 2 6C Exec will be skipped if this is non 0)
-	02 | byte  | ??
-	03 | byte  | GameData State bitfield
-			& 0x01 : 
-			& 0x02 : 
-			& 0x04 : 
-			& 0x08 : 
-			& 0x10 : 
-			& 0x20 : 
-			& 0x40 : When set, prevents things like gaining wexp, leveling up or recieving support bonuses (Link Arena Flag Maybe?)
-			& 0x80 : 
-	04 | short | VerticalCounter (IOReg:04000006) state at the end of the last main loop iteration
-	0C | word  | Current Real Camera Pos?
-	10 | word  | ??
-	14 | word  | Target Map Camera Pos?
-	18 | word  | ??
-	1C | word  | Another Real Camera Pos?
-	20 | word  | ANOTHER Real Camera Pos.
-	24 | word  | Some Real Camera *Offset* (Used When Setting Up Backgrounds)
-	
+Battle Map Game State, Located at 0202BCB0 (FE8U):
+    +00 | byte  | Main loop ended flag
+    +01 | byte  | Proc tree #2 lock count (Proc tree #2 will be skipped if this is non 0)
+    +02 | byte  | Battle map gfx lock count (non zero means that map sprites and weather effects don't get updated)
+    +04 | byte  | Battle Map State bitfield
+        & 0x01 : something related to map displaying
+        & 0x02 : cursor movement gets blocked by movement range edge
+        & 0x04 : cursor position updated this frame
+        & 0x08 : danger zone? viewing attack range?
+        & 0x10 : prep screen?
+        & 0x20 : something related to sound not playing during battle?
+        & 0x40 : When set, prevents things like gaining wexp, leveling up or recieving support bonuses (Link Arena Flag Maybe?)
+        & 0x80 : 
+    +06 | short | VerticalCounter (IOReg:04000006) state at the end of the last main loop iteration
+    +0C | word  | (2 shorts) camera position from top-left of the map (in pixels)
+    +10 | word  | ??
+    +14 | word  | (2 shorts) cursor position from top-left of the map (in tiles)
+    +18 | word  | (2 shorts) previous cursor position
+    +1C | word  | (2 shorts) Another Real Camera Pos?
+    +20 | word  | (2 shorts) cursor display position from top-left of the map (in pixels)
+    +24 | word  | (2 shorts) Some Real Camera *Offset* (Used When Setting Up Backgrounds)
+    +3D | byte  | partial actions taken bitfield (actions that do not end the user's turn, but disallow cancel
+        & 0x01: take/give action taken
+        & 0x02: trade action taken
+        & 0x04: supply action taken
+        & 0x08: ride/exit ballista action taken
