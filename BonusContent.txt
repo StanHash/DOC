@@ -1,0 +1,14 @@
+FE8U
+
+The bonus content menu is called by the savemenu via the function at FE8U:80B1688
+
+Bonus content data has is a list of $10 (?) entries of size $14:
+    +00 | bit[2] | 0 for nothing, 1 for new, 2 for old
+    +01 | byte   | 0 for nothing, 1 for item, 2 for money, 3 for ?, 4 for ?
+    +02 | byte   | item id (even for money!)
+    +03 | byte[] | a string?
+
+02001168 (pointed to at 08A21598) seems to be used to list the bonus content items currently displayed on the menu
+It's an array of 4 byte entries:
+    +00 | byte | claim entry
+    +01 | byte | 1 if not claimed

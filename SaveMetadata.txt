@@ -42,7 +42,7 @@ E000000, general metadata:
     +20 | byte[?]   | probably support related
     +40 | byte[$20] | "bit array", indexed by character id. If the bit is set, it means the character is known (used for support viewer).
     +60 | short     | 16bit checksum of the first $50 bytes of this struct
-    +62 | byte      | ?
+    +62 | byte      | last game save slot
     +63 | byte      | if 1, save to second suspend slot?
 
 E000064, array of 7 "save metadata" (one for each save block):
@@ -50,7 +50,7 @@ E000064, array of 7 "save metadata" (one for each save block):
             0x40624 for save or suspend (blocks 0-4)
             0x20112 for link arena stuff (block 5)
             0x20223 for block 6
-    +04 | short | also magic number (fixed 0x200A)
+    +04 | short | also magic number (fixed 0x200A for non-"blank" blocks, 0 otherwise)
     +06 | byte  | block type: 0 for saves; 1 for suspends; 2 for link arena data; 3 for whatever block 6 is; FF for no block
     +08 | short | block start offset
     +0A | short | block size

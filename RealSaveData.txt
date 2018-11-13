@@ -21,15 +21,15 @@ Save 3 SRAM Offset: 5B54
 SAVE (not Suspend!) DATA: (total size: DC8)
 	000 -> 04C | Chapter Data (0x4C)
 	04C -> 778 | Saved Units  (51 * 0x24) (size: 0x72C)
-	778 -> 780 | RNG State?
-	780 -> 79C | free? (not that exciting since thats a whopping 0x1C (28) bytes)
+	778 -> 780 | World map RNG state
+	780 -> 79C | gap?
 	79C -> 84C | Convoy Items
 	84C -> CAC | BWL Entries (size 0x460)
 	CAC -> D6C | Chapter turn count/time data (array in RAM at 0203ECF4) (size 0xC0)
-	D88 -> D8C | Word at 0203EDB4 (size 0x04)
+	D88 -> D8C | Bonus content claim flags
 	D6C -> D85 | Global Events
-	D8C -> ??? | TODO: check (080A70B0 (arg r0 = SRAM out, r1 = 03005280), same as Suspend+0x1F44)
-	DB0 -> DC8 | 030017AC, size 0x18, Same as Suspend+0xAE0
+	D8C -> DB0 | World map stuff
+	DB0 -> DC8 | valni/lagdou completion data (permanent)
 
 080A533C | SaveUnit      | Arguments: r0 = Unit, r1 = Target SRAM
 080A5794 | LoadSavedUnit | Arguments: r0 = Source SRAM, r1 = Unit

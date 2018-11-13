@@ -7,17 +7,18 @@ SAVE STRUCT:
 	+0x00   | 0x4C bytes if Chapter Data
 	+0x4C   | 0x38 bytes of Action Struct (First 6 bytes are current RN State)
 	+0x84   | 51*0x34      = 0xA5C bytes of Player Units           (See SAVE UNIT STRUCT for details)
-	+0xAE0  | 
+	+0xAE0  | 0x18 bytes of valni/lagdou completion data (permanent)
+	+0xAF8  | gap?
 	+0xB14  | (50+10)*0x34 = 0xC30 bytes of Enemy then Other Units (See SAVE UNIT STRUCT for details)
 	+0x1744 | 0x200 bytes of Traps
 	+0x1944 | 0xB0 bytes of convoy item data (first 0x63 bytes are 1 byte = 1 item, next 0x4D are 6 bits = 1 item use)
 	+0x19F4 | 0x460 bytes of BWL Data
-	+0x1E54 | 0xC0 bytes if ???? (Straight copy from 203ECF4)
-	+0x1F14 | 0x10 bytes of some generated data
+	+0x1E54 | 0xC0 bytes of turn counts and time for cleared chapters
+	+0x1F14 | 0x10 bytes of something related to the unit menu I think?
 	+0x1F24 | 0x19 bytes of global event data
 	+0x1F3D | 0x05 bytes of local event data
-	+0x1F44 | 
-	+0x1F68 | 
+	+0x1F44 | 0x24 bytes of world map stuff
+	+0x1F68 | 0x0C bytes of valni/lagdou current run data (I think?)
 	+0x1F74 | 0x04 bytes of the event counter
 
 SAVE UNIT STRUCT: (Size: 0x34) (Reverse Engineered from routine 080A5E10:ConvertUnitStructToSaveUnitStruct)
