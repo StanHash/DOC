@@ -1,85 +1,86 @@
+FE8U
 
-World Map 6C:
-	3E | byte | Current WM Location Id?
-	44 | word | Gmap Screen
-	4C | word | Gmap Unit (Container)
-	50 | word | Gmap Cursor
-	54 | word | Gmap MU
+World Map Proc:
+    3E | byte | Current WM Location Id?
+    44 | word | Gmap Screen Proc
+    4C | word | Gmap Unit (Container) Proc (scr: 08A3DEFC)
+    50 | word | Gmap Cursor Proc
+    54 | word | Gmap MU Proc
 
-GmapScreen:
-	29 | byte  | some bitfield
-	2A | byte  | (0 initially)
-	2B | byte  | (0 initially)
-	2C | byte  | (0 initially)
-	2D | byte  | (0 initially)
-	2E | byte  | (0 initially)
-	2F | byte  | (0 initially)
-	30 | byte  | (0 initially)
-	31 | byte  | (0 initially)
-	32 | byte  | (0 initially)
-	33 unused?
-	34 | short | (0 initially)
-	36 | short | (0 initially)
-	38 | short | (0 initially)
-	3A | short | (0 initially)
-	3C | word  | some pointer to ROM (8A83364 initially)
-	40 | word  | pointer to BG Tilemap buffer
-	44 | word  | pointer to some decompressed data (from 8A96064 initially)
-	4C | word  | GmapRoute 6C pointer
+GmapScreen Proc:
+    29 | byte  | some bitfield
+    2A | byte  | (0 initially)
+    2B | byte  | (0 initially)
+    2C | byte  | (0 initially)
+    2D | byte  | (0 initially)
+    2E | byte  | (0 initially)
+    2F | byte  | (0 initially)
+    30 | byte  | (0 initially)
+    31 | byte  | (0 initially)
+    32 | byte  | (0 initially)
+    33 unused?
+    34 | short | (0 initially)
+    36 | short | (0 initially)
+    38 | short | (0 initially)
+    3A | short | (0 initially)
+    3C | word  | some pointer to ROM (8A83364 initially)
+    40 | word  | pointer to BG Tilemap buffer
+    44 | word  | pointer to some decompressed data (from 8A96064 initially)
+    4C | word  | GmapRoute 6C pointer
 
-GMapScreenVSync:
-	2C | word  | GmapScreen.3C
-	30 | word  | GmapScreen.40
-	
+GMapScreenVSync Proc:
+    2C | word  | GmapScreen.3C
+    30 | word  | GmapScreen.40
+    
 
-GmapRoute:
-	2C | word  | 0x5000
-	32 | byte  | bitfield?
-	34 | byte  | 
-	35 | byte  | transition effect bg index
-	3C | short | timing denominator factor?
-	3E | short | timing numerator factor?
-	40 | word  | pointer to 03005324 (displayed route id list thing)
+GmapRoute Proc:
+    2C | word  | 0x5000
+    32 | byte  | bitfield?
+    34 | byte  | 
+    35 | byte  | transition effect bg index
+    3C | short | timing denominator factor?
+    3E | short | timing numerator factor?
+    40 | word  | pointer to 03005324 (displayed route id list thing)
 
-Gmap MU 6C:
-	2C | Array of 7 Words | Gmap MU prim
+Gmap MU Proc:
+    2C | Array of 7 Gmap MU prim proc pointers
 
-Gmap MU prim 6C:
-	29 | byte  | idk ()
-	2A | byte  | Gmap MU prim index in the Gmap MU (<0 when unused)
-	2B | byte  | index of the linked Gmap Unit ((-1) at start)
-	2C | byte  | idk (0 initially)
-	40 | short | idk (0 initially)
-	
+Gmap MU prim Proc:
+    29 | byte  | idk ()
+    2A | byte  | Gmap MU prim index in the Gmap MU (<0 when unused)
+    2B | byte  | index of the linked Gmap Unit ((-1) at start)
+    2C | byte  | idk (0 initially)
+    40 | short | idk (0 initially)
+    
 
-At 03005290 (03005280+0x10) seems to be an array of struct { byte; byte; short; } that's strongly tied to Gmap MUs (It's indexed the same way)
-	00 | byte  | some bitfield (&1 = set when linked Gmap MU prim is used?, &2 = Use class (char otherwise))
-	01 | byte  | Current WM Location Index?
-	02 | short | Char/Class ID
+At 03005290 (03005280+$10) seems to be an array of struct { byte; byte; short; } that's strongly tied to Gmap MUs (It's indexed the same way)
+    00 | byte  | some bitfield (&1 = set when linked Gmap MU prim is used?, &2 = Use class (char otherwise))
+    01 | byte  | Current WM Location Index?
+    02 | short | Char/Class ID
 
-GmapUnit (container) 6C (6C Code at: 08A3DEFC):
-	2C | word    | something
-	34 | 7 words | pointers to GmapUnit 6C, all deleted when this one is deleted
+GmapUnit (container) Proc (Scr at: 08A3DEFC):
+    2C | word    | something
+    34 | 7 words | pointers to GmapUnit 6C, all deleted when this one is deleted
 
-GmapUnit 6C (6C Code at: 08A3DECC):
-	2A | short | bitfield (0 initially, &4 = ?)
-	2C | short | 8 initially (TCS "OAM index")
-	2E | short | 0x100 initially
-	30 | word  | same as container:2C (base tile index for SMS gfx?)
-	34 | byte  | index within container
-	35 | byte  | Allegience color index
-	36 | byte  | Palette index
-	37 | byte  | current TCS anim id (4 initially)
-	38 | short | class initially
-	3A | short | class initially
-	3C | short | X pos (0 initially)
-	3E | short | Y pos (0 initially)
-	40 | word  | pointer to a *The Confusing Struct*
+GmapUnit Proc (Scr at: 08A3DECC):
+    2A | short | bitfield (0 initially, &4 = ?)
+    2C | short | 8 initially (AP obj priority node)
+    2E | short | 0x100 initially
+    30 | word  | same as container:2C (base tile index for SMS gfx?)
+    34 | byte  | index within container
+    35 | byte  | Allegience color index
+    36 | byte  | Palette index
+    37 | byte  | current AP anim id (4 initially)
+    38 | short | class initially
+    3A | short | class initially
+    3C | short | X pos (0 initially)
+    3E | short | Y pos (0 initially)
+    40 | word  | AP pointer
 
 WORD MAP EVENT CODES:
-	80
-	81
-	82
-	83
-	84 | Sets camera position on a WM location?
-	85 | Same as 84, but given on a sprite's WM location
+    80
+    81
+    82
+    83
+    84 | Sets camera position on a WM location?
+    85 | Same as 84, but given on a sprite's WM location

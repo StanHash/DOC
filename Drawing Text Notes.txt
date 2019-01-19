@@ -11,7 +11,9 @@ Font Struct (size 0x18):
     +10 | short | base value for text tiles (containing base tile index & palette mask)
     +12 | short | current tile index (local/relative to root)
     +14 | short | palette index
-    +16 | byte  | idk (set from byte at 02028E74, which is initialized at 1 at the start of the game and never changed again. My guess is that it denotes whenever to use Japanses (Shift-JS, 0) or English (ascii, 1) string format, since it is checked in various routines related to strings and glyphs)
+    +16 | byte  | idk
+        - set from byte at 02028E74, which is initialized at 1 at the start of the game and never changed again. My guess is that it denotes whenever to use Japanses (Shift-JS, 0) or English (ascii, 1) string format, since it is checked in various routines related to strings and glyphs
+        - in FE8E, this is initialized to the current language id (byte at FE8E:02028E74)
     +17 | byte  | idk
 
 Default font struct at 02028E58
