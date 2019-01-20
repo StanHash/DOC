@@ -121,3 +121,14 @@ EVENT CODES:
 	
 	10 | EVBIT_MODIFY
 	2A | MNCH, MNC2, MNC3, MNTS
+
+UNIT LOADING:
+	LOAD1 Param Ptr
+	LOAD2 Ptr @ LOAD1 but Param is fixed to 2
+	LOAD3 Param Ptr @ LOAD1 but also calls FE8U:80125C0 on the UNIT list which I don't really get?
+	LOAD4 Param @ loads skirmish enemies
+
+	Param meaning:
+	- 0 means do not load if unit is dead and player unit.
+	- 1 means no extra load constraints.
+	- 2 means load as cutscene unit unless unit is dead and player unit and not either of Seth, Myrrh, Innes or L'Arachel.

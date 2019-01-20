@@ -25,7 +25,23 @@ The code identifier essentially dictates which routine the event engine will can
 
 For example, the code id `0x33` handles a whopping 9 subcodes, each of which reads some kind of information related to a unit. You can see that the general thing this code does is "reading information from a unit", but the subcode dictates which information to read (if it exists, if it is alive, which is its allegiance, its class id, its luck stat...).
 
-## The Doc
+## Evbits
+
+- evbit `0` is the "ignore queued scenes" evbit. When set upon reaching the end of the current scene, queued scenes will not be executed and control will be given back to the main game logic.
+- evbit `1` is the "scene is active" evbit? It is set before interpreting any event code. TODO: investigate further.
+- evbit `2` is the "scene-skipping" evbit. It is automatically set by the event engine which the player presses start (unless evbit `4` is set)
+- evbit `3` is the "text-skipping" evbit. It is set when the player presses Start or B during text (unless evbit `5` was set before the text was displayed)
+- evbit `4` is the "prevent scene-skipping" evbit. When set, it prevents the player to scene-skip using Start. It can be modified by `10 : configure skipping`.
+- evbit `5` is the "prevent text-skipping" evbit. When set, it prevents the player to text-skip using B or Start. It can be modified by `10 : configure skipping`.
+- evbit `6` is the "prevent text-fast-forwarding" evbit. When set, it prevents the player to fast-forward the text using A, B or the D-pad. It can be modified by `10 : configure skipping`.
+- evbit `7` is the "no end fade" evbit. When set, it prevents cutscene events to clear the screen when reaching the end. See related scene source in `01 : end` doc for further details.
+- evbit `8` is the "faded in" evbit. Is is automatically set/cleared by the `17 : fade in/out` codes accordingly. It is set by `10 : configure skipping` when skipping is disabled but evbit `2` is set.
+- evbit `9` is the "camera follows moving units" evbit. When set, any units moved through events (through loading or moving for example) will have the camera follow them.
+- evbit `10` is the "moving to another chapter" evbit? Is is set by the "move to chapter" family of event codes. TODO: investigate further.
+- evbit `11` is the "changing game mode" evbit? TODO: investigate further.
+- evbit `12` is the "gfx locked" evbit. It is automatically set and unset by the "lock/unlock gfx" event codes.
+
+## The Code Doc
 
 This lists all event codes from 00 to 45 (hex) by id. The 80 to CD range may or may get documentation here in the future, just know that those are all world map related and probably not relevant to most people.
 
@@ -113,6 +129,8 @@ LABEL $1
 ```
 
 </details>
+
+If evbit `0` is set, the event scene ends immediately. No other event scenes are called and/or returned to.
 
 ---
 
@@ -272,6 +290,11 @@ If TargetOffset is negative, the target event scene address will be read from `s
 <details>
 <summary>0B : enqueue event engine invocation (TODO: figure out)</summary>
 
+```
+[0B40] - @ -
+[0B41] - @ -
+```
+
 TODO: add to experimental
 
 - variant 0 equeues an event engine invocation. This means that the target event scene will be called *after the current event scene ends*. If other event engine invocations are already queued, this will be put at the end of the queue (because it's a queue).
@@ -397,11 +420,11 @@ _**Note**: "scene skipping" refers to pressing start to skip a scene. "dialogue 
 <details>
 <summary>11 : set ignored key presses (STORETOSOMETHING)</summary>
 
-TODO: add better alias to experimental
-
 ```
 [1120] STORETOSOMETHING Mask @ Sets key press ignore mask
 ```
+
+TODO: add better alias to experimental stdlib.
 
 `Mask` is a bitset where each bit maps to a button of the GBA console:
 
@@ -581,6 +604,189 @@ Is of note:
 - `CHECK_SKIRMISH` gets 0 for story chapters, 1 for tower/ruins and 2 for skirmishes.
 - `CHECK_MONEY` gets 0 on chapter 5x.
 - `CHECK_EVENTID` gets the eid given to the "condition" of the event (the `TURN`, `AFEV`, `CHAR` that had this event called). Gets 0 for events called otherwise.
+
+---
+
+</details>
+
+<details>
+<summary>1A : set text type (TEXTSTART, REMOVEPORTRAITS, ...)</summary>
+
+```
+[1A20] TEXTSTART @ sets text type 0
+[1A21] REMOVEPORTRAITS @ sets text type 1
+[1A22] _0x1A22 @ sets text type 2
+[1A23] TUTORIALTEXTBOXSTART @ sets text type 3
+[1A24] SOLOTEXTBOXSTART @ sets text type 4
+[1A25] _0x1A25 @ sets text type 5
+```
+
+TODO: add better aliases to experimental stdlib.
+
+- `TEXTSTART` sets text type 0, which is background-less regular dialogue.
+- `REMOVEPORTRAITS` sets text type 1, which is regular dialogue with background.
+- `_1A22` sets text type 2, which is CG with text (only cg background available is the lyon + twins one).
+- `TUTORIALTEXTBOXSTART` sets text type 3, which is displaying text in the yellow box thing
+- `SOLOTEXTBOXSTART` sets text type 4, which is displaying text in a single regular dialogue box
+- `_0x1A25` sets text type 5, which is also displaying in the yellow box thing but slightly differently and I don't know how?
+
+This will immediately end any active dialogue if the new text type isn't equal to the old text type (it will have the same effect as REMA)! This means you can't use the `[Events]` text code to switch from one text type to another mid-dialogue (you'd need to use two different text entries to have this effect).
+
+---
+
+</details>
+
+<details>
+<summary>1B : display text (TEXTSHOW, TEXTSHOW2, REMA)</summary>
+
+```
+[1B20] TEXTSHOW TextId @ Displays text
+[1B21] TEXTSHOW2 TextId @ Displays text unless previous text was skipped
+[1B22] REMA @ Clears text and portraits
+```
+
+`TEXTSHOW` and `TEXTSHOW2` display text according to the active text type.
+
+- `TEXTSHOW` resets the "text-skipping" evbit (evbit `3`) before displaying text.
+- `TEXTSHOW2` will only display text if the "text-skipping" evbit (evbit `3`) isn't set.
+
+If TextId is negative, the displayed text id will be read from `s2`. If the displayed text id is zero, nothing happens.
+
+`REMA` ends text interpreters, clears text and portraits gfx and clears the "text-skipping" evbit (evbit `3`).
+
+---
+
+</details>
+
+<details>
+<summary>1C : continue text (TEXTCONT)</summary>
+
+```
+[1C20] TEXTCONT @ Continues text display
+```
+
+Continues displaying current text after it has returned control to the event engine through the `[Events]` text code.
+
+If the "scene-skipping" evbit (evbit `2`) is set, this has the same effect as `[1B22] REMA` except for clearing the "text-skipping" evbit (evbit `3`).
+
+---
+
+</details>
+
+<details>
+<summary>1D : wait for text (TEXTEND)</summary>
+
+```
+[1D20] TEXTEND @ waits for text to stop
+```
+
+`TEXTEND` will wait for either the text to reach the end (`[X]`) or for it to temporarily return control (`[Events]`). In the latter case, use `[1C20] TEXTCONT` to resume text where it left off.
+
+`TEXTEND` will set `sC` to the result id of any prompt within text (ex: for Yes/No the possible results will be 1/2). If the text was skipped, `sC` will be 0. It may be a good idea to prevent text-skipping and scene-skipping before displaying a text with an important prompt (see `10 : configure skipping`).
+
+If the "scene-skipping" evbit (evbit `2`) is set, this has the same effect as `[1B22] REMA` except for clearing the "text-skipping" evbit (evbit `3`). It will also set `sC` to 0.
+
+---
+
+</details>
+
+<details>
+<summary>1E : display portraits (TODO)</summary>
+
+```
+[1E20] - FaceId @ put face on the "far left" slot
+[1E21] - FaceId @ put face on the "mid left" slot
+[1E22] - FaceId @ put face on the "left" slot
+[1E23] - FaceId @ put face on the "right" slot
+[1E24] - FaceId @ put face on the "mid right" slot
+[1E25] - FaceId @ put face on the "far right" slot
+[1E26] - FaceId @ put face on the "far far left" slot
+[1E27] - FaceId @ put face on the "far far right" slot
+```
+
+TODO: add to experimental stdlib.
+
+Essentially executes the `[Open{FaceSlot}][LoadFace][FaceId][1]` and `[Open{FaceSlot}][ClearFace]` text codes without going through text ids.
+
+If FaceId is `-1`, then the effective face id is read from `s2`.
+
+If FaceId is `-2`, it has the same effect as calling `[ClearFace]` for the slot corresponding to the code. It will also clear any opened text box.
+
+If FaceId is `-3`, all faces are cleared (reguardless of the code used).
+
+This code doesn't wait for the face displaying/clearing transition effect is done before giving control back to the event engine. Be careful as using those and then displaying text immediately after may have interesting side effects (as there would be two dialogue engines running simultaneously). Use `STAL` if needed.
+
+---
+
+</details>
+
+<details>
+<summary>1F : move portraits (TODO)</summary>
+
+```
+[1F20] - From To @ moves portrait on the From slot to the To slot
+```
+
+TODO: add to experimental stdlib.
+
+Effectively executes the `[Open{From}][Move{To}]` text codes without going through text ids.
+
+This code doesn't wait for the face moving transition effect is done before giving control back to the event engine. Be careful as using those and then displaying text immediately after may have interesting side effects (as there would be two dialogue engines running simultaneously). Use `STAL` if needed.
+
+---
+
+</details>
+
+<details>
+<summary>20 : clear text boxes (TODO)</summary>
+
+```
+[2020] - @ clears opened text boxes
+```
+
+TODO: add to experimental stdlib.
+
+Clears any open text box.
+
+---
+
+</details>
+
+<details>
+<summary>21 : display text background (BACG, ...)</summary>
+
+```
+[2140] BACG BackgroundId @ displays identified background for active text type
+[2141] _0x2141 BackgroundId TargetTextType Speed @ transitions to identified background for target text type
+[2142] - BackgroundId SourceColor Speed @ fades in background from given RGB color
+[2143] - TargetColor Speed @ fades current baground out to given color
+```
+
+TODO: add better aliases and more to experimental stdlib.
+
+- `BACG` displays a background given the active text type without transition.
+- `_0x2141` will start a transition from the current screen "background" (it may be a background or just the map) to a new background as if it was displayed for the given text type. This code doesn't switch text types after the transition, you will have to do it yourself.
+  - You are not allowed to transition from a non-background text type to another non-background text type (the game will hang).
+  - You *are* allowed to transition from a baground text type to a non-background text type, in which case the background id is ignored and the currently displayed background will be faded out.
+- `[2142]` displays a background and then fades it in from the given color.
+- `[2143]` fades the displayed background to the given color.
+
+_**Note**: due to what I assume is a bug in the engine, the only background that can be displayed for text type 2 ("cg text") is the lyon/eirika/ephraim being happy scene thing._
+
+_**Note**: Only text types 1 ("dialogue with background") and 2 ("cg text") support displaying backgrounds. If you try to display backgrounds for any other text type, the game will hang._
+
+---
+
+</details>
+
+<details>
+<summary>22 : Clear screen (CLEAN)</summary>
+
+```
+[2220] CLEAN @ clears screen and reloads various graphics
+```
+
+Clears bg0 and bg1, text, portraits, reloads default font, default map sprite palettes, ui graphics, and unblocks game graphics if they were blocked.
 
 ---
 
