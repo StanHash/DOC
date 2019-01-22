@@ -1127,15 +1127,15 @@ For `[2B20]` and `[2B21]`, if the argument is negative, it will be read from `s2
 TODO: add better aliases to experimental.
 
 - `LOAD1` loads unit group respecting restriction (see below).
-- `LOAD2` loads unit group respecting restriction 2 (see below).
-- `LOAD3` loads unit group respecting restriction (see below). The character and classes of the units in the group will be replaced by the ones corresponding to the player deployed, in order.
+- `LOAD2` loads unit group respecting restriction `2` (see below).
+- `LOAD3` loads unit group respecting restriction (see below). The units in the group will be replaced by the corresponding units in the player's deployed unit list.
 - `LOAD4` loads the current skirmish enemy group respecting restriction.
 
-A "restriction"s identifies additional conditions that have to be met for loading *player* units. This is a list of valid identifiers and what they mean:
+A "restriction" identifies additional conditions that have to be met for loading *player* units. This is a list of valid identifiers and what they mean:
 
 - `0` means to not load dead units.
 - `1` means no special restrictions.
-- `2` means to not load dead units unless they are one of Seth, L'Arachel, Myrrh and Innes. Units loaded with constraint 2 will also be considered as "cutscene" units and will be removed when the scene ends (even non-player units!).
+- `2` means to not load dead units unless they are one of Seth, L'Arachel, Myrrh and Innes. Units loaded with restriction 2 will also be considered as "cutscene units" and will be removed when the scene ends (even non-player units!).
 
 In addition to that, an *enemy* unit won't be loaded if its target position is occupied by another unit and it doesn't have a REDA assigned to it (or it has been marked to load at a random position). (Player and NPC units will have their position adjusted).
 
