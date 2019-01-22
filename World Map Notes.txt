@@ -58,6 +58,12 @@ At 03005290 (03005280+$10) seems to be an array of struct { byte; byte; short; }
     01 | byte  | Current WM Location Index?
     02 | short | Char/Class ID
 
+WM Location Entry (in RAM):
+    00 | byte | flags :: 1 = enabled, 2 = is story location
+
+WM Location Static Data Entry: (in ROM)
+    00 | byte | type? :: 3 = dungeon
+
 GmapUnit (container) Proc (Scr at: 08A3DEFC):
     2C | word    | something
     34 | 7 words | pointers to GmapUnit 6C, all deleted when this one is deleted

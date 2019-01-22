@@ -88,7 +88,7 @@ The event engine holds a set of internal flags called "evbits" which have variou
 - evbit `8` is the "faded in" evbit. Is is automatically set/cleared by the `17 : fade in/out` codes accordingly. It is set by `10 : configure skipping` when skipping is disabled but evbit `2` is set.
 - evbit `9` is the "camera follows moving units" evbit. When set, any units moved through events (through loading or moving for example) will have the camera follow them.
 - evbit `10` is the "moving to another chapter" evbit? Is is set by the "move to chapter" family of event codes. TODO: investigate further.
-- evbit `11` is the "changing game mode" evbit? TODO: investigate further.
+- evbit `11` is the "changing game mode" evbit. When set, ending the event engine will also end the active battle map, allowing the `GAMECTRL` proc to continue its flow and change game mode.
 - evbit `12` is the "gfx locked" evbit. It is automatically set and unset by the "lock/unlock gfx" event codes.
 
 evbits persist for the duration of a scene.
@@ -102,6 +102,8 @@ Most codes that work with units take character identifiers as parameters. There 
 - When the argument is `-2`, the unit taken into account is the unit at position in `sB`.
 - When the argument is `-3`, the unit taken into account is the first unit whose character id corresponds to `s2`.
 - Otherwise, the unit taken into account is the first unit whone character id corresponds to the argument.
+
+Each time I name a code paramter `CharId`, assume that those rules apply unless otherwise noted.
 
 ## The Code Doc
 
@@ -1066,11 +1068,211 @@ If not scene-skipping, the event engine will wait for the displayed transition t
 <summary>2A : move to chapter (MNTS, MNCH, MNC2, MNC3, MNC4)</summary>
 
 ```
-[2A20] MNTS Id
-[2A21] MNCH Id
-[2A22] MNC2 Id
-[2A23] MNC3 Id
-[2A24] MNC4 Id
+[2A20] MNTS <Ignored>
+[2A21] MNCH ChapterId
+[2A22] MNC2 ChapterId
+[2A23] MNC3 ChapterId
+[2A24] MNC4 <Ignored>
+```
+
+TODO: add better aliases to experimental.
+
+- `MNTS` has the game go to the title screen.
+- `MNCH` has the game go to the world map, running the identified chapter's world map unlock events.
+- `MNC2` has the game go to the identified chapter, without going through the world map.
+- `MNC3` has the game go to the identified chapter immediately, without event going through the save screen.
+- `MNC4` has the game go to the game ending and credits.
+
+All variants but `MNC3` set evbit 11. All variants set evbit 10. All variants start a BGM fade out.
+
+If `ChapterId` is negative, the target chapter id will be read from `s2`.
+
+_**Note**: be careful when using `MNC2` (and `MNC3`)! If you move to a chapter with a world map location attached to it, that location won't have been marked as the next "story" location (this is typically done through the chapter's world map unlock events). In other words, the next chapter will probably be considered as a skirmish!_
+
+---
+
+</details>
+
+<details>
+<summary>2B : configure next unit load (TODO)</summary>
+
+```
+[2B20] - UnitCount
+[2B21] - Chance
+[2B22] -
+```
+
+This is primarily used in the vanilla game to gain more control on loading units for dungeons (tower/ruins).
+
+- `[2B20]` sets the number of units to load for the next load. A value of 0 (which is default) means that it will load up until the terminating unit (any unit definition with char id 0).
+- `[2B21]` sets the chance (in percent) for units that are marked to be loaded at a random position to actually be loaded at a random position (More precisely, it sets the proportion of units in the load group to be loaded as such).
+- `[2B22]` disables REDAs for the next load.
+
+For `[2B20]` and `[2B21]`, if the argument is negative, it will be read from `s2`.
+
+---
+
+</details>
+
+<details>
+<summary>2C : load units (LOAD1, LOAD2, LOAD3, LOAD4)</summary>
+
+```
+[2C40] LOAD1 RestrictionType UnitsOffset
+[2C41] LOAD2 <Unused> UnitsOffset
+[2C42] LOAD3 RestrictionType UnitsOffset
+[2C43] LOAD4 RestrictionType <Unused>
+```
+
+TODO: add better aliases to experimental.
+
+- `LOAD1` loads unit group respecting restriction (see below).
+- `LOAD2` loads unit group respecting restriction 2 (see below).
+- `LOAD3` loads unit group respecting restriction (see below). The character and classes of the units in the group will be replaced by the ones corresponding to the player deployed, in order.
+- `LOAD4` loads the current skirmish enemy group respecting restriction.
+
+A "restriction"s identifies additional conditions that have to be met for loading *player* units. This is a list of valid identifiers and what they mean:
+
+- `0` means to not load dead units.
+- `1` means no special restrictions.
+- `2` means to not load dead units unless they are one of Seth, L'Arachel, Myrrh and Innes. Units loaded with constraint 2 will also be considered as "cutscene" units and will be removed when the scene ends (even non-player units!).
+
+In addition to that, an *enemy* unit won't be loaded if its target position is occupied by another unit and it doesn't have a REDA assigned to it (or it has been marked to load at a random position). (Player and NPC units will have their position adjusted).
+
+Units with defined initial movement (aka `REDA`s) will have their initial movement displayed. It may be wise to use an `ENUN` after loading units to avoid conflicting events (or you could not do that and instead opt to abuse this for dramatic camera movement or something, but stay careful!).
+
+Not all units in an unit group will necessarily be loaded simultaneously: if more than 4 units require displayed movement simultaneously, the event engine will wait for a moving unit to reach its destination before continuing to load.
+
+If scene-skipping (evbit 2 set) or faded in (evbit 8 set), unit load is instant and no movement is displayed.
+
+For `LOAD1`, `LOAD2` and `LOAD3`, if the unit group address is negative, the effective address will be read from `s2`. EA standard raws provide `LOAD_SLOT1` which is bad but the only way to make use of this because EA doesn't all for negative offsets. TODO: add `LOAD_S2`, `LOAD_CUTSCENE_S2`, `LOAD_DEPLOYED_S2`.
+
+TODO: maybe document unit groups.
+
+---
+
+</details>
+
+<details>
+<summary>2D : override map sprite palettes (TODO)</summary>
+
+```
+[2D20] - BlueId RedId GreenId
+```
+
+TODO: add to experimental
+
+Overwrites standard map sprite palettes with palettes identified as such:
+
+- `0` for default (unchanged) palette.
+- `1` for blue palette.
+- `2` for red palette.
+- `3` for green palette.
+- `4` for sepia flashback palette.
+
+This isn't reset at the end of a scene! So make sure you do it yourself if needed. (It will not persist during gameplay tho, anything that reloads palettes will cancel this effect).
+
+---
+
+</details>
+
+<details>
+<summary>2E : get character id (CHECK_ACTIVE, CHECK_AT)</summary>
+
+```
+[2E20] CHECK_AT [X, Y]
+[2E21] CHECK_ACTIVE
+```
+
+- `CHECK_AT` gets the character id of the unit at given position. (0 if there is no unit there).
+- `CHECK_ACTIVE` gets the character id of the current active unit. (0 if there is currently no active unit).
+
+For `CHECK_AT`, there is no way of reading the effective position from a slot.
+
+---
+
+</details>
+
+<details>
+<summary>2F : move unit (MOVE, MOVEONTO, MOVE_1STEP, MOVEFORCED)</summary>
+
+```
+[2F40] MOVE Speed CharId [X, Y]
+[2F41] MOVEONTO Speed CharId TargetCharId
+[2F42] MOVE_1STEP Speed CharId Direction
+[2F43] MOVEFORCED <Unused> CharId <Unused>
+```
+
+TODO: better `MOVEFORCED` to experimental.
+
+Moves the unit identified through `CharId`.
+
+- `MOVE` moves the unit to the given coordinates.
+- `MOVEONTO` moves the unit to where the target unit is located. The `TargetCharId` doesn't follow the usual rules for unit parameters (it only looks for a unit with that character id).
+- `MOVE_1STEP` moves the unit one step in the given direction.
+- `MOVEFORCED` moves the unit given the defined movement in the event queue. Defined movement follow the exact same format as `REDA`s.
+
+For non-`MOVEFORCED` variants, if speed is negative, movement is done instantly and isn't displayed. Otherwise it dicates the speed at which the unit is moving (0 means default). TODO: investigate speed more.
+
+If scene-skipping (evbit 2 set), movement is instant reguardless of the speed argument. Note that `MOVEFORCED` may not work properly when scene-skipping. (TODO: investigate).
+
+Valid directions for `MOVE_1STEP` are:
+
+- `0` for left.
+- `1` for right.
+- `2` for down.
+- `3` for up.
+
+If displayed unit movement cannot start (because too many units on the map are already moving), the event engine will wait for a moving unit to reach its destination before moving this unit.
+
+The event engine doesn't wait for displayed movement to end before continuing.
+
+---
+
+</details>
+
+<details>
+<summary>30 : wait for displayed movement (ENUN)</summary>
+
+```
+[3020] ENUN
+```
+
+Stops the event engine until all displayed unit movement have ended.
+
+If scene-skipping (evbit 2 set), will forcefully end all displayed movement immediately.
+
+---
+
+</details>
+
+<details>
+<summary>31 : display move/effect range (SHOW_ATTACK_RANGE, HIDE_ATTACK_RANGE)</summary>
+
+```
+[3120] SHOW_ATTACK_RANGE CharId
+[3121] HIDE_ATTACK_RANGE
+```
+
+- `SHOW_ATTACK_RANGE` displays the given units's move+attack range (or move+staff range if that unit doesn't have usable weapons).
+- `HIDE_ATTACK_RANGE` hides any displayed range.
+
+`SHOW_ATTACK_RANGE` changes the active unit to the unit whose range is displayed. `HIDE_ATTACK_RANGE` restores it to the unit it was beforehand.
+
+If scene-skipping (evbit 2 set), nothing happens.
+
+---
+
+</details>
+
+<details>
+<summary>32 : load single unit (SPAWN_xyz)</summary>
+
+```
+[3240] SPAWN_ALLY CharId [X, Y]
+[3241] SPAWN_NPC CharId [X, Y]
+[3242] SPAWN_ENEMY CharId [X, Y]
+[324F] SPAWN_CUTSCENE_ALLY CharId [X, Y]
 ```
 
 TODO
