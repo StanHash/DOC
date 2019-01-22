@@ -1,6 +1,6 @@
-# Event Code Master Doc
+# Event Master Doc
 
-The goal here is to have a complete and detailed documentation of *every* event codes handled by the base game.
+The goal here is to have a complete and detailed documentation of how event scenes are handled by the base game, including a complete description of every known event code (except world map specific codes, for now).
 
 When this is done, I will also post that on FEU. It isn't done yet tho so it will be only here for now.
 
@@ -10,12 +10,20 @@ Example and other event scene source will be written in event assembler language
 
 ## Generalities
 
+### Code representation
+
 The binary representation of each code is as follows:
 
 	bits 0-3  | subcode : "subcode" identifier
 	bits 4-7  | size    : byte size / 2
 	bits 8-15 | id      : code identifier
 	[code-dependent layout]
+
+I'll simplify the representation of the header like so:
+
+	[XXYZ]
+
+With `XX` corresponding to the code id, `Y` to the code size and `Z` to the subcode. All in hexadecimal.
 
 The size of a code in memory is *always* to be considered as equal to `size*2` bytes (header included), no matter what code this is. This is in contrast with FE6 and FE7 where to each code id is assigned a fixed size. This could allow for some funky obfucation shenanigans if you felt like doing that.
 
@@ -25,7 +33,49 @@ The code identifier essentially dictates which routine the event engine will can
 
 For example, the code id `0x33` handles a whopping 9 subcodes, each of which reads some kind of information related to a unit. You can see that the general thing this code does is "reading information from a unit", but the subcode dictates which information to read (if it exists, if it is alive, which is its allegiance, its class id, its luck stat...).
 
-## Evbits
+### Event Slots
+
+Event slots are objects available for storing and retrieving values. They persist for the duration of a scene and can often be used to pass values to event codes.
+
+There are 14 of them, noted `s0` to `sD`. Some of them are special:
+
+- `s0` always holds 0. More specifically, it is reset to 0 before each code is interpreted.
+- `s1` typically holds "implicit code arguments". Codes that always read from a slot usually read from `s1`.
+- `s2` typically holds "explicit code arguments". Codes that can substitute one of their fixed arguments for a slot value usually read from `s2`.
+- `sB` typically holds "positions". Codes that can read positions from slot will read it from `sB`.
+- `sC` typically holds "results". Codes that yield a result will store it in this slot.
+- `sD` holds the queue size.
+
+### Event Queue
+
+The event queue is a list of values that follow a [FIFO](https://en.wikipedia.org/wiki/FIFO_(computing_and_electronics)) (First In First Out) model (hence why it's called a queue).
+
+It can be (and is) used to pass lists of values to various codes and/or subscenes. `sD` should always hold the queue size. The queue can be manipulated using the `07 : queue operations` codes.
+
+The event queue has room for up to 30 elements.
+
+### Eids
+
+Eids (aka "event ids" or "flags") are booleans that you can use to mark the completion of certain events. Many of them have set purpose but many others are free to be used for your chapter logic.
+
+There are two kinds of eids:
+
+- chapter (or "temporary") eids, which persist for the duration of a chapter and are saved accordingly. They are cleared upon switching chapters.
+- global (or "permanent") eids, which persist for the duration of a given playthrough and are saved accordingly. They are only cleared upon starting a new game.
+
+Note that eids are meant to be used as simple on/off switches. If you need to store other kind of numbers, consider maybe looking at counters.
+
+[See this post for a detailed map of what eids are used for what purpose](https://feuniverse.us/t/fe8-eid-glossary/4815?u=stanh).
+
+### Counters
+
+Counters are small variables that can hold values ranging from 0 to 15 included. There is a total of 8 of them (identified by integers from 0 to 7). They persist for the duration of a chapter and are saved accordingly (much like chapter eids).
+
+Counters can be manipulated using the `0F : counter operations` codes.
+
+### Evbits
+
+The event engine holds a set of internal flags called "evbits" which have various meanings. Many event codes implictely modify them, or behave differently based on their state. Here's the full list of known evbits:
 
 - evbit `0` is the "ignore queued scenes" evbit. When set upon reaching the end of the current scene, queued scenes will not be executed and control will be given back to the main game logic.
 - evbit `1` is the "scene is active" evbit? It is set before interpreting any event code. TODO: investigate further.
@@ -40,6 +90,18 @@ For example, the code id `0x33` handles a whopping 9 subcodes, each of which rea
 - evbit `10` is the "moving to another chapter" evbit? Is is set by the "move to chapter" family of event codes. TODO: investigate further.
 - evbit `11` is the "changing game mode" evbit? TODO: investigate further.
 - evbit `12` is the "gfx locked" evbit. It is automatically set and unset by the "lock/unlock gfx" event codes.
+
+evbits persist for the duration of a scene.
+
+### Unit parameters
+
+Most codes that work with units take character identifiers as parameters. There are some common rules this kind of parameter follow almost all of those codes follow (the only exception is TODO):
+
+- When the argument is `0`, the unit taken into account is the player leader unit.
+- When the argument is `-1`, the unit taken into account is the active unit.
+- When the argument is `-2`, the unit taken into account is the unit at position in `sB`.
+- When the argument is `-3`, the unit taken into account is the first unit whose character id corresponds to `s2`.
+- Otherwise, the unit taken into account is the first unit whone character id corresponds to the argument.
 
 ## The Code Doc
 
@@ -260,7 +322,7 @@ _**Note**: Vanilla events use `SADD sDst sSrc s0` to move the value of a slot in
 - `SENQUEUE` enqueues the value of the given slot. The parameterless variant enqueues the value of `s1`.
 - `SDEQUEUE` dequeues the value in the front of the queue into the given slot.
 
-TODO: write and link to the queue stuff
+See also the section on the event queue in `Generalities`.
 
 ---
 
@@ -419,12 +481,12 @@ There is no way of getting the duration from an event slot. If Duration is 0, th
 [0F23] COUNTER_DEC Identifier
 ```
 
-Event counters are small variables that can hold values ranging from 0 to 15 included. There is a total of 8 of them (identified by integers from 0 to 7) and they are saved between scenes and on suspend (much like chapter eids).
-
 - `COUNTER_CHECK` gets value of counter into `sC`.
 - `COUNTER_SET` sets counter to given value. You cannot get this value from a slot.
 - `COUNTER_INC` increments value of given counter by 1.
 - `COUNTER_DEC` decrements value of given counter by 1.
+
+See also the section on counters in `Generalities`.
 
 `COUNTER_INC` and `COUNTER_DEC` will not allow the counter value to overflow or underflow. If the value is 0 and `COUNTER_DEC` is used, the value will still be 0. If the value is 15 and `COUNTER_INC` is used, the value will still be 15.
 
@@ -653,7 +715,7 @@ If scene-skipping or faded in, then `FADECOLORS` is instant.
 Get various information in `sC`.
 
 - `CHECK_MODE` gets current mode identifier: 0 for "prologue" chapters, 1 for eirika route, 2 for ephraim route.
-- `CHECK_CHAPTER_NUMBER` gets current chapter id. It doesn't care for `LOMA`.
+- `CHECK_CHAPTER_NUMBER` gets current chapter id. Cares for `LOMA`.
 - `CHECK_HARD` gets 1 if the player is playing on difficult, 0 otherwise.
 - `CHECK_TURNS` gets the current turn number as it would be displayed in the status screen. Turn changes occur between the green and blue phases.
 - `CHECK_ENEMIES` gets the number of alive red units.
@@ -850,13 +912,83 @@ _**Note**: Only text types 1 ("dialogue with background") and 2 ("cg text") supp
 </details>
 
 <details>
-<summary>22 : Clear screen (CLEAN)</summary>
+<summary>22 : clear screen (CLEAN)</summary>
 
 ```
 [2220] CLEAN
 ```
 
 Clears bg0 and bg1, text, portraits, reloads default font, default map sprite palettes, ui graphics, and unblocks game graphics if they were blocked.
+
+---
+
+</details>
+
+<details>
+<summary>23 : disable battle map display (TODO)</summary>
+
+```
+[2320] -
+```
+
+Manually disables battle map display and sets evbit `12`. This can be implicetely called by text codes for text types involving backgrounds.
+
+More speficically, this disables map sprite display, weather effects and camera updates.
+
+---
+
+</details>
+
+<details>
+<summary>24 : restore battle map display (TODO)</summary>
+
+```
+[2420] -
+```
+
+Restores battle map display after `[2320]`. This can be implicitely called by text codes for text types involving backgrounds.
+
+If evbit `12` isn't set, does nothing.
+
+---
+
+</details>
+
+<details>
+<summary>25 : load chapter map (LOMA)</summary>
+
+```
+[2520] LOMA ChapterId
+```
+
+Loads new map given chapter id and sets camera given position in `sB`.
+
+The chapter number *will* be updated, so be careful! This means that after the current scene has ended, if you didn't restore the chapter via another `LOMA`, the chapter will executed as if it were the loaded chapter, not the original!
+
+If given chapter id is negative, will load chapter id from `s2`.
+
+---
+
+</details>
+
+<details>
+<summary>26 : camera control (CAMERA, CAMERA2)</summary>
+
+```
+[2620] CAMERA [X, Y]
+[2621] CAMERA CharId
+[2628] CAMERA2 [X, Y]
+[2629] CAMERA2 CharId
+```
+
+Moves the camera given coordinates. For variants taking units, will move given the unit's position.
+
+- `CAMERA` moves the camera in such a way that the given position is on screen, and more than 2 tiles away from the edge (if possible).
+- `CAMERA2` moves the camera in such a way that the given position becomes the center of the screen. Due to a bug in the vanilla engine, this can move the camera in such a way that part of "past the edge of the map" junk is visible, so be careful!
+
+For variants taking coordinates, if both coordinates are negatve then the target position will be read from `sB`. Experimental raws provide `CAMERA_SB` and `CAMERA2_SB` for convenience.
+
+_**Note**: "old" EA standard raws only provide `CAM1`, which is an alias for `CAMERA` for character variants, but for `CAMERA2` for position variants!_
 
 ---
 
