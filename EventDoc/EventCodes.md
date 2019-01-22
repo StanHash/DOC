@@ -988,7 +988,92 @@ Moves the camera given coordinates. For variants taking units, will move given t
 
 For variants taking coordinates, if both coordinates are negatve then the target position will be read from `sB`. Experimental raws provide `CAMERA_SB` and `CAMERA2_SB` for convenience.
 
+Camera movement is instant if scene-skipping (evbit 2 set) or faded in (evbit 8 set). Otherwise, the event engine waits for the camera movement to complete before continuing the scene.
+
 _**Note**: "old" EA standard raws only provide `CAM1`, which is an alias for `CAMERA` for character variants, but for `CAMERA2` for position variants!_
+
+---
+
+</details>
+
+<details>
+<summary>27 : apply/remove tile changes (TILECHANGE, TILEREVERT)</summary>
+
+```
+[2720] TILECHANGE Id
+[2721] TILEREVERT Id
+```
+
+- `TILECHANGE` applies a tile change if not already applied.
+- `TILEREVERT` reverts a tile change unless it wasn't applied.
+
+If given id is `-1`/`0xFFFF`, a position is read from `sB`. The target tile change will be the first in the current map's tile change list for which its area overlap with that position.
+
+If given id is `-2`/`0xFFFE`, it will look for the tile change the same way as for `-1`/`0xFFFF`, but for the position of the active unit.
+
+If give id is `-3`/`0xFFFD`, mutiple tile changes will be applied/reverted. It will read all tile change ids from the event queue.
+
+Tile change is instant if faded in (evbit 8 set). Otherwise, the event engine waits for the tile change fade effect to complete before continuing the scene.
+
+---
+
+</details>
+
+<details>
+<summary>28 : set weather (WEA1)</summary>
+
+```
+[2820] WEA1 WeatherId
+```
+
+Sets active weather.
+
+For reference, here's a list of valid weather identifiers:
+
+- `0` is no weather.
+- `1` is snowing.
+- `2` is snowstorm.
+- `3` is something blue.
+- `4` is rain.
+- `5` is flames.
+- `6` is sandstorm.
+- `7` is background clouds.
+
+_**Note**: Interestingly enough, EA standard raws define `WEA1` as code `2821`, which suggests that this is also what the vanilla game uses. The difference in subcode doesn't matter for this code in particular but it is nonetheless notable._
+
+---
+
+</details>
+
+<details>
+<summary>29 : set fog vision (VCWF)</summary>
+
+```
+[2920] VCWF Vision
+```
+
+Sets active fog vision range.
+
+A vision range of 0 means no fog. A negative vision range loads the chapter's default fog vision.
+
+If not scene-skipping, the event engine will wait for the displayed transition to end before continuing the scene.
+
+---
+
+</details>
+
+<details>
+<summary>2A : move to chapter (MNTS, MNCH, MNC2, MNC3, MNC4)</summary>
+
+```
+[2A20] MNTS Id
+[2A21] MNCH Id
+[2A22] MNC2 Id
+[2A23] MNC3 Id
+[2A24] MNC4 Id
+```
+
+TODO
 
 ---
 
