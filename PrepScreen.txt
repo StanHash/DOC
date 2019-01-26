@@ -1,0 +1,80 @@
+addresses are FE8U
+Kirb started this.
+
+SALLYCURSOR proc layout:
+    00 | header
+
+    58 | word | active prep screen map menu item type
+        this is checked when on map to decide on whether swapping units is allowed
+        (since "view map" and "formation" have otherwise the same effect)
+
+AtMenu proc layout:
+    00 | header
+    29 | byte | unit count
+    2A | byte | max selected unit count
+    2B | byte | selected unit count
+
+    2D | byte
+    2E | byte
+    2F | byte | some bitfield related to the support menu item
+    30 | byte
+    31 | byte
+    32 | byte
+    33 | byte | current submenu?
+        0 = still in menu?
+        1 = picking units
+        2 = managing items
+        3 = saving
+        4 = viewing supports
+        5 = ?
+
+    34 | byte
+    35 | byte | active prep screen menu item type
+    36 | byte | (bool) true to end prep screen
+
+    3C | word
+    40 | word
+
+prep screen menu proc: (scr: FE8U:8A186EC)
+    00 | header
+
+    29 | byte | (bool) is displaying R-text for active item
+    2A | byte | active menu item index
+    2B | byte | menu item count
+
+    34 | short | origin tile x
+    36 | short | origin tile y
+
+    38 | word[8] | item dummy proc pointer array
+
+    58 | word | pointer to on B press callback (sig: "int (*) (struct Proc* menuParent);")
+    5C | word | pointer to on Start press callback (sig: "int (*) (struct Proc* menuParent);")
+        the return value of OnBPress and OnStartPress should be 1 on success, 0 on failure. The prep screen menu will react accordingly
+
+    60 | word | pointer to on end callback (sig: "void (*) (struct Proc* menuParent);")
+
+prep screen menu item dummy proc: (src: FE8U:8A186DC)
+    00 | header
+
+    2C | word | pointer to on select callback (sig: "void (*) (struct Proc* menuParent);")
+    30 | word | R-help text id
+    34 | word | label text id
+    38 | byte | (bool) true = unusable/grayed out
+    39 | byte | item type id
+        For non-map prep screen menu:
+            0 = pick units
+            1 = items
+            2 = save
+            3 = link arena cancel
+            4 = support
+            5 = ? (one of: fortune, ranking)
+            6 = ? (one of: fortune, ranking)
+            7 = check map
+            8 = start battle?
+
+        For map prep screen menu:
+            1 = view map
+            2 = formation
+    3C | TextHandle
+
+The prep screen menu system seems generic enough that it could be used for any menu.

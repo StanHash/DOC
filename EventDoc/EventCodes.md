@@ -1275,7 +1275,15 @@ If scene-skipping (evbit 2 set), nothing happens.
 [324F] SPAWN_CUTSCENE_ALLY CharId [X, Y]
 ```
 
-TODO
+Loads a single unit give character id and target position.
+
+The unit's class will be the character's default. The character's stats and level will be the character's bases. The loaded units won't start with any items, with null AI **and with the "drop item" state set**.
+
+If CharId is `-3`/`0xFFFD`, the loaded character id is read from `s2`.
+
+If X and Y are negative, the target position is read from `sB`.
+
+`SPAWN_CUTSCENE_ALLY` loads a "cutscene unit" in very much the any `2C : load units` with restriction `2` would.
 
 ---
 
