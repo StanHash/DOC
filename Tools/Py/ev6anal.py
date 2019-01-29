@@ -7,36 +7,92 @@ ANAL_KEY_ITEMS   = 'items'
 ANAL_KEY_EVLIST  = 'evlist'
 ANAL_KEY_MOMA    = 'movescr'
 
-class SceneAnalyser:
+FE6_SCENE_INS_REFERENCE_ADDR = 0x085C4164
+FE6_ELIST_INS_REFERENCE_ADDR = 0x08666114
 
-	class Ins:
+class InsReference:
 
-		INS_REFERENCE_ADDR = 0x085C4164
+	def __init__(self, refAddr):
+		self.referenceAddr = refAddr
+		self.sizeCache = {}
 
-		def __init__(self, code, size, args):
-			self.code = code
-			self.size = size
-			self.args = args
+	def get_code_size(self, code, input = None):
+		if code in self.sizeCache:
+			return self.sizeCache[code]
 
-		@staticmethod
-		def read_from_file(input, address):
-			input.seek(anal.addr_to_offset(address))
-			code = anal.read_int(input, 4)
-
-			input.seek(anal.addr_to_offset(SceneAnalyser.Ins.INS_REFERENCE_ADDR + 8*code + 4))
+		elif input:
+			input.seek(anal.addr_to_offset(self.referenceAddr + code*8 + 4))
 			size = anal.read_int(input, 4)
 
-			input.seek(anal.addr_to_offset(address + 4))
-			args = [anal.read_int(input, 4) for _ in range(size - 1)]
+			self.sizeCache[code] = size
+			return size
 
-			return SceneAnalyser.Ins(code, size, args)
+		raise Exception("uncached code size with no available input")
 
-		@staticmethod
-		def read_from_bytes(bytes, offset):
-			raise NotImplementedError()
+class SceneIns:
 
-		def get_byte_size(self):
-			return self.size * 4
+	def __init__(self, code, size, args):
+		self.code = code
+		self.size = size
+		self.args = args
+
+	@staticmethod
+	def read_from_file(input, address, reference):
+		input.seek(anal.addr_to_offset(address))
+		code = anal.read_int(input, 4)
+
+		size = reference.get_code_size(code, input)
+
+		input.seek(anal.addr_to_offset(address + 4))
+		args = [anal.read_int(input, 4) for _ in range(size - 1)]
+
+		return SceneIns(code, size, args)
+
+	@staticmethod
+	def read_from_bytes(bytes, offset, reference):
+		code = int.from_bytes(bytes[offset:offset+4], 'little')
+		size = reference.get_code_size(code)
+		args = [int.from_bytes(bytes[offset+i*4+4:offset+i*4+8], 'little') for i in range(size - 1)]
+
+		return SceneIns(code, size, args)
+
+	def get_byte_size(self):
+		return self.size * 4
+
+class EvListIns:
+
+	def __init__(self, code, eid, size, args):
+		self.code = code
+		self.eid  = eid
+		self.size = size
+		self.args = args
+
+	@staticmethod
+	def read_from_file(input, address, reference):
+		input.seek(anal.addr_to_offset(address))
+		code = anal.read_int(input, 2)
+		eid  = anal.read_int(input, 2)
+
+		size = reference.get_code_size(code, input)
+
+		input.seek(anal.addr_to_offset(address + 4))
+		args = [anal.read_int(input, 4) for _ in range(size - 1)]
+
+		return EvListIns(code, eid, size, args)
+
+	@staticmethod
+	def read_from_bytes(bytes, offset, reference):
+		code = int.from_bytes(bytes[offset:offset+2], 'little')
+		eid  = int.from_bytes(bytes[offset+2:offset+4], 'little')
+		size = reference.get_code_size(code)
+		args = [int.from_bytes(bytes[offset+i*4+4:offset+i*4+8], 'little') for i in range(size - 1)]
+
+		return EvListIns(code, eid, size, args)
+
+	def get_byte_size(self):
+		return self.size * 4
+
+class SceneAnalyser:
 
 	def analyse_end(self, ins):
 		self.try_end()
@@ -80,7 +136,7 @@ class SceneAnalyser:
 		0x25: analyse_jump,  # JUMP scene
 	}
 
-	def __init__(self, anal, input, address, name):
+	def __init__(self, reference, anal, input, address, name):
 		self.anal = anal
 		self.input = input
 		self.address = address
@@ -88,11 +144,13 @@ class SceneAnalyser:
 
 		self.ended = False
 
+		self.insReference = reference
+
 		self.encounteredLabels = []
 		self.expectedLabels = []
 
 	def analyse_next(self):
-		ins = SceneAnalyser.Ins.read_from_file(self.input, self.address)
+		ins = SceneIns.read_from_file(self.input, self.address, self.insReference)
 
 		if ins.code in SceneAnalyser.CODE_HANDLER_DICT:
 			SceneAnalyser.CODE_HANDLER_DICT[ins.code](self, ins)
@@ -113,13 +171,13 @@ class SceneAnalyser:
 		if len(self.expectedLabels) == 0:
 			self.ended = True
 
-def analyse_scene(analyser, input, address, name):
+def analyse_scene(analyser, input, address, name, reference = InsReference(FE6_SCENE_INS_REFERENCE_ADDR)):
 	"""
 	Analysis handler for scenes.
 	Encapsulates a SceneAnalyser doing its thing.
 	"""
 
-	sa = SceneAnalyser(analyser, input, address, name)
+	sa = SceneAnalyser(reference, analyser, input, address, name)
 
 	while not sa.ended:
 		sa.analyse_next()
@@ -188,33 +246,6 @@ def analyse_items(analyser, input, address, name):
 
 class EvListAnalyser:
 
-	class Ins:
-
-		INS_REFERENCE_ADDR = 0x08666114
-
-		def __init__(self, code, eid, size, args):
-			self.code = code
-			self.eid  = eid
-			self.size = size
-			self.args = args
-
-		@staticmethod
-		def read_from_file(input, address):
-			input.seek(anal.addr_to_offset(address))
-			code = anal.read_int(input, 2)
-			eid  = anal.read_int(input, 2)
-
-			input.seek(anal.addr_to_offset(EvListAnalyser.Ins.INS_REFERENCE_ADDR + 8*code + 4))
-			size = anal.read_int(input, 4)
-
-			input.seek(anal.addr_to_offset(address + 4))
-			args = [anal.read_int(input, 4) for _ in range(size - 1)]
-
-			return EvListAnalyser.Ins(code, eid, size, args)
-
-		def get_byte_size(self):
-			return self.size * 4
-
 	def analyse_end(self, ins):
 		self.ended = True
 
@@ -242,28 +273,30 @@ class EvListAnalyser:
 		0xD: analyse_entry, # ASME
 	}
 
-	def __init__(self, analyser, input, address, name):
+	def __init__(self, reference, analyser, input, address, name):
 		self.analyser = analyser
 		self.input = input
 		self.address = address
 		self.name = name
 
+		self.insReference = reference
+
 		self.ended = False
 
 	def analyse_next(self):
-		ins = EvListAnalyser.Ins.read_from_file(self.input, self.address)
+		ins = EvListIns.read_from_file(self.input, self.address, self.insReference)
 
 		if ins.code in EvListAnalyser.CODE_HANDLER_DICT:
 			EvListAnalyser.CODE_HANDLER_DICT[ins.code](self, ins)
 
 		self.address += ins.get_byte_size()
 
-def analyse_event_list(analyser, input, address, name):
+def analyse_event_list(analyser, input, address, name, reference = InsReference(FE6_ELIST_INS_REFERENCE_ADDR)):
 	"""
 	Analysis handler for event lists ("main codes").
 	"""
 
-	ea = EvListAnalyser(analyser, input, address, name)
+	ea = EvListAnalyser(reference, analyser, input, address, name)
 
 	while not ea.ended:
 		ea.analyse_next()
@@ -291,41 +324,40 @@ def analyse_chapter_events(analyser, input, address, name):
 	return anal.AnalysedObject(
 		address, 0x1C, ANAL_KEY_PTRLIST, anal.read_data_at(input, address, 0x1C), name)
 
-def make_fe6_analyser():
-	result = anal.RomAnalyser()
-
-	result.set_analysis_handler(ANAL_KEY_SCENE, analyse_scene)
-	result.set_analysis_handler(ANAL_KEY_MOMA, analyse_moma)
-	result.set_analysis_handler(ANAL_KEY_UNITS, analyse_units)
-	result.set_analysis_handler(ANAL_KEY_ITEMS, analyse_items)
-	result.set_analysis_handler(ANAL_KEY_EVLIST, analyse_event_list)
-	result.set_analysis_handler(ANAL_KEY_PTRLIST, analyse_chapter_events)
-
-	return result
-
 def main(args):
+	def show_exception_and_exit(exc_type, exc_value, tb):
+		import traceback
+
+		traceback.print_exception(exc_type, exc_value, tb)
+		sys.exit(-1)
+
+	sys.excepthook = show_exception_and_exit
+
 	if (len(args) == 0):
 		sys.exit(":(")
 
-	analyser = make_fe6_analyser()
+	analyser = anal.RomAnalyser()
 
-	try:
-		with open(args[0], 'rb') as f:
-			CHAPTER_TABLE_ADDR = 0x086637A4
-			CHAPTER_ASSET_ADDR = 0x08664398
+	analyser.set_analysis_handler(ANAL_KEY_SCENE, analyse_scene)
+	analyser.set_analysis_handler(ANAL_KEY_MOMA, analyse_moma)
+	analyser.set_analysis_handler(ANAL_KEY_UNITS, analyse_units)
+	analyser.set_analysis_handler(ANAL_KEY_ITEMS, analyse_items)
+	analyser.set_analysis_handler(ANAL_KEY_EVLIST, analyse_event_list)
+	analyser.set_analysis_handler(ANAL_KEY_PTRLIST, analyse_chapter_events)
 
-			for i in range(45):
-				f.seek(anal.addr_to_offset(CHAPTER_TABLE_ADDR + 0x44*i + 0x3A))
-				assetId = anal.read_int(f, 1)
+	with open(args[0], 'rb') as f:
+		CHAPTER_TABLE_ADDR = 0x086637A4
+		CHAPTER_ASSET_ADDR = 0x08664398
 
-				if assetId != 0:
-					f.seek(anal.addr_to_offset(CHAPTER_ASSET_ADDR + 4*assetId))
-					analyser.enqueue_analysis(anal.read_int(f, 4), ANAL_KEY_PTRLIST, "chapter{}".format(i))
+		for i in range(45):
+			f.seek(anal.addr_to_offset(CHAPTER_TABLE_ADDR + 0x44*i + 0x3A))
+			assetId = anal.read_int(f, 1)
 
-			analyser.analyse_queued(f)
+			if assetId != 0:
+				f.seek(anal.addr_to_offset(CHAPTER_ASSET_ADDR + 4*assetId))
+				analyser.enqueue_analysis(anal.read_int(f, 4), ANAL_KEY_PTRLIST, "chapter{}".format(i))
 
-	except Exception as e:
-		sys.exit('ERROR: {}'.format(e.__repr__()))
+		analyser.analyse_queued(f)
 
 	for line in analyser.iter_pretty_summary():
 		print(line)

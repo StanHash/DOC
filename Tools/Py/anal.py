@@ -194,9 +194,9 @@ class AnalysisPrinter:
 
 	def iter_print_list(self, analysedList):
 		for analysed in analysedList:
-			yield "{} {} at {:08X}:".format(analysed.type, analysed.name, analysed.address)
+			yield "{} {} at {:08X}:\n".format(analysed.type, analysed.name, analysed.address)
 
 			for line in self.iter_print(analysed):
-				yield "  {}\n".format(line)
+				yield "  {}".format(line)
 
 			yield "\n"
