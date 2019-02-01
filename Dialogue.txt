@@ -13,9 +13,9 @@ Dialogue Struct Layout: (FE8U:03000048)
     +0C | byte    | 
     +0D | byte    | 
     +0E | byte    | tile width of the text box?
-    +0F | sbyte   | 
-    +10 | byte    | 
-    +11 | byte    | current active face position index (0xFF for none)
+    +0F | sbyte   | speaking face position index (0xFF for none?)
+    +10 | byte    | some face position index
+    +11 | byte    | selected face position index (0xFF for none)
     +12 | byte    | when non-zero, text is displayed instantly (set when user presses a button mid-scroll)
     +13 | byte    | delay between character display
     +14 | byte    | frame counted for character display
@@ -25,6 +25,7 @@ Dialogue Struct Layout: (FE8U:03000048)
     +18 | word[8] | Face proc pointer array (one for each possible face position?)
     +38 | word    | 
     +3C | word    | a number
+    +60 | char[]  | string to be displays with text code '[0x80][0x06]' (?)
     +80 | short   | config bitfield/dialogue flags
                 & 0x001 | 
                 & 0x002 | 
