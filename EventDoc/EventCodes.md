@@ -1279,11 +1279,30 @@ Loads a single unit give character id and target position.
 
 The unit's class will be the character's default. The character's stats and level will be the character's bases. The loaded units won't start with any items, with null AI **and with the "drop item" state set**.
 
-If CharId is `-3`/`0xFFFD`, the loaded character id is read from `s2`.
+If `CharId` is `-3`/`0xFFFD`, the loaded character id is read from `s2`.
 
 If X and Y are negative, the target position is read from `sB`.
 
 `SPAWN_CUTSCENE_ALLY` loads a "cutscene unit" in very much the any `2C : load units` with restriction `2` would.
+
+---
+
+</details>
+
+<details>
+<summary>33 : check unit state (CHECK_xyz)</summary>
+
+```
+[3320] CHECK_EXISTS CharId
+[3321] CHECK_STATUS CharId
+[3322] CHECK_ALIVE CharId
+[3323] CHECK_DEPLOYED CharId
+[3324] CHECK_ACTIVEID CharId
+[3325] CHECK_ALLEGIANCE CharId
+[3326] CHECK_COORDS CharId
+[3327] CHECK_CLASS CharId
+[3328] CHECK_LUCK CharId
+```
 
 ---
 

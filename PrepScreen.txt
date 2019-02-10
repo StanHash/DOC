@@ -78,3 +78,33 @@ prep screen menu item dummy proc: (src: FE8U:8A186DC)
     3C | TextHandle
 
 The prep screen menu system seems generic enough that it could be used for any menu.
+
+PREP SCREEN ITEM USE SCREEN (thanks circles):
+    proc layout (scr: FE8U:08A19064)
+        00 | header
+
+        2C | word | unit pointer
+        30 | word | current hovered item index
+        38 | word | current hovered item index for help text (0xFF if none)
+
+    proc scr labels:
+        label 0 (FE8U:08A1906C): start (fade in)
+        label 1 (FE8U:08A19094): main idle (handles keyin, jumping to label 2, 6, and displaying/managing help text)
+        label 2 (FE8U:08A190A4): "are you sure"? jumps to either 1 or 3.
+        label 3 (FE8U:08A190C4): do use item. Jumps to 4, 5, or falls through depending on item id.
+                (FE8U:08A190D4): (fallback from label 3) stat boost use effect. calls blocking proc (src: FE8U:08A191A4). jumps to 1 when finished.
+        label 4 (FE8U:08A190E4): juna fruit use effect. calls blocking proc (src: FE8U:08A191C4). jumps to 1 when finished.
+        label 5 (FE8U:08A190FC): promotion use effect. inline (no blocking proc). jumps to 1 when finished.
+        label 6 (FE8U:08A19174): fade out into end
+        label 7 (FE8U:08A1918C): end
+
+    0809C4E4 (called under label 0, and towards the end of promotion effect) is what draws everything. It sets up a "parallel worker" proc that updates the sms.
+    promotion effect fades into a completely different screen and calls promotion stuff once there.
+
+PREP SCREEN HAND CURSOR:
+    proc layout (src: FE8U:08A20C1C)
+        00 | header
+
+        ??
+
+    It is accessed through a single instance and functions calling FindProc (or whataver name is used for that function in your env)
