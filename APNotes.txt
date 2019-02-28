@@ -1,6 +1,7 @@
 FE8U
 
 See also decomp files src/ap.c and include/ap.h.
+(https://github.com/FireEmblemUniverse/fireemblem8u)
 
 AP is the name I'll give to the RAM struct initialized with the "Other Pointer" in the Moving Map Sprite table. With time I discovered that it was used in some other cases, like the prep menu/warp move unit cursor. The big thing is that is can be used to animate shit, using a definition in ROM (we back to the MMS "Other Pointer") (see ROMAP).
 
@@ -23,18 +24,18 @@ AP: (Size: 0x28) Array of 20 of those located at 03000108
 AP Data:
 	00 | short | Relative Offset to Frame Data Ref Array
 	02 | short | Relative Offset to Anim Data Ref Array
-	
+
 	AP Data Ref Arrays:
 		Arrays of shorts that are relative offsets (relative *to the array*) to the relevant data
-	
+
 	Anim Data:
 		Arrays of pairs of shorts:
 			00 | short | cycle time of this anim frame
 		if cycle time is non 0:
 			02 | short | Frame index of this anim frame
 		if cycle time is 0:
-			02 | short | 0 = Error, 1 = End/Free Anim/AP, FFFF = Loop back to start of Anim, other = same as with std cycle
-	
+			02 | short | 0 = End animation (AP_Update returns 0), 1 = End/Free Anim/AP, FFFF = Loop back to start of Anim, other = same as with std cycle
+
 	Frame Data:
 		Your standard OAM Data (first short is number of parts, then array of three shorts that define base OAM data for that part)
 		OR, when the top bit of the first short is set, then the OAM Data is at FrameData + 2 + [first short ignoring the top bit], the part before it is used to do some trigonometry and shit, so I guess that thing handles transformations as well? neat

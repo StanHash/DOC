@@ -1,0 +1,242 @@
+ap_data:
+	SHORT (frame_list - ap_data) (anim_list - ap_data) // header
+
+frame_list: // +$4
+	SHORT (frame_0 - frame_list)
+	SHORT (frame_1 - frame_list)
+	SHORT (frame_2 - frame_list)
+	SHORT (frame_3 - frame_list)
+	SHORT (frame_4 - frame_list)
+	SHORT (frame_5 - frame_list)
+	SHORT (frame_6 - frame_list)
+	SHORT (frame_7 - frame_list)
+	SHORT (frame_8 - frame_list)
+	SHORT (frame_9 - frame_list)
+	SHORT (frame_10 - frame_list)
+	SHORT (frame_11 - frame_list)
+	SHORT (frame_12 - frame_list)
+	SHORT (frame_13 - frame_list)
+	SHORT (frame_14 - frame_list)
+	SHORT (frame_15 - frame_list)
+	SHORT (frame_16 - frame_list)
+	SHORT (frame_17 - frame_list)
+	SHORT (frame_18 - frame_list)
+	SHORT (frame_19 - frame_list)
+	SHORT (frame_20 - frame_list)
+	SHORT (frame_21 - frame_list)
+
+anim_list: // +$30
+	SHORT (anim_0 - anim_list)
+	SHORT (anim_1 - anim_list)
+	SHORT (anim_2 - anim_list)
+	SHORT (anim_3 - anim_list)
+	SHORT (anim_4 - anim_list)
+	SHORT (anim_5 - anim_list)
+	SHORT (anim_6 - anim_list)
+
+frame_0: // +$3E
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x81F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0
+	SHORT 0x0 // 0 : sheet tile id
+
+frame_1: // +$48
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x81F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0
+	SHORT 0x10 // 0 : sheet tile id
+
+frame_2: // +$52
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x81F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0
+	SHORT 0x20 // 0 : sheet tile id
+
+frame_3: // +$5C
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x81F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0
+	SHORT 0x30 // 0 : sheet tile id
+
+frame_4: // +$66
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x91F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0, hflip
+	SHORT 0x0 // 0 : sheet tile id
+
+frame_5: // +$70
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x91F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0, hflip
+	SHORT 0x10 // 0 : sheet tile id
+
+frame_6: // +$7A
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x91F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0, hflip
+	SHORT 0x20 // 0 : sheet tile id
+
+frame_7: // +$84
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x91F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0, hflip
+	SHORT 0x30 // 0 : sheet tile id
+
+frame_8: // +$8E
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x81F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0
+	SHORT 0x4A // 0 : sheet tile id
+
+frame_9: // +$98
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x81F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0
+	SHORT 0x5A // 0 : sheet tile id
+
+frame_10: // +$A2
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x81F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0
+	SHORT 0x6A // 0 : sheet tile id
+
+frame_11: // +$AC
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x81F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0
+	SHORT 0x7A // 0 : sheet tile id
+
+frame_12: // +$B6
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x81F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0
+	SHORT 0x90 // 0 : sheet tile id
+
+frame_13: // +$C0
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x81F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0
+	SHORT 0xA0 // 0 : sheet tile id
+
+frame_14: // +$CA
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x81F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0
+	SHORT 0xB0 // 0 : sheet tile id
+
+frame_15: // +$D4
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x81F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0
+	SHORT 0xC0 // 0 : sheet tile id
+
+frame_16: // +$DE
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x81F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0
+	SHORT 0xF0 // 0 : sheet tile id
+
+frame_17: // +$E8
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x81F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0
+	SHORT 0xE0 // 0 : sheet tile id
+
+frame_18: // +$F2
+	SHORT 1 // oam entries
+	SHORT 0x00E0 0x81F0 0x0000 // 0 : 32x32 at [-16, -32], tile +0
+	SHORT 0xD0 // 0 : sheet tile id
+
+frame_19: // +$FC
+	SHORT 5 // oam entries
+	SHORT 0x00E1 0x41F8 0x0000 // 0 : 16x16 at [-8, -31], tile +0
+	SHORT 0x80E1 0x0008 0x0002 // 1 : 8x16 at [8, -31], tile +2
+	SHORT 0x00FA 0x01FB 0x0003 // 2 : 8x8 at [-5, -6], tile +3
+	SHORT 0x00FA 0x01FE 0x0004 // 3 : 8x8 at [-2, -6], tile +4
+	SHORT 0x00F1 0x01FC 0x0005 // 4 : 8x8 at [-4, -15], tile +5
+	SHORT 0x40 // 0 : sheet tile id
+	SHORT 0x44 // 1 : sheet tile id
+	SHORT 0x48 // 2 : sheet tile id
+	SHORT 0x48 // 3 : sheet tile id
+	SHORT 0x46 // 4 : sheet tile id
+
+frame_20: // +$126
+	SHORT 5 // oam entries
+	SHORT 0x00E4 0x41F8 0x0000 // 0 : 16x16 at [-8, -28], tile +0
+	SHORT 0x80E4 0x0008 0x0002 // 1 : 8x16 at [8, -28], tile +2
+	SHORT 0x00FB 0x01FA 0x0003 // 2 : 8x8 at [-6, -5], tile +3
+	SHORT 0x00FB 0x01FF 0x0004 // 3 : 8x8 at [-1, -5], tile +4
+	SHORT 0x00F4 0x01FC 0x0005 // 4 : 8x8 at [-4, -12], tile +5
+	SHORT 0x40 // 0 : sheet tile id
+	SHORT 0x44 // 1 : sheet tile id
+	SHORT 0x48 // 2 : sheet tile id
+	SHORT 0x48 // 3 : sheet tile id
+	SHORT 0x46 // 4 : sheet tile id
+
+frame_21: // +$150
+	SHORT 7 // oam entries
+	SHORT 0x00E7 0x41F0 0x0000 // 0 : 16x16 at [-16, -25], tile +0
+	SHORT 0x80E7 0x0000 0x0002 // 1 : 8x16 at [0, -25], tile +2
+	SHORT 0x00F7 0x0002 0x0003 // 2 : 8x8 at [2, -9], tile +3
+	SHORT 0x00F7 0x01FC 0x0004 // 3 : 8x8 at [-4, -9], tile +4
+	SHORT 0x00F7 0x11F7 0x0005 // 4 : 8x8 at [-9, -9], tile +5, hflip
+	SHORT 0x00FB 0x01FA 0x0006 // 5 : 8x8 at [-6, -5], tile +6
+	SHORT 0x00FB 0x01FF 0x0007 // 6 : 8x8 at [-1, -5], tile +7
+	SHORT 0x8A // 0 : sheet tile id
+	SHORT 0x8E // 1 : sheet tile id
+	SHORT 0x47 // 2 : sheet tile id
+	SHORT 0x49 // 3 : sheet tile id
+	SHORT 0x47 // 4 : sheet tile id
+	SHORT 0x48 // 5 : sheet tile id
+	SHORT 0x48 // 6 : sheet tile id
+
+anim_0: // +$18A
+	SHORT 13  0
+	SHORT  6  1
+	SHORT 13  2
+	SHORT  6  3
+
+	SHORT 0 (-1) // loop back to start
+
+anim_1: // +$19E
+	SHORT 13  4
+	SHORT  6  5
+	SHORT 13  6
+	SHORT  6  7
+
+	SHORT 0 (-1) // loop back to start
+
+anim_2: // +$1B2
+	SHORT 13  8
+	SHORT  6  9
+	SHORT 13 10
+	SHORT  6 11
+
+	SHORT 0 (-1) // loop back to start
+
+anim_3: // +$1C6
+	SHORT 13 12
+	SHORT  6 13
+	SHORT 13 14
+	SHORT  6 15
+
+	SHORT 0 (-1) // loop back to start
+
+anim_4: // +$1DA
+	SHORT 20 16
+	SHORT  4 17
+	SHORT 20 18
+	SHORT  4 17
+
+	SHORT 0 (-1) // loop back to start
+
+anim_5: // +$1EE
+	SHORT  5  0
+	SHORT  3 12
+	SHORT  2 14
+	SHORT  3  5
+	SHORT  2  7
+	SHORT  3  8
+	SHORT  2  9
+	SHORT  3 20
+	SHORT 15 19
+	SHORT  3 20
+	SHORT  1 21
+
+	SHORT 0 0 // end current animation
+
+anim_6: // +$222
+	SHORT  5  0
+	SHORT  3 12
+	SHORT  2 14
+	SHORT  3  5
+	SHORT  2  7
+	SHORT  3  8
+	SHORT  2  9
+	SHORT  3 20
+	SHORT  1 19
+
+	SHORT 0 0 // end current animation
+

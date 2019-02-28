@@ -43,6 +43,41 @@ def gen_label_expr_ea(name, comment = None):
 	result += '\n'
 	return result
 
+def gen_oam_details_comment(oam0, oam1, oam2):
+	sizestr = (
+		("8x8", "16x16", "32x32", "64x64"), # shape 0 : square
+		("16x8", "32x8", "32x16", "64x32"), # shape 1 : horizontal
+		("8x16", "8x32", "16x32", "32x64"), # shape 2 : vertical
+		("<invalid>", "<invalid>", "<invalid>", "<invalid>")
+	)[(oam0 >> 14) & 0x3][(oam1 >> 14) & 0x3]
+
+	x = oam1 & 0x1FF
+	y = oam0 & 0x0FF
+
+	if x & 0x100:
+		x = (x & 0xFF) - 256
+
+	if y & 0x080:
+		y = (y & 0x7F) - 128
+
+	result = "{} at [{}, {}], tile +{}".format(
+		sizestr, x, y, oam2 & 0x3FF)
+
+	if oam2 & 0xF000:
+		result += ", pal +{}".format((oam2 & 0xF000) >> 12)
+
+	if oam0 & 0x0C00:
+		result += ", {}".format(
+			("", "semi-transparent", "obj window", "<invalid>")[(oam0 & 0x0C00) >> 10])
+
+	if oam1 & 0x1000:
+		result += ", hflip"
+
+	if oam1 & 0x2000:
+		result += ", vflip"
+
+	return result
+
 class FrameData:
 
 	def __init__(self, input):
@@ -56,7 +91,7 @@ class FrameData:
 		if (count & 0x8000) == 0x8000:
 			count = count & 0x7FFF # RotScale count
 
-			for i in range(count):
+			for _ in range(count):
 				alpha = read_int16(input)
 				xMag = read_int16(input)
 				yMag = read_int16(input)
@@ -67,7 +102,7 @@ class FrameData:
 			count = read_int16(input)
 
 		# Handle Obj data
-		for i in range(count):
+		for _ in range(count):
 			oam0 = read_int16(input)
 			oam1 = read_int16(input)
 			oam2 = read_int16(input)
@@ -76,7 +111,7 @@ class FrameData:
 
 	def load_sheet_indices(self, input):
 		# One sheet index for each OAM entry
-		for i in range(len(self.entries)):
+		for _ in range(len(self.entries)):
 			self.gfxEntries.append(read_int16(input))
 
 	def to_asm(self, gen_2byte_expr):
@@ -93,13 +128,16 @@ class FrameData:
 		i = 0
 
 		for oam0, oam1, oam2 in self.entries:
-			result += gen_2byte_expr(map(lambda x: '0x{:X}'.format(x), [oam0, oam1, oam2]), 'OAM Data #{}'.format(i))
+			result += gen_2byte_expr(map(
+				lambda x: '0x{:04X}'.format(x), [oam0, oam1, oam2]), '{} : {}'.format(
+					i, gen_oam_details_comment(oam0, oam1, oam2)))
+
 			i += 1
 
 		i = 0
 
 		for gfx in self.gfxEntries:
-			result += gen_2byte_expr(['0x{:X}'.format(gfx)], 'Sheet Tile #{}'.format(i))
+			result += gen_2byte_expr(['0x{:X}'.format(gfx)], '{} : sheet tile id'.format(i))
 			i += 1
 
 		return result
@@ -121,8 +159,8 @@ if __name__ == '__main__':
 		sys.exit("Error: file `{}` does not exist".format(fName))
 
 	# Replacing those with their ea alternatives work
-	gen_2byte_expr = gen_2byte_expr_asm
-	gen_label_expr = gen_label_expr_asm
+	gen_2byte_expr = gen_2byte_expr_ea
+	gen_label_expr = gen_label_expr_ea
 
 	with open(fName, 'rb') as file:
 		baseOffset = 0 # offset whithin file of where the ap data is located 
