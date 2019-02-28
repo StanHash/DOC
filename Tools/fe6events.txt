@@ -1,0 +1,10186 @@
+evlist chapter0.turn at 08667640:
+  <no available representation>
+
+evlist chapter0.char at 08667698:
+  <no available representation>
+
+evlist chapter0.loca at 0866769C:
+  <no available representation>
+
+evlist chapter0.action at 086676C4:
+  <no available representation>
+
+chapter chapter0 at 086676F0:
+  <no available representation>
+
+evlist chapter1.turn at 0866770C:
+  <no available representation>
+
+evlist chapter1.char at 08667728:
+  <no available representation>
+
+evlist chapter1.loca at 0866772C:
+  <no available representation>
+
+evlist chapter1.action at 08667790:
+  <no available representation>
+
+chapter chapter1 at 086677A0:
+  <no available representation>
+
+evlist chapter2.turn at 086677BC:
+  <no available representation>
+
+evlist chapter2.char at 086677D8:
+  <no available representation>
+
+evlist chapter2.loca at 086677F4:
+  <no available representation>
+
+evlist chapter2.action at 08667858:
+  <no available representation>
+
+chapter chapter2 at 08667868:
+  <no available representation>
+
+evlist chapter3.turn at 08667884:
+  <no available representation>
+
+evlist chapter3.char at 086678DC:
+  <no available representation>
+
+evlist chapter3.loca at 086678F8:
+  <no available representation>
+
+evlist chapter3.action at 08667950:
+  <no available representation>
+
+chapter chapter3 at 08667960:
+  <no available representation>
+
+evlist chapter4.turn at 0866797C:
+  <no available representation>
+
+evlist chapter4.char at 08667A1C:
+  <no available representation>
+
+evlist chapter4.loca at 08667A38:
+  <no available representation>
+
+evlist chapter4.action at 08667ACC:
+  <no available representation>
+
+chapter chapter4 at 08667ADC:
+  <no available representation>
+
+evlist chapter5.turn at 08667AF8:
+  <no available representation>
+
+evlist chapter5.char at 08667B44:
+  <no available representation>
+
+evlist chapter5.loca at 08667B48:
+  <no available representation>
+
+evlist chapter5.action at 08667BA0:
+  <no available representation>
+
+chapter chapter5 at 08667BBC:
+  <no available representation>
+
+evlist chapter6.turn at 08667BD8:
+  <no available representation>
+
+evlist chapter6.char at 08667C48:
+  <no available representation>
+
+evlist chapter6.loca at 08667C64:
+  <no available representation>
+
+evlist chapter6.action at 08667D4C:
+  <no available representation>
+
+chapter chapter6 at 08667D5C:
+  <no available representation>
+
+evlist chapter7.turn at 08667D78:
+  <no available representation>
+
+evlist chapter7.char at 08667DDC:
+  <no available representation>
+
+evlist chapter7.loca at 08667E4C:
+  <no available representation>
+
+evlist chapter7.action at 08667F7C:
+  <no available representation>
+
+chapter chapter7 at 08667FA4:
+  <no available representation>
+
+evlist chapter8.turn at 08667FC0:
+  <no available representation>
+
+evlist chapter8.char at 08668024:
+  <no available representation>
+
+evlist chapter8.loca at 08668070:
+  <no available representation>
+
+evlist chapter8.action at 08668110:
+  <no available representation>
+
+chapter chapter8 at 0866812C:
+  <no available representation>
+
+evlist chapter9.turn at 08668148:
+  <no available representation>
+
+evlist chapter9.char at 0866817C:
+  <no available representation>
+
+evlist chapter9.loca at 08668198:
+  <no available representation>
+
+evlist chapter9.action at 08668238:
+  <no available representation>
+
+chapter chapter9 at 08668248:
+  <no available representation>
+
+evlist chapter10.turn at 08668264:
+  <no available representation>
+
+evlist chapter10.char at 08668304:
+  <no available representation>
+
+evlist chapter10.loca at 08668320:
+  <no available representation>
+
+evlist chapter10.action at 08668354:
+  <no available representation>
+
+chapter chapter10 at 08668364:
+  <no available representation>
+
+evlist chapter11.turn at 08668380:
+  <no available representation>
+
+evlist chapter11.char at 08668420:
+  <no available representation>
+
+evlist chapter11.loca at 08668490:
+  <no available representation>
+
+evlist chapter11.action at 08668578:
+  <no available representation>
+
+chapter chapter11 at 08668588:
+  <no available representation>
+
+evlist chapter12.turn at 086685A4:
+  <no available representation>
+
+evlist chapter12.char at 08668620:
+  <no available representation>
+
+evlist chapter12.loca at 08668678:
+  <no available representation>
+
+evlist chapter12.action at 08668718:
+  <no available representation>
+
+chapter chapter12 at 08668728:
+  <no available representation>
+
+evlist chapter13.turn at 08668744:
+  <no available representation>
+
+evlist chapter13.char at 086687FC:
+  <no available representation>
+
+evlist chapter13.loca at 08668818:
+  <no available representation>
+
+evlist chapter13.action at 08668894:
+  <no available representation>
+
+chapter chapter13 at 086688B0:
+  <no available representation>
+
+evlist chapter14.turn at 086688CC:
+  <no available representation>
+
+evlist chapter14.char at 08668948:
+  <no available representation>
+
+evlist chapter14.loca at 0866894C:
+  <no available representation>
+
+evlist chapter14.action at 0866898C:
+  <no available representation>
+
+chapter chapter14 at 086689FC:
+  <no available representation>
+
+evlist chapter15.turn at 08668A18:
+  <no available representation>
+
+evlist chapter15.char at 08668A4C:
+  <no available representation>
+
+evlist chapter15.loca at 08668A80:
+  <no available representation>
+
+evlist chapter15.action at 08668AE4:
+  <no available representation>
+
+chapter chapter15 at 08668AF4:
+  <no available representation>
+
+evlist chapter16.turn at 08668B10:
+  <no available representation>
+
+evlist chapter16.char at 08668B5C:
+  <no available representation>
+
+evlist chapter16.loca at 08668BC0:
+  <no available representation>
+
+evlist chapter16.action at 08668C84:
+  <no available representation>
+
+chapter chapter16 at 08668C94:
+  <no available representation>
+
+evlist chapter17.turn at 08668CB0:
+  <no available representation>
+
+evlist chapter17.char at 08668D2C:
+  <no available representation>
+
+evlist chapter17.loca at 08668D30:
+  <no available representation>
+
+evlist chapter17.action at 08668D7C:
+  <no available representation>
+
+chapter chapter17 at 08668D8C:
+  <no available representation>
+
+evlist chapter18.turn at 08668DA8:
+  <no available representation>
+
+evlist chapter18.char at 08668E90:
+  <no available representation>
+
+evlist chapter18.loca at 08668E94:
+  <no available representation>
+
+evlist chapter18.action at 08668F1C:
+  <no available representation>
+
+chapter chapter18 at 08668F2C:
+  <no available representation>
+
+evlist chapter19.turn at 08668F48:
+  <no available representation>
+
+evlist chapter19.char at 08668F7C:
+  <no available representation>
+
+evlist chapter19.loca at 08668F80:
+  <no available representation>
+
+evlist chapter19.action at 08668FFC:
+  <no available representation>
+
+chapter chapter19 at 0866900C:
+  <no available representation>
+
+evlist chapter20.turn at 08669028:
+  <no available representation>
+
+evlist chapter20.char at 08669080:
+  <no available representation>
+
+evlist chapter20.loca at 086690FC:
+  <no available representation>
+
+evlist chapter20.action at 086691C0:
+  <no available representation>
+
+chapter chapter20 at 086691DC:
+  <no available representation>
+
+evlist chapter21.turn at 086691F8:
+  <no available representation>
+
+evlist chapter21.char at 08669250:
+  <no available representation>
+
+evlist chapter21.loca at 0866929C:
+  <no available representation>
+
+evlist chapter21.action at 086692E8:
+  <no available representation>
+
+chapter chapter21 at 086692F8:
+  <no available representation>
+
+evlist chapter22.turn at 08669314:
+  <no available representation>
+
+evlist chapter22.char at 08669420:
+  <no available representation>
+
+evlist chapter22.loca at 08669430:
+  <no available representation>
+
+evlist chapter22.action at 08669488:
+  <no available representation>
+
+chapter chapter22 at 086694BC:
+  <no available representation>
+
+evlist chapter23.turn at 086694D8:
+  <no available representation>
+
+evlist chapter23.char at 086694F4:
+  <no available representation>
+
+evlist chapter23.loca at 08669540:
+  <no available representation>
+
+evlist chapter23.action at 0866958C:
+  <no available representation>
+
+chapter chapter23 at 0866959C:
+  <no available representation>
+
+evlist chapter24.turn at 086695B8:
+  <no available representation>
+
+evlist chapter24.char at 08669610:
+  <no available representation>
+
+evlist chapter24.loca at 08669614:
+  <no available representation>
+
+evlist chapter24.action at 0866966C:
+  <no available representation>
+
+chapter chapter24 at 0866967C:
+  <no available representation>
+
+evlist chapter25.turn at 08669698:
+  <no available representation>
+
+evlist chapter25.char at 086696B4:
+  <no available representation>
+
+evlist chapter25.loca at 086696B8:
+  <no available representation>
+
+evlist chapter25.action at 086696BC:
+  <no available representation>
+
+chapter chapter25 at 086696CC:
+  <no available representation>
+
+evlist chapter26.turn at 086696E8:
+  <no available representation>
+
+evlist chapter26.char at 08669794:
+  <no available representation>
+
+evlist chapter26.loca at 08669804:
+  <no available representation>
+
+evlist chapter26.action at 086698C8:
+  <no available representation>
+
+chapter chapter26 at 086698D8:
+  <no available representation>
+
+evlist chapter27.turn at 086698F4:
+  <no available representation>
+
+evlist chapter27.char at 086699B8:
+  <no available representation>
+
+evlist chapter27.loca at 086699F8:
+  <no available representation>
+
+evlist chapter27.action at 08669A44:
+  <no available representation>
+
+chapter chapter27 at 08669A54:
+  <no available representation>
+
+evlist chapter28.turn at 08669A70:
+  <no available representation>
+
+evlist chapter28.char at 08669AE0:
+  <no available representation>
+
+evlist chapter28.loca at 08669AE4:
+  <no available representation>
+
+evlist chapter28.action at 08669B48:
+  <no available representation>
+
+chapter chapter28 at 08669B58:
+  <no available representation>
+
+evlist chapter29.turn at 08669B74:
+  <no available representation>
+
+evlist chapter29.char at 08669BF0:
+  <no available representation>
+
+evlist chapter29.loca at 08669BF4:
+  <no available representation>
+
+evlist chapter29.action at 08669C4C:
+  <no available representation>
+
+chapter chapter29 at 08669C80:
+  <no available representation>
+
+evlist chapter30.turn at 08669C9C:
+  <no available representation>
+
+evlist chapter30.char at 08669D54:
+  <no available representation>
+
+evlist chapter30.loca at 08669D64:
+  <no available representation>
+
+evlist chapter30.action at 08669E04:
+  <no available representation>
+
+chapter chapter30 at 08669E14:
+  <no available representation>
+
+evlist chapter31.turn at 08669E30:
+  <no available representation>
+
+evlist chapter31.char at 08669E70:
+  <no available representation>
+
+evlist chapter31.loca at 08669ED4:
+  <no available representation>
+
+evlist chapter31.action at 08669F68:
+  <no available representation>
+
+chapter chapter31 at 08669F78:
+  <no available representation>
+
+evlist chapter32.turn at 08669F94:
+  <no available representation>
+
+evlist chapter32.char at 08669FA4:
+  <no available representation>
+
+evlist chapter32.loca at 08669FA8:
+  <no available representation>
+
+evlist chapter32.action at 08669FB8:
+  <no available representation>
+
+chapter chapter32 at 08669FC8:
+  <no available representation>
+
+evlist chapter33.loca at 08669FE4:
+  <no available representation>
+
+evlist chapter33.turn at 0866A084:
+  <no available representation>
+
+evlist chapter33.char at 0866A094:
+  <no available representation>
+
+evlist chapter33.action at 0866A098:
+  <no available representation>
+
+chapter chapter33 at 0866A0A8:
+  <no available representation>
+
+evlist chapter34.turn at 0866A0C4:
+  <no available representation>
+
+evlist chapter34.char at 0866A0D4:
+  <no available representation>
+
+evlist chapter34.loca at 0866A0D8:
+  <no available representation>
+
+evlist chapter34.action at 0866A0E8:
+  <no available representation>
+
+chapter chapter34 at 0866A0F8:
+  <no available representation>
+
+evlist chapter35.turn at 0866A114:
+  <no available representation>
+
+evlist chapter35.char at 0866A160:
+  <no available representation>
+
+evlist chapter35.loca at 0866A164:
+  <no available representation>
+
+evlist chapter35.action at 0866A174:
+  <no available representation>
+
+chapter chapter35 at 0866A184:
+  <no available representation>
+
+evlist chapter36.turn at 0866A1A0:
+  <no available representation>
+
+evlist chapter36.char at 0866A1B0:
+  <no available representation>
+
+evlist chapter36.loca at 0866A1B4:
+  <no available representation>
+
+evlist chapter36.action at 0866A1C4:
+  <no available representation>
+
+chapter chapter36 at 0866A1D4:
+  <no available representation>
+
+evlist chapter37.turn at 0866A1F0:
+  <no available representation>
+
+evlist chapter37.char at 0866A200:
+  <no available representation>
+
+evlist chapter37.loca at 0866A204:
+  <no available representation>
+
+evlist chapter37.action at 0866A250:
+  <no available representation>
+
+chapter chapter37 at 0866A260:
+  <no available representation>
+
+evlist chapter38.turn at 0866A27C:
+  <no available representation>
+
+evlist chapter38.char at 0866A28C:
+  <no available representation>
+
+evlist chapter38.loca at 0866A290:
+  <no available representation>
+
+evlist chapter38.action at 0866A2E8:
+  <no available representation>
+
+chapter chapter38 at 0866A2F8:
+  <no available representation>
+
+evlist chapter40.turn at 0866A314:
+  <no available representation>
+
+evlist chapter40.char at 0866A354:
+  <no available representation>
+
+evlist chapter40.loca at 0866A358:
+  <no available representation>
+
+evlist chapter40.action at 0866A368:
+  <no available representation>
+
+chapter chapter40 at 0866A384:
+  <no available representation>
+
+evlist chapter41.turn at 0866A3A0:
+  <no available representation>
+
+evlist chapter41.char at 0866A590:
+  <no available representation>
+
+evlist chapter41.loca at 0866A594:
+  <no available representation>
+
+evlist chapter41.action at 0866A598:
+  <no available representation>
+
+chapter chapter41 at 0866A5B4:
+  <no available representation>
+
+evlist chapter42.turn at 0866A5D0:
+  <no available representation>
+
+evlist chapter42.char at 0866A634:
+  <no available representation>
+
+evlist chapter42.loca at 0866A638:
+  <no available representation>
+
+evlist chapter42.action at 0866A63C:
+  <no available representation>
+
+chapter chapter42 at 0866A664:
+  <no available representation>
+
+evlist chapter43.turn at 0866A680:
+  <no available representation>
+
+evlist chapter43.char at 0866A720:
+  <no available representation>
+
+evlist chapter43.loca at 0866A724:
+  <no available representation>
+
+evlist chapter43.action at 0866A728:
+  <no available representation>
+
+chapter chapter43 at 0866A75C:
+  <no available representation>
+
+evlist chapter44.turn at 0866A778:
+  <no available representation>
+
+evlist chapter44.char at 0866A7D0:
+  <no available representation>
+
+evlist chapter44.loca at 0866A7D4:
+  <no available representation>
+
+evlist chapter44.action at 0866A7D8:
+  <no available representation>
+
+chapter chapter44 at 0866A800:
+  <no available representation>
+
+items chapter2.loca.shop at 0866A81C:
+  <no available representation>
+
+items chapter2.loca.shop at 0866A820:
+  <no available representation>
+
+items chapter4.loca.shop at 0866A82A:
+  <no available representation>
+
+items chapter4.loca.shop at 0866A832:
+  <no available representation>
+
+items chapter5.loca.shop at 0866A844:
+  <no available representation>
+
+items chapter7.loca.shop at 0866A84E:
+  <no available representation>
+
+items chapter7.loca.shop at 0866A85E:
+  <no available representation>
+
+items chapter7.loca.shop at 0866A86C:
+  <no available representation>
+
+items chapter9.loca.shop at 0866A87C:
+  <no available representation>
+
+items chapter9.loca.shop at 0866A890:
+  <no available representation>
+
+items chapter11.loca.shop at 0866A8A0:
+  <no available representation>
+
+items chapter11.loca.shop at 0866A8B8:
+  <no available representation>
+
+items chapter13.loca.shop at 0866A8CA:
+  <no available representation>
+
+items chapter13.loca.shop at 0866A8E0:
+  <no available representation>
+
+items chapter14.loca.shop at 0866A8F8:
+  <no available representation>
+
+items chapter14.loca.shop at 0866A904:
+  <no available representation>
+
+items chapter15.loca.shop at 0866A918:
+  <no available representation>
+
+items chapter16.loca.shop at 0866A92A:
+  <no available representation>
+
+items chapter17.loca.shop at 0866A93A:
+  <no available representation>
+
+items chapter19.loca.shop at 0866A956:
+  <no available representation>
+
+items chapter20.loca.shop at 0866A96A:
+  <no available representation>
+
+items chapter20.loca.shop at 0866A98A:
+  <no available representation>
+
+items chapter21.loca.shop at 0866A99E:
+  <no available representation>
+
+items chapter21.loca.shop at 0866A9B0:
+  <no available representation>
+
+items chapter21.loca.shop at 0866A9C8:
+  <no available representation>
+
+items chapter23.loca.shop at 0866A9EC:
+  <no available representation>
+
+items chapter23.loca.shop at 0866AA12:
+  <no available representation>
+
+items chapter23.loca.shop at 0866AA2A:
+  <no available representation>
+
+items chapter23.loca.shop at 0866AA3C:
+  <no available representation>
+
+items chapter26.loca.shop at 0866AA4E:
+  <no available representation>
+
+items chapter27.loca.shop at 0866AA64:
+  <no available representation>
+
+items chapter28.loca.shop at 0866AA76:
+  <no available representation>
+
+items chapter29.loca.shop at 0866AA98:
+  <no available representation>
+
+items chapter29.loca.shop at 0866AAB0:
+  <no available representation>
+
+items chapter30.loca.shop at 0866AAC4:
+  <no available representation>
+
+items chapter30.loca.shop at 0866AAE4:
+  <no available representation>
+
+scene chapter6.char.scene at 0866ABA8:
+  GOTO_IFY_EID $2 103
+  _0x37 [50]
+  TEXT $97
+  TEXT_CLEAR
+  _0x32 [53, 3078]
+  _0x34 [103]
+  GOTO $9
+  LABEL $2
+  GOTO_IFY_EID $3 104
+  _0x37 [50]
+  TEXT $98
+  TEXT_CLEAR
+  _0x32 [53, 3078]
+  _0x34 [104]
+  GOTO $9
+  LABEL $3
+  _0x37 [51]
+  TEXT $99
+  TEXT_CLEAR
+  FACTION 53 0
+  _0x34 [105]
+  LABEL $9
+  _0x38 []
+  END?
+  END
+
+scene chapter0.action.scene at 0866AC6C:
+  _0x41 []
+  SLEEP 30
+  ASM 0806C609
+  SLEEP 10
+  ASM 080146BD
+  SLEEP 80
+  ASM 080608D5
+  GOTO_IFY_ASM $1 0806C62D
+  ASM 0801EA1D
+  LABEL $1
+  ASM 080987B9
+  END?
+  END
+
+scene chapter0.turn.scene at 0866AD18:
+  _0x41 []
+  CAMERA_FOLLOW_MOVE_OFF
+  _0x34 [4]
+  TEXT $14
+  TEXT_CLEAR
+  CURSOR [7, 6]
+  TEXT $15
+  CURSOR_CLEAR
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  LOAD 086799E4
+  MOVE_WAIT
+  LOAD 08679974
+  MOVE_WAIT
+  ASM 080163E5
+  END?
+  END
+
+scene chapter0.turn.scene at 0866AD78:
+  _0x41 []
+  LOAD 08679994
+  MOVE_WAIT
+  TEXT $36
+  TEXT_CLEAR
+  CAMERA 1
+  TEXT $37
+  TEXT_CLEAR
+  CAMERA [0, 2]
+  CURSOR [12, 3]
+  SLEEP 32
+  TEXT $38
+  CURSOR_CLEAR
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  CAMERA 1
+  END?
+  END
+
+scene chapter0.turn.scene at 0866ADE4:
+  _0x41 []
+  LOAD 086799B4
+  MOVE_WAIT
+  CAMERA [12, 9]
+  TEXT $39
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter0.turn.scene at 0866AE10:
+  _0x41 []
+  TEXT $16
+  TEXT_CLEAR
+  CAMERA [22, 4]
+  CURSOR [22, 4]
+  TEXT $17
+  CURSOR_CLEAR
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  CAMERA 1
+  TEXT $18
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter0.turn.scene at 0866AE60:
+  _0x41 []
+  TEXT $35
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter0.turn.scene at 0866AE78:
+  _0x41 []
+  TEXT $3B
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter0.turn.scene at 0866AE90:
+  _0x41 []
+  TEXT $44
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter0.loca.scene at 0866B2FC:
+  _0x41 []
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $49
+  TEXT_CLEAR
+  _0x3B []
+  MAPCHANGE 0
+  _0x40 []
+  ITEM 104
+  END?
+  END
+
+scene chapter0.action.scene at 0866B350:
+  _0x41 []
+  GOTO_IFY_ASM $A 0806CC09
+  GOTO_IFY_ASM $14 0806CC21
+  GOTO_IFY_ASM $1E 0806CC39
+  GOTO $63
+  LABEL $A
+  GOTO_IFN_ASM $C 0806CC81
+  GOTO_IFY_EID $C 14
+  _0x34 [14]
+  TEXT $1D
+  TEXT_CLEAR
+  GOTO $63
+  LABEL $C
+  GOTO_IFN_ASM $E 0806CC95
+  TEXT $2F
+  TEXT_CLEAR
+  GOTO $63
+  LABEL $E
+  ASM 0806CCC5
+  GOTO $63
+  LABEL $14
+  GOTO_IFN_ASM $16 0806CC81
+  GOTO_IFY_EID $16 15
+  _0x34 [15]
+  TEXT $22
+  TEXT_CLEAR
+  GOTO $63
+  LABEL $16
+  GOTO_IFN_ASM $18 0806CC95
+  TEXT $2F
+  TEXT_CLEAR
+  GOTO $63
+  LABEL $18
+  ASM 0806CCC5
+  GOTO $63
+  LABEL $1E
+  GOTO_IFN_ASM $20 0806CC81
+  GOTO_IFY_EID $20 16
+  _0x34 [16]
+  TEXT $28
+  TEXT_CLEAR
+  GOTO $63
+  LABEL $20
+  GOTO_IFN_ASM $22 0806CC95
+  TEXT $2F
+  TEXT_CLEAR
+  GOTO $63
+  LABEL $22
+  ASM 0806CCC5
+  LABEL $63
+  GOTO_IFY_EID $64 25
+  GOTO_IFN_ASM $64 0806CCE9
+  _0x34 [25]
+  TEXT $2C
+  TEXT_CLEAR
+  LABEL $64
+  GOTO_IFY_EID $6D 26
+  GOTO_IFN_ASM $6D 0806CD79
+  _0x34 [26]
+  TEXT $3D
+  TEXT_CLEAR
+  LABEL $6D
+  GOTO_IFY_EID $81 24
+  GOTO_IFN_ASM $81 0806CD35
+  _0x34 [24]
+  CAMERA [22, 4]
+  TEXT $3C
+  TEXT_CLEAR
+  LABEL $81
+  END?
+  END
+
+scene chapter0.ending at 0866B5A0:
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $4A
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [0]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter1.turn.scene at 0866B5F8:
+  CAMERA_FOLLOW_MOVE_OFF
+  LOAD 08679BE0
+  MOVE_WAIT
+  CURSOR_FLASH 74
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $1
+  TEXT_CLEAR
+  CAMERA [7, 9]
+  LOAD 08679CE0
+  MOVE_WAIT
+  CURSOR_FLASH [7, 7]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $2
+  TEXT_CLEAR
+  MOVE 224 [4, 9]
+  MOVE_WAIT
+  _0x3C [171]
+  MAPCHANGE [4, 8]
+  CURSOR_FLASH [5, 4]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $3
+  TEXT_MORE $4
+  TEXT_CLEAR
+  MOVE_WAIT
+  SLEEP 16
+  CAMERA [8, 12]
+  CAMERA_FOLLOW_MOVE_OFF
+  SLEEP 16
+  LOAD 08679C40
+  CAMERA [8, 17]
+  LOAD 08679C90
+  MOVE_WAIT
+  SLEEP 16
+  LOAD 08679B40
+  MOVE_WAIT
+  LOAD 08679B70
+  MOVE_WAIT
+  LOAD 08679BB0
+  MOVE_WAIT
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $6
+  TEXT_CLEAR
+  MOVE 28 [4, 18]
+  MOVE_WAIT
+  ASM 0806BFCD
+  ASM 0806BAF1
+  END?
+  END
+
+scene chapter1.turn.scene at 0866B79C:
+  _0x36 [2]
+  CAMERA [5, 3]
+  MOVE_WAIT
+  MOVE 74 [5, 4]
+  MOVE_WAIT
+  SLEEP 16
+  TEXT $8
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter1.loca.scene at 0866B7F8:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $A
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  MONEY 5000
+  END?
+  END
+
+scene chapter1.loca.scene at 0866B840:
+  _0x40 []
+  MONEY 5000
+  END?
+  END
+
+scene chapter1.loca.scene at 0866B854:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $B
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter1.loca.scene at 0866B890:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $C
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter1.loca.scene at 0866B8CC:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $D
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter1.ending at 0866B944:
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $11
+  GOTO_IFN_ASM $0 0806C1A5
+  TEXT_MORE $12
+  LABEL $0
+  TEXT_MORE $13
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [2]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+movescr chapter2.turn.scene.moma at 0866B9C4:
+  <no available representation>
+
+movescr chapter2.turn.scene.moma at 0866B9CA:
+  <no available representation>
+
+scene chapter2.turn.scene at 0866B9D0:
+  CAMERA [18, 0]
+  CAMERA_FOLLOW_MOVE_OFF
+  LOAD 0867A06C
+  MOVE_WAIT
+  LOAD 0867A04C
+  MOVE_WAIT
+  TEXT $4D
+  TEXT_CLEAR
+  MOVE 75 [17, 4]
+  MOVE_WAIT
+  MOVE 55 [13, 65535]
+  MOVE_WAIT
+  _0x30 [55]
+  SLEEP 16
+  MOVE 75 [16, 4]
+  MOVE_WAIT
+  SLEEP 16
+  LOAD 0867A08C
+  _0x36 [2]
+  TEXT $4E
+  TEXT_CLEAR
+  SLEEP 16
+  MOVE [16, 3] [17, 11]
+  MOVE_WAIT
+  MOVE 75 [16, 3]
+  MOVE_WAIT
+  CAMERA_FOLLOW_MOVE_OFF
+  LOAD 08679E8C
+  MOVE_WAIT
+  _0x39 [1]
+  SLEEP 16
+  _0x36 [36]
+  LOAD_INSTANT 08679DEC
+  MOVE_WAIT
+  LOAD 08679E5C
+  MOVE_WAIT
+  SLEEP 16
+  CAMERA 1
+  SLEEP 16
+  MOVE 66 [2, 9]
+  MOVE_WAIT
+  TEXT $4F
+  TEXT_CLEAR
+  LOAD 0867A0AC
+  MOVE_WAIT
+  MOVE_MANUAL 17 0866B9C4
+  MOVE_WAIT
+  SLEEP 16
+  MOVE_MANUAL 17 0866B9CA
+  MOVE_WAIT
+  TEXT $50
+  _0x36 [35]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  LOAD 08679F5C
+  SLEEP 16
+  CAMERA [0, 14]
+  CAMERA_FOLLOW_MOVE_OFF
+  MOVE_WAIT
+  TEXT $51
+  TEXT_CLEAR
+  LOAD 08679F7C
+  MOVE_WAIT
+  LOAD 08679FAC
+  MOVE_WAIT
+  CAMERA 1
+  TEXT $52
+  TEXT_CLEAR
+  MOVE 66 [1, 9]
+  MOVE 17 [4, 10]
+  MOVE_WAIT
+  ASM 0806BAF1
+  END?
+  END
+
+scene chapter2.turn.scene at 0866BBD0:
+  SLEEP 32
+  _0x37 [51]
+  CAMERA [20, 18]
+  SLEEP 32
+  LOAD 08679FEC
+  LOAD 0867A01C
+  MOVE_WAIT
+  TEXT $53
+  TEXT_CLEAR
+  CAMERA_FOLLOW_MOVE_OFF
+  MOVE 49 [0, 13]
+  MOVE_WAIT
+  MOVE 33 [13, 16]
+  MOVE_WAIT
+  MOVE 34 [13, 18]
+  MOVE_WAIT
+  TEXT $54
+  TEXT_CLEAR
+  MOVE 49 [12, 17]
+  MOVE_WAIT
+  TEXT $55
+  TEXT_CLEAR
+  MOVE 33 [12, 16]
+  MOVE 34 [12, 18]
+  MOVE 49 [14, 17]
+  MOVE_WAIT
+  _0x38 []
+  END?
+  END
+
+scene chapter2.char.scene at 0866BCA0:
+  _0x37 [51]
+  TEXT $56
+  TEXT_CLEAR
+  _0x38 []
+  END?
+  END
+
+scene chapter2.loca.scene at 0866BD08:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $58
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 10
+  END?
+  END
+
+scene chapter2.loca.scene at 0866BD50:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $59
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter2.loca.scene at 0866BD8C:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $5A
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter2.loca.scene at 0866BDC8:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $5B
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter2.ending at 0866BE04:
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $5E
+  GOTO_IFN_ASM $1 0806C1C5
+  TEXT_MORE $5F
+  LABEL $1
+  TEXT_MORE $60
+  GOTO_IFN_ASM $2 0806C1C5
+  TEXT_MORE $61
+  LABEL $2
+  _0x36 [43]
+  TEXT_MORE $62
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [3]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter3.turn.scene at 0866BEB0:
+  CAMERA [19, 2]
+  SLEEP 16
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $63
+  TEXT_CLEAR
+  CAMERA_FOLLOW_MOVE_OFF
+  LOAD_INSTANT 0867A2AC
+  MOVE_WAIT
+  _0x36 [51]
+  CAMERA 1
+  SLEEP 16
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $64
+  _0x36 [36]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  SLEEP 64
+  LOAD 0867A37C
+  MOVE_WAIT
+  CAMERA 1
+  ASM 0806BAF1
+  END?
+  END
+
+scene chapter3.turn.scene at 0866BF78:
+  _0x36 [10]
+  CAMERA [0, 0]
+  CAMERA_FOLLOW_MOVE_OFF
+  CURSOR_FLASH [3, 3]
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $65
+  TEXT_CLEAR
+  _0x3B []
+  LOAD 0867A5DC
+  MOVE_WAIT
+  LOAD 0867A5FC
+  MOVE_WAIT
+  MOVE 86 [5, 65535]
+  MOVE 53 [5, 65535]
+  MOVE 42 [6, 65535]
+  MOVE 38 [4, 65535]
+  MOVE_WAIT
+  _0x30 [86]
+  _0x30 [53]
+  _0x30 [42]
+  _0x30 [38]
+  SLEEP 64
+  END?
+  END
+
+scene chapter3.turn.scene at 0866C044:
+  _0x37 [5]
+  SLEEP 16
+  CAMERA [21, 3]
+  CAMERA_FOLLOW_MOVE_OFF
+  SLEEP 16
+  MAPCHANGE [19, 4]
+  LOAD 0867A4CC
+  SLEEP 16
+  MOVE 89 [19, 5]
+  MOVE_WAIT
+  TEXT $66
+  TEXT_CLEAR
+  SLEEP 16
+  MOVE 89 [20, 5]
+  MOVE_WAIT
+  MOVE 100 [19, 5]
+  MOVE_WAIT
+  MOVE 100 [25, 8]
+  MOVE 101 [25, 8]
+  MOVE_WAIT
+  _0x30 [100]
+  _0x30 [101]
+  SLEEP 16
+  MOVE 89 [19, 4]
+  MOVE_WAIT
+  SLEEP 16
+  MOVE 76 [19, 5]
+  MOVE_WAIT
+  SLEEP 16
+  TEXT $67
+  TEXT_CLEAR
+  SLEEP 16
+  MOVE 76 [18, 5]
+  MOVE_WAIT
+  MOVE 89 [25, 9]
+  MOVE_WAIT
+  _0x30 [89]
+  SLEEP 16
+  MOVE 76 [19, 4]
+  MOVE [16, 5] [17, 4]
+  MOVE [22, 5] [21, 4]
+  SLEEP 16
+  LOAD 0867A58C
+  MOVE_WAIT
+  MOVE_WAIT
+  _0x38 []
+  END?
+  END
+
+scene chapter3.char.scene at 0866C1B4:
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $68
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter3.loca.scene at 0866C1E8:
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  _0x37 [51]
+  GOTO_IFY_ACTIVE $1 20
+  TEXT $6A
+  GOTO $9
+  LABEL $1
+  TEXT $69
+  _0x34 [5]
+  LABEL $9
+  _0x38 []
+  TEXT_CLEAR
+  LOAD 0867A5BC
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter3.loca.scene at 0866C268:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $6B
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 68
+  END?
+  END
+
+scene chapter3.ending at 0866C2B0:
+  _0x36 [40]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $6E
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [4]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter4.turn.scene at 0866C308:
+  SLEEP 16
+  CAMERA [3, 8]
+  SLEEP 16
+  CAMERA_FOLLOW_MOVE_OFF
+  MOVE 89 [3, 8]
+  MOVE_WAIT
+  SLEEP 16
+  _0x30 [89]
+  SLEEP 16
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $6F
+  TEXT_CLEAR
+  LOAD 0867A81C
+  MOVE_WAIT
+  SLEEP 16
+  CAMERA_FOLLOW_MOVE_ON
+  MOVE 89 [13, 65535]
+  MOVE_WAIT
+  _0x30 [89]
+  SLEEP 16
+  CAMERA [0, 8]
+  SLEEP 16
+  CAMERA_FOLLOW_MOVE_OFF
+  MOVE 77 [3, 8]
+  MOVE_WAIT
+  LOAD_INSTANT 0867A70C
+  MOVE_WAIT
+  SLEEP 16
+  CAMERA 1
+  ASM 0806BAF1
+  END?
+  END
+
+scene chapter4.turn.scene at 0866C400:
+  _0x36 [2]
+  SLEEP 16
+  _0x3A []
+  LOAD 0867A93C
+  MOVE_WAIT
+  TEXT $70
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter4.turn.scene at 0866C438:
+  CAMERA [4, 8]
+  _0x3A []
+  SLEEP 16
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 2
+  _0x44 [16]
+  _0x48 []
+  TEXT $71
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter4.turn.scene at 0866C484:
+  CAMERA [4, 8]
+  _0x3A []
+  SLEEP 16
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $72
+  TEXT_CLEAR
+  LOAD 0867A9BC
+  MOVE_WAIT
+  TEXT $74
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter4.turn.scene at 0866C4E8:
+  GOTO_IFY_EID $9 2
+  CAMERA [4, 9]
+  SLEEP 16
+  _0x36 [2]
+  CAMERA_FOLLOW_MOVE_OFF
+  LOAD 0867A9DC
+  MOVE_WAIT
+  TEXT $73
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter4.turn.scene at 0866C538:
+  GOTO_IFY_EID $9 2
+  CAMERA [3, 8]
+  CURSOR_FLASH [3, 8]
+  _0x36 [2]
+  SLEEP 16
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $75
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter4.char.scene at 0866C5C8:
+  _0x37 [51]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $76
+  TEXT_CLEAR
+  FACTION 2 0
+  _0x38 []
+  END?
+  END
+
+scene chapter4.turn.scene at 0866C614:
+  ASM 0806CED9
+  END?
+  END
+
+scene chapter4.char.scene at 0866C624:
+  _0x37 [51]
+  TEXT $77
+  TEXT_CLEAR
+  FACTION 23 0
+  _0x38 []
+  END?
+  END
+
+scene chapter4.loca.scene at 0866C650:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $78
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 101
+  END?
+  END
+
+scene chapter4.loca.scene at 0866C698:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $79
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 114
+  END?
+  END
+
+scene chapter4.loca.scene at 0866C6E0:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $7A
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 88
+  END?
+  END
+
+scene chapter4.loca.scene at 0866C728:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $7B
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter4.loca.scene at 0866C764:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $7C
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter4.loca.scene at 0866C7A0:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $7D
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter4.ending at 0866C7DC:
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $80
+  _0x36 [43]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [5]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter5.turn.scene at 0866C840:
+  CAMERA [2, 14]
+  SLEEP 16
+  TEXT $81
+  TEXT_CLEAR
+  CAMERA_FOLLOW_MOVE_OFF
+  LOAD_INSTANT 0867AB48
+  MOVE_WAIT
+  _0x36 [36]
+  CAMERA 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $82
+  TEXT_CLEAR
+  SLEEP 64
+  ASM 0806BAF1
+  END?
+  END
+
+scene chapter5.turn.scene at 0866C8C0:
+  _0x37 [50]
+  CAMERA [10, 0]
+  CAMERA_FOLLOW_MOVE_OFF
+  CURSOR_FLASH [10, 2]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $83
+  TEXT_CLEAR
+  LOAD 0867AE98
+  MOVE 16 [20, 5]
+  MOVE 14 [20, 6]
+  MOVE_WAIT
+  _0x30 [16]
+  _0x30 [14]
+  _0x38 []
+  END?
+  END
+
+scene chapter5.action.scene at 0866C948:
+  GOTO_IFY_ASM $1 0806C4D9
+  _0x35 [5]
+  GOTO $9
+  LABEL $1
+  _0x3A []
+  TEXT $84
+  TEXT_CLEAR
+  MAPCHANGE [6, 16]
+  GOTO_IFY_EID $7 2
+  SLEEP 32
+  CAMERA [2, 14]
+  TEXT $85
+  TEXT_CLEAR
+  GOTO_IFN_ASM $7 0806BAA1
+  LOAD 0867AE18
+  LABEL $7
+  _0x3B []
+  LABEL $9
+  END?
+  END
+
+scene chapter5.loca.scene at 0866C9DC:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $86
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 117
+  END?
+  END
+
+scene chapter5.loca.scene at 0866CA24:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $87
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter5.loca.scene at 0866CA60:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $88
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter5.loca.scene at 0866CA9C:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $89
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter5.ending at 0866CAD8:
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $8C
+  _0x36 [37]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [6]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter6.turn.scene at 0866CB34:
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $8D
+  _0x36 [2]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  _0x36 [35]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 8
+  _0x44 [16]
+  _0x48 []
+  TEXT $8E
+  TEXT_CLEAR
+  LOAD_INSTANT 0867AFA0
+  MOVE_WAIT
+  LOAD 0867B050
+  MOVE_WAIT
+  CAMERA 1
+  CAMERA_FOLLOW_MOVE_OFF
+  MOVE 79 [13, 10]
+  MOVE 1 [13, 18]
+  MOVE_WAIT
+  MOVE 79 [13, 17]
+  MOVE [12, 9] [12, 16]
+  MOVE [13, 9] [13, 16]
+  MOVE_WAIT
+  TEXT $8F
+  TEXT_CLEAR
+  MOVE 79 [12, 1]
+  MOVE [12, 16] [12, 9]
+  MOVE [13, 16] [13, 9]
+  MOVE_WAIT
+  MOVE 1 [12, 20]
+  MOVE_WAIT
+  CAMERA 1
+  END?
+  END
+
+scene chapter6.turn.scene at 0866CC5C:
+  GOTO_IFY_ASM $7 0806CEF1
+  _0x35 [7]
+  GOTO $9
+  LABEL $7
+  LOAD 0867B260
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter6.turn.scene at 0866CC9C:
+  GOTO_IFY_ASM $7 0806CF3D
+  _0x35 [11]
+  GOTO $9
+  LABEL $7
+  LOAD 0867B2B0
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter6.turn.scene at 0866CCDC:
+  _0x37 [50]
+  LOAD 0867B3D0
+  MOVE_WAIT
+  TEXT $90
+  TEXT_CLEAR
+  _0x38 []
+  END?
+  END
+
+scene chapter6.turn.scene at 0866CD08:
+  CAMERA [2, 8]
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 2
+  _0x44 [16]
+  _0x48 []
+  TEXT $91
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter6.turn.scene at 0866CD4C:
+  LOAD 0867B4E0
+  MOVE_WAIT
+  LOAD 0867B520
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter6.char.scene at 0866CD6C:
+  _0x37 [51]
+  TEXT $92
+  TEXT_CLEAR
+  FACTION 5 0
+  _0x38 []
+  END?
+  END
+
+scene chapter6.loca.scene at 0866CD98:
+  MAPCHANGE [6, 4]
+  MAPCHANGE [6, 6]
+  END?
+  END
+
+scene chapter6.loca.scene at 0866CDB0:
+  MAPCHANGE [19, 4]
+  MAPCHANGE [19, 6]
+  END?
+  END
+
+scene chapter6.ending at 0866CDC8:
+  _0x36 [40]
+  GOTO_IFN_ASM $3 0806C1E5
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 8
+  _0x44 [16]
+  _0x48 []
+  TEXT $95
+  TEXT_CLEAR
+  LABEL $3
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 8
+  _0x44 [16]
+  _0x48 []
+  TEXT $96
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [7]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter7.turn.scene at 0866CE68:
+  _0x34 [9]
+  CAMERA_FOLLOW_MOVE_OFF
+  MOVE 80 [4, 2]
+  MOVE_WAIT
+  SLEEP 16
+  LOAD 0867BA60
+  MOVE_WAIT
+  MOVE 80 [5, 2]
+  MOVE_WAIT
+  TEXT $9A
+  TEXT_CLEAR
+  MOVE 80 [4, 2]
+  MOVE_WAIT
+  MOVE 81 [8, 65535]
+  MOVE_WAIT
+  _0x30 [81]
+  MOVE 80 [5, 1]
+  MOVE_WAIT
+  GOTO_IFN_ASM $5 0806BAA1
+  LOAD 0867B8D0
+  MOVE_WAIT
+  LABEL $5
+  SLEEP 16
+  _0x36 [36]
+  LOAD_INSTANT 0867B680
+  MOVE_WAIT
+  CAMERA 1
+  SLEEP 32
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $9B
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter7.action.scene at 0866CF6C:
+  GOTO_IFY_ASM $9 0806C4D9
+  _0x35 [14]
+  LABEL $9
+  END?
+  END
+
+scene chapter7.turn.scene at 0866CF90:
+  _0x37 [18]
+  CAMERA [15, 15]
+  SLEEP 16
+  LOAD 0867B930
+  MOVE_WAIT
+  SLEEP 16
+  TEXT $9C
+  TEXT_CLEAR
+  _0x38 []
+  END?
+  END
+
+scene chapter7.turn.scene at 0866CFD4:
+  _0x37 [18]
+  CAMERA [8, 16]
+  CAMERA_FOLLOW_MOVE_OFF
+  SLEEP 16
+  CURSOR_FLASH [6, 16]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 16
+  _0x44 [16]
+  _0x48 []
+  TEXT $9D
+  TEXT_CLEAR
+  LOAD 0867BA80
+  MOVE_WAIT
+  SLEEP 32
+  MOVE 22 [7, 28]
+  MOVE_WAIT
+  _0x30 [22]
+  LOAD 0867B960
+  MOVE_WAIT
+  _0x38 []
+  END?
+  END
+
+scene chapter7.turn.scene at 0866D068:
+  GOTO_IFY_EID $9 2
+  CAMERA [5, 1]
+  CURSOR_FLASH [5, 1]
+  SLEEP 16
+  TEXT $9E
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter7.turn.scene at 0866D0A8:
+  GOTO_IFY_EID $9 2
+  LOAD 0867BA10
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter7.turn.scene at 0866D0D0:
+  GOTO_IFY_EID $9 2
+  LOAD 0867B980
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter7.char.scene at 0866D0F8:
+  _0x37 [51]
+  TEXT $9F
+  TEXT_CLEAR
+  FACTION 60 0
+  _0x38 []
+  END?
+  END
+
+scene chapter7.char.scene at 0866D124:
+  _0x37 [51]
+  TEXT $A0
+  TEXT_CLEAR
+  FACTION 58 0
+  _0x38 []
+  END?
+  END
+
+scene chapter7.char.scene at 0866D150:
+  _0x37 [51]
+  TEXT $A1
+  TEXT_CLEAR
+  FACTION 58 0
+  _0x38 []
+  END?
+  END
+
+scene chapter7.char.scene at 0866D17C:
+  _0x37 [51]
+  TEXT $A2
+  TEXT_CLEAR
+  FACTION 59 0
+  _0x38 []
+  END?
+  END
+
+scene chapter7.char.scene at 0866D1A8:
+  _0x37 [51]
+  TEXT $A3
+  TEXT_CLEAR
+  FACTION 59 0
+  _0x38 []
+  END?
+  END
+
+scene chapter7.char.scene at 0866D1D4:
+  _0x37 [51]
+  TEXT $A4
+  TEXT_CLEAR
+  FACTION 60 0
+  _0x35 [9]
+  _0x38 []
+  END?
+  END
+
+scene chapter7.char.scene at 0866D208:
+  _0x37 [51]
+  TEXT $A5
+  TEXT_CLEAR
+  FACTION 60 0
+  _0x35 [9]
+  _0x38 []
+  END?
+  END
+
+scene chapter7.char.scene at 0866D23C:
+  _0x3A []
+  TEXT $A6
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter7.loca.scene at 0866D258:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $A7
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 46
+  END?
+  END
+
+scene chapter7.loca.scene at 0866D2A0:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $A8
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 77
+  END?
+  END
+
+scene chapter7.loca.scene at 0866D2E8:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $A9
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 105
+  END?
+  END
+
+scene chapter7.loca.scene at 0866D330:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $AA
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 123
+  END?
+  END
+
+scene chapter7.loca.scene at 0866D378:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $AB
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 70
+  END?
+  END
+
+scene chapter7.loca.scene at 0866D3C0:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $AC
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 12
+  END?
+  END
+
+scene chapter7.loca.scene at 0866D408:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $AD
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 95
+  END?
+  END
+
+scene chapter7.loca.scene at 0866D450:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $AE
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 24
+  END?
+  END
+
+scene chapter7.ending at 0866D498:
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $B1
+  _0x36 [37]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [8]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+movescr chapter8.ending.moma at 0866D4FC:
+  <no available representation>
+
+movescr chapter8.ending.moma at 0866D50D:
+  <no available representation>
+
+scene chapter8.turn.scene at 0866D528:
+  ASM 0806CF89
+  CAMERA_FOLLOW_MOVE_OFF
+  MOVE [6, 19] [6, 18]
+  MOVE_WAIT
+  TEXT $B2
+  TEXT_CLEAR
+  LOAD_INSTANT 0867BB5C
+  MOVE_WAIT
+  LOAD 0867BC2C
+  MOVE_WAIT
+  LOAD 0867BF7C
+  MOVE_WAIT
+  MOVE [6, 18] [6, 19]
+  CAMERA 38
+  MOVE_WAIT
+  SLEEP 32
+  _0x36 [35]
+  CAMERA 1
+  MOVE_WAIT
+  SLEEP 16
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $B3
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter8.turn.scene at 0866D5E4:
+  GOTO_IFY_EID $9 112
+  _0x37 [50]
+  LOAD 0867BE2C
+  MOVE_WAIT
+  CAMERA 53
+  TEXT $B6
+  TEXT_CLEAR
+  _0x38 []
+  LABEL $9
+  END?
+  END
+
+scene chapter8.turn.scene at 0866D62C:
+  _0x3A []
+  CAMERA 38
+  CURSOR_FLASH 38
+  TEXT $B4
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter8.turn.scene at 0866D658:
+  _0x37 [51]
+  LOAD 0867BF9C
+  MOVE_WAIT
+  SLEEP 32
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 2
+  _0x44 [16]
+  _0x48 []
+  TEXT $B5
+  TEXT_CLEAR
+  _0x38 []
+  END?
+  END
+
+scene chapter8.action.scene at 0866D6AC:
+  _0x32 [120, 3078]
+  END?
+  END
+
+scene chapter8.char.scene at 0866D6C0:
+  _0x37 [51]
+  TEXT $B7
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 52
+  _0x38 []
+  END?
+  END
+
+scene chapter8.char.scene at 0866D6EC:
+  TEXT $B8
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter8.char.scene at 0866D700:
+  TEXT $B9
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter8.char.scene at 0866D714:
+  TEXT $BA
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter8.ending at 0866D818:
+  GOTO_IFN_ASM $3 0806C1B5
+  _0x36 [40]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $BD
+  _0x36 [49]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [32]
+  SLEEP 1
+  END2?
+  GOTO $9
+  LABEL $3
+  _0x39 [1]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $BE
+  TEXT_CLEAR
+  CAMERA_FOLLOW_MOVE_OFF
+  MOVE_MANUAL 1 0866D4FC
+  _0x43 [4]
+  _0x47 []
+  MOVE_WAIT
+  _0x3F [7, 8, 13]
+  MOVE_MANUAL 1 0866D50D
+  MOVE_WAIT
+  LOAD 0867BFFC
+  MOVE_WAIT
+  MOVE 1 [6, 17]
+  _0x44 [4]
+  _0x48 []
+  MOVE_WAIT
+  SLEEP 16
+  CAMERA 89
+  _0x36 [44]
+  MOVE [1, 19] [3, 17]
+  MOVE [11, 19] [9, 17]
+  MOVE_WAIT
+  SLEEP 32
+  MOVE 89 [6, 19]
+  MOVE_WAIT
+  SLEEP 32
+  TEXT $BF
+  TEXT_CLEAR
+  CAMERA_FOLLOW_MOVE_OFF
+  TEXT_CLEAR
+  _0x36 [39]
+  LOAD 0867C07C
+  MOVE_WAIT
+  CAMERA 29
+  CAMERA_FOLLOW_MOVE_OFF
+  SLEEP 16
+  LOAD 0867C09C
+  MOVE_WAIT
+  SLEEP 16
+  LOAD 0867C0BC
+  MOVE_WAIT
+  LOAD 0867C10C
+  MOVE_WAIT
+  LOAD 0867C15C
+  MOVE_WAIT
+  LOAD 0867C1AC
+  MOVE_WAIT
+  LOAD 0867C1EC
+  MOVE_WAIT
+  LOAD 0867C1FC
+  MOVE_WAIT
+  TEXT $C0
+  TEXT_CLEAR
+  MOVE 89 [20, 12]
+  MOVE_WAIT
+  MOVE [3, 17] [19, 11]
+  MOVE [9, 17] [18, 11]
+  MOVE_WAIT
+  MOVE [3, 19] [18, 15]
+  MOVE [5, 19] [17, 15]
+  MOVE_WAIT
+  MOVE [7, 19] [16, 14]
+  MOVE [9, 19] [15, 14]
+  MOVE_WAIT
+  SLEEP 16
+  MOVE 29 [6, 19]
+  MOVE 63 [7, 18]
+  MOVE_WAIT
+  TEXT $C1
+  TEXT_CLEAR
+  MOVE 29 [6, 27]
+  MOVE_WAIT
+  SLEEP 16
+  MOVE 63 [6, 18]
+  MOVE_WAIT
+  TEXT $C2
+  TEXT_CLEAR
+  MOVE 1 [6, 10]
+  MOVE_WAIT
+  TEXT $C3
+  TEXT_CLEAR
+  MOVE 63 [5, 10]
+  _0x43 [4]
+  _0x47 []
+  MOVE_WAIT
+  _0x3F [8, 8, 13]
+  SLEEP 64
+  _0x3D [9]
+  SLEEP 1
+  END2?
+  LABEL $9
+  END?
+  END
+
+scene chapter9.turn.scene at 0866DB60:
+  CAMERA [2, 3]
+  CURSOR_FLASH [2, 3]
+  CAMERA_FOLLOW_MOVE_OFF
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $C7
+  TEXT_CLEAR
+  _0x36 [17]
+  LOAD_INSTANT 0867C3A4
+  MOVE_WAIT
+  LOAD 0867C714
+  MOVE_WAIT
+  CAMERA_FOLLOW_MOVE_ON
+  MOVE 1 [19, 15]
+  MOVE_WAIT
+  CAMERA_FOLLOW_MOVE_OFF
+  TEXT $C8
+  TEXT_CLEAR
+  MOVE 63 [18, 22]
+  MOVE 68 [18, 21]
+  MOVE_WAIT
+  _0x30 [63]
+  _0x30 [68]
+  CAMERA_FOLLOW_MOVE_ON
+  MOVE 1 [19, 13]
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter9.turn.scene at 0866DC2C:
+  CAMERA [2, 3]
+  CURSOR_FLASH [2, 3]
+  _0x36 [9]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $CB
+  TEXT_CLEAR
+  LOAD 0867C6E4
+  CURSOR_FLASH 4
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $CD
+  TEXT_CLEAR
+  CAMERA [2, 3]
+  CURSOR_FLASH [2, 3]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $CC
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter9.turn.scene at 0866DCF0:
+  _0x32 [4, 0]
+  END?
+  END
+
+scene chapter9.char.scene at 0866DD04:
+  _0x37 [51]
+  TEXT $CE
+  TEXT_CLEAR
+  FACTION 22 0
+  _0x38 []
+  END?
+  END
+
+scene chapter9.char.scene at 0866DD30:
+  _0x37 [51]
+  TEXT $CF
+  TEXT_CLEAR
+  FACTION 4 0
+  _0x38 []
+  END?
+  END
+
+scene chapter9.loca.scene at 0866DD5C:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $D0
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 4
+  END?
+  END
+
+scene chapter9.loca.scene at 0866DDA4:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $D1
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 74
+  MAPCHANGE [18, 2]
+  END?
+  END
+
+scene chapter9.loca.scene at 0866DDF4:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $D2
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 43
+  MAPCHANGE [21, 2]
+  END?
+  END
+
+scene chapter9.loca.scene at 0866DE44:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $D3
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter9.loca.scene at 0866DE80:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $D4
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter9.loca.scene at 0866DEBC:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $D5
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter9.loca.scene at 0866DEF8:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $D6
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter9.ending at 0866DF34:
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $D9
+  GOTO_IFY_EID $0 8
+  GOTO_IFY_EID $5 7
+  TEXT_MORE $DC
+  GOTO $2
+  LABEL $0
+  TEXT_MORE $DA
+  LABEL $2
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [10]
+  SLEEP 1
+  END2?
+  GOTO $9
+  LABEL $5
+  TEXT_MORE $DB
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [26]
+  SLEEP 1
+  END2?
+  LABEL $9
+  END?
+  END
+
+scene chapter10.turn.scene at 0866E00C:
+  _0x34 [106]
+  CAMERA [18, 29]
+  CURSOR_FLASH [18, 29]
+  CAMERA_FOLLOW_MOVE_OFF
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $DD
+  TEXT_CLEAR
+  _0x36 [36]
+  LOAD_INSTANT 0867C898
+  MOVE_WAIT
+  CAMERA 1
+  SLEEP 32
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $DE
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter10.turn.scene at 0866E0AC:
+  CAMERA [18, 29]
+  CURSOR_FLASH [18, 29]
+  CAMERA_FOLLOW_MOVE_OFF
+  GOTO_IFY_EID $3 2
+  _0x36 [3]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $DF
+  TEXT_CLEAR
+  LABEL $3
+  LOAD 0867CBB8
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter10.turn.scene at 0866E11C:
+  CAMERA [18, 17]
+  CURSOR_FLASH [18, 17]
+  _0x37 [18]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $E1
+  TEXT_CLEAR
+  LOAD 0867CBD8
+  MOVE_WAIT
+  _0x38 []
+  END?
+  END
+
+scene chapter27.char.scene at 0866E1A4:
+  _0x37 [51]
+  TEXT $E3
+  TEXT_CLEAR
+  FACTION 35 0
+  _0x38 []
+  END?
+  END
+
+scene chapter10.char.scene at 0866E1D0:
+  _0x37 [51]
+  TEXT $E4
+  TEXT_CLEAR
+  FACTION 56 0
+  _0x38 []
+  END?
+  END
+
+scene chapter10.char.scene at 0866E1FC:
+  _0x37 [51]
+  TEXT $E5
+  TEXT_CLEAR
+  FACTION 64 0
+  _0x38 []
+  END?
+  END
+
+scene chapter10.loca.scene at 0866E228:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $E6
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 36
+  END?
+  END
+
+scene chapter10.loca.scene at 0866E270:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $E7
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter10.ending at 0866E2AC:
+  _0x36 [40]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $EA
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 1 120
+  SLEEP 64
+  _0x3D [11]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter11.turn.scene at 0866E314:
+  _0x34 [13]
+  _0x30 [86]
+  SLEEP 16
+  CURSOR_FLASH [27, 2]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $EB
+  TEXT_CLEAR
+  LOAD 0867D2EC
+  MOVE_WAIT
+  MOVE 55 [30, 5]
+  MOVE_WAIT
+  _0x30 [55]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $EC
+  TEXT_CLEAR
+  LOAD 0867D00C
+  MOVE_WAIT
+  LOAD_INSTANT 0867CDAC
+  MOVE_WAIT
+  _0x36 [36]
+  CAMERA 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $ED
+  TEXT_CLEAR
+  LOAD 0867CE7C
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter11.turn.scene at 0866E418:
+  _0x37 [5]
+  CAMERA [28, 12]
+  LOAD 0867D30C
+  MOVE_WAIT
+  CAMERA_FOLLOW_MOVE_OFF
+  LOAD 0867D32C
+  MOVE_WAIT
+  TEXT $EE
+  TEXT_CLEAR
+  MOVE 51 [30, 18]
+  MOVE 55 [30, 17]
+  MOVE_WAIT
+  _0x30 [51]
+  _0x30 [55]
+  _0x38 []
+  END?
+  END
+
+scene chapter11.turn.scene at 0866E488:
+  _0x37 [35]
+  CAMERA [18, 10]
+  LOAD 0867D13C
+  MOVE_WAIT
+  TEXT $EF
+  TEXT_CLEAR
+  LOAD 0867D11C
+  MOVE_WAIT
+  TEXT $F0
+  TEXT_CLEAR
+  _0x38 []
+  END?
+  END
+
+scene chapter11.turn.scene at 0866E4D4:
+  GOTO_IFN_EID $1 2
+  _0x35 [4]
+  GOTO $9
+  LABEL $1
+  CAMERA [27, 2]
+  _0x36 [3]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $F1
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter11.turn.scene at 0866E544:
+  GOTO_IFN_EID $1 2
+  _0x35 [5]
+  GOTO $9
+  LABEL $1
+  LOAD 0867D0BC
+  MOVE_WAIT
+  CAMERA [18, 10]
+  _0x36 [3]
+  TEXT $F2
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter11.turn.scene at 0866E5A0:
+  GOTO_IFN_EID $9 5
+  _0x37 [35]
+  CAMERA 1
+  TEXT $F3
+  TEXT_CLEAR
+  _0x38 []
+  LABEL $9
+  END?
+  END
+
+scene chapter11.turn.scene at 0866E5DC:
+  _0x36 [3]
+  LOAD 0867D20C
+  MOVE_WAIT
+  LOAD 0867D24C
+  MOVE_WAIT
+  SLEEP 16
+  CAMERA_FOLLOW_MOVE_OFF
+  LOAD 0867D34C
+  MOVE_WAIT
+  TEXT $94E
+  TEXT_CLEAR
+  MOVE 46 [18, 26]
+  MOVE_WAIT
+  _0x30 [46]
+  TEXT $94F
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter11.turn.scene at 0866E64C:
+  _0x37 [4]
+  LOAD 0867D27C
+  MOVE_WAIT
+  LOAD 0867D2BC
+  MOVE_WAIT
+  TEXT $950
+  TEXT_CLEAR
+  _0x38 []
+  END?
+  END
+
+scene chapter11.turn.scene at 0866E684:
+  GOTO_IFY_EID $9 2
+  CAMERA [27, 2]
+  CURSOR_FLASH [27, 2]
+  _0x36 [3]
+  SLEEP 16
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $F4
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter11.turn.scene at 0866E6EC:
+  GOTO_IFY_EID $9 2
+  LOAD 0867D02C
+  MOVE_WAIT
+  LOAD 0867D07C
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter11.turn.scene at 0866E720:
+  GOTO_IFY_EID $9 2
+  _0x36 [3]
+  CAMERA [27, 2]
+  CURSOR_FLASH [27, 2]
+  SLEEP 16
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $F5
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter11.turn.scene at 0866E788:
+  GOTO_IFY_EID $9 2
+  LOAD 0867D17C
+  MOVE_WAIT
+  LOAD 0867D1CC
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter11.char.scene at 0866E7BC:
+  _0x37 [51]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $F6
+  TEXT_CLEAR
+  FACTION 61 0
+  _0x38 []
+  END?
+  END
+
+scene chapter11.char.scene at 0866E808:
+  _0x3A []
+  TEXT $954
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter11.char.scene at 0866E824:
+  _0x37 [51]
+  TEXT $957
+  TEXT_CLEAR
+  FACTION 15 0
+  FACTION 216 64
+  _0x32 [216, 3078]
+  _0x35 [13]
+  _0x38 []
+  END?
+  END
+
+scene chapter11.char.scene at 0866E870:
+  _0x37 [51]
+  TEXT $958
+  TEXT_CLEAR
+  FACTION 15 0
+  FACTION 216 64
+  _0x32 [216, 3078]
+  _0x38 []
+  END?
+  END
+
+scene chapter11.char.scene at 0866E8B4:
+  _0x37 [51]
+  TEXT $955
+  TEXT_CLEAR
+  FACTION 46 0
+  _0x34 [12]
+  FACTION 217 64
+  _0x32 [217, 3078]
+  _0x38 []
+  END?
+  END
+
+scene chapter11.char.scene at 0866E900:
+  _0x37 [51]
+  TEXT $959
+  TEXT_CLEAR
+  FACTION 46 0
+  _0x34 [12]
+  FACTION 217 64
+  _0x32 [217, 3078]
+  _0x38 []
+  END?
+  END
+
+scene chapter11.char.scene at 0866E94C:
+  _0x37 [18]
+  TEXT $956
+  TEXT_CLEAR
+  FACTION 46 64
+  FACTION 217 64
+  _0x38 []
+  END?
+  END
+
+scene chapter11.loca.scene at 0866E984:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $F8
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 89
+  END?
+  END
+
+scene chapter11.loca.scene at 0866E9CC:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $F9
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 76
+  END?
+  END
+
+scene chapter11.loca.scene at 0866EA14:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $FA
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  MONEY 5000
+  END?
+  END
+
+scene chapter11.loca.scene at 0866EA5C:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $FB
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 74
+  END?
+  END
+
+scene chapter11.loca.scene at 0866EAA4:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $FC
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 91
+  END?
+  END
+
+scene chapter11.loca.scene at 0866EAEC:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $FD
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 88
+  END?
+  END
+
+scene chapter11.loca.scene at 0866EB34:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $FE
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 97
+  END?
+  END
+
+scene chapter11.loca.scene at 0866EB7C:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $FF
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 26
+  END?
+  END
+
+scene chapter11.ending at 0866EBC4:
+  _0x36 [39]
+  _0x43 [4]
+  _0x47 []
+  _0x3F [11, 27, 2]
+  LOAD 0867D36C
+  MOVE_WAIT
+  MOVE 52 [27, 2]
+  _0x44 [4]
+  _0x48 []
+  MOVE_WAIT
+  _0x30 [52]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $102
+  _0x36 [40]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  GOTO_IFN_EID $3 14
+  GOTO_IFN_EID $3 15
+  GOTO_IFN_EID $3 16
+  GOTO_IFN_EID $3 17
+  GOTO_IFN_EID $3 18
+  GOTO_IFN_EID $3 19
+  GOTO_IFN_EID $3 20
+  GOTO_IFN_EID $3 21
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $103
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 1 95
+  LABEL $3
+  GOTO_IFN_ASM $5 0806C295
+  GOTO_IFY_EID $5 22
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $96A
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 15 97
+  LABEL $5
+  GOTO_IFN_ASM $7 0806C2A5
+  GOTO_IFY_EID $7 23
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $96B
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 46 98
+  LABEL $7
+  SLEEP 64
+  _0x3D [12]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter12.turn.scene at 0866EDE8:
+  GOTO_IFN_EID $0 105
+  _0x34 [9]
+  LABEL $0
+  _0x34 [7]
+  _0x34 [8]
+  LOAD 0867D938
+  MOVE_WAIT
+  CAMERA 85
+  MOVE 85 [9, 2]
+  MOVE_WAIT
+  TEXT $104
+  TEXT_CLEAR
+  MOVE 85 [8, 2]
+  MOVE_WAIT
+  MOVE 94 [12, 6]
+  MOVE_WAIT
+  _0x30 [94]
+  MOVE 85 [9, 1]
+  MOVE_WAIT
+  TEXT $105
+  TEXT_CLEAR
+  SLEEP 16
+  _0x36 [36]
+  LOAD_INSTANT 0867D538
+  MOVE_WAIT
+  CAMERA 1
+  GOTO_IFN_EID $7 106
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $106
+  TEXT_CLEAR
+  GOTO $9
+  LABEL $7
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $107
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter12.turn.scene at 0866EF30:
+  _0x37 [6]
+  CAMERA 85
+  CAMERA_FOLLOW_MOVE_OFF
+  MOVE 42 [9, 8]
+  MOVE_WAIT
+  LOAD 0867D918
+  MOVE_WAIT
+  MOVE 88 [9, 2]
+  MOVE_WAIT
+  TEXT $108
+  TEXT_CLEAR
+  MOVE 88 [8, 2]
+  MOVE_WAIT
+  MOVE 85 [12, 6]
+  MOVE_WAIT
+  _0x30 [85]
+  SLEEP 16
+  MOVE 88 [9, 1]
+  MOVE_WAIT
+  CAMERA 42
+  TEXT $109
+  TEXT_CLEAR
+  CAMERA_FOLLOW_MOVE_ON
+  MOVE 42 [3, 11]
+  MOVE_WAIT
+  SLEEP 16
+  _0x38 []
+  END?
+  END
+
+scene chapter12.turn.scene at 0866EFF8:
+  GOTO_IFY_EID $9 105
+  GOTO_IFY_EID $9 112
+  _0x37 [50]
+  LOAD 0867D8C8
+  MOVE_WAIT
+  TEXT $10A
+  TEXT_CLEAR
+  _0x38 []
+  LABEL $9
+  END?
+  END
+
+scene chapter12.turn.scene at 0866F044:
+  GOTO_IFY_EID $8 2
+  LOAD 0867D7E8
+  MOVE_WAIT
+  LOAD 0867D878
+  MOVE_WAIT
+  LABEL $8
+  END?
+  END
+
+scene chapter12.turn.scene at 0866F078:
+  GOTO_IFY_EID $9 2
+  _0x37 [6]
+  CAMERA [9, 1]
+  CURSOR_FLASH [9, 1]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $10B
+  TEXT_CLEAR
+  _0x38 []
+  LABEL $9
+  END?
+  END
+
+scene chapter12.turn.scene at 0866F0DC:
+  _0x36 [3]
+  SLEEP 16
+  _0x3A []
+  LOAD 0867D828
+  MOVE_WAIT
+  TEXT $10C
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter12.char.scene at 0866F114:
+  _0x37 [51]
+  TEXT $10D
+  TEXT_CLEAR
+  FACTION 42 0
+  _0x35 [8]
+  _0x38 []
+  END?
+  END
+
+scene chapter12.char.scene at 0866F148:
+  _0x37 [51]
+  TEXT $10E
+  TEXT_CLEAR
+  FACTION 42 0
+  _0x35 [7]
+  _0x38 []
+  END?
+  END
+
+scene chapter12.char.scene at 0866F17C:
+  _0x3A []
+  TEXT $10F
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter12.char.scene at 0866F198:
+  _0x3A []
+  TEXT $110
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter12.ending at 0866F1B4:
+  _0x36 [40]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $113
+  TEXT_CLEAR
+  GOTO_IFY_EID $7 118
+  GOTO_IFY_ASM $7 0806C49D
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $114
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [33]
+  SLEEP 1
+  END2?
+  GOTO $9
+  LABEL $7
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $115
+  TEXT_CLEAR
+  LABEL $8
+  SLEEP 64
+  _0x3D [13]
+  SLEEP 1
+  END2?
+  LABEL $9
+  END?
+  END
+
+movescr chapter13.turn.scene.moma at 0866F2C0:
+  <no available representation>
+
+movescr chapter13.turn.scene.moma at 0866F2C2:
+  <no available representation>
+
+scene chapter13.turn.scene at 0866F2C4:
+  CAMERA 85
+  SLEEP 16
+  CAMERA_FOLLOW_MOVE_OFF
+  LOAD 0867DFD4
+  MOVE_WAIT
+  TEXT $116
+  _0x36 [42]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  LOAD 0867DF44
+  MOVE_WAIT
+  MOVE 100 [45, 13]
+  MOVE 101 [45, 14]
+  MOVE_WAIT
+  TEXT $117
+  _0x36 [42]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  MOVE_MANUAL 101 0866F2C2
+  MOVE_WAIT
+  _0x30 [101]
+  _0x36 [36]
+  LOAD_INSTANT 0867DA14
+  MOVE_WAIT
+  CAMERA 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $118
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter13.turn.scene at 0866F3B0:
+  _0x40 []
+  ASM 0806CFD1
+  CAMERA [43, 9]
+  MOVE 100 [43, 10]
+  MOVE_WAIT
+  TEXT $119
+  TEXT_CLEAR
+  _0x49 [63, 100, 140964772, 0]
+  TEXT $11A
+  TEXT_CLEAR
+  _0x31 [63]
+  TEXT $11B
+  TEXT_CLEAR
+  MOVE 100 [43, 9]
+  END?
+  END
+
+scene chapter13.turn.scene at 0866F428:
+  _0x3A []
+  CAMERA 29
+  CURSOR_FLASH 29
+  TEXT $11C
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter13.turn.scene at 0866F454:
+  _0x37 [35]
+  CAMERA 1
+  CURSOR_FLASH 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $11D
+  TEXT_CLEAR
+  _0x38 []
+  END?
+  END
+
+scene chapter13.turn.scene at 0866F4A4:
+  _0x37 [42]
+  CAMERA [43, 9]
+  MOVE 89 [43, 10]
+  MOVE_WAIT
+  TEXT $11E
+  TEXT_CLEAR
+  MOVE 89 [44, 10]
+  MOVE_WAIT
+  SLEEP 16
+  LOAD 0867DFB4
+  MOVE_WAIT
+  TEXT $11F
+  ASM 08012799
+  SLEEP 30
+  GOTO_IFY_UNK $16
+  ASM 0806CFB9
+  LABEL $16
+  TEXT_CONTINUE
+  ASM 08012781
+  SLEEP 30
+  GOTO_IFY_UNK $17
+  ASM 080127B1
+  LABEL $17
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  MOVE_WAIT
+  _0x30 [100]
+  MOVE_WAIT
+  MOVE_MANUAL 89 0866F2C0
+  _0x30 [68]
+  MOVE_WAIT
+  MOVE 89 [43, 9]
+  MOVE_WAIT
+  _0x30 [89]
+  MOVE_WAIT
+  _0x38 []
+  END?
+  END
+
+scene chapter13.turn.scene at 0866F5A8:
+  _0x40 []
+  _0x37 [43]
+  CAMERA [43, 9]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $120
+  TEXT_CLEAR
+  LOAD 0867DEC4
+  MOVE_WAIT
+  MOVE_NEXTTO 55 1
+  MOVE_WAIT
+  TEXT $121
+  TEXT_CLEAR
+  FACTION 55 0
+  _0x38 []
+  END?
+  END
+
+scene chapter13.turn.scene at 0866F628:
+  _0x37 [42]
+  CAMERA [43, 9]
+  CURSOR_FLASH [43, 9]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $122
+  TEXT_CLEAR
+  LOAD 0867DF74
+  MOVE_WAIT
+  LOAD 0867DF94
+  MOVE_WAIT
+  MOVE 100 [46, 10]
+  MOVE 101 [46, 11]
+  MOVE_WAIT
+  _0x30 [100]
+  _0x30 [101]
+  LOAD 0867DF24
+  _0x38 []
+  END?
+  END
+
+scene chapter13.turn.scene at 0866F6C4:
+  CAMERA [43, 9]
+  CURSOR_FLASH [43, 9]
+  _0x36 [38]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 2
+  _0x44 [16]
+  _0x48 []
+  TEXT $123
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter13.action.scene at 0866F710:
+  GOTO_IFY_ASM $1 0806C4D9
+  _0x35 [6]
+  GOTO $9
+  LABEL $1
+  _0x37 [44]
+  MOVE 85 [43, 10]
+  MOVE_WAIT
+  TEXT $124
+  TEXT_CLEAR
+  MOVE 85 [42, 10]
+  MOVE_WAIT
+  MOVE 89 [46, 9]
+  MOVE_WAIT
+  _0x30 [89]
+  MOVE 85 [43, 9]
+  MOVE_WAIT
+  _0x32 [134, 0]
+  _0x38 []
+  LABEL $9
+  END?
+  END
+
+scene chapter13.turn.scene at 0866F7B0:
+  GOTO_IFN_ASM $9 0806C3DD
+  _0x37 [18]
+  CAMERA 29
+  CURSOR_FLASH 29
+  TEXT $125
+  TEXT_CLEAR
+  MOVE 29 [45, 6]
+  MOVE_WAIT
+  _0x30 [29]
+  _0x38 []
+  GOTO_IFN_ASM $1 0806C3ED
+  MOVE 213 [45, 6]
+  MOVE_WAIT
+  _0x30 [213]
+  LABEL $1
+  GOTO_IFN_ASM $2 0806C3FD
+  MOVE 214 [45, 6]
+  MOVE_WAIT
+  _0x30 [214]
+  LABEL $2
+  GOTO_IFN_ASM $9 0806C40D
+  MOVE 215 [45, 6]
+  MOVE_WAIT
+  _0x30 [215]
+  LABEL $9
+  END?
+  END
+
+scene chapter13.turn.scene at 0866F888:
+  LOAD 0867DDA4
+  MOVE_WAIT
+  LOAD 0867DDF4
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter13.turn.scene at 0866F8A8:
+  LOAD 0867DE34
+  MOVE_WAIT
+  LOAD 0867DE84
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter13.char.scene at 0866F8C8:
+  _0x37 [51]
+  TEXT $149
+  TEXT_CLEAR
+  FACTION 29 0
+  _0x34 [113]
+  FACTION 213 64
+  _0x32 [213, 3078]
+  FACTION 214 64
+  _0x32 [214, 3078]
+  FACTION 215 64
+  _0x32 [215, 3078]
+  _0x38 []
+  END?
+  END
+
+scene chapter13.char.scene at 0866F944:
+  _0x37 [51]
+  TEXT $14A
+  TEXT_CLEAR
+  FACTION 29 0
+  _0x34 [113]
+  FACTION 213 64
+  _0x32 [213, 3078]
+  FACTION 214 64
+  _0x32 [214, 3078]
+  FACTION 215 64
+  _0x32 [215, 3078]
+  _0x38 []
+  END?
+  END
+
+scene chapter13.loca.scene at 0866F9C0:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $126
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 94
+  END?
+  END
+
+scene chapter13.loca.scene at 0866FA08:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $127
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 116
+  END?
+  END
+
+scene chapter13.loca.scene at 0866FA50:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $12E
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter13.loca.scene at 0866FA8C:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $12F
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter13.loca.scene at 0866FAC8:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $130
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter13.ending at 0866FB04:
+  GOTO_IFY_EID $3 5
+  CAMERA [43, 15]
+  TEXT $121
+  TEXT_CLEAR
+  LABEL $3
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $133
+  GOTO_IFY_UNK $16
+  _0x36 [38]
+  LABEL $16
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  GOTO_IFN_ASM $5 0806C159
+  GOTO_IFY_EID $5 14
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $134
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 29 96
+  _0x34 [119]
+  LABEL $5
+  SLEEP 64
+  _0x3D [14]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter14.turn.scene at 0866FC0C:
+  CURSOR_FLASH [27, 1]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 3
+  _0x44 [16]
+  _0x48 []
+  TEXT $135
+  TEXT_CLEAR
+  _0x36 [9]
+  CAMERA 90
+  CURSOR_FLASH [27, 3]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 8
+  _0x44 [16]
+  _0x48 []
+  TEXT $136
+  TEXT_CLEAR
+  _0x39 [1]
+  ASM 0806D001
+  LOAD_INSTANT 0867E13C
+  MOVE_WAIT
+  CAMERA 1
+  TEXT $137
+  TEXT_CLEAR
+  LOAD 0867E1FC
+  MOVE_WAIT
+  ASM 0806D01D
+  END?
+  END
+
+scene chapter14.turn.scene at 0866FCD0:
+  _0x37 [59]
+  LOAD 0867E42C
+  MOVE_WAIT
+  LOAD 0867E46C
+  MOVE_WAIT
+  LOAD 0867E49C
+  MOVE_WAIT
+  LOAD 0867E4DC
+  MOVE_WAIT
+  CURSOR_FLASH 92
+  TEXT $138
+  TEXT_CLEAR
+  _0x38 []
+  END?
+  END
+
+scene chapter14.turn.scene at 0866FD28:
+  ASM 0806BFC1
+  ASM 0806DDD5
+  SLEEP 128
+  CAMERA 1
+  CURSOR_FLASH 1
+  _0x3A []
+  TEXT $139
+  TEXT_CLEAR
+  _0x3B []
+  GOTO_IFY_EID $9 2
+  CAMERA [27, 3]
+  CURSOR_FLASH 1
+  _0x3A []
+  TEXT $13A
+  TEXT_CLEAR
+  _0x3B []
+  LABEL $9
+  END?
+  END
+
+scene chapter14.loca.scene at 0866FDA4:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $13C
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter14.loca.scene at 0866FDE0:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $13D
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter14.action.scene at 0866FE1C:
+  GOTO_IFY_ASM $1 0806D029
+  _0x35 [9]
+  GOTO $9
+  LABEL $1
+  _0x40 []
+  ITEM 75
+  LABEL $9
+  END?
+  END
+
+scene chapter14.action.scene at 0866FE5C:
+  GOTO_IFY_ASM $1 0806D029
+  _0x35 [10]
+  GOTO $9
+  LABEL $1
+  _0x40 []
+  ITEM 92
+  LABEL $9
+  END?
+  END
+
+scene chapter14.action.scene at 0866FE9C:
+  GOTO_IFY_ASM $1 0806D029
+  _0x35 [11]
+  GOTO $9
+  LABEL $1
+  _0x40 []
+  ITEM 93
+  LABEL $9
+  END?
+  END
+
+scene chapter14.action.scene at 0866FEDC:
+  GOTO_IFY_ASM $1 0806D029
+  _0x35 [12]
+  GOTO $9
+  LABEL $1
+  _0x40 []
+  ITEM 115
+  LABEL $9
+  END?
+  END
+
+scene chapter14.action.scene at 0866FF1C:
+  GOTO_IFY_ASM $1 0806D029
+  _0x35 [13]
+  GOTO $9
+  LABEL $1
+  _0x40 []
+  ITEM 91
+  LABEL $9
+  END?
+  END
+
+scene chapter14.action.scene at 0866FF5C:
+  GOTO_IFY_ASM $1 0806D029
+  _0x35 [14]
+  GOTO $9
+  LABEL $1
+  _0x40 []
+  ITEM 110
+  LABEL $9
+  END?
+  END
+
+scene chapter14.action.scene at 0866FF9C:
+  GOTO_IFY_ASM $1 0806D029
+  _0x35 [15]
+  GOTO $9
+  LABEL $1
+  _0x40 []
+  ITEM 72
+  LABEL $9
+  END?
+  END
+
+scene chapter14.action.scene at 0866FFDC:
+  GOTO_IFY_ACTIVE $1 54
+  _0x35 [16]
+  GOTO $9
+  LABEL $1
+  _0x3A []
+  TEXT $13B
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 99
+  LABEL $9
+  END?
+  END
+
+scene chapter14.ending at 08670030:
+  GOTO_IFY_ASM $7 0806C4B1
+  GOTO_IFN_ASM $7 0806C225
+  _0x36 [38]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 8
+  _0x44 [16]
+  _0x48 []
+  TEXT $142
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [34]
+  SLEEP 1
+  END2?
+  GOTO $9
+  LABEL $7
+  _0x36 [38]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 8
+  _0x44 [16]
+  _0x48 []
+  TEXT $143
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [15]
+  SLEEP 1
+  END2?
+  LABEL $9
+  END?
+  END
+
+scene chapter15.turn.scene at 08670108:
+  CAMERA 93
+  CURSOR_FLASH 93
+  CAMERA_FOLLOW_MOVE_OFF
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $144
+  TEXT_CLEAR
+  _0x34 [5]
+  GOTO_IFY_EID $1 113
+  GOTO_IFY_EID $1 111
+  _0x35 [5]
+  LOAD 0867E9F0
+  MOVE_WAIT
+  CAMERA 29
+  SLEEP 16
+  MOVE 11 [1, 0]
+  MOVE_WAIT
+  TEXT $146
+  TEXT_CLEAR
+  MOVE 11 [0, 0]
+  MOVE_WAIT
+  _0x30 [11]
+  MOVE 29 [2, 3]
+  MOVE_WAIT
+  LABEL $1
+  _0x36 [37]
+  LOAD_INSTANT 0867E710
+  MOVE_WAIT
+  CAMERA 1
+  CURSOR_FLASH 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $145
+  TEXT_CLEAR
+  LOAD 0867E7E0
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter15.turn.scene at 0867023C:
+  LOAD 0867EAB0
+  MOVE_WAIT
+  CAMERA 26
+  _0x36 [2]
+  TEXT $147
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter15.turn.scene at 0867026C:
+  GOTO_IFY_EID $9 2
+  CAMERA 93
+  CURSOR_FLASH 93
+  _0x36 [2]
+  SLEEP 16
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $148
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter15.turn.scene at 086702D4:
+  GOTO_IFY_EID $9 2
+  LOAD 0867EA60
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter15.char.scene at 086702FC:
+  _0x37 [51]
+  TEXT $149
+  TEXT_CLEAR
+  FACTION 29 0
+  _0x34 [113]
+  FACTION 211 64
+  _0x32 [211, 3078]
+  _0x38 []
+  END?
+  END
+
+scene chapter15.char.scene at 08670348:
+  _0x37 [51]
+  TEXT $14A
+  TEXT_CLEAR
+  FACTION 29 0
+  _0x34 [113]
+  FACTION 211 64
+  _0x32 [211, 3078]
+  _0x38 []
+  END?
+  END
+
+scene chapter15.char.scene at 08670394:
+  _0x37 [51]
+  TEXT $14B
+  TEXT_CLEAR
+  FACTION 26 0
+  _0x38 []
+  END?
+  END
+
+scene chapter15.char.scene at 086703C0:
+  _0x3A []
+  TEXT $14C
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter15.loca.scene at 086703DC:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $14D
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 60
+  END?
+  END
+
+scene chapter15.loca.scene at 08670424:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $14E
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 78
+  END?
+  END
+
+scene chapter15.loca.scene at 0867046C:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $14F
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter15.loca.scene at 086704A8:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $150
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter15.ending at 086704E4:
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $153
+  GOTO_IFY_UNK $16
+  _0x36 [38]
+  LABEL $16
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  GOTO_IFN_ASM $5 0806C159
+  GOTO_IFY_EID $5 11
+  GOTO_IFY_EID $5 119
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $134
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 29 96
+  LABEL $5
+  CAMERA_FOLLOW_MOVE_OFF
+  LOAD 0867EAF0
+  MOVE_WAIT
+  SLEEP 64
+  _0x3D [16]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter16.turn.scene at 086705D8:
+  GOTO_IFN_EID $0 105
+  _0x34 [12]
+  LABEL $0
+  CURSOR_FLASH 89
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $156
+  TEXT_CLEAR
+  LOAD 0867EFF4
+  MOVE_WAIT
+  CAMERA_FOLLOW_MOVE_OFF
+  MOVE 98 [7, 13]
+  MOVE_WAIT
+  _0x30 [98]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $157
+  TEXT_CLEAR
+  _0x39 [1]
+  _0x37 [2]
+  CAMERA 11
+  TEXT $159
+  TEXT_CLEAR
+  CAMERA 97
+  MOVE 97 [3, 11]
+  MOVE_WAIT
+  _0x30 [97]
+  CAMERA 94
+  MOVE 94 [3, 11]
+  MOVE_WAIT
+  _0x30 [94]
+  CAMERA 11
+  TEXT $15A
+  TEXT_CLEAR
+  LOAD_INSTANT 0867EBA4
+  MOVE_WAIT
+  _0x36 [36]
+  CAMERA 1
+  CURSOR_FLASH 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $158
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter16.turn.scene at 0867074C:
+  _0x37 [5]
+  CAMERA [1, 1]
+  LOAD 0867EFA4
+  MOVE_WAIT
+  TEXT $15B
+  TEXT_CLEAR
+  MOVE 50 [1, 4]
+  MOVE_WAIT
+  SLEEP 32
+  LOAD 0867EFC4
+  MOVE_WAIT
+  TEXT $15C
+  TEXT_CLEAR
+  MOVE 50 [1, 2]
+  MOVE_WAIT
+  TEXT $15D
+  TEXT_CLEAR
+  MOVE 51 [1, 0]
+  MOVE_WAIT
+  _0x30 [51]
+  TEXT $15E
+  TEXT_CLEAR
+  MOVE 50 [1, 0]
+  MOVE_WAIT
+  _0x38 []
+  END?
+  END
+
+scene chapter16.turn.scene at 08670800:
+  GOTO_IFN_ASM $9 0806C38D
+  _0x37 [59]
+  CAMERA 39
+  TEXT $15F
+  TEXT_CLEAR
+  _0x38 []
+  LABEL $9
+  END?
+  END
+
+scene chapter16.turn.scene at 0867083C:
+  GOTO_IFY_EID $9 105
+  GOTO_IFY_EID $9 112
+  _0x37 [50]
+  LOAD 0867EF74
+  MOVE_WAIT
+  CAMERA 53
+  TEXT $160
+  TEXT_CLEAR
+  _0x38 []
+  LABEL $9
+  END?
+  END
+
+scene chapter16.char.scene at 08670890:
+  _0x41 []
+  TEXT $161
+  TEXT_CLEAR
+  GOTO_IFY_ASM $1 0806C525
+  GOTO_IFY_ASM $2 0806C541
+  GOTO_IFY_ASM $3 0806C55D
+  GOTO_IFY_ASM $4 0806C579
+  TEXT $162
+  TEXT_CLEAR
+  GOTO $0
+  LABEL $1
+  TEXT $163
+  TEXT_CLEAR
+  GOTO_IFN_ASM $2 0806C595
+  _0x34 [15]
+  GOTO $A
+  LABEL $2
+  TEXT $165
+  TEXT_CLEAR
+  TEXT $163
+  TEXT_CLEAR
+  GOTO_IFN_ASM $3 0806C595
+  _0x34 [16]
+  GOTO $A
+  LABEL $3
+  TEXT $166
+  TEXT_CLEAR
+  TEXT $163
+  TEXT_CLEAR
+  GOTO_IFN_ASM $4 0806C595
+  _0x34 [17]
+  GOTO $A
+  LABEL $4
+  TEXT $167
+  TEXT_CLEAR
+  TEXT $163
+  TEXT_CLEAR
+  GOTO_IFN_ASM $7 0806C595
+  _0x34 [18]
+  GOTO $A
+  LABEL $7
+  TEXT $168
+  TEXT_CLEAR
+  GOTO $0
+  LABEL $A
+  _0x37 [51]
+  TEXT $164
+  TEXT_CLEAR
+  FACTION 39 0
+  ASM 0806D065
+  _0x38 []
+  LABEL $0
+  END?
+  END
+
+scene chapter16.char.scene at 08670A28:
+  _0x37 [37]
+  TEXT $169
+  TEXT_CLEAR
+  _0x38 []
+  END?
+  END
+
+scene chapter16.char.scene at 08670A48:
+  _0x37 [37]
+  TEXT $16A
+  TEXT_CLEAR
+  _0x38 []
+  END?
+  END
+
+scene chapter16.char.scene at 08670A68:
+  _0x37 [51]
+  TEXT $16B
+  TEXT_CLEAR
+  FACTION 50 0
+  _0x38 []
+  END?
+  END
+
+scene chapter16.char.scene at 08670A94:
+  _0x37 [37]
+  TEXT $16C
+  TEXT_CLEAR
+  _0x38 []
+  END?
+  END
+
+scene chapter16.char.scene at 08670AB4:
+  _0x37 [37]
+  TEXT $16D
+  TEXT_CLEAR
+  _0x38 []
+  END?
+  END
+
+scene chapter16.char.scene at 08670AD4:
+  _0x37 [37]
+  TEXT $16E
+  TEXT_CLEAR
+  _0x38 []
+  END?
+  END
+
+scene chapter16.ending at 08670AF4:
+  GOTO_IFY_EID $3 110
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $171
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [35]
+  SLEEP 1
+  END2?
+  GOTO $9
+  LABEL $3
+  _0x36 [43]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $172
+  TEXT_CLEAR
+  SLEEP 64
+  GOTO_IFN_ASM $7 0806C5A9
+  _0x3D [28]
+  SLEEP 1
+  END2?
+  GOTO $9
+  LABEL $7
+  _0x3D [17]
+  SLEEP 1
+  END2?
+  LABEL $9
+  END?
+  END
+
+scene chapter17.turn.scene at 08670BF0:
+  _0x34 [107]
+  CAMERA_FOLLOW_MOVE_OFF
+  _0x30 [94]
+  CURSOR_FLASH [29, 3]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $173
+  TEXT_CLEAR
+  LOAD 0867F4C4
+  MOVE_WAIT
+  MOVE 97 [32, 5]
+  MOVE_WAIT
+  _0x30 [97]
+  SLEEP 16
+  LOAD 0867F504
+  MOVE_WAIT
+  SLEEP 16
+  TEXT $174
+  TEXT_CLEAR
+  MOVE 98 [28, 12]
+  MOVE 51 [28, 11]
+  MOVE_WAIT
+  _0x30 [98]
+  _0x30 [51]
+  MOVE_WAIT
+  LOAD 0867F534
+  MOVE_WAIT
+  LOAD_INSTANT 0867F0E4
+  MOVE_WAIT
+  _0x36 [36]
+  LOAD 0867F4E4
+  MOVE_WAIT
+  CAMERA 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $175
+  TEXT_CLEAR
+  MOVE 18 [65535, 19]
+  MOVE_WAIT
+  _0x30 [18]
+  END?
+  END
+
+scene chapter17.turn.scene at 08670D34:
+  END?
+  END
+
+scene chapter17.turn.scene at 08670D3C:
+  END?
+  END
+
+scene chapter17.turn.scene at 08670D44:
+  CAMERA [10, 8]
+  _0x3C [190]
+  MAPCHANGE [11, 8]
+  SLEEP 64
+  GOTO_IFN_ASM $9 0806C35D
+  CAMERA [29, 3]
+  TEXT $179
+  TEXT_CLEAR
+  _0x36 [10]
+  CAMERA 1
+  TEXT $17A
+  TEXT_CLEAR
+  LABEL $9
+  _0x38 []
+  END?
+  END
+
+scene chapter17.loca.scene at 08670DB4:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $17E
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 118
+  END?
+  END
+
+scene chapter17.loca.scene at 08670DFC:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $17F
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter17.loca.scene at 08670E38:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $180
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter17.ending at 08670E74:
+  _0x36 [40]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $183
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [18]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter18.turn.scene at 08670ECC:
+  CURSOR_FLASH [19, 3]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $184
+  TEXT_CLEAR
+  LOAD_INSTANT 0867F64C
+  MOVE_WAIT
+  CAMERA 1
+  _0x36 [43]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 11
+  _0x44 [16]
+  _0x48 []
+  TEXT $185
+  _0x36 [17]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  CAMERA 1
+  END?
+  END
+
+scene chapter18.turn.scene at 08670F64:
+  GOTO_IFY_EID $9 2
+  _0x37 [4]
+  CAMERA [19, 3]
+  CURSOR_FLASH [19, 3]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $186
+  TEXT_CLEAR
+  CAMERA 1
+  CURSOR_FLASH 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 11
+  _0x44 [16]
+  _0x48 []
+  TEXT $187
+  TEXT_CLEAR
+  _0x3C [198]
+  MAPCHANGE 6
+  MAPCHANGE 7
+  MAPCHANGE 8
+  MAPCHANGE 9
+  MAPCHANGE 10
+  MAPCHANGE 11
+  MAPCHANGE 12
+  MAPCHANGE 13
+  MAPCHANGE 14
+  MAPCHANGE 15
+  MAPCHANGE 16
+  MAPCHANGE 17
+  MAPCHANGE 18
+  MAPCHANGE 19
+  CAMERA [19, 28]
+  CAMERA [3, 28]
+  CAMERA [3, 3]
+  CAMERA [19, 3]
+  CURSOR_FLASH [19, 3]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $188
+  TEXT_CLEAR
+  _0x36 [36]
+  CAMERA 1
+  CURSOR_FLASH 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 11
+  _0x44 [16]
+  _0x48 []
+  TEXT $189
+  TEXT_CLEAR
+  _0x38 []
+  LABEL $9
+  END?
+  END
+
+scene chapter18.loca.scene at 08671114:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 10
+  _0x44 [16]
+  _0x48 []
+  TEXT $18A
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 87
+  END?
+  END
+
+scene chapter18.loca.scene at 0867115C:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 10
+  _0x44 [16]
+  _0x48 []
+  TEXT $18B
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 99
+  END?
+  END
+
+scene chapter18.loca.scene at 086711A4:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 10
+  _0x44 [16]
+  _0x48 []
+  TEXT $18C
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 86
+  END?
+  END
+
+scene chapter18.loca.scene at 086711EC:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 9
+  _0x44 [16]
+  _0x48 []
+  TEXT $18D
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter18.loca.scene at 08671228:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 9
+  _0x44 [16]
+  _0x48 []
+  TEXT $18E
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter18.loca.scene at 08671264:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 9
+  _0x44 [16]
+  _0x48 []
+  TEXT $18F
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter18.loca.scene at 086712A0:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 9
+  _0x44 [16]
+  _0x48 []
+  TEXT $190
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter18.ending at 086712DC:
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $193
+  _0x36 [37]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [19]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter19.turn.scene at 08671340:
+  CURSOR_FLASH 96
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $194
+  TEXT_CLEAR
+  _0x36 [36]
+  LOAD_INSTANT 0867FA58
+  MOVE_WAIT
+  LOAD 0867FB38
+  MOVE_WAIT
+  CAMERA 1
+  SLEEP 16
+  MOVE 40 [2, 20]
+  MOVE_WAIT
+  TEXT $195
+  _0x36 [63]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter19.turn.scene at 086713D4:
+  _0x36 [4]
+  GOTO_IFY_EID $1 2
+  CAMERA 96
+  CURSOR_FLASH 96
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $196
+  TEXT_CLEAR
+  LABEL $1
+  END?
+  END
+
+scene chapter19.turn.scene at 08671434:
+  GOTO_IFY_EID $1 2
+  CAMERA_FOLLOW_MOVE_OFF
+  LOAD 0867FDE8
+  MOVE_WAIT
+  LABEL $1
+  END?
+  END
+
+scene chapter19.loca.scene at 08671460:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 10
+  _0x44 [16]
+  _0x48 []
+  TEXT $197
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 55
+  END?
+  END
+
+scene chapter19.loca.scene at 086714A8:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 10
+  _0x44 [16]
+  _0x48 []
+  TEXT $198
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 90
+  END?
+  END
+
+scene chapter19.loca.scene at 086714F0:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 10
+  _0x44 [16]
+  _0x48 []
+  TEXT $199
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter19.loca.scene at 0867152C:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 10
+  _0x44 [16]
+  _0x48 []
+  TEXT $19A
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter19.loca.scene at 08671568:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 10
+  _0x44 [16]
+  _0x48 []
+  TEXT $19B
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter19.loca.scene at 086715A4:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 10
+  _0x44 [16]
+  _0x48 []
+  TEXT $19C
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter19.ending at 086715E0:
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $19F
+  ASM 08012799
+  SLEEP 30
+  GOTO_IFY_UNK $16
+  ASM 0806CFB9
+  LABEL $16
+  TEXT_CONTINUE
+  ASM 08012781
+  SLEEP 30
+  GOTO_IFY_UNK $17
+  ASM 080127B1
+  LABEL $17
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [20]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter20.turn.scene at 08671690:
+  GOTO_IFN_EID $0 105
+  _0x34 [10]
+  LABEL $0
+  _0x34 [7]
+  _0x34 [8]
+  _0x34 [9]
+  CURSOR_FLASH 97
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $1A0
+  TEXT_CLEAR
+  CAMERA 44
+  CURSOR_FLASH 44
+  _0x36 [49]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 2
+  _0x44 [16]
+  _0x48 []
+  TEXT $1A1
+  TEXT_CLEAR
+  LOAD_INSTANT 0867FE94
+  MOVE_WAIT
+  CAMERA 1
+  CURSOR_FLASH 1
+  _0x36 [43]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 11
+  _0x44 [16]
+  _0x48 []
+  TEXT $1A2
+  _0x36 [12]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter20.turn.scene at 086717A0:
+  GOTO_IFY_EID $3 105
+  GOTO_IFY_EID $3 112
+  _0x37 [50]
+  LOAD 08680254
+  MOVE_WAIT
+  TEXT $1A3
+  TEXT_CLEAR
+  _0x38 []
+  LABEL $3
+  LOAD 08680274
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter20.turn.scene at 08671800:
+  _0x4C [2]
+  CAMERA 1
+  CURSOR_FLASH 1
+  _0x3A []
+  TEXT $1A4
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter20.action.scene at 08671834:
+  GOTO_IFY_ASM $7 0806C4D9
+  _0x35 [5]
+  GOTO $9
+  LABEL $7
+  _0x33 [720916, 0]
+  _0x33 [720919, 0]
+  _0x33 [786454, 0]
+  _0x33 [917526, 0]
+  _0x33 [983061, 0]
+  _0x33 [1048598, 0]
+  LABEL $9
+  END?
+  END
+
+scene chapter20.char.scene at 086718B0:
+  _0x37 [51]
+  TEXT $1A5
+  TEXT_CLEAR
+  FACTION 44 0
+  _0x35 [8]
+  _0x35 [9]
+  _0x38 []
+  END?
+  END
+
+scene chapter20.char.scene at 086718EC:
+  _0x37 [51]
+  TEXT $1A6
+  TEXT_CLEAR
+  FACTION 44 0
+  _0x35 [7]
+  _0x35 [9]
+  _0x38 []
+  END?
+  END
+
+scene chapter20.char.scene at 08671928:
+  _0x37 [51]
+  TEXT $1A7
+  TEXT_CLEAR
+  FACTION 44 0
+  _0x35 [7]
+  _0x35 [8]
+  _0x38 []
+  END?
+  END
+
+scene chapter20.char.scene at 08671964:
+  _0x3A []
+  TEXT $1A8
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter20.char.scene at 08671980:
+  _0x3A []
+  TEXT $1A9
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter20.char.scene at 0867199C:
+  _0x3A []
+  TEXT $1AA
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter20.ending at 086719B8:
+  GOTO_IFN_ASM $5 0806C235
+  GOTO_IFN_ASM $5 0806C245
+  GOTO_IFY_ASM $5 0806C4B1
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $1AD
+  TEXT_CLEAR
+  GOTO_IFY_EID $2 13
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $1B2
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 1 88
+  LABEL $2
+  SLEEP 64
+  _0x3D [36]
+  SLEEP 1
+  END2?
+  GOTO $9
+  LABEL $5
+  _0x36 [43]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $1AE
+  _0x36 [60]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  GOTO_IFY_EID $7 13
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $1B2
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 1 88
+  LABEL $7
+  SLEEP 64
+  _0x3D [21]
+  SLEEP 1
+  END2?
+  LABEL $9
+  END?
+  END
+
+scene chapter21.turn.scene at 08671B48:
+  GOTO_IFN_ASM $1 0806BAA1
+  LOAD 08680694
+  MOVE_WAIT
+  LABEL $1
+  CAMERA 98
+  CURSOR_FLASH 98
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 3
+  _0x44 [16]
+  _0x48 []
+  TEXT $1B3
+  TEXT_CLEAR
+  _0x36 [36]
+  LOAD_INSTANT 08680324
+  MOVE_WAIT
+  CAMERA 1
+  CURSOR_FLASH 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $1B4
+  _0x36 [62]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  GOTO_IFN_EID $5 107
+  LABEL $3
+  LOAD 08680764
+  MOVE_WAIT
+  GOTO $9
+  LABEL $5
+  LOAD 08680744
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter21.turn.scene at 08671C4C:
+  LOAD 08680784
+  MOVE_WAIT
+  GOTO_IFN_ASM $9 0806C39D
+  _0x37 [5]
+  LOAD 086807A4
+  MOVE_WAIT
+  CAMERA 51
+  CURSOR_FLASH 51
+  TEXT $1B5
+  TEXT_CLEAR
+  _0x38 []
+  LABEL $9
+  END?
+  END
+
+scene chapter21.turn.scene at 08671CA8:
+  GOTO_IFY_EID $2 5
+  _0x34 [5]
+  GOTO $7
+  LABEL $2
+  GOTO_IFY_EID $3 6
+  _0x34 [6]
+  GOTO $7
+  LABEL $3
+  GOTO_IFY_EID $9 7
+  _0x34 [7]
+  LABEL $7
+  LOAD 086807F4
+  MOVE_WAIT
+  LOAD 08680844
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter21.turn.scene at 08671D34:
+  GOTO_IFY_EID $2 8
+  _0x34 [8]
+  GOTO $7
+  LABEL $2
+  GOTO_IFY_EID $3 9
+  _0x34 [9]
+  GOTO $7
+  LABEL $3
+  GOTO_IFY_EID $9 10
+  _0x34 [10]
+  LABEL $7
+  LOAD 086808E4
+  MOVE_WAIT
+  LOAD 08680934
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter21.turn.scene at 08671DC0:
+  LOAD 08680894
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter21.turn.scene at 08671DD4:
+  GOTO_IFY_EID $2 12
+  _0x34 [12]
+  GOTO $7
+  LABEL $2
+  GOTO_IFY_EID $3 13
+  _0x34 [13]
+  GOTO $7
+  LABEL $3
+  GOTO_IFY_EID $9 14
+  _0x34 [14]
+  LABEL $7
+  LOAD 086809D4
+  MOVE_WAIT
+  LOAD 08680A24
+  MOVE_WAIT
+  LOAD 08680A74
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter21.turn.scene at 08671E6C:
+  LOAD 08680AC4
+  MOVE_WAIT
+  GOTO_IFN_ASM $9 0806C3AD
+  TEXT $1B6
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter21.char.scene at 08671EA0:
+  _0x37 [37]
+  TEXT $1B7
+  TEXT_CLEAR
+  _0x38 []
+  END?
+  END
+
+scene chapter21.char.scene at 08671EC0:
+  _0x37 [37]
+  TEXT $1B8
+  TEXT_CLEAR
+  _0x38 []
+  END?
+  END
+
+scene chapter21.char.scene at 08671EE0:
+  TEXT $1B9
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter21.char.scene at 08671EF4:
+  TEXT $1BA
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter21.loca.scene at 08671F08:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $1BC
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 96
+  END?
+  END
+
+scene chapter21.ending at 08671F50:
+  _0x41 []
+  _0x39 [4]
+  GOTO_IFN_ASM $3 0806C205
+  GOTO_IFN_ASM $3 0806C215
+  GOTO_IFY_ASM $3 0806C4C5
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 13
+  _0x44 [16]
+  _0x48 []
+  TEXT $1BF
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [38]
+  SLEEP 1
+  END2?
+  GOTO $9
+  LABEL $3
+  SLEEP 64
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $1C0
+  ASM 0806DE01
+  _0x46 [16]
+  _0x48 []
+  TEXT_CONTINUE
+  ASM 0806DE21
+  _0x45 [4]
+  _0x47 []
+  BACKGROUND 4
+  _0x46 [4]
+  _0x48 []
+  _0x36 [41]
+  TEXT $1C1
+  ASM 0806DE01
+  _0x46 [16]
+  _0x48 []
+  _0x45 [4]
+  _0x47 []
+  BACKGROUND 6
+  _0x46 [4]
+  _0x48 []
+  _0x36 [60]
+  TEXT $1C2
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 1 15
+  SLEEP 64
+  ASM 0806D0E5
+  SLEEP 1280
+  _0x3D [22]
+  SLEEP 1
+  END2?
+  LABEL $9
+  END?
+  END
+
+scene chapter22.turn.scene at 086720EC:
+  GOTO_IFN_EID $0 105
+  _0x34 [10]
+  LABEL $0
+  GOTO_IFN_ASM $1 0806BAA1
+  LOAD 08680FF0
+  MOVE_WAIT
+  LABEL $1
+  CAMERA [18, 19]
+  SLEEP 16
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $1C3
+  TEXT_CLEAR
+  CAMERA [1, 0]
+  CURSOR_FLASH [1, 0]
+  TEXT $1C4
+  TEXT_CLEAR
+  CAMERA [30, 0]
+  CURSOR_FLASH [30, 0]
+  TEXT $1C5
+  TEXT_CLEAR
+  LOAD_INSTANT 08680C60
+  MOVE_WAIT
+  _0x36 [62]
+  CAMERA 1
+  CURSOR_FLASH 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $1C6
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter22.turn.scene at 086721F4:
+  GOTO_IFY_EID $3 105
+  GOTO_IFY_EID $3 112
+  LOAD 086811C0
+  MOVE_WAIT
+  GOTO_IFN_ASM $3 0806C37D
+  _0x37 [50]
+  TEXT $1C7
+  TEXT_CLEAR
+  _0x38 []
+  LABEL $3
+  LOAD 086811E0
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter22.action.scene at 08672260:
+  GOTO_IFY_ASM $1 0806C4D9
+  _0x35 [5]
+  GOTO $9
+  LABEL $1
+  _0x3A []
+  GOTO_IFN_ASM $3 0806C501
+  TEXT $1C8
+  TEXT_CLEAR
+  GOTO $7
+  LABEL $3
+  TEXT $1C9
+  TEXT_CLEAR
+  LABEL $7
+  _0x3B []
+  GOTO_IFN_EID $9 6
+  _0x34 [7]
+  LABEL $9
+  END?
+  END
+
+scene chapter22.action.scene at 086722EC:
+  GOTO_IFY_ASM $1 0806C4D9
+  _0x35 [6]
+  GOTO $9
+  LABEL $1
+  _0x3A []
+  GOTO_IFN_ASM $3 0806C501
+  TEXT $1C8
+  TEXT_CLEAR
+  GOTO $7
+  LABEL $3
+  TEXT $1C9
+  TEXT_CLEAR
+  LABEL $7
+  _0x3B []
+  GOTO_IFN_EID $9 5
+  _0x34 [7]
+  LABEL $9
+  END?
+  END
+
+scene chapter22.action.scene at 08672378:
+  GOTO_IFN_ASM $1 0806C4D9
+  GOTO_IFN_EID $1 5
+  GOTO_IFN_EID $1 6
+  GOTO_IFY_ACTIVE $3 1
+  LABEL $1
+  _0x35 [8]
+  GOTO $9
+  LABEL $3
+  _0x37 [42]
+  MAPCHANGE [15, 10]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $1CA
+  TEXT_CLEAR
+  LOAD 08681120
+  MOVE_WAIT
+  LOAD 08681170
+  MOVE_WAIT
+  _0x38 []
+  LABEL $9
+  END?
+  END
+
+scene chapter22.turn.scene at 08672430:
+  GOTO_IFN_EID $9 8
+  LOAD 086810D0
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter22.ending at 08672464:
+  _0x39 [1]
+  GOTO_IFN_ASM $7 0806D151
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $1CD
+  ASM 0806DE01
+  _0x46 [16]
+  _0x48 []
+  TEXT_MORE $1CE
+  ASM 0806DE01
+  _0x46 [16]
+  _0x48 []
+  _0x36 [14]
+  TEXT_MORE $1CF
+  TEXT_MORE $1D0
+  ASM 0806DE21
+  _0x45 [4]
+  _0x47 []
+  BACKGROUND_CONTINUED 6
+  _0x46 [4]
+  _0x48 []
+  TEXT_CONTINUE
+  SLEEP 64
+  _0x3D [23]
+  SLEEP 1
+  END2?
+  GOTO $9
+  LABEL $7
+  ASM 0806E2A9
+  _0x3E []
+  END2?
+  LABEL $9
+  END?
+  END
+
+scene chapter23.turn.scene at 08672560:
+  _0x34 [5]
+  _0x34 [6]
+  _0x34 [7]
+  CURSOR_FLASH 99
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 3
+  _0x44 [16]
+  _0x48 []
+  TEXT $1E8
+  TEXT_CLEAR
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $1E9
+  TEXT_CLEAR
+  LABEL $5
+  _0x36 [62]
+  LOAD_INSTANT 086814B0
+  MOVE_WAIT
+  CAMERA 1
+  CURSOR_FLASH 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $1EB
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter23.turn.scene at 08672638:
+  CAMERA [22, 23]
+  CURSOR_FLASH [22, 23]
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $1EF
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter23.loca.scene at 08672684:
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  GOTO_IFY_ACTIVE $2 22
+  GOTO_IFY_ACTIVE $3 35
+  _0x3A []
+  TEXT $1F2
+  TEXT_CLEAR
+  _0x3B []
+  GOTO $9
+  LABEL $2
+  _0x37 [51]
+  TEXT $1F0
+  _0x35 [6]
+  _0x35 [7]
+  GOTO $7
+  LABEL $3
+  _0x37 [51]
+  TEXT $1F1
+  _0x35 [5]
+  _0x35 [7]
+  LABEL $7
+  TEXT_CLEAR
+  LOAD 08681880
+  MOVE_WAIT
+  ASM 0806D17D
+  _0x34 [4]
+  _0x38 []
+  LABEL $9
+  END?
+  END
+
+scene chapter23.char.scene at 0867276C:
+  _0x3A []
+  TEXT $1EC
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter23.char.scene at 08672788:
+  _0x3A []
+  TEXT $1ED
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter23.char.scene at 086727A4:
+  _0x3A []
+  TEXT $1EE
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter23.ending at 086727C0:
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 3
+  _0x44 [16]
+  _0x48 []
+  TEXT $1F5
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [24]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter24.turn.scene at 08672818:
+  LOAD_INSTANT 086818F8
+  MOVE_WAIT
+  CAMERA 1
+  CURSOR_FLASH 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 3
+  _0x44 [16]
+  _0x48 []
+  TEXT $1F6
+  _0x36 [61]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter24.turn.scene at 08672874:
+  LOAD 08681B68
+  MOVE_WAIT
+  ASM 0806D1AD
+  END?
+  END
+
+scene chapter24.turn.scene at 08672890:
+  LOAD 08681B88
+  MOVE_WAIT
+  ASM 0806D1AD
+  END?
+  END
+
+scene chapter24.turn.scene at 086728AC:
+  LOAD 08681BA8
+  MOVE_WAIT
+  ASM 0806D1AD
+  END?
+  END
+
+scene chapter24.turn.scene at 086728C8:
+  LOAD 08681BC8
+  MOVE_WAIT
+  ASM 0806D1AD
+  END?
+  END
+
+scene chapter24.turn.scene at 086728E4:
+  LOAD 08681BE8
+  MOVE_WAIT
+  ASM 0806D1AD
+  END?
+  END
+
+scene chapter24.turn.scene at 08672900:
+  LOAD 08681C08
+  MOVE_WAIT
+  ASM 0806D1AD
+  END?
+  END
+
+scene chapter24.loca.scene at 0867291C:
+  ASM 0806D195
+  _0x37 [61]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 3
+  _0x44 [16]
+  _0x48 []
+  TEXT $1F7
+  TEXT_CLEAR
+  MAPCHANGE 5
+  _0x38 []
+  END?
+  END
+
+scene chapter24.loca.scene at 0867296C:
+  ASM 0806D195
+  _0x37 [61]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 3
+  _0x44 [16]
+  _0x48 []
+  TEXT $1F8
+  TEXT_CLEAR
+  MAPCHANGE 4
+  _0x38 []
+  END?
+  END
+
+scene chapter24.loca.scene at 086729BC:
+  ASM 0806D195
+  _0x37 [61]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 3
+  _0x44 [16]
+  _0x48 []
+  TEXT $1F9
+  TEXT_CLEAR
+  MAPCHANGE 3
+  _0x38 []
+  END?
+  END
+
+scene chapter24.loca.scene at 08672A0C:
+  ASM 0806D195
+  _0x37 [61]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 3
+  _0x44 [16]
+  _0x48 []
+  TEXT $1FA
+  TEXT_CLEAR
+  MAPCHANGE 2
+  _0x38 []
+  END?
+  END
+
+scene chapter24.loca.scene at 08672A5C:
+  ASM 0806D195
+  _0x37 [61]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 3
+  _0x44 [16]
+  _0x48 []
+  TEXT $1FB
+  TEXT_CLEAR
+  MAPCHANGE 1
+  _0x38 []
+  END?
+  END
+
+scene chapter24.loca.scene at 08672AAC:
+  ASM 0806D195
+  _0x37 [62]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 3
+  _0x44 [16]
+  _0x48 []
+  TEXT $1FC
+  TEXT_CLEAR
+  MAPCHANGE 0
+  _0x38 []
+  END?
+  END
+
+scene chapter24.ending at 08672B28:
+  GOTO_IFY_EID $5 108
+  _0x39 [1]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 3
+  _0x44 [16]
+  _0x48 []
+  TEXT $1FF
+  _0x36 [38]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  GOTO $6
+  LABEL $5
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 3
+  _0x44 [16]
+  _0x48 []
+  TEXT $200
+  TEXT_CLEAR
+  LABEL $6
+  SLEEP 64
+  _0x3D [25]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter25.turn.scene at 08672BE4:
+  ASM 080124A9
+  ASM 08012565
+  ASM 080190F5
+  ASM 08022095
+  CAMERA_FOLLOW_MOVE_OFF
+  SLEEP 16
+  MOVE 1 [8, 9]
+  MOVE_WAIT
+  SLEEP 16
+  CAMERA 101
+  _0x36 [41]
+  TEXT $201
+  TEXT_CLEAR
+  ASM 0806DE01
+  _0x45 [4]
+  _0x47 []
+  SLEEP 30
+  _0x30 [101]
+  LOAD 08681DF4
+  MOVE_WAIT
+  SLEEP 32
+  _0x46 [4]
+  _0x48 []
+  SLEEP 16
+  CAMERA [8, 15]
+  SLEEP 16
+  ASM 0806D1D5
+  ASM_WHILE 0806D1FD
+  TEXT_CLEAR
+  CAMERA 1
+  CAMERA_FOLLOW_MOVE_ON
+  GOTO_IFY_EID $5 108
+  TEXT $236
+  GOTO $6
+  LABEL $5
+  TEXT $237
+  LABEL $6
+  TEXT_CLEAR
+  MOVE 1 [8, 16]
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter25.turn.scene at 08672D10:
+  GOTO_IFY_ASM $0 0806D35D
+  LABEL $1
+  GOTO_IFN_ASM $2 0806D399
+  LOAD 08681E14
+  GOTO $9
+  LABEL $2
+  GOTO_IFN_ASM $3 0806D399
+  LOAD 08681E34
+  GOTO $9
+  LABEL $3
+  GOTO_IFN_ASM $4 0806D399
+  LOAD 08681E54
+  GOTO $9
+  LABEL $4
+  LOAD 08681E74
+  LABEL $9
+  MOVE_WAIT
+  LABEL $0
+  END?
+  END
+
+scene chapter25.ending at 08672E0C:
+  ASM 0806E279
+  ASM 0806E2A9
+  _0x39 [4]
+  _0x43 [4]
+  _0x47 []
+  _0x3E []
+  END2?
+  END?
+  END
+
+scene chapter26.turn.scene at 08672E40:
+  _0x34 [11]
+  CAMERA [20, 2]
+  CURSOR_FLASH [20, 2]
+  CAMERA_FOLLOW_MOVE_OFF
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $948
+  TEXT_CLEAR
+  _0x36 [36]
+  LOAD_INSTANT 08681F5C
+  MOVE_WAIT
+  CAMERA 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $949
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter26.turn.scene at 08672ED8:
+  _0x37 [5]
+  CAMERA [20, 2]
+  CAMERA_FOLLOW_MOVE_OFF
+  LOAD 0868241C
+  MOVE_WAIT
+  CAMERA_FOLLOW_MOVE_ON
+  LOAD 086823FC
+  MOVE_WAIT
+  SLEEP 16
+  TEXT $94A
+  TEXT_CLEAR
+  MOVE 51 [7, 1]
+  MOVE_WAIT
+  MOVE 51 [13, 65535]
+  MOVE 55 [12, 65535]
+  MOVE_WAIT
+  _0x30 [51]
+  _0x30 [55]
+  _0x38 []
+  END?
+  END
+
+scene chapter26.turn.scene at 08672F64:
+  _0x37 [20]
+  CAMERA [8, 8]
+  CURSOR_FLASH [8, 8]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $94B
+  TEXT_CLEAR
+  _0x38 []
+  END?
+  END
+
+scene chapter26.turn.scene at 08672FB4:
+  CAMERA [20, 2]
+  CURSOR_FLASH [20, 2]
+  _0x36 [3]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $94C
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter26.turn.scene at 08673000:
+  LOAD 0868220C
+  MOVE_WAIT
+  LOAD 086821DC
+  MOVE_WAIT
+  CAMERA 182
+  _0x36 [3]
+  TEXT $94D
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter26.turn.scene at 0867303C:
+  _0x37 [2]
+  LOAD 086822AC
+  MOVE_WAIT
+  LOAD 086822EC
+  MOVE_WAIT
+  SLEEP 16
+  LOAD 0868243C
+  MOVE_WAIT
+  TEXT $94E
+  TEXT_CLEAR
+  MOVE 46 [17, 32]
+  MOVE_WAIT
+  _0x30 [46]
+  SLEEP 16
+  TEXT $94F
+  TEXT_CLEAR
+  _0x38 []
+  END?
+  END
+
+scene chapter26.turn.scene at 086730B4:
+  _0x37 [4]
+  LOAD 0868231C
+  MOVE_WAIT
+  LOAD 0868235C
+  MOVE_WAIT
+  SLEEP 16
+  TEXT $950
+  TEXT_CLEAR
+  _0x38 []
+  END?
+  END
+
+scene chapter26.turn.scene at 086730F4:
+  GOTO_IFY_EID $9 2
+  CAMERA [20, 2]
+  CURSOR_FLASH [20, 2]
+  _0x36 [3]
+  SLEEP 16
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $951
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter26.turn.scene at 0867315C:
+  GOTO_IFY_EID $9 2
+  LOAD 0868238C
+  MOVE_WAIT
+  LOAD 086823CC
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter26.turn.scene at 08673190:
+  GOTO_IFY_EID $9 2
+  CAMERA [20, 2]
+  CURSOR_FLASH [20, 2]
+  _0x36 [3]
+  SLEEP 16
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $952
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter26.turn.scene at 086731F8:
+  GOTO_IFY_EID $9 2
+  LOAD 0868223C
+  MOVE_WAIT
+  LOAD 0868227C
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter26.char.scene at 0867322C:
+  _0x37 [51]
+  TEXT $953
+  TEXT_CLEAR
+  FACTION 56 0
+  _0x38 []
+  END?
+  END
+
+scene chapter26.char.scene at 08673258:
+  _0x3A []
+  TEXT $954
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter26.char.scene at 08673274:
+  _0x37 [51]
+  TEXT $957
+  TEXT_CLEAR
+  FACTION 15 0
+  FACTION 216 64
+  _0x32 [216, 3078]
+  _0x35 [11]
+  _0x38 []
+  END?
+  END
+
+scene chapter26.char.scene at 086732C0:
+  _0x37 [51]
+  TEXT $958
+  TEXT_CLEAR
+  FACTION 15 0
+  FACTION 216 64
+  _0x32 [216, 3078]
+  _0x38 []
+  END?
+  END
+
+scene chapter26.char.scene at 08673304:
+  _0x37 [51]
+  TEXT $955
+  TEXT_CLEAR
+  FACTION 46 0
+  _0x34 [10]
+  FACTION 217 64
+  _0x32 [217, 3078]
+  _0x38 []
+  END?
+  END
+
+scene chapter26.char.scene at 08673350:
+  _0x37 [51]
+  TEXT $959
+  TEXT_CLEAR
+  FACTION 46 0
+  _0x34 [10]
+  FACTION 217 64
+  _0x32 [217, 3078]
+  _0x38 []
+  END?
+  END
+
+scene chapter26.char.scene at 0867339C:
+  _0x37 [18]
+  TEXT $956
+  TEXT_CLEAR
+  FACTION 46 64
+  FACTION 217 64
+  _0x38 []
+  END?
+  END
+
+scene chapter11.char.scene at 086733D4:
+  TEXT $95A
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter26.loca.scene at 086733E8:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $95B
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 76
+  END?
+  END
+
+scene chapter26.loca.scene at 08673430:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $95C
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 97
+  END?
+  END
+
+scene chapter26.loca.scene at 08673478:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $95D
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 82
+  END?
+  END
+
+scene chapter26.loca.scene at 086734C0:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  GOTO_IFY_ACTIVE $5 33
+  GOTO_IFY_ACTIVE $7 34
+  TEXT $960
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 101
+  GOTO $9
+  LABEL $5
+  TEXT $95E
+  GOTO $8
+  LABEL $7
+  TEXT $95F
+  LABEL $8
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 36
+  LABEL $9
+  _0x3B []
+  END?
+  END
+
+scene chapter26.loca.scene at 08673570:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  GOTO_IFY_ACTIVE $5 33
+  GOTO_IFY_ACTIVE $7 34
+  TEXT $963
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 105
+  GOTO $9
+  LABEL $5
+  TEXT $961
+  GOTO $8
+  LABEL $7
+  TEXT $962
+  LABEL $8
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 91
+  LABEL $9
+  _0x3B []
+  END?
+  END
+
+scene chapter26.loca.scene at 08673620:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $964
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 89
+  END?
+  END
+
+scene chapter26.loca.scene at 08673668:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $965
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 36
+  END?
+  END
+
+scene chapter26.ending at 086736B0:
+  _0x36 [39]
+  _0x43 [4]
+  _0x47 []
+  _0x3F [26, 20, 2]
+  LOAD 0868245C
+  MOVE_WAIT
+  MOVE 52 [20, 2]
+  _0x44 [4]
+  _0x48 []
+  MOVE_WAIT
+  _0x30 [52]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $968
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 1 120
+  GOTO_IFN_EID $3 12
+  GOTO_IFN_EID $3 13
+  GOTO_IFN_EID $3 14
+  GOTO_IFN_EID $3 15
+  GOTO_IFN_EID $3 16
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $969
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 1 95
+  LABEL $3
+  GOTO_IFN_ASM $5 0806C295
+  GOTO_IFY_EID $5 17
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $96A
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 15 97
+  LABEL $5
+  GOTO_IFN_ASM $7 0806C2A5
+  GOTO_IFY_EID $7 18
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $96B
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 46 98
+  LABEL $7
+  SLEEP 64
+  _0x3D [27]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter27.turn.scene at 0867389C:
+  _0x34 [12]
+  _0x30 [200]
+  LOAD 08682964
+  MOVE_WAIT
+  TEXT $96C
+  TEXT_CLEAR
+  CAMERA [2, 25]
+  CURSOR_FLASH [2, 25]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $96D
+  TEXT_CLEAR
+  LOAD 08682AF4
+  MOVE_WAIT
+  MOVE 94 [65535, 26]
+  MOVE_WAIT
+  _0x30 [94]
+  LOAD 08682824
+  MOVE_WAIT
+  LOAD 08682AD4
+  MOVE_WAIT
+  LOAD_INSTANT 086825C4
+  MOVE_WAIT
+  LOAD 086826A4
+  MOVE_WAIT
+  CAMERA 1
+  SLEEP 16
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $96F
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter27.turn.scene at 08673998:
+  _0x36 [3]
+  LOAD 086828B4
+  MOVE_WAIT
+  TEXT $970
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter27.turn.scene at 086739C0:
+  CAMERA [18, 21]
+  CURSOR_FLASH [18, 21]
+  _0x37 [18]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $E1
+  TEXT_CLEAR
+  LOAD 086829F4
+  MOVE_WAIT
+  _0x38 []
+  LABEL $9
+  END?
+  END
+
+scene chapter27.turn.scene at 08673A24:
+  GOTO_IFY_EID $1 2
+  _0x37 [3]
+  CAMERA [2, 25]
+  CURSOR_FLASH [2, 25]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $971
+  TEXT_CLEAR
+  _0x38 []
+  LABEL $1
+  END?
+  END
+
+scene chapter27.turn.scene at 08673A88:
+  GOTO_IFY_EID $2 2
+  LOAD 08682A44
+  MOVE_WAIT
+  LABEL $2
+  END?
+  END
+
+scene chapter27.turn.scene at 08673AB0:
+  GOTO_IFY_EID $2 2
+  LOAD 08682A74
+  MOVE_WAIT
+  LABEL $2
+  END?
+  END
+
+scene chapter27.turn.scene at 08673AD8:
+  GOTO_IFY_EID $2 2
+  LOAD 08682AA4
+  MOVE_WAIT
+  LABEL $2
+  END?
+  END
+
+scene chapter27.turn.scene at 08673B00:
+  _0x32 [212, 0]
+  END?
+  END
+
+scene chapter27.char.scene at 08673B14:
+  _0x37 [51]
+  TEXT $E2
+  TEXT_CLEAR
+  FACTION 35 0
+  _0x35 [12]
+  _0x38 []
+  END?
+  END
+
+scene chapter27.char.scene at 08673B48:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $973
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter27.char.scene at 08673B84:
+  _0x37 [51]
+  TEXT $E5
+  TEXT_CLEAR
+  FACTION 64 0
+  _0x38 []
+  END?
+  END
+
+scene chapter27.loca.scene at 08673BB0:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $975
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 123
+  END?
+  END
+
+scene chapter27.ending at 08673BF8:
+  GOTO_IFN_EID $3 118
+  _0x36 [20]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $978
+  TEXT_CLEAR
+  LABEL $3
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $979
+  TEXT_CLEAR
+  GOTO_IFY_EID $7 14
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $97B
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 1 90
+  LABEL $7
+  SLEEP 64
+  _0x3D [12]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter28.turn.scene at 08673CE8:
+  CAMERA_FOLLOW_MOVE_OFF
+  CURSOR_FLASH [29, 18]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $97C
+  TEXT_CLEAR
+  SLEEP 16
+  CURSOR_FLASH [29, 18]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 8
+  _0x44 [16]
+  _0x48 []
+  TEXT $97D
+  TEXT_CLEAR
+  LOAD_INSTANT 08682C70
+  MOVE_WAIT
+  LOAD 08682FF0
+  MOVE_WAIT
+  CAMERA 1
+  _0x36 [36]
+  TEXT $97E
+  TEXT_CLEAR
+  MOVE 18 [65535, 0]
+  MOVE_WAIT
+  _0x30 [18]
+  LOAD 08682F30
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter28.turn.scene at 08673DBC:
+  END?
+  END
+
+scene chapter28.loca.scene at 08673DC4:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $97F
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 118
+  END?
+  END
+
+scene chapter28.loca.scene at 08673E0C:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $980
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 65
+  END?
+  END
+
+scene chapter28.loca.scene at 08673E54:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $981
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter28.loca.scene at 08673E90:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $982
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter28.ending at 08673ECC:
+  _0x36 [40]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $985
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [29]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter29.turn.scene at 08673F24:
+  CURSOR_FLASH [17, 19]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $986
+  TEXT_CLEAR
+  LOAD_INSTANT 086830B8
+  MOVE_WAIT
+  CAMERA 1
+  CURSOR_FLASH 1
+  _0x36 [43]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $987
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter29.action.scene at 08673FB0:
+  GOTO_IFY_ASM $9 0806C4D9
+  _0x35 [5]
+  LABEL $9
+  END?
+  END
+
+scene chapter29.turn.scene at 08673FD4:
+  _0x40 []
+  _0x35 [5]
+  ASM 0806D3E1
+  LABEL $1
+  GOTO_IFN_ASM $2 0806D3B5
+  LOAD 08683438
+  MOVE_WAIT
+  LABEL $2
+  GOTO_IFN_ASM $3 0806D3B5
+  LOAD 08683458
+  MOVE_WAIT
+  LABEL $3
+  GOTO_IFN_ASM $4 0806D3B5
+  LOAD 08683478
+  MOVE_WAIT
+  LABEL $4
+  GOTO_IFN_ASM $5 0806D3B5
+  LOAD 08683498
+  MOVE_WAIT
+  LABEL $5
+  GOTO_IFN_ASM $6 0806D3B5
+  LOAD 086834B8
+  MOVE_WAIT
+  LABEL $6
+  GOTO_IFN_ASM $7 0806D3B5
+  LOAD 086834D8
+  MOVE_WAIT
+  LABEL $7
+  GOTO_IFN_ASM $8 0806D3B5
+  LOAD 086834F8
+  MOVE_WAIT
+  LABEL $8
+  GOTO_IFN_ASM $9 0806D3B5
+  LOAD 08683518
+  MOVE_WAIT
+  LABEL $9
+  GOTO_IFN_ASM $A 0806D3B5
+  LOAD 08683538
+  MOVE_WAIT
+  LABEL $A
+  GOTO_IFN_ASM $B 0806D3B5
+  LOAD 08683558
+  MOVE_WAIT
+  LABEL $B
+  GOTO_IFN_ASM $C 0806D3B5
+  LOAD 08683578
+  MOVE_WAIT
+  LABEL $C
+  GOTO_IFN_ASM $D 0806D3B5
+  LOAD 08683598
+  MOVE_WAIT
+  LABEL $D
+  GOTO_IFN_ASM $E 0806D3B5
+  LOAD 086835B8
+  MOVE_WAIT
+  LABEL $E
+  GOTO_IFN_ASM $F 0806D3B5
+  LOAD 086835D8
+  MOVE_WAIT
+  LABEL $F
+  GOTO_IFN_ASM $0 0806D3B5
+  LOAD 086835F8
+  MOVE_WAIT
+  LABEL $0
+  END?
+  END
+
+scene chapter29.loca.scene at 086741D8:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $98C
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter29.loca.scene at 08674214:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $98D
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter29.loca.scene at 08674250:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $98E
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter29.loca.scene at 0867428C:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $98F
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter29.ending at 086742C8:
+  _0x36 [39]
+  TEXT $992
+  ASM 08012799
+  SLEEP 30
+  GOTO_IFY_UNK $16
+  ASM 0806CFB9
+  LABEL $16
+  TEXT_CONTINUE
+  ASM 08012781
+  SLEEP 30
+  GOTO_IFY_UNK $17
+  ASM 080127B1
+  LABEL $17
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [30]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter30.turn.scene at 08674358:
+  CURSOR_FLASH [16, 1]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 8
+  _0x44 [16]
+  _0x48 []
+  TEXT $993
+  TEXT_CLEAR
+  _0x36 [43]
+  LOAD_INSTANT 086837F0
+  MOVE_WAIT
+  CAMERA 1
+  CURSOR_FLASH 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $994
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter30.turn.scene at 086743E4:
+  CAMERA [16, 11]
+  CURSOR_FLASH [16, 11]
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 0
+  _0x44 [16]
+  _0x48 []
+  TEXT $995
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter30.turn.scene at 08674430:
+  GOTO_IFY_EID $9 2
+  LOAD 08683BC0
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter30.turn.scene at 08674458:
+  GOTO_IFY_EID $9 2
+  CAMERA [16, 1]
+  CURSOR_FLASH [16, 1]
+  _0x36 [4]
+  SLEEP 16
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $996
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter30.turn.scene at 086744C0:
+  GOTO_IFY_EID $9 2
+  LOAD 08683C70
+  MOVE_WAIT
+  LOAD 08683CC0
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter30.turn.scene at 086744F4:
+  GOTO_IFY_EID $9 2
+  CAMERA [16, 16]
+  CURSOR_FLASH [16, 16]
+  _0x36 [4]
+  SLEEP 16
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $998
+  TEXT_CLEAR
+  MAPCHANGE [16, 16]
+  LABEL $9
+  END?
+  END
+
+scene chapter30.turn.scene at 08674564:
+  GOTO_IFY_EID $9 2
+  _0x36 [4]
+  CAMERA [16, 1]
+  CURSOR_FLASH [16, 1]
+  SLEEP 16
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $997
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter30.char.scene at 086745CC:
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT_CLEAR
+  FACTION 46 0
+  END?
+  END
+
+scene chapter30.loca.scene at 08674604:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $999
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 120
+  END?
+  END
+
+scene chapter30.loca.scene at 0867464C:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $99A
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 90
+  END?
+  END
+
+scene chapter30.loca.scene at 08674694:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $99B
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 87
+  END?
+  END
+
+scene chapter30.loca.scene at 086746DC:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $99C
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 14
+  END?
+  END
+
+scene chapter30.loca.scene at 08674724:
+  _0x3A []
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 1
+  _0x44 [16]
+  _0x48 []
+  TEXT $99D
+  TEXT_CLEAR
+  _0x3B []
+  _0x40 []
+  ITEM 46
+  END?
+  END
+
+scene chapter30.ending at 0867476C:
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 8
+  _0x44 [16]
+  _0x48 []
+  TEXT $9A0
+  _0x36 [63]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [31]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter31.turn.scene at 086747D0:
+  GOTO_IFN_EID $0 105
+  _0x34 [10]
+  LABEL $0
+  _0x34 [8]
+  _0x34 [9]
+  CURSOR_FLASH [15, 2]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 5
+  _0x44 [16]
+  _0x48 []
+  TEXT $9A1
+  TEXT_CLEAR
+  LOAD_INSTANT 08683DA4
+  MOVE_WAIT
+  LOAD 08683E84
+  MOVE_WAIT
+  CAMERA 1
+  CURSOR_FLASH 1
+  _0x36 [36]
+  TEXT $9A2
+  _0x36 [63]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter31.turn.scene at 08674880:
+  _0x36 [18]
+  LOAD 08683ED4
+  MOVE_WAIT
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 8
+  _0x44 [16]
+  _0x48 []
+  TEXT $9A4
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter31.turn.scene at 086748C8:
+  LOAD 08684154
+  MOVE_WAIT
+  TEXT $9A3
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter31.turn.scene at 086748E8:
+  GOTO_IFY_EID $9 105
+  GOTO_IFY_EID $9 112
+  _0x37 [50]
+  LOAD 08684114
+  MOVE_WAIT
+  TEXT $9A5
+  TEXT_CLEAR
+  _0x38 []
+  LABEL $9
+  END?
+  END
+
+scene chapter31.char.scene at 08674934:
+  _0x37 [51]
+  TEXT $9A6
+  TEXT_CLEAR
+  FACTION 6 0
+  _0x35 [8]
+  _0x35 [9]
+  _0x38 []
+  END?
+  END
+
+scene chapter31.char.scene at 08674970:
+  _0x37 [51]
+  TEXT $9A7
+  TEXT_CLEAR
+  FACTION 6 0
+  _0x35 [9]
+  _0x38 []
+  END?
+  END
+
+scene chapter31.char.scene at 086749A4:
+  _0x37 [51]
+  TEXT $9A8
+  TEXT_CLEAR
+  FACTION 6 0
+  _0x35 [8]
+  _0x38 []
+  END?
+  END
+
+scene chapter31.char.scene at 086749D8:
+  _0x3A []
+  TEXT $9A9
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter31.char.scene at 086749F4:
+  _0x3A []
+  TEXT $9AA
+  TEXT_CLEAR
+  _0x3B []
+  END?
+  END
+
+scene chapter31.ending at 08674A10:
+  _0x36 [39]
+  GOTO_IFN_ASM $5 0806C1E5
+  GOTO_IFN_ASM $5 0806C275
+  GOTO_IFN_ASM $5 0806C285
+  GOTO_IFY_ASM $5 0806C4B1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 8
+  _0x44 [16]
+  _0x48 []
+  TEXT $9AD
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [37]
+  SLEEP 1
+  END2?
+  GOTO $9
+  LABEL $5
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 8
+  _0x44 [16]
+  _0x48 []
+  TEXT $9AE
+  _0x36 [43]
+  TEXT_CONTINUE
+  _0x36 [60]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [21]
+  SLEEP 1
+  END2?
+  LABEL $9
+  END?
+  END
+
+movescr chapter32.ending.moma at 08674B10:
+  <no available representation>
+
+movescr chapter32.ending.moma at 08674B22:
+  <no available representation>
+
+scene chapter32.turn.scene at 08674B2C:
+  ASM 0806D41D
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 18
+  _0x44 [16]
+  _0x48 []
+  TEXT $BD3
+  TEXT_CLEAR
+  _0x36 [15]
+  LOAD_INSTANT 0868424C
+  MOVE_WAIT
+  CAMERA 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 18
+  _0x44 [16]
+  _0x48 []
+  TEXT $BD4
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter32.ending at 08674BB0:
+  _0x36 [39]
+  GOTO_IFN_ASM $3 0806C1B5
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 18
+  _0x44 [16]
+  _0x48 []
+  TEXT $BD7
+  TEXT_CLEAR
+  GOTO $5
+  LABEL $3
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 18
+  _0x44 [16]
+  _0x48 []
+  TEXT $BD8
+  TEXT_CLEAR
+  LABEL $5
+  _0x40 []
+  ITEM 1 9
+  SLEEP 64
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 18
+  _0x44 [16]
+  _0x48 []
+  TEXT $BE
+  TEXT_CLEAR
+  CAMERA_FOLLOW_MOVE_OFF
+  MOVE_MANUAL 1 08674B10
+  _0x43 [4]
+  _0x47 []
+  MOVE_WAIT
+  ASM 08028E29
+  SLEEP 1
+  _0x3F [7, 8, 13]
+  MOVE_MANUAL 1 08674B22
+  MOVE_WAIT
+  LOAD 0868451C
+  MOVE_WAIT
+  MOVE 1 [6, 17]
+  _0x44 [4]
+  _0x48 []
+  MOVE_WAIT
+  SLEEP 16
+  CAMERA 89
+  _0x36 [44]
+  MOVE [1, 19] [3, 17]
+  MOVE [11, 19] [9, 17]
+  MOVE_WAIT
+  SLEEP 32
+  MOVE 89 [6, 19]
+  MOVE_WAIT
+  SLEEP 32
+  TEXT $BF
+  TEXT_CLEAR
+  CAMERA_FOLLOW_MOVE_OFF
+  TEXT_CLEAR
+  _0x36 [39]
+  LOAD 0868459C
+  MOVE_WAIT
+  CAMERA 29
+  CAMERA_FOLLOW_MOVE_OFF
+  SLEEP 16
+  LOAD 086845BC
+  MOVE_WAIT
+  SLEEP 16
+  LOAD 086845DC
+  MOVE_WAIT
+  LOAD 0868462C
+  MOVE_WAIT
+  LOAD 0868467C
+  MOVE_WAIT
+  LOAD 086846CC
+  MOVE_WAIT
+  LOAD 0868470C
+  MOVE_WAIT
+  LOAD 0868471C
+  MOVE_WAIT
+  TEXT $C0
+  TEXT_CLEAR
+  MOVE 89 [20, 12]
+  MOVE_WAIT
+  MOVE [3, 17] [19, 11]
+  MOVE [9, 17] [18, 11]
+  MOVE_WAIT
+  MOVE [3, 19] [18, 15]
+  MOVE [5, 19] [17, 15]
+  MOVE_WAIT
+  MOVE [7, 19] [16, 14]
+  MOVE [9, 19] [15, 14]
+  MOVE_WAIT
+  SLEEP 16
+  MOVE 29 [6, 19]
+  MOVE 63 [7, 18]
+  MOVE_WAIT
+  TEXT $C1
+  TEXT_CLEAR
+  MOVE 29 [6, 27]
+  MOVE_WAIT
+  SLEEP 16
+  MOVE 63 [6, 18]
+  MOVE_WAIT
+  TEXT $C2
+  TEXT_CLEAR
+  MOVE 1 [6, 10]
+  MOVE_WAIT
+  TEXT $C3
+  TEXT_CLEAR
+  MOVE 63 [5, 10]
+  MOVE_WAIT
+  ASM 0806D55D
+  _0x3D [9]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter33.turn.scene at 08674F00:
+  ASM 0806D569
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 17
+  _0x44 [16]
+  _0x48 []
+  TEXT $BD9
+  TEXT_CLEAR
+  _0x36 [15]
+  LOAD_INSTANT 08684824
+  MOVE_WAIT
+  CAMERA 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 17
+  _0x44 [16]
+  _0x48 []
+  TEXT $BDA
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter33.ending at 08674F84:
+  _0x36 [40]
+  GOTO_IFY_ASM $1 0806C255
+  GOTO_IFN_EID $3 106
+  LABEL $1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 17
+  _0x44 [16]
+  _0x48 []
+  TEXT $BDD
+  TEXT_CLEAR
+  GOTO $5
+  LABEL $3
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 17
+  _0x44 [16]
+  _0x48 []
+  TEXT $BDE
+  TEXT_CLEAR
+  LABEL $5
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 17
+  _0x44 [16]
+  _0x48 []
+  TEXT $115
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 1 33
+  SLEEP 64
+  _0x3D [13]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter34.turn.scene at 0867514C:
+  ASM 0806D621
+  CAMERA 185
+  CURSOR_FLASH 185
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 13
+  _0x44 [16]
+  _0x48 []
+  TEXT $BDF
+  TEXT_CLEAR
+  _0x36 [38]
+  LOAD_INSTANT 08684A94
+  MOVE_WAIT
+  CAMERA 1
+  CURSOR_FLASH 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 13
+  _0x44 [16]
+  _0x48 []
+  TEXT $BE0
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter34.ending at 086751E8:
+  _0x36 [38]
+  GOTO_IFN_ASM $5 0806C225
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 3
+  _0x44 [16]
+  _0x48 []
+  TEXT $BE3
+  TEXT_CLEAR
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 8
+  _0x44 [16]
+  _0x48 []
+  TEXT $143
+  TEXT_CLEAR
+  GOTO $9
+  LABEL $5
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 3
+  _0x44 [16]
+  _0x48 []
+  TEXT $BE4
+  TEXT_CLEAR
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $BE5
+  TEXT_CLEAR
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 8
+  _0x44 [16]
+  _0x48 []
+  TEXT $143
+  TEXT_CLEAR
+  LABEL $9
+  _0x40 []
+  ITEM 1 58
+  SLEEP 64
+  _0x3D [15]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter35.turn.scene at 08675324:
+  ASM 0806D649
+  CAMERA 198
+  CURSOR_FLASH 198
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 15
+  _0x44 [16]
+  _0x48 []
+  TEXT $BE6
+  TEXT_CLEAR
+  LOAD_INSTANT 08684D84
+  MOVE_WAIT
+  GOTO_IFY_EID $7 110
+  LOAD 08685074
+  MOVE_WAIT
+  LABEL $7
+  _0x36 [15]
+  CAMERA 1
+  CURSOR_FLASH 1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 15
+  _0x44 [16]
+  _0x48 []
+  TEXT $BE7
+  TEXT_CLEAR
+  END?
+  END
+
+scene chapter35.turn.scene at 086753E0:
+  GOTO_IFN_ASM $9 0806C3BD
+  CAMERA 198
+  _0x32 [199, 0]
+  LABEL $9
+  END?
+  END
+
+scene chapter35.ending at 08675410:
+  _0x36 [39]
+  GOTO_IFN_ASM $1 0806C2B5
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 15
+  _0x44 [16]
+  _0x48 []
+  TEXT $BEB
+  TEXT_CLEAR
+  GOTO $2
+  LABEL $1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 15
+  _0x44 [16]
+  _0x48 []
+  TEXT $BEC
+  TEXT_CLEAR
+  LABEL $2
+  _0x36 [43]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $172
+  TEXT_CLEAR
+  GOTO_IFY_ASM $3 0806C2B5
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 3
+  _0x44 [16]
+  _0x48 []
+  TEXT $BED
+  TEXT_CLEAR
+  LABEL $3
+  _0x40 []
+  ITEM 1 62
+  SLEEP 64
+  GOTO_IFN_ASM $7 0806C5A9
+  _0x3D [28]
+  SLEEP 1
+  END2?
+  GOTO $9
+  LABEL $7
+  _0x3D [17]
+  SLEEP 1
+  END2?
+  LABEL $9
+  END?
+  END
+
+scene chapter36.turn.scene at 0867557C:
+  CAMERA [16, 1]
+  CURSOR_FLASH [16, 1]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 13
+  _0x44 [16]
+  _0x48 []
+  TEXT $BEE
+  TEXT_CLEAR
+  _0x36 [15]
+  LOAD_INSTANT 08685100
+  MOVE_WAIT
+  CAMERA 1
+  CURSOR_FLASH 1
+  GOTO_IFY_ASM $1 0806C0F9
+  GOTO_IFY_ASM $2 0806C0E9
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 13
+  _0x44 [16]
+  _0x48 []
+  TEXT $BF2
+  TEXT_CLEAR
+  GOTO $9
+  LABEL $1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 13
+  _0x44 [16]
+  _0x48 []
+  TEXT $BF0
+  TEXT_CLEAR
+  GOTO $9
+  LABEL $2
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 13
+  _0x44 [16]
+  _0x48 []
+  TEXT $BF1
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter36.ending at 086756A8:
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 13
+  _0x44 [16]
+  _0x48 []
+  TEXT $BF5
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 1 23
+  _0x36 [43]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 13
+  _0x44 [16]
+  _0x48 []
+  TEXT $1AE
+  _0x36 [60]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [21]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter37.turn.scene at 08675768:
+  ASM 0806D6B5
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $BF6
+  TEXT_CLEAR
+  _0x36 [15]
+  LOAD_INSTANT 086854A0
+  MOVE_WAIT
+  CAMERA 1
+  CURSOR_FLASH 1
+  GOTO_IFY_ASM $1 0806C109
+  GOTO_IFY_ASM $2 0806C119
+  GOTO_IFY_ASM $3 0806C129
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $BFA
+  TEXT_CLEAR
+  GOTO $9
+  LABEL $1
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $BF7
+  TEXT_CLEAR
+  GOTO $9
+  LABEL $2
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $BF8
+  TEXT_CLEAR
+  GOTO $9
+  LABEL $3
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $BF9
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter37.loca.scene at 086758D4:
+  GOTO_IFN_EID $5 10
+  _0x34 [3]
+  GOTO $9
+  LABEL $5
+  LOAD 086857C0
+  MOVE_WAIT
+  LOAD 08685800
+  MOVE_WAIT
+  TEXT $BFC
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter37.loca.scene at 0867592C:
+  GOTO_IFN_EID $5 11
+  _0x34 [3]
+  GOTO $9
+  LABEL $5
+  LOAD 08685840
+  MOVE_WAIT
+  LOAD 08685880
+  MOVE_WAIT
+  TEXT $BFC
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter37.loca.scene at 08675984:
+  GOTO_IFN_EID $5 12
+  _0x34 [3]
+  GOTO $9
+  LABEL $5
+  LOAD 086858B0
+  MOVE_WAIT
+  LOAD 086858F0
+  MOVE_WAIT
+  TEXT $BFC
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter37.loca.scene at 086759DC:
+  GOTO_IFN_EID $5 13
+  _0x34 [3]
+  GOTO $9
+  LABEL $5
+  LOAD 08685930
+  MOVE_WAIT
+  LOAD 08685970
+  MOVE_WAIT
+  TEXT $BFC
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter37.loca.scene at 08675A34:
+  GOTO_IFN_EID $5 14
+  _0x34 [3]
+  GOTO $9
+  LABEL $5
+  LOAD 086859B0
+  MOVE_WAIT
+  LOAD 086859F0
+  MOVE_WAIT
+  TEXT $BFC
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter37.loca.scene at 08675A8C:
+  GOTO_IFN_EID $5 15
+  _0x34 [3]
+  GOTO $9
+  LABEL $5
+  LOAD 08685A30
+  MOVE_WAIT
+  LOAD 08685A70
+  MOVE_WAIT
+  TEXT $BFC
+  TEXT_CLEAR
+  LABEL $9
+  END?
+  END
+
+scene chapter37.ending at 08675AE4:
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $BFF
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 1 47
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 7
+  _0x44 [16]
+  _0x48 []
+  TEXT $9AE
+  _0x36 [43]
+  TEXT_CONTINUE
+  _0x36 [60]
+  TEXT_CONTINUE
+  TEXT_CLEAR
+  SLEEP 64
+  _0x3D [21]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter38.turn.scene at 08675BA8:
+  ASM 0806D6D9
+  ASM 0806D77D
+  CAMERA [15, 1]
+  CURSOR_FLASH [15, 1]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 13
+  _0x44 [16]
+  _0x48 []
+  TEXT $C00
+  TEXT_CLEAR
+  _0x36 [15]
+  LOAD_INSTANT 08685BC0
+  MOVE_WAIT
+  CAMERA 1
+  CURSOR_FLASH 1
+  GOTO_IFY_ASM $5 0806C139
+  GOTO_IFY_ASM $7 0806C149
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 13
+  _0x44 [16]
+  _0x48 []
+  TEXT $C03
+  TEXT_CLEAR
+  GOTO $9
+  LABEL $5
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 13
+  _0x44 [16]
+  _0x48 []
+  TEXT $C01
+  TEXT_CLEAR
+  GOTO $9
+  LABEL $7
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 13
+  _0x44 [16]
+  _0x48 []
+  TEXT $C02
+  TEXT_CLEAR
+  GOTO $9
+  LABEL $9
+  CAMERA 1
+  END?
+  END
+
+scene chapter38.loca.scene at 08675CF4:
+  GOTO_IFY_EID $3 8
+  _0x40 []
+  ITEM 105
+  GOTO $9
+  LABEL $3
+  LOAD 08685F50
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter38.loca.scene at 08675D38:
+  GOTO_IFY_EID $3 9
+  _0x40 []
+  ITEM 105
+  GOTO $9
+  LABEL $3
+  LOAD 08685F70
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter38.loca.scene at 08675D7C:
+  GOTO_IFY_EID $3 10
+  _0x40 []
+  ITEM 105
+  GOTO $9
+  LABEL $3
+  LOAD 08685F90
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter38.loca.scene at 08675DC0:
+  GOTO_IFY_EID $3 11
+  _0x40 []
+  ITEM 105
+  GOTO $9
+  LABEL $3
+  LOAD 08685FB0
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter38.loca.scene at 08675E04:
+  GOTO_IFY_EID $3 12
+  _0x40 []
+  ITEM 105
+  GOTO $9
+  LABEL $3
+  LOAD 08685FD0
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter38.loca.scene at 08675E48:
+  GOTO_IFY_EID $3 13
+  _0x40 []
+  ITEM 105
+  GOTO $9
+  LABEL $3
+  LOAD 08685FF0
+  MOVE_WAIT
+  LABEL $9
+  END?
+  END
+
+scene chapter38.ending at 08675E8C:
+  _0x41 []
+  _0x36 [39]
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 13
+  _0x44 [16]
+  _0x48 []
+  TEXT $C06
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 1 66
+  SLEEP 64
+  _0x39 [4]
+  SLEEP 64
+  _0x43 [16]
+  _0x47 []
+  BACKGROUND 6
+  _0x44 [16]
+  _0x48 []
+  TEXT $1C0
+  ASM 0806DE01
+  _0x46 [16]
+  _0x48 []
+  TEXT_CONTINUE
+  ASM 0806DE21
+  _0x45 [4]
+  _0x47 []
+  BACKGROUND 4
+  _0x46 [4]
+  _0x48 []
+  _0x36 [41]
+  TEXT $1C1
+  ASM 0806DE01
+  _0x46 [16]
+  _0x48 []
+  _0x45 [4]
+  _0x47 []
+  BACKGROUND 6
+  _0x46 [4]
+  _0x48 []
+  _0x36 [60]
+  TEXT $1C2
+  TEXT_CLEAR
+  _0x40 []
+  ITEM 1 15
+  SLEEP 64
+  ASM 0806D0E5
+  SLEEP 1280
+  _0x3D [22]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter40.turn.scene at 08675FF0:
+  END?
+  END
+
+scene chapter40.ending at 08675FF8:
+  _0x3D [40]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter40.action.scene at 08676014:
+  _0x3D [0]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter41.turn.scene at 08676030:
+  END?
+  END
+
+scene chapter41.ending at 08676038:
+  SLEEP 64
+  _0x3D [41]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter41.action.scene at 0867605C:
+  SLEEP 64
+  _0x3D [0]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter42.turn.scene at 08676080:
+  END?
+  END
+
+scene chapter42.ending at 08676088:
+  SLEEP 64
+  _0x3D [42]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter42.action.scene at 086760AC:
+  GOTO_IFY_ASM $3 0806C4ED
+  _0x35 [3]
+  GOTO $9
+  LABEL $3
+  SLEEP 64
+  _0x3D [0]
+  SLEEP 1
+  END2?
+  LABEL $9
+  END?
+  END
+
+scene chapter43.turn.scene at 086760FC:
+  END?
+  END
+
+scene chapter43.ending at 08676104:
+  SLEEP 64
+  _0x3D [43]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter43.action.scene at 08676128:
+  SLEEP 64
+  _0x3D [0]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter44.turn.scene at 0867614C:
+  END?
+  END
+
+scene chapter44.ending at 08676154:
+  SLEEP 64
+  _0x3D [44]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+scene chapter44.action.scene at 08676178:
+  SLEEP 64
+  _0x3D [0]
+  SLEEP 1
+  END2?
+  END?
+  END
+
+units chapter0.red at 08679974:
+  <no available representation>
+
+units chapter0.turn.scene.units at 08679994:
+  <no available representation>
+
+units chapter0.turn.scene.units at 086799B4:
+  <no available representation>
+
+units chapter0.blue at 086799D4:
+  <no available representation>
+
+units chapter0.turn.scene.units at 086799E4:
+  <no available representation>
+
+units chapter1.red at 08679B40:
+  <no available representation>
+
+units chapter1.turn.scene.units at 08679B70:
+  <no available representation>
+
+units chapter1.turn.scene.units at 08679BB0:
+  <no available representation>
+
+units chapter1.blue at 08679BD0:
+  <no available representation>
+
+units chapter1.turn.scene.units at 08679BE0:
+  <no available representation>
+
+units chapter1.turn.scene.units at 08679C40:
+  <no available representation>
+
+units chapter1.turn.scene.units at 08679C90:
+  <no available representation>
+
+units chapter1.turn.scene.units at 08679CE0:
+  <no available representation>
+
+units chapter2.red at 08679DEC:
+  <no available representation>
+
+units chapter2.turn.scene.units at 08679E5C:
+  <no available representation>
+
+units chapter2.blue at 08679E7C:
+  <no available representation>
+
+units chapter2.turn.scene.units at 08679E8C:
+  <no available representation>
+
+units chapter2.turn.scene.units at 08679F5C:
+  <no available representation>
+
+units chapter2.turn.scene.units at 08679F7C:
+  <no available representation>
+
+units chapter2.turn.scene.units at 08679FAC:
+  <no available representation>
+
+units chapter2.turn.scene.units at 08679FEC:
+  <no available representation>
+
+units chapter2.turn.scene.units at 0867A01C:
+  <no available representation>
+
+units chapter2.turn.scene.units at 0867A04C:
+  <no available representation>
+
+units chapter2.turn.scene.units at 0867A06C:
+  <no available representation>
+
+units chapter2.turn.scene.units at 0867A08C:
+  <no available representation>
+
+units chapter2.turn.scene.units at 0867A0AC:
+  <no available representation>
+
+units chapter3.red at 0867A2AC:
+  <no available representation>
+
+units chapter3.turn.scene.units at 0867A37C:
+  <no available representation>
+
+units chapter3.blue at 0867A39C:
+  <no available representation>
+
+units chapter3.turn.scene.units at 0867A4CC:
+  <no available representation>
+
+units chapter3.turn.scene.units at 0867A58C:
+  <no available representation>
+
+units chapter3.loca.scene.units at 0867A5BC:
+  <no available representation>
+
+units chapter3.turn.scene.units at 0867A5DC:
+  <no available representation>
+
+units chapter3.turn.scene.units at 0867A5FC:
+  <no available representation>
+
+scene chapter3.turn.scene at 0867A6BC:
+  LOAD 0867A58C
+  MOVE_WAIT
+  END?
+  END
+
+units chapter4.red at 0867A70C:
+  <no available representation>
+
+units chapter4.blue at 0867A7FC:
+  <no available representation>
+
+units chapter4.turn.scene.units at 0867A81C:
+  <no available representation>
+
+units chapter4.turn.scene.units at 0867A93C:
+  <no available representation>
+
+units chapter4.turn.scene.units at 0867A96C:
+  <no available representation>
+
+units chapter4.turn.scene.units at 0867A9BC:
+  <no available representation>
+
+units chapter4.turn.scene.units at 0867A9DC:
+  <no available representation>
+
+scene chapter4.turn.scene at 0867AAD0:
+  LOAD 0867A93C
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter4.turn.scene at 0867AAE4:
+  LOAD 0867A96C
+  MOVE_WAIT
+  END?
+  END
+
+units chapter5.red at 0867AB48:
+  <no available representation>
+
+units chapter5.blue at 0867AC58:
+  <no available representation>
+
+units chapter5.turn.scene.units at 0867ADE8:
+  <no available representation>
+
+units chapter5.action.scene.units at 0867AE18:
+  <no available representation>
+
+units chapter5.turn.scene.units at 0867AE68:
+  <no available representation>
+
+units chapter5.turn.scene.units at 0867AE98:
+  <no available representation>
+
+scene chapter5.turn.scene at 0867AF3C:
+  LOAD 0867ADE8
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter5.turn.scene at 0867AF64:
+  LOAD 0867AE68
+  MOVE_WAIT
+  END?
+  END
+
+units chapter6.red at 0867AFA0:
+  <no available representation>
+
+units chapter6.turn.scene.units at 0867B050:
+  <no available representation>
+
+units chapter6.blue at 0867B080:
+  <no available representation>
+
+units chapter6.turn.scene.units at 0867B260:
+  <no available representation>
+
+units chapter6.turn.scene.units at 0867B2B0:
+  <no available representation>
+
+units chapter6.turn.scene.units at 0867B3D0:
+  <no available representation>
+
+units chapter6.turn.scene.units at 0867B3F0:
+  <no available representation>
+
+units chapter6.turn.scene.units at 0867B440:
+  <no available representation>
+
+units chapter6.turn.scene.units at 0867B490:
+  <no available representation>
+
+units chapter6.turn.scene.units at 0867B4E0:
+  <no available representation>
+
+units chapter6.turn.scene.units at 0867B520:
+  <no available representation>
+
+scene chapter6.turn.scene at 0867B61C:
+  LOAD 0867B3F0
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter6.turn.scene at 0867B630:
+  LOAD 0867B440
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter6.turn.scene at 0867B644:
+  LOAD 0867B490
+  MOVE_WAIT
+  END?
+  END
+
+units chapter7.red at 0867B680:
+  <no available representation>
+
+units chapter7.blue at 0867B760:
+  <no available representation>
+
+units chapter7.turn.scene.units at 0867B8D0:
+  <no available representation>
+
+units chapter7.turn.scene.units at 0867B930:
+  <no available representation>
+
+units chapter7.turn.scene.units at 0867B960:
+  <no available representation>
+
+units chapter7.turn.scene.units at 0867B980:
+  <no available representation>
+
+units chapter7.turn.scene.units at 0867BA10:
+  <no available representation>
+
+units chapter7.turn.scene.units at 0867BA60:
+  <no available representation>
+
+units chapter7.turn.scene.units at 0867BA80:
+  <no available representation>
+
+scene chapter7.turn.scene at 0867BB20:
+  LOAD 0867BA10
+  MOVE_WAIT
+  END?
+  END
+
+units chapter8.red at 0867BB5C:
+  <no available representation>
+
+units chapter8.turn.scene.units at 0867BC2C:
+  <no available representation>
+
+units chapter8.blue at 0867BC4C:
+  <no available representation>
+
+units chapter8.turn.scene.units at 0867BE2C:
+  <no available representation>
+
+units chapter8.turn.scene.units at 0867BE5C:
+  <no available representation>
+
+units chapter8.turn.scene.units at 0867BEAC:
+  <no available representation>
+
+units chapter8.turn.scene.units at 0867BEFC:
+  <no available representation>
+
+units chapter8.turn.scene.units at 0867BF3C:
+  <no available representation>
+
+units chapter8.turn.scene.units at 0867BF7C:
+  <no available representation>
+
+units chapter8.turn.scene.units at 0867BF9C:
+  <no available representation>
+
+units chapter8.ending.units at 0867BFFC:
+  <no available representation>
+
+units chapter8.ending.units at 0867C07C:
+  <no available representation>
+
+units chapter8.ending.units at 0867C09C:
+  <no available representation>
+
+units chapter8.ending.units at 0867C0BC:
+  <no available representation>
+
+units chapter8.ending.units at 0867C10C:
+  <no available representation>
+
+units chapter8.ending.units at 0867C15C:
+  <no available representation>
+
+units chapter8.ending.units at 0867C1AC:
+  <no available representation>
+
+units chapter8.ending.units at 0867C1EC:
+  <no available representation>
+
+units chapter8.ending.units at 0867C1FC:
+  <no available representation>
+
+scene chapter8.turn.scene at 0867C264:
+  LOAD 0867BE5C
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter8.turn.scene at 0867C278:
+  LOAD 0867BEAC
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter8.turn.scene at 0867C28C:
+  LOAD 0867BEFC
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter8.turn.scene at 0867C2A0:
+  LOAD 0867BF3C
+  MOVE_WAIT
+  END?
+  END
+
+units chapter9.red at 0867C3A4:
+  <no available representation>
+
+units chapter9.blue at 0867C484:
+  <no available representation>
+
+units chapter9.turn.scene.units at 0867C664:
+  <no available representation>
+
+units chapter9.turn.scene.units at 0867C6E4:
+  <no available representation>
+
+units chapter9.turn.scene.units at 0867C714:
+  <no available representation>
+
+scene chapter9.turn.scene at 0867C834:
+  LOAD 0867C664
+  MOVE_WAIT
+  END?
+  END
+
+units chapter10.red at 0867C898:
+  <no available representation>
+
+units chapter10.blue at 0867C968:
+  <no available representation>
+
+units chapter10.turn.scene.units at 0867CAE8:
+  <no available representation>
+
+units chapter10.turn.scene.units at 0867CB08:
+  <no available representation>
+
+units chapter10.turn.scene.units at 0867CB28:
+  <no available representation>
+
+units chapter10.turn.scene.units at 0867CB48:
+  <no available representation>
+
+units chapter10.turn.scene.units at 0867CBB8:
+  <no available representation>
+
+units chapter10.turn.scene.units at 0867CBD8:
+  <no available representation>
+
+scene chapter10.turn.scene at 0867CCF8:
+  LOAD 0867CAE8
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter10.turn.scene at 0867CD0C:
+  LOAD 0867CB08
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter10.turn.scene at 0867CD20:
+  LOAD 0867CB28
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter10.turn.scene at 0867CD34:
+  LOAD 0867CB48
+  MOVE_WAIT
+  END?
+  END
+
+units chapter11.red at 0867CDAC:
+  <no available representation>
+
+units chapter11.turn.scene.units at 0867CE7C:
+  <no available representation>
+
+units chapter11.blue at 0867CE9C:
+  <no available representation>
+
+units chapter11.turn.scene.units at 0867D00C:
+  <no available representation>
+
+units chapter11.turn.scene.units at 0867D02C:
+  <no available representation>
+
+units chapter11.turn.scene.units at 0867D07C:
+  <no available representation>
+
+units chapter11.turn.scene.units at 0867D0BC:
+  <no available representation>
+
+units chapter11.turn.scene.units at 0867D0EC:
+  <no available representation>
+
+units chapter11.turn.scene.units at 0867D11C:
+  <no available representation>
+
+units chapter11.turn.scene.units at 0867D13C:
+  <no available representation>
+
+units chapter11.turn.scene.units at 0867D17C:
+  <no available representation>
+
+units chapter11.turn.scene.units at 0867D1CC:
+  <no available representation>
+
+units chapter11.turn.scene.units at 0867D20C:
+  <no available representation>
+
+units chapter11.turn.scene.units at 0867D24C:
+  <no available representation>
+
+units chapter11.turn.scene.units at 0867D27C:
+  <no available representation>
+
+units chapter11.turn.scene.units at 0867D2BC:
+  <no available representation>
+
+units chapter11.turn.scene.units at 0867D2EC:
+  <no available representation>
+
+units chapter11.turn.scene.units at 0867D30C:
+  <no available representation>
+
+units chapter11.turn.scene.units at 0867D32C:
+  <no available representation>
+
+units chapter11.turn.scene.units at 0867D34C:
+  <no available representation>
+
+units chapter11.ending.units at 0867D36C:
+  <no available representation>
+
+scene chapter11.turn.scene at 0867D420:
+  LOAD 0867D0EC
+  MOVE_WAIT
+  END?
+  END
+
+units chapter12.red at 0867D538:
+  <no available representation>
+
+units chapter12.blue at 0867D618:
+  <no available representation>
+
+units chapter12.turn.scene.units at 0867D7E8:
+  <no available representation>
+
+units chapter12.turn.scene.units at 0867D828:
+  <no available representation>
+
+units chapter12.turn.scene.units at 0867D878:
+  <no available representation>
+
+units chapter12.turn.scene.units at 0867D8C8:
+  <no available representation>
+
+units chapter12.turn.scene.units at 0867D8E8:
+  <no available representation>
+
+units chapter12.turn.scene.units at 0867D918:
+  <no available representation>
+
+units chapter12.turn.scene.units at 0867D938:
+  <no available representation>
+
+scene chapter12.turn.scene at 0867D988:
+  LOAD 0867D7E8
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter12.turn.scene at 0867D99C:
+  LOAD 0867D828
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter12.turn.scene at 0867D9B0:
+  LOAD 0867D878
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter12.turn.scene at 0867D9D8:
+  LOAD 0867D8E8
+  MOVE_WAIT
+  END?
+  END
+
+units chapter13.red at 0867DA14:
+  <no available representation>
+
+units chapter13.blue at 0867DB04:
+  <no available representation>
+
+units chapter13.turn.scene.units at 0867DDA4:
+  <no available representation>
+
+units chapter13.turn.scene.units at 0867DDF4:
+  <no available representation>
+
+units chapter13.turn.scene.units at 0867DE34:
+  <no available representation>
+
+units chapter13.turn.scene.units at 0867DE84:
+  <no available representation>
+
+units chapter13.turn.scene.units at 0867DEC4:
+  <no available representation>
+
+units chapter13.turn.scene.units at 0867DF24:
+  <no available representation>
+
+units chapter13.turn.scene.units at 0867DF44:
+  <no available representation>
+
+units chapter13.turn.scene.units at 0867DF74:
+  <no available representation>
+
+units chapter13.turn.scene.units at 0867DF94:
+  <no available representation>
+
+units chapter13.turn.scene.units at 0867DFB4:
+  <no available representation>
+
+units chapter13.turn.scene.units at 0867DFD4:
+  <no available representation>
+
+scene chapter13.turn.scene at 0867E038:
+  LOAD 0867DDA4
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter13.turn.scene at 0867E04C:
+  LOAD 0867DDF4
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter13.turn.scene at 0867E060:
+  LOAD 0867DE34
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter13.turn.scene at 0867E074:
+  LOAD 0867DE84
+  MOVE_WAIT
+  END?
+  END
+
+units chapter14.red at 0867E13C:
+  <no available representation>
+
+units chapter14.turn.scene.units at 0867E1FC:
+  <no available representation>
+
+units chapter14.blue at 0867E22C:
+  <no available representation>
+
+units chapter14.turn.scene.units at 0867E42C:
+  <no available representation>
+
+units chapter14.turn.scene.units at 0867E46C:
+  <no available representation>
+
+units chapter14.turn.scene.units at 0867E49C:
+  <no available representation>
+
+units chapter14.turn.scene.units at 0867E4DC:
+  <no available representation>
+
+units chapter14.turn.scene.units at 0867E50C:
+  <no available representation>
+
+units chapter14.turn.scene.units at 0867E55C:
+  <no available representation>
+
+units chapter14.turn.scene.units at 0867E5AC:
+  <no available representation>
+
+scene chapter14.turn.scene at 0867E6C0:
+  LOAD 0867E50C
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter14.turn.scene at 0867E6D4:
+  LOAD 0867E55C
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter14.turn.scene at 0867E6E8:
+  LOAD 0867E5AC
+  MOVE_WAIT
+  END?
+  END
+
+units chapter15.red at 0867E710:
+  <no available representation>
+
+units chapter15.turn.scene.units at 0867E7E0:
+  <no available representation>
+
+units chapter15.blue at 0867E800:
+  <no available representation>
+
+units chapter15.turn.scene.units at 0867E9F0:
+  <no available representation>
+
+units chapter15.turn.scene.units at 0867EA60:
+  <no available representation>
+
+units chapter15.turn.scene.units at 0867EAB0:
+  <no available representation>
+
+units chapter15.ending.units at 0867EAF0:
+  <no available representation>
+
+units chapter16.red at 0867EBA4:
+  <no available representation>
+
+units chapter16.blue at 0867EC94:
+  <no available representation>
+
+units chapter16.turn.scene.units at 0867EEC4:
+  <no available representation>
+
+units chapter16.turn.scene.units at 0867EF54:
+  <no available representation>
+
+units chapter16.turn.scene.units at 0867EF74:
+  <no available representation>
+
+units chapter16.turn.scene.units at 0867EFA4:
+  <no available representation>
+
+units chapter16.turn.scene.units at 0867EFC4:
+  <no available representation>
+
+units chapter16.turn.scene.units at 0867EFF4:
+  <no available representation>
+
+scene chapter16.turn.scene at 0867F044:
+  LOAD 0867EEC4
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter16.turn.scene at 0867F06C:
+  LOAD 0867EF54
+  MOVE_WAIT
+  END?
+  END
+
+units chapter17.red at 0867F0E4:
+  <no available representation>
+
+units chapter17.blue at 0867F1D4:
+  <no available representation>
+
+units chapter17.turn.scene.units at 0867F3A4:
+  <no available representation>
+
+units chapter17.turn.scene.units at 0867F3D4:
+  <no available representation>
+
+units chapter17.turn.scene.units at 0867F404:
+  <no available representation>
+
+units chapter17.turn.scene.units at 0867F4C4:
+  <no available representation>
+
+units chapter17.turn.scene.units at 0867F4E4:
+  <no available representation>
+
+units chapter17.turn.scene.units at 0867F504:
+  <no available representation>
+
+units chapter17.turn.scene.units at 0867F534:
+  <no available representation>
+
+scene chapter17.turn.scene at 0867F584:
+  LOAD 0867F3A4
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter17.turn.scene at 0867F598:
+  LOAD 0867F3D4
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter17.turn.scene at 0867F5AC:
+  LOAD 0867F404
+  MOVE_WAIT
+  END?
+  END
+
+units chapter18.red at 0867F64C:
+  <no available representation>
+
+units chapter18.blue at 0867F74C:
+  <no available representation>
+
+units chapter18.turn.scene.units at 0867F95C:
+  <no available representation>
+
+units chapter18.turn.scene.units at 0867F98C:
+  <no available representation>
+
+units chapter18.turn.scene.units at 0867F9BC:
+  <no available representation>
+
+scene chapter18.turn.scene at 0867FA1C:
+  LOAD 0867F95C
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter18.turn.scene at 0867FA30:
+  LOAD 0867F98C
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter18.turn.scene at 0867FA44:
+  LOAD 0867F9BC
+  MOVE_WAIT
+  END?
+  END
+
+units chapter19.red at 0867FA58:
+  <no available representation>
+
+units chapter19.turn.scene.units at 0867FB38:
+  <no available representation>
+
+units chapter19.blue at 0867FB58:
+  <no available representation>
+
+units chapter19.turn.scene.units at 0867FDB8:
+  <no available representation>
+
+units chapter19.turn.scene.units at 0867FDE8:
+  <no available representation>
+
+scene chapter19.turn.scene at 0867FE6C:
+  LOAD 0867FDB8
+  MOVE_WAIT
+  END?
+  END
+
+units chapter20.red at 0867FE94:
+  <no available representation>
+
+units chapter20.blue at 0867FF74:
+  <no available representation>
+
+units chapter20.turn.scene.units at 086801E4:
+  <no available representation>
+
+units chapter20.turn.scene.units at 08680214:
+  <no available representation>
+
+units chapter20.turn.scene.units at 08680254:
+  <no available representation>
+
+units chapter20.turn.scene.units at 08680274:
+  <no available representation>
+
+scene chapter20.turn.scene at 086802D4:
+  LOAD 086801E4
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter20.turn.scene at 086802E8:
+  LOAD 08680214
+  MOVE_WAIT
+  END?
+  END
+
+units chapter21.red at 08680324:
+  <no available representation>
+
+units chapter21.blue at 08680454:
+  <no available representation>
+
+units chapter21.turn.scene.units at 08680694:
+  <no available representation>
+
+units chapter21.turn.scene.units at 08680744:
+  <no available representation>
+
+units chapter21.turn.scene.units at 08680764:
+  <no available representation>
+
+units chapter21.turn.scene.units at 08680784:
+  <no available representation>
+
+units chapter21.turn.scene.units at 086807A4:
+  <no available representation>
+
+units chapter21.turn.scene.units at 086807F4:
+  <no available representation>
+
+units chapter21.turn.scene.units at 08680844:
+  <no available representation>
+
+units chapter21.turn.scene.units at 08680894:
+  <no available representation>
+
+units chapter21.turn.scene.units at 086808E4:
+  <no available representation>
+
+units chapter21.turn.scene.units at 08680934:
+  <no available representation>
+
+units chapter21.turn.scene.units at 086809D4:
+  <no available representation>
+
+units chapter21.turn.scene.units at 08680A24:
+  <no available representation>
+
+units chapter21.turn.scene.units at 08680A74:
+  <no available representation>
+
+units chapter21.turn.scene.units at 08680AC4:
+  <no available representation>
+
+units chapter22.red at 08680C60:
+  <no available representation>
+
+units chapter22.blue at 08680D70:
+  <no available representation>
+
+units chapter22.turn.scene.units at 08680FF0:
+  <no available representation>
+
+units chapter22.turn.scene.units at 086810A0:
+  <no available representation>
+
+units chapter22.turn.scene.units at 086810D0:
+  <no available representation>
+
+units chapter22.action.scene.units at 08681120:
+  <no available representation>
+
+units chapter22.action.scene.units at 08681170:
+  <no available representation>
+
+units chapter22.turn.scene.units at 086811C0:
+  <no available representation>
+
+units chapter22.turn.scene.units at 086811E0:
+  <no available representation>
+
+scene chapter22.turn.scene at 086813D4:
+  LOAD 086810A0
+  MOVE_WAIT
+  END?
+  END
+
+units chapter23.red at 086814B0:
+  <no available representation>
+
+units chapter23.blue at 086815C0:
+  <no available representation>
+
+units chapter23.loca.scene.units at 08681880:
+  <no available representation>
+
+units chapter24.red at 086818F8:
+  <no available representation>
+
+units chapter24.blue at 086819A8:
+  <no available representation>
+
+units chapter24.turn.scene.units at 08681B68:
+  <no available representation>
+
+units chapter24.turn.scene.units at 08681B88:
+  <no available representation>
+
+units chapter24.turn.scene.units at 08681BA8:
+  <no available representation>
+
+units chapter24.turn.scene.units at 08681BC8:
+  <no available representation>
+
+units chapter24.turn.scene.units at 08681BE8:
+  <no available representation>
+
+units chapter24.turn.scene.units at 08681C08:
+  <no available representation>
+
+units chapter25.red at 08681D04:
+  <no available representation>
+
+units chapter25.blue at 08681DB4:
+  <no available representation>
+
+units chapter25.turn.scene.units at 08681DF4:
+  <no available representation>
+
+units chapter25.turn.scene.units at 08681E14:
+  <no available representation>
+
+units chapter25.turn.scene.units at 08681E34:
+  <no available representation>
+
+units chapter25.turn.scene.units at 08681E54:
+  <no available representation>
+
+units chapter25.turn.scene.units at 08681E74:
+  <no available representation>
+
+units chapter26.red at 08681F5C:
+  <no available representation>
+
+units chapter26.blue at 0868202C:
+  <no available representation>
+
+units chapter26.turn.scene.units at 086821DC:
+  <no available representation>
+
+units chapter26.turn.scene.units at 0868220C:
+  <no available representation>
+
+units chapter26.turn.scene.units at 0868223C:
+  <no available representation>
+
+units chapter26.turn.scene.units at 0868227C:
+  <no available representation>
+
+units chapter26.turn.scene.units at 086822AC:
+  <no available representation>
+
+units chapter26.turn.scene.units at 086822EC:
+  <no available representation>
+
+units chapter26.turn.scene.units at 0868231C:
+  <no available representation>
+
+units chapter26.turn.scene.units at 0868235C:
+  <no available representation>
+
+units chapter26.turn.scene.units at 0868238C:
+  <no available representation>
+
+units chapter26.turn.scene.units at 086823CC:
+  <no available representation>
+
+units chapter26.turn.scene.units at 086823FC:
+  <no available representation>
+
+units chapter26.turn.scene.units at 0868241C:
+  <no available representation>
+
+units chapter26.turn.scene.units at 0868243C:
+  <no available representation>
+
+units chapter26.ending.units at 0868245C:
+  <no available representation>
+
+scene chapter26.turn.scene at 086824AC:
+  LOAD 086821DC
+  MOVE_WAIT
+  END?
+  END
+
+units chapter27.red at 086825C4:
+  <no available representation>
+
+units chapter27.turn.scene.units at 086826A4:
+  <no available representation>
+
+units chapter27.blue at 086826C4:
+  <no available representation>
+
+units chapter27.turn.scene.units at 08682824:
+  <no available representation>
+
+units chapter27.turn.scene.units at 086828B4:
+  <no available representation>
+
+units chapter27.turn.scene.units at 086828F4:
+  <no available representation>
+
+units chapter27.turn.scene.units at 08682924:
+  <no available representation>
+
+units chapter27.turn.scene.units at 08682964:
+  <no available representation>
+
+units chapter27.turn.scene.units at 086829F4:
+  <no available representation>
+
+units chapter27.turn.scene.units at 08682A44:
+  <no available representation>
+
+units chapter27.turn.scene.units at 08682A74:
+  <no available representation>
+
+units chapter27.turn.scene.units at 08682AA4:
+  <no available representation>
+
+units chapter27.turn.scene.units at 08682AD4:
+  <no available representation>
+
+units chapter27.turn.scene.units at 08682AF4:
+  <no available representation>
+
+scene chapter27.turn.scene at 08682B94:
+  LOAD 086828F4
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter27.turn.scene at 08682BA8:
+  LOAD 08682924
+  MOVE_WAIT
+  END?
+  END
+
+units chapter28.red at 08682C70:
+  <no available representation>
+
+units chapter28.blue at 08682D60:
+  <no available representation>
+
+units chapter28.turn.scene.units at 08682F30:
+  <no available representation>
+
+units chapter28.turn.scene.units at 08682F50:
+  <no available representation>
+
+units chapter28.turn.scene.units at 08682F70:
+  <no available representation>
+
+units chapter28.turn.scene.units at 08682FA0:
+  <no available representation>
+
+units chapter28.turn.scene.units at 08682FF0:
+  <no available representation>
+
+scene chapter28.turn.scene at 08683054:
+  LOAD 08682F50
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter28.turn.scene at 08683068:
+  LOAD 08682F70
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter28.turn.scene at 0868307C:
+  LOAD 08682FA0
+  MOVE_WAIT
+  END?
+  END
+
+units chapter29.red at 086830B8:
+  <no available representation>
+
+units chapter29.blue at 086831B8:
+  <no available representation>
+
+units chapter29.turn.scene.units at 086833B8:
+  <no available representation>
+
+units chapter29.turn.scene.units at 086833F8:
+  <no available representation>
+
+units chapter29.turn.scene.units at 08683438:
+  <no available representation>
+
+units chapter29.turn.scene.units at 08683458:
+  <no available representation>
+
+units chapter29.turn.scene.units at 08683478:
+  <no available representation>
+
+units chapter29.turn.scene.units at 08683498:
+  <no available representation>
+
+units chapter29.turn.scene.units at 086834B8:
+  <no available representation>
+
+units chapter29.turn.scene.units at 086834D8:
+  <no available representation>
+
+units chapter29.turn.scene.units at 086834F8:
+  <no available representation>
+
+units chapter29.turn.scene.units at 08683518:
+  <no available representation>
+
+units chapter29.turn.scene.units at 08683538:
+  <no available representation>
+
+units chapter29.turn.scene.units at 08683558:
+  <no available representation>
+
+units chapter29.turn.scene.units at 08683578:
+  <no available representation>
+
+units chapter29.turn.scene.units at 08683598:
+  <no available representation>
+
+units chapter29.turn.scene.units at 086835B8:
+  <no available representation>
+
+units chapter29.turn.scene.units at 086835D8:
+  <no available representation>
+
+units chapter29.turn.scene.units at 086835F8:
+  <no available representation>
+
+units chapter29.turn.scene.units at 08683618:
+  <no available representation>
+
+scene chapter29.turn.scene at 08683688:
+  LOAD 086833B8
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter29.turn.scene at 0868369C:
+  LOAD 086833F8
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter29.turn.scene at 086837DC:
+  LOAD 08683618
+  MOVE_WAIT
+  END?
+  END
+
+units chapter30.red at 086837F0:
+  <no available representation>
+
+units chapter30.blue at 086838F0:
+  <no available representation>
+
+units chapter30.turn.scene.units at 08683BC0:
+  <no available representation>
+
+units chapter30.turn.scene.units at 08683C10:
+  <no available representation>
+
+units chapter30.turn.scene.units at 08683C40:
+  <no available representation>
+
+units chapter30.turn.scene.units at 08683C70:
+  <no available representation>
+
+units chapter30.turn.scene.units at 08683CC0:
+  <no available representation>
+
+scene chapter30.turn.scene at 08683D40:
+  LOAD 08683BC0
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter30.turn.scene at 08683D54:
+  LOAD 08683C10
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter30.turn.scene at 08683D68:
+  LOAD 08683C40
+  MOVE_WAIT
+  END?
+  END
+
+units chapter31.red at 08683DA4:
+  <no available representation>
+
+units chapter31.turn.scene.units at 08683E84:
+  <no available representation>
+
+units chapter31.turn.scene.units at 08683ED4:
+  <no available representation>
+
+units chapter31.blue at 08683EF4:
+  <no available representation>
+
+units chapter31.turn.scene.units at 08684114:
+  <no available representation>
+
+units chapter31.turn.scene.units at 08684134:
+  <no available representation>
+
+units chapter31.turn.scene.units at 08684154:
+  <no available representation>
+
+scene chapter31.turn.scene at 08684224:
+  LOAD 08684134
+  MOVE_WAIT
+  END?
+  END
+
+units chapter32.red at 0868424C:
+  <no available representation>
+
+units chapter32.blue at 086842FC:
+  <no available representation>
+
+units chapter32.ending.units at 0868451C:
+  <no available representation>
+
+units chapter32.ending.units at 0868459C:
+  <no available representation>
+
+units chapter32.ending.units at 086845BC:
+  <no available representation>
+
+units chapter32.ending.units at 086845DC:
+  <no available representation>
+
+units chapter32.ending.units at 0868462C:
+  <no available representation>
+
+units chapter32.ending.units at 0868467C:
+  <no available representation>
+
+units chapter32.ending.units at 086846CC:
+  <no available representation>
+
+units chapter32.ending.units at 0868470C:
+  <no available representation>
+
+units chapter32.ending.units at 0868471C:
+  <no available representation>
+
+units chapter33.red at 08684824:
+  <no available representation>
+
+units chapter33.blue at 086848B4:
+  <no available representation>
+
+units chapter34.red at 08684A94:
+  <no available representation>
+
+units chapter34.blue at 08684B44:
+  <no available representation>
+
+units chapter35.red at 08684D84:
+  <no available representation>
+
+units chapter35.blue at 08684E34:
+  <no available representation>
+
+units chapter35.turn.scene.units at 08685034:
+  <no available representation>
+
+units chapter35.turn.scene.units at 08685054:
+  <no available representation>
+
+units chapter35.turn.scene.units at 08685074:
+  <no available representation>
+
+scene chapter35.turn.scene at 086850C4:
+  LOAD 08685034
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter35.turn.scene at 086850D8:
+  LOAD 08685054
+  MOVE_WAIT
+  END?
+  END
+
+units chapter36.red at 08685100:
+  <no available representation>
+
+units chapter36.blue at 086851E0:
+  <no available representation>
+
+units chapter37.red at 086854A0:
+  <no available representation>
+
+units chapter37.blue at 08685590:
+  <no available representation>
+
+units chapter37.loca.scene.units at 086857C0:
+  <no available representation>
+
+units chapter37.loca.scene.units at 08685800:
+  <no available representation>
+
+units chapter37.loca.scene.units at 08685840:
+  <no available representation>
+
+units chapter37.loca.scene.units at 08685880:
+  <no available representation>
+
+units chapter37.loca.scene.units at 086858B0:
+  <no available representation>
+
+units chapter37.loca.scene.units at 086858F0:
+  <no available representation>
+
+units chapter37.loca.scene.units at 08685930:
+  <no available representation>
+
+units chapter37.loca.scene.units at 08685970:
+  <no available representation>
+
+units chapter37.loca.scene.units at 086859B0:
+  <no available representation>
+
+units chapter37.loca.scene.units at 086859F0:
+  <no available representation>
+
+units chapter37.loca.scene.units at 08685A30:
+  <no available representation>
+
+units chapter37.loca.scene.units at 08685A70:
+  <no available representation>
+
+units chapter38.red at 08685BC0:
+  <no available representation>
+
+units chapter38.blue at 08685C70:
+  <no available representation>
+
+units chapter38.loca.scene.units at 08685F50:
+  <no available representation>
+
+units chapter38.loca.scene.units at 08685F70:
+  <no available representation>
+
+units chapter38.loca.scene.units at 08685F90:
+  <no available representation>
+
+units chapter38.loca.scene.units at 08685FB0:
+  <no available representation>
+
+units chapter38.loca.scene.units at 08685FD0:
+  <no available representation>
+
+units chapter38.loca.scene.units at 08685FF0:
+  <no available representation>
+
+units chapter40.red at 086860B8:
+  <no available representation>
+
+units chapter40.blue at 08686168:
+  <no available representation>
+
+units chapter40.turn.scene.units at 08686318:
+  <no available representation>
+
+units chapter40.turn.scene.units at 08686358:
+  <no available representation>
+
+units chapter40.turn.scene.units at 08686398:
+  <no available representation>
+
+units chapter40.turn.scene.units at 086863D8:
+  <no available representation>
+
+scene chapter40.turn.scene at 08686448:
+  LOAD 08686318
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter40.turn.scene at 0868645C:
+  LOAD 08686358
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter40.turn.scene at 08686470:
+  LOAD 08686398
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter40.turn.scene at 08686484:
+  LOAD 086863D8
+  MOVE_WAIT
+  END?
+  END
+
+units chapter41.red at 08686498:
+  <no available representation>
+
+units chapter41.blue at 08686548:
+  <no available representation>
+
+units chapter41.turn.scene.units at 086866A8:
+  <no available representation>
+
+units chapter41.turn.scene.units at 086866C8:
+  <no available representation>
+
+units chapter41.turn.scene.units at 086866E8:
+  <no available representation>
+
+units chapter41.turn.scene.units at 08686708:
+  <no available representation>
+
+units chapter41.turn.scene.units at 08686728:
+  <no available representation>
+
+units chapter41.turn.scene.units at 08686748:
+  <no available representation>
+
+units chapter41.turn.scene.units at 08686768:
+  <no available representation>
+
+units chapter41.turn.scene.units at 08686788:
+  <no available representation>
+
+units chapter41.turn.scene.units at 086867A8:
+  <no available representation>
+
+units chapter41.turn.scene.units at 086867C8:
+  <no available representation>
+
+units chapter41.turn.scene.units at 086867E8:
+  <no available representation>
+
+units chapter41.turn.scene.units at 08686808:
+  <no available representation>
+
+units chapter41.turn.scene.units at 08686828:
+  <no available representation>
+
+units chapter41.turn.scene.units at 08686848:
+  <no available representation>
+
+units chapter41.turn.scene.units at 08686868:
+  <no available representation>
+
+units chapter41.turn.scene.units at 08686888:
+  <no available representation>
+
+units chapter41.turn.scene.units at 086868A8:
+  <no available representation>
+
+scene chapter41.turn.scene at 086868F8:
+  LOAD 086866A8
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter41.turn.scene at 0868690C:
+  LOAD 086866C8
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter41.turn.scene at 08686920:
+  LOAD 086866E8
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter41.turn.scene at 08686934:
+  LOAD 08686708
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter41.turn.scene at 08686948:
+  LOAD 08686728
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter41.turn.scene at 0868695C:
+  LOAD 08686748
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter41.turn.scene at 08686970:
+  LOAD 08686768
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter41.turn.scene at 08686984:
+  LOAD 08686788
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter41.turn.scene at 08686998:
+  LOAD 086867A8
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter41.turn.scene at 086869AC:
+  LOAD 086867C8
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter41.turn.scene at 086869C0:
+  LOAD 086867E8
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter41.turn.scene at 086869D4:
+  LOAD 08686808
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter41.turn.scene at 086869E8:
+  LOAD 08686828
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter41.turn.scene at 086869FC:
+  LOAD 08686848
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter41.turn.scene at 08686A10:
+  LOAD 08686868
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter41.turn.scene at 08686A24:
+  LOAD 08686888
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter41.turn.scene at 08686A38:
+  LOAD 086868A8
+  MOVE_WAIT
+  END?
+  END
+
+units chapter42.red at 08686A4C:
+  <no available representation>
+
+units chapter42.blue at 08686AFC:
+  <no available representation>
+
+units chapter42.turn.scene.units at 08686C9C:
+  <no available representation>
+
+units chapter42.turn.scene.units at 08686CEC:
+  <no available representation>
+
+units chapter42.turn.scene.units at 08686D3C:
+  <no available representation>
+
+units chapter42.turn.scene.units at 08686D8C:
+  <no available representation>
+
+units chapter42.turn.scene.units at 08686DDC:
+  <no available representation>
+
+units chapter42.turn.scene.units at 08686E2C:
+  <no available representation>
+
+scene chapter42.turn.scene at 08686EAC:
+  LOAD 08686C9C
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter42.turn.scene at 08686EC0:
+  LOAD 08686CEC
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter42.turn.scene at 08686ED4:
+  LOAD 08686D3C
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter42.turn.scene at 08686EE8:
+  LOAD 08686D8C
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter42.turn.scene at 08686EFC:
+  LOAD 08686DDC
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter42.turn.scene at 08686F10:
+  LOAD 08686E2C
+  MOVE_WAIT
+  END?
+  END
+
+units chapter43.red at 08686F24:
+  <no available representation>
+
+units chapter43.blue at 08686FD4:
+  <no available representation>
+
+units chapter43.turn.scene.units at 08687184:
+  <no available representation>
+
+units chapter43.turn.scene.units at 08687204:
+  <no available representation>
+
+units chapter43.turn.scene.units at 08687274:
+  <no available representation>
+
+units chapter43.action.scene.units at 086872E4:
+  <no available representation>
+
+scene chapter43.turn.scene at 08687334:
+  LOAD 08687184
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter43.turn.scene at 08687348:
+  LOAD 08687204
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter43.turn.scene at 0868735C:
+  LOAD 08687274
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter43.action.scene at 08687370:
+  LOAD 086872E4
+  MOVE_WAIT
+  END?
+  END
+
+units chapter44.red at 08687384:
+  <no available representation>
+
+units chapter44.blue at 086873A4:
+  <no available representation>
+
+units chapter44.turn.scene.units at 08687544:
+  <no available representation>
+
+units chapter44.turn.scene.units at 08687564:
+  <no available representation>
+
+units chapter44.turn.scene.units at 08687584:
+  <no available representation>
+
+units chapter44.turn.scene.units at 086875A4:
+  <no available representation>
+
+units chapter44.turn.scene.units at 086875C4:
+  <no available representation>
+
+units chapter44.turn.scene.units at 086875E4:
+  <no available representation>
+
+scene chapter44.turn.scene at 08687634:
+  LOAD 08687544
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter44.turn.scene at 08687648:
+  LOAD 08687564
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter44.turn.scene at 0868765C:
+  LOAD 08687584
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter44.turn.scene at 08687670:
+  LOAD 086875A4
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter44.turn.scene at 08687684:
+  LOAD 086875C4
+  MOVE_WAIT
+  END?
+  END
+
+scene chapter44.turn.scene at 08687698:
+  LOAD 086875E4
+  MOVE_WAIT
+  END?
+  END
+
