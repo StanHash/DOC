@@ -1490,3 +1490,139 @@ TODO
 ---
 
 </details>
+
+<details>
+<summary>3C : TODO (TODO)</summary>
+
+---
+
+</details>
+
+<details>
+<summary>3D : configure disabled menu commands (-)</summary>
+
+```
+[3D20] - <Bits>
+[3D21] - <Bits>
+```
+
+Disables menu commands based on given bits.
+
+- `[3D20]` completely removes the commands from the menu.
+- `[3D21]` grays commands out, but have them still displayed.
+
+Bit list for `[3D20]` (byte table at `FE8U:080D793F`):
+
+| Bit | Command Id | Corresponding command(s) |
+| --- | ---------- | ------------------------ |
+| `0`  | `4F` | (Unit Menu) Attack |
+| `1`  | `51` | (Unit Menu) Staff |
+| `2`  | `6B` | (Unit Menu) Wait |
+| `3`  | `63` | (Unit Menu) Rescue |
+| `4`  | `64` | (Unit Menu) Drop |
+| `5`  | `5C` | (Unit Menu) Visit |
+| `6`  | `5A` | (Unit Menu) Talk |
+| `7`  | `67` | (Unit Menu) Item |
+| `8`  | `37` | (Item Menu) Discard |
+| `9`  | `68` | (Unit Menu) Trade |
+| `10` | `69` | (Unit Menu) Supply |
+| `11` | `5B` | (Unit Menu) Support |
+| `12` | `5F` | (Unit Menu) Armory |
+| `13` | `71` | (Map Menu) Options |
+| `14` | `78` | (Map Menu) End (turn) |
+
+Bit list for `[3D21]` (byte table at `FE8U:080D794E`):
+
+| Bit | Command Id | Corresponding command(s) |
+| --- | ---------- | ------------------------ |
+| `0` | `49` | (Attack Weapon Select Menu) Item 1 |
+| `1` | `4A` | (Attack Weapon Select Menu) Item 2 |
+| `2` | `4B` | (Attack Weapon Select Menu) Item 3 |
+| `3` | `4C` | (Attack Weapon Select Menu) Item 4 |
+| `4` | `4D` | (Attack Weapon Select Menu) Item 5 |
+
+Used for turorials, probably.
+
+---
+
+</details>
+
+<details>
+<summary>3E : Open Prep Screen (PREP)</summary>
+
+```
+[3E20] PREP
+```
+
+Starts prepscreen.
+
+Clears eid `0x84`, effectively enabling various map sprite related icons.
+
+**Note**: The event engine is still running, and will continue its execution normally after the prep screen ends.
+
+---
+
+</details>
+
+<details>
+<summary>3F : Scripted battles (TODO)</summary>
+
+TODO
+
+---
+
+</details>
+
+<details>
+<summary>40 : Promote unit (PROM)</summary>
+
+TODO
+
+---
+
+</details>
+
+<details>
+<summary>41 : Warp animations (WARP_IN, WARP_OUT)</summary>
+
+TODO
+
+---
+
+</details>
+
+<details>
+<summary>42 : TODO (TODO)</summary>
+
+TODO
+
+---
+
+</details>
+
+<details>
+<summary>43 : TODO (TODO)</summary>
+
+TODO
+
+---
+
+</details>
+
+<details>
+<summary>44 : TODO (TODO)</summary>
+
+TODO
+
+---
+
+</details>
+
+<details>
+<summary>45 : TODO (TODO)</summary>
+
+TODO
+
+---
+
+</details>
