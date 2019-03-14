@@ -54,7 +54,7 @@ It can be (and is) used to pass lists of values to various codes and/or subscene
 
 The event queue has room for up to 30 elements.
 
-### Eids
+### Eids / Flags
 
 Eids (aka "event ids" or "flags") are booleans that you can use to mark the completion of certain events. Many of them have set purpose but many others are free to be used for your chapter logic.
 
@@ -226,6 +226,9 @@ If the argument is negative, the target evbit/eid will be read from `s2`. EA sta
 [0320] CHECK_EVBIT Evbit @ gets Evbit state in sC
 [0321] CHECK_EVENTID Eid @ gets Eid state in sC
 ```
+
+- `CHECK_EVBIT` gets evbit state in `sC`.
+- `CHECK_EVENTID` gets eid state in `sC`.
 
 The argument is allowed to be `(-1)`, in which case the target Evbit/Eid will be read from `s2`.
 
@@ -671,6 +674,8 @@ If SongId is negative, the song id is read from `s2`.
 Hopefully it being said like that can make for decent mnemonics?
 
 No fade happens if the scene is being skipped. The event engine will wait for the fade to end before continuing.
+
+**Note**: The code parameter is in fact the **speed** of the fade (not its duration!). A larger value will have the fade be shorter and vice-versa.
 
 ---
 
@@ -1303,6 +1308,184 @@ If X and Y are negative, the target position is read from `sB`.
 [3327] CHECK_CLASS CharId
 [3328] CHECK_LUCK CharId
 ```
+
+Gets various informations reguarding a given [unit](#unit-parameters) in `sC`.
+
+- `CHECK_EXISTS` gets `1` if a matching unit exists, `0` otherwise.
+- `CHECK_STATUS` gets byte at `+0x30` in matching unit's character entry. This may be bugged.
+- `CHECK_ALIVE` gets `1` if matching unit exists and is alive, `0` otherwise.
+- `CHECK_DEPLOYED` gets `1` if matching unit is deployed, `0` otherwise.
+- `CHECK_ACTIVEID` gets `1` if `CharId` corresponds to the character id of the active unit.
+- `CHECK_ALLEGIANCE` gets `2` if matching unit is red, `0` if it's blue and `1` if it's either green or purple.
+- `CHECK_COORDS` gets the matching units position (in the form of a pair of halfwords, suitable for most purposes involving coords).
+- `CHECK_CLASS` gets the matching units class id.
+- `CHECK_LUCK` gets the matching units luck stat (with taking bonuses into account).
+
+**Note**: `CHECK_EXISTS` and `CHECK_ALIVE` are the only members of the `33` code family that will not hang when no matching unit exist. All others will (even `CHECK_ACTIVEID`, which doesn't otherwise care for the matching unit).
+
+---
+
+</details>
+
+<details>
+<summary>34 : modify unit state (REMU, REVEAL, CUSx, SET_HP, ...)</summary>
+
+```
+[3420] REMU CharId
+[3421] REVEAL CharId
+[3422] CUSA CharId
+[3423] CUSN CharId
+[3424] CUSE CharId
+[3425] SET_HP CharId
+[3426] SET_ENDTURN CharId
+[3427] _0x3427 CharId
+[3428] SET_STATE CharId
+[3429] - CharId
+[342A] CLEA <Unused>
+[342B] CLEN <Unused>
+[342C] CLEE <Unused>
+[342D] SET_SOMETHING CharId
+[342E] DISA_IF CharId
+[342F] DISA CharId
+```
+
+TODO: better code names, as usual.
+
+Modify various [unit](#unit-parameters) states.
+
+- `REMU` removes matching unit from the player party. Note that this doesn't actually remove the unit itself, just hides it.
+- `REVEAL` reverts the effect of a previous `REMU`.
+- `CUSA` changes the matching units faction to blue.
+- `CUSN` changes the matching units faction to green.
+- `CUSE` changes the matching units faction to red.
+- `SET_HP` sets the matching units HP to the value in `s1`. If HP is set to 0, also marks that unit as dead.
+- `SET_ENDTURN` grays out the matching unit.
+- `_0x3427` marks the matching unit as having being moved by the AI during this phase. Note: unsure, investigate.
+- `SET_STATE` deploys or undeploys matching unit given value in `s1`: `1` will deploy the unit, `0` will undeploy the unit, and `-1` will deploy or undeploy the unit based on units state bit 21 (?).
+- `[3429]` does nothing.
+- `CLEA` hides every blue unit, and then clears all cutscene units.
+- `CLEN` removes all green units.
+- `CLEE` removes all red units.
+- `SET_SOMETHING` starts the death fade map animation for matching units map sprite.
+- `DISA_IF` waits for any death fade map animation to end before permanently removing matching unit.
+- `DISA` permanently removes matching unit.
+
+**Note**: `REMU` through `[3429]` will hang if no matching unit exist, `CLEA` through `CLEE` don't care, and `SET_SOMETHING` through `DISA` will silently do nothing.
+
+---
+
+</details>
+
+<details>
+<summary>35 : change unit class (RECLASS, RECLASS_FROMCHAR, SWITCH_CLASSES)</summary>
+
+```
+[3540] RECLASS CharId ClassId
+[3540] RECLASS_FROMCHAR CharId OtherCharId
+[3541] SWITCH_CLASSES CharId OtherCharId
+```
+
+Changes matchin [units](#unit-parameters) class.
+
+- `RECLASS` sets matching units class to `ClassId`.
+- `RECLASS_FROMCHAR` sets matching units class to the default class of the (other) given character.
+- `SWITCH_CLASSES` sets matching units class to the default class of the (other) given character, and sets unit matching other characters class to the class the first matching unit was in before.
+
+**Note**: Only the first character paramater follow the [standard unit lookup rules](#unit-parameters). The second one just gets a unit by comparing raw character id.
+
+---
+
+</details>
+
+<details>
+<summary>36 : check in area (CHECK_INAREA)</summary>
+
+```
+[3640] CHECK_INAREA CharId [XTopLeft, YTopLeft] [Width, Height]
+```
+
+Gets `1` if the [matching units](#unit-parameters) position is within the box defined by given parameters, `0` otherwise.
+
+---
+
+</details>
+
+<details>
+<summary>37 : give item or gold (GIVE_ITEM, GIVE_MONEY, TAKE_MONEY)</summary>
+
+```
+[3720] GIVE_ITEM CharId
+[3721] GIVE_MONEY CharId
+[3722] TAKE_MONEY
+```
+
+- `GIVE_ITEM` gives new item based on item id in `s3` to [matching unit](#unit-parameters), and displays popup accordingly.
+- `GIVE_MONEY` gives money amount in `s3` to [matching units](#unit-parameters) faction, and displays popup accordingly.
+- `TAKE_MONEY` silently takes away money amount in `s3` from blue (player) faction. This will not allow money underflow.
+
+**Note**: standard EA raws have those named `GIVEITEMTO` (alright), `GIVEITEMTOMAIN` (what), and `GIVETOSLOT3` (tf) respectively.
+
+---
+
+</details>
+
+<details>
+<summary>38 : set active unit (SET_ACTIVE)</summary>
+
+```
+[3820] SET_ACTIVE CharId
+```
+
+Sets [matching unit](#unit-parameters) as active unit (while doing the necessary bookkeeping for changing active unit if necessary).
+
+**Note**: This hangs if this can't find any matching unit.
+
+---
+
+</details>
+
+<details>
+<summary>39 : change AI scripts (CHAI)</summary>
+
+```
+[3920] CHAI CharId
+[3921] CHAI [X, Y]
+```
+
+Changes the matching units (or unit at given position) primary (AI1) and secondary (AI2) AI scripts based on the content of `s1`.
+
+`s1` needs to formatted as follows: `0x0000YYXX`, with `YY` corresponding to AI2, and `XX` to AI1.
+
+If AI2 is changed to `0x13`, no change occurs. If AI1 is changed to `0x15`, no change occurs.
+
+**Note**: This **doesn't** follow the [standard unit lookup rules](#unit-parameters)! Instead, `[3920]` will apply the AI changes to *all* units with matching character ids!
+
+**Note**: This only will change the AI *scripts*. There is no way to change AI *parameters* (aka AI3 and AI4) through events without using ASMCs.
+
+---
+
+</details>
+
+<details>
+<summary>3A : popups (NOTIFY, BROWNTEXTBOX)</summary>
+
+```
+[3A40] NOTIFY TextId SongId <Unused?>
+[3A41] BROWNTEXTBOX TextId [0, 0xYYXX]
+```
+
+TODO
+
+**Note**: standard EA raw for `BROWNTEXTBOX` is misconfigured hence why the position argument is weird.
+
+---
+
+</details>
+
+<details>
+<summary>3B : display cursor (CURSOR, CURSOR_REMOVE, CURSOR_FLASHING)</summary>
+
+TODO
 
 ---
 
