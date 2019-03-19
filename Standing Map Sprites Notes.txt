@@ -6,3 +6,19 @@ There's a bunch of systems overlapping each others here, but the core thing is p
 at 02033F40 is an array of 0xD0 bytes indexed by SMS Index. It's either 0xFF or the "Tile Index" of the Obj graphics in the buffer
 
 at 02034010 begins an array of 3 0x2000 (!) bytes long buffers for the SMS tile sheet, one for each frame.
+
+For each displayed map sprite, there exist an object in memory that I'll call SMS handle.
+
+SMS handle struct layout:
+	00 | word  | pointer to next SMS handle
+	04 | short | display x position
+	06 | short | display y position
+	08 | short | oam2 base (encodes base tile + palette)
+	0A | byte  | unknown
+	0B | byte  | config (TODO: investigate)
+
+All of them are located in an array at FE8U:0203A018 (100 entries max). It is a singly-linked list. The first element of the array is always the first element in the linked list, and is never displayed.
+
+The linked list is sorted by y position. This is likely to ensure that the sprites at higher y position are displayed "in front" of the sprites at lower y positions.
+
+This list is entirely built by the function at FE8U:080271A0 (RefreshSMS). Sprites are displayed from this list by FE8U:080273A4 (DisplaySMS).

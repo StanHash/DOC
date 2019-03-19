@@ -1,25 +1,50 @@
+FE8U
 
-Battle Anim Round Types:
-    0 Hit 2 (Close)
-    1 Crit 2 (Close)
-    2 Non-Crit 2 (Far)
-    3 Crit 2 (Far)
-    4 Miss (Close) (Also promotion)
-    5 Miss (Far)
-    6 Hit (Close)
+FE8U:0203E108 is the actor/target order (0: actor on the left, r1: actor on the right)
+FE8U:0203E100 is the initial hit side (0: left, 1: right)
+The above two values are not equal if the target retaliates before the actor hits (impossible in vanilla? but there are leftover structure hinting at vantage being a possible thing).
+
+At FE8U:0203E12A is the array of "battle anim round types". Each entry is actually a pair of shorts: one for the right unit, and one for the left unit (which one is which is TODO: invertigate).
+
+Each short has two parts: the first 8 bits are the round type identifier itself (see below). The next 8 bits are the flags. Probably.
+
+BATTLE ANIM HIT TYPE IDENTIFIERS:
+    0 Hit (Close)
+    1 Crit (Close)
+    2 Non-Crit (Far)
+    3 Crit (Far)
+    4 Taking Miss (Close) (Also promotion)
+    5 Taking Miss (Far)
+    6 Taking Hit (Close)
     7 Standing (never set to the round type array itself, only exists indirectly through a hardcoded reference to the lookup described below)
-    8 Hit (Far)
-    9 Miss 2 (Close)
+    8 Taking Hit (Far)
+    9 Miss (Close)
 
-at FE8U:080DAEF0, there is a lookup table that maps one of the indices above to the following struct:
+At FE8U:080DAEF0, there is a lookup table that maps one of the identifiers above to the following struct:
     +00 | byte | Front layer frame index
     +01 | byte | Front layer AIS draw depth (higher values means in front, so typically hight value than [+03])
     +02 | byte | Back layer frame index
     +03 | byte | Back layer AIS draw depth (^, so typically lower value than [+01])
 
-The frame indices follow the "modes" that battle anim scripters are familiar with (with everything shifted down one, some mode 1 corresponds to index 0)
+The frame indices follow the "modes" that battle anim scripters are familiar with (with everything shifted down one: mode 1 corresponds to index 0)
 
+BATTLE ANIM HIT FLAGS:
+    (Reminder: bits 0-7 are used for the type identifier, see above)
+     8 (& 0100):
+     9 (& 0200): pierce hit?
+    10 (& 0400): great shield hit?
+    11 (& 0800): sure shot hit?
+    12 (& 1000): silencer hit?
+    13 (& 2000): poison hit? (applies to other short?)
+    14 (& 4000):
+    15 (& 8000): devil hit?
 
+At FE8U:0203E156, there is the list of hp values that both units take during the battle. Each entry is a pair of shorts: one for the left unit and one for the right.
+This is kind of bad because pairs don't necessarily match. There will only be a new hp value written in that table if there is a hit that modifies hp.
+
+For ex, the table may look like this:
+0014 0018  0009 FFFF  0000 FFFF
+Here we have left unit initial hp to 0x14 (20) and right unit initial hp to 0x18 (24). But only the left unit's hp updates so we have the next two entries having "null" (0xFFFF) values for the right unit.
 
 ///// Don't mind this that's from the teq doq:
     Byte 0x0:
