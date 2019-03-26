@@ -1,0 +1,34 @@
+# Ballista data.
+BALLISTA, 0, 6, -language:FE8 -unsafe -priority:ballista -indexMode:8 -offsetMod:1
+	1, 0, 1, -fixed 
+	Position, 1, 2, -coordinates:2 -preferredBase:10
+	Type, 3, 1
+
+# Fire trap.
+FIRETILE, 0, 6, -language:FE8 -unsafe -priority:ballista -indexMode:8 -offsetMod:1
+	4, 0, 1, -fixed 
+	Position, 1, 2, -coordinates:2 -preferredBase:10
+	Type, 3, 1
+	Size, 4, 2, -coordinates:2 -preferredBase:10
+
+# Gas trap
+GASTRAP, 0, 6, -language:FE8 -unsafe -priority:ballista -indexMode:8 -offsetMod:1
+	5, 0, 1, -fixed 
+	Position, 1, 2, -coordinates:2 -preferredBase:10
+	Direction, 3, 1
+	Size, 4, 2, -coordinates:2 -preferredBase:10
+
+ARROWTRAP, 0, 6, -language:FE8 -unsafe -priority:ballista -indexMode:8 -offsetMod:1
+	7, 0, 1, -fixed 
+	X coordinate, 1, 1, -preferredBase:10
+	Size, 4, 2, -coordinates:2 -preferredBase:10
+
+# Gorgon egg
+GORGONEGG, 0, 6, -language:FE8 -unsafe -priority:ballista -indexMode:8 -offsetMod:1
+	0xC, 0, 1, -fixed 
+	Position, 1, 2, -coordinates:2 -preferredBase:10
+	Unknown, 4, 1
+	Unknown2, 5, 1
+
+ENDTRAP, 0, 1, -language:FE8 -unsafe -priority:ballista -end -indexMode:8 -offsetMod:1
+	0, 0, 1, -fixed 

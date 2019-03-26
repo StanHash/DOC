@@ -1,0 +1,158 @@
+
+## Event Condition: If Flag
+FLAG, 1, 12, -game:FE8 -indexMode:8 -priority:main
+	FlagId,        2, 2, -preferredBase:10
+	SceneOffset,   4, 4, -pointer
+	FlagCondition, 8, 2, -preferredBase:10
+
+## Event Condition: If Turn in range
+TURN, 2, 12, -game:FE8 -indexMode:8 -priority:main
+	FlagId,       2,  2, -preferredBase:10
+	SceneOffset,  4,  4, -pointer 
+	TurnRange,    8,  2, -coordinates:1-2 -preferredBase:10
+	PhaseFaction, 10, 2
+
+## Event Condition: Talk
+TALK, 3, 16, -game:FE8 -indexMode:8 -priority:main
+	FlagId,      2,  2, -preferredBase:10
+	SceneOffset, 4,  4, -pointer
+	CharIds,     8,  2, -coordinates:2
+	TODO,        12, 4
+
+## Event Condition: Talk if func
+TALK_IFFUNC, 4, 16, -game:FE8 -indexMode:8 -priority:main
+	FlagId,      2,  2, -preferredBase:10
+	SceneOffset, 4,  4, -pointer
+	CharIds,     8,  2, -coordinates:2
+	Func,        12, 4, -pointer:ASM
+
+## Event Condition: Command on tile
+LOCATION, 5, 12, -game:FE8 -indexMode:8 -priority:main
+	FlagId,      2,  2, -preferredBase:10
+	SceneOffset, 4,  4, -pointer
+	Position,    8,  2, -coordinates:2 -preferredBase:10
+	Command,     10, 2
+
+## Event Condition: Command on tile (no scene)
+LOCATION, 5, 12, -game:FE8 -indexMode:8 -priority:main
+	FlagId,      2,  2, -preferredBase:10
+	1,           4,  4, -fixed
+	Position,    8,  2, -coordinates:2 -preferredBase:10
+	Command,     10, 2
+
+CHEST_RANDOM, 5, 12, -priority:main -language:FE8 -indexMode:8
+	FlagId,      2,  2, -preferredBase:10
+	ItemsOffset, 4,  4, -pointer
+	Position,    8,  2, -coordinates:2 -preferredBase:10
+	20,          10, 2, -fixed
+
+HOUSE, 5, 12, -priority:main -language:FE8 -indexMode:8
+	FlagId,      2,  2, -preferredBase:10
+	SceneOffset, 4,  4, -pointer
+	Position,    8,  2, -coordinates:2 -preferredBase:10
+	16,          10, 2, -fixed
+
+SEIZE, 5, 12, -priority:main -language:FE8 -indexMode:8
+	FlagId,      2,  2, -preferredBase:10
+	SceneOffset, 4,  4, -pointer
+	Position,    8,  2, -coordinates:2 -preferredBase:10
+	17,          10, 2, -fixed
+
+SEIZE, 5, 12, -priority:main -language:FE8 -indexMode:8
+	FlagId,      2,  2, -preferredBase:10
+	1,           4,  4, -fixed
+	Position,    8,  2, -coordinates:2 -preferredBase:10
+	17,          10, 2, -fixed
+
+VILLAGE, 6, 12, -game:FE8 -indexMode:8 -priority:main
+	FlagId,      2,  2, -preferredBase:10
+	SceneOffset, 4,  4, -pointer
+	Position,    8,  2, -coordinates:2 -preferredBase:10
+	Command,     10, 2
+
+VILLAGE, 6, 12, -game:FE8 -indexMode:8 -priority:main
+	FlagId,      2,  2, -preferredBase:10
+	SceneOffset, 4,  4, -pointer
+	Position,    8,  2, -coordinates:2 -preferredBase:10
+	16,          10, 2, -fixed
+
+CHEST, 7, 12, -game:FE8 -indexMode:8 -priority:main
+	FlagId,   2,  2, -preferredBase:10
+	Item,     4,  2
+	Position, 8,  2, -coordinates:2 -preferredBase:10
+	Command,  10, 2
+
+CHEST, 7, 12, -game:FE8 -indexMode:8 -priority:main
+	FlagId,   2,  2, -preferredBase:10
+	Item,     4,  2
+	Position, 8,  2, -coordinates:2 -preferredBase:10
+	20,       10, 2, -fixed
+
+# Note: money needs to be >255 otherwise weird things happen
+CHEST_MONEY, 7, 12, -game:FE8 -indexMode:8 -priority:main
+	FlagId,   2,  2, -preferredBase:10
+	0x77,     4,  2, -fixed
+	Money,    6,  2, -preferredBase:10
+	Position, 8,  2, -coordinates:2 -preferredBase:10
+	Command,  10, 2
+
+# Note: money needs to be >255 otherwise weird things happen
+CHEST_MONEY, 7, 12, -game:FE8 -indexMode:8 -priority:main
+	FlagId,   2,  2, -preferredBase:10
+	0x77,     4,  2, -fixed
+	Money,    6,  2, -preferredBase:10
+	Position, 8,  2, -coordinates:2 -preferredBase:10
+	20,       10, 2, -fixed
+
+DOOR, 8, 12, -game:FE8 -indexMode:8 -priority:main
+	FlagId,      2,  2, -preferredBase:10
+	SceneOffset, 4,  4, -pointer
+	Position,    8,  2, -coordinates:2 -preferredBase:10
+	Command,     10, 1
+#	11, 1 ?
+
+DOOR, 8, 12, -game:FE8 -indexMode:8 -priority:main
+	FlagId,   2,  2, -preferredBase:10
+	1,        4,  4, -fixed
+	Position, 8,  2, -coordinates:2 -preferredBase:10
+	Command,  10, 1
+#	11, 1 ?
+
+LOCA2, 9, 12, -game:FE8 -indexMode:8 -priority:main
+
+SHOP, 10, 12, -game:FE8 -indexMode:8 -priority:main
+	FlagId,   2,  2, -preferredBase:10
+	ItemList, 4,  4, -pointer:shopList
+	Position, 8,  2, -coordinates:2 -preferredBase:10
+	Command,  10, 2
+
+ARMORY, 10, 12, -game:FE8 -indexMode:8 -priority:main
+	FlagId,   2,  2, -preferredBase:10
+	ItemList, 4,  4, -pointer:shopList
+	Position, 8,  2, -coordinates:2 -preferredBase:10
+	22,       10, 2, -fixed
+
+VENDOR, 10, 12, -game:FE8 -indexMode:8 -priority:main
+	FlagId,   2,  2, -preferredBase:10
+	ItemList, 4,  4, -pointer:shopList
+	Position, 8,  2, -coordinates:2 -preferredBase:10
+	23,       10, 2, -fixed
+
+SECRETSHOP, 10, 12, -game:FE8 -indexMode:8 -priority:main
+	FlagId,   2,  2, -preferredBase:10
+	ItemList, 4,  4, -pointer:shopList
+	Position, 8,  2, -coordinates:2 -preferredBase:10
+	24,       10, 2, -fixed
+
+AREA, 11, 12, -game:FE8 -indexMode:8 -priority:main
+	FlagId,            2,  2, -preferredBase:10
+	SceneOffset,       4,  4, -pointer
+	CornerTopLeft,     8,  2, -coordinates:2 -preferredBase:10
+	CornerBottomRight, 10, 2, -coordinates:2 -preferredBase:10
+
+FUNCCOND, 14, 12, -game:FE8 -indexMode:8 -priority:main
+	FlagId,      2,  2, -preferredBase:10
+	SceneOffset, 4,  4, -pointer
+	FuncOffset,  8,  4, -pointer:ASM
+
+ENDCONDS, 0, 4, -game:FE8 -indexMode:8 -priority:main -end

@@ -1,0 +1,30 @@
+
+## Full unit
+UNIT, 0, 160, -game:FE8 -priority:unit
+	CharId,          0,   8
+	ClassId,         8,   8
+	LeaderId,        16,  8
+	LevelAndFaction, 24,  8
+	LoadPosition,    32,  12, -coordinate:2 -preferredBase:10
+	Flags,           44,  12, -preferredBase:2
+	MovementCount,   56,  8,  -preferredBase:10
+	MovementOffset,  64,  32, -pointer:reinforcementData
+	ItemList,        96,  32, -coordinate:1-4
+	AiList,          128, 32, -coordinate:1-4
+
+## End unit list
+ENDUNIT, 0, 160, -game:FE8 -priority:unit -end
+	0, 0, 8, -fixed
+
+## List shop items
+SHOPITEMS, 0, 2, -game:FE8 -indexMode:8 -terminatingList:00 -end -priority:shopList -offsetMod:2
+	Item, 0, 2
+
+REDA, 0, 64, -game:FE8 -priority:reinforcementData
+	Position, 0,  12, -coordinate:2 -preferredBase:10
+	Flags,    12, 4,  -preferredBase:2
+	Speed,    16, 8,  -preferredBase:10
+	Rescuing, 24, 8
+##Unknwon. Usually 0xFFFF.
+	Unknown,  32, 16
+	Delay,    48, 8,  -preferredBase:10
