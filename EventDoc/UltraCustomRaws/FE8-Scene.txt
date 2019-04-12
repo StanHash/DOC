@@ -24,6 +24,14 @@ FLAG_F, 0x0221, 4, -game:FE8 -indexMode:8
 FLAG_T, 0x0229, 4, -game:FE8 -indexMode:8
 	Flag, 2, 2, -preferredBase:10
 
+## Clears given flag
+FLAG_F_S2, 0x0221, 4, -game:FE8 -indexMode:8
+	0xFFFF, 2, 2, -fixed
+
+## Clears given flag
+FLAG_T_S2, 0x0229, 4, -game:FE8 -indexMode:8
+	0xFFFF, 2, 2, -fixed
+
 ## Gets evbit state in sC
 GET_EVBIT, 0x0320, 4, -game:FE8 -indexMode:8
 	Evbit, 2, 2, -preferredBase:10
@@ -37,7 +45,7 @@ GET_RAND, 0x0420, 4, -game:FE8 -indexMode:8
 	Max, 2, 2, -preferredBase:10
 
 ## Sets given value to given slot
-SVALUE, 0x0540, 8, -game:FE8 -indexMode:8
+SVAL, 0x0540, 8, -game:FE8 -indexMode:8
 	Slot,  2, 2
 	Value, 4, 4
 
@@ -137,16 +145,20 @@ CALL, 0x0A40, 8, -game:FE8 -indexMode:8
 CALL_S2, 0x0A40, 8, -game:FE8 -indexMode:8
 	0xFFFFFFFF, 4, 4, -fixed
 
-UNK0B40, 0x0B40, 8, -game:FE8 -indexMode:8
+QUEUECALL, 0x0B40, 8, -game:FE8 -indexMode:8
+	Mode,  2, 2, -preferredBase:10
 	Scene, 4, 4, -pointer
 
-UNK0B40_S2, 0x0B40, 8, -game:FE8 -indexMode:8
+QUEUECALL_S2, 0x0B40, 8, -game:FE8 -indexMode:8
+	Mode,       2, 2, -preferredBase:10
 	0xFFFFFFFF, 4, 4, -fixed
 
-UNK0B41, 0x0B41, 8, -game:FE8 -indexMode:8
+QUEUETUTORIAL, 0x0B41, 8, -game:FE8 -indexMode:8
+	Mode,  2, 2, -preferredBase:10
 	Scene, 4, 4, -pointer
 
-UNK0B41_S2, 0x0B41, 8, -game:FE8 -indexMode:8
+QUEUETUTORIAL_S2, 0x0B41, 8, -game:FE8 -indexMode:8
+	Mode,       2, 2, -preferredBase:10
 	0xFFFFFFFF, 4, 4, -fixed
 
 ## Goto LabelId if Slot1 == Slot2
@@ -321,14 +333,17 @@ TEXTMODE, 0, 32, -game:FE8
 TEXT, 0x1B20, 4, -game:FE8 -indexMode:8
 	MsgId, 2, 2
 
-TEXT_MORE, 0x1B21, 4, -game:FE8 -indexMode:8
+TEXT_S2, 0x1B20, 4, -game:FE8 -indexMode:8
+	0xFFFF, 2, 2, -fixed
+
+MORETEXT, 0x1B21, 4, -game:FE8 -indexMode:8
 	MsgId, 2, 2
 
 TEXTCLEAR, 0x1B22, 4, -game:FE8 -indexMode:8
 
-TEXT_RESUME, 0x1C20, 4, -game:FE8 -indexMode:8
+RESUMETEXT, 0x1C20, 4, -game:FE8 -indexMode:8
 
-AWAIT_TEXT, 0x1D20, 4, -game:FE8 -indexMode:8
+TEXTWAIT, 0x1D20, 4, -game:FE8 -indexMode:8
 
 FACE, 0, 32, -game:FE8
 	0x1E2,    4,  12, -fixed
@@ -343,6 +358,9 @@ TEXTCLOSE, 0x2020, 4, -game:FE8 -indexMode:8
 
 BACKGROUND, 0x2140, 8, -game:FE8 -indexMode:8
 	BackgroundId, 2, 2
+
+BACKGROUND_S2, 0x2140, 8, -game:FE8 -indexMode:8
+	0xFFFF, 2, 2, -fixed
 
 BACKGROUND_CHANGE, 0x2141, 8, -game:FE8 -indexMode:8
 	BackgroundId,   2, 2
@@ -371,6 +389,10 @@ MAP, 0x2520, 4, -game:FE8 -indexMode:8
 CAMERA, 0x2620, 4, -game:FE8 -indexMode:8
 	Position, 2, 2, -coordinates:2 -preferredBase:10
 
+## Moves camera such that given position is visible
+CAMERA_SB, 0x2620, 4, -game:FE8 -indexMode:8
+	0xFFFF, 2, 2, -fixed
+
 ## Moves camera such that given CharId is visible
 CAMERA, 0x2621, 4, -game:FE8 -indexMode:8
 	CharId, 2, 2
@@ -378,6 +400,10 @@ CAMERA, 0x2621, 4, -game:FE8 -indexMode:8
 ## Centers camera on given position
 CAMERA_CENTERED, 0x2628, 4, -game:FE8 -indexMode:8
 	Position, 2, 2, -coordinates:2 -preferredBase:10
+
+## Centers camera on given position
+CAMERA_CENTERED, 0x2628, 4, -game:FE8 -indexMode:8
+	0xFFFF, 2, 2, -fixed
 
 ## Centers camera on given CharId
 CAMERA_CENTERED, 0x2629, 4, -game:FE8 -indexMode:8
@@ -438,6 +464,7 @@ LOAD_S2, 0x2C40, 8, -game:FE8 -indexMode:8
 
 ## Load a group of units. Loaded units will dissapear when the event engine ends.
 LOAD_CUTSCENE, 0x2C41, 8, -game:FE8 -indexMode:8
+	0x0001, 2, 2, -fixed
 	Units, 4, 4, -pointer:unit
 
 ## Load a group of units (address in s2). Loaded units will dissapear when the event engine ends.
@@ -505,7 +532,7 @@ MOVE_1STEP_CLOSEST, 0x2F4A, 8, -game:FE8 -indexMode:8
 MOVE_DEFINED_CLOSEST, 0x2F4B, 8, -game:FE8 -indexMode:8
 	CharId, 4, 2
 
-AWAIT_MOVE, 0x3020, 4, -game:FE8 -indexMode:8
+MOVEWAIT, 0x3020, 4, -game:FE8 -indexMode:8
 
 ## Shows movement & attack range for unit
 SHOW_MOVERANGE, 0x3120, 4, -game:FE8 -indexMode:8
@@ -533,6 +560,26 @@ SPAWN_RED, 0x3242, 8, -game:FE8 -indexMode:8
 SPAWN_CUTSCENE_BLUE, 0x324F, 8, -game:FE8 -indexMode:8
 	Char, 2, 2
 	Position, 4, 2, -coordinates:2 -preferredBase:10
+
+## Loads one Ally unit with it's default parameters (will set the "drop last item" flag)
+SPAWN_BLUE_SB, 0x3240, 8, -game:FE8 -indexMode:8
+	Char, 2, 2
+	0xFFFF, 4, 2, -fixed
+
+## Loads one NPC unit with it's default parameters (will set the "drop last item" flag)
+SPAWN_GREEN_SB, 0x3241, 8, -game:FE8 -indexMode:8
+	Char, 2, 2
+	0xFFFF, 4, 2, -fixed
+
+## Loads one Enemy unit with it's default parameters (will set the "drop last item" flag)
+SPAWN_RED_SB, 0x3242, 8, -game:FE8 -indexMode:8
+	Char, 2, 2
+	0xFFFF, 4, 2, -fixed
+
+## This unit will dissapear at the end of events
+SPAWN_CUTSCENE_BLUE_SB, 0x324F, 8, -game:FE8 -indexMode:8
+	Char, 2, 2
+	0xFFFF, 4, 2, -fixed
 
 GET_EXISTS, 0x3320, 4, -game:FE8 -indexMode:8
 	CharId, 2, 2
@@ -642,17 +689,27 @@ SET_AI, 0x3920, 4, -game:FE8 -indexMode:8
 SET_AI, 0x3921, 4, -game:FE8 -indexMode:8
 	Position, 2, 2, -coordinates:2 -preferredBase:10
 
+SET_AI_SB, 0x3921, 4, -game:FE8 -indexMode:8
+	0xFFFF, 2, 2, -fixed
+
 POPUP, 0x3A40, 8, -game:FE8 -indexMode:8
 	MsgId, 2, 2
 	SongId, 4, 2
 
-BROWNBOX, 0x3A41, 8, -game:FE8 -indexMode:8
+BROWNBOX, 0x3A41, 8, -game:FE8 -indexMode:8 -noDisassembly
 	MsgId, 2, 2
 	Position, 6, 2, -coordinates:2 -preferredBase:10
+
+BROWNBOX_BUGGED, 0x3A41, 8, -game:FE8 -indexMode:8
+	MsgId, 2, 2
+	Position, 4, 4, -coordinates:2 -preferredBase:10
 
 ## Display cursor on given position
 CURSOR, 0x3B20, 4, -game:FE8 -indexMode:8
 	Position, 2, 2, -coordinate:2 -preferredBase:10
+
+CUSOR_SB, 0x3B20, 4, -game:FE8 -indexMode:8
+	0xFFFF, 2, 2, -fixed
 
 ## Display cursor on unit corresponding to given character
 CURSOR, 0x3B21, 4, -game:FE8 -indexMode:8
@@ -665,6 +722,10 @@ REMOVE_CURSORS, 0x3B22, 4, -game:FE8 -indexMode:8
 CURSOR_FLASHING, 0x3B24, 4, -game:FE8 -indexMode:8
 	Position, 2, 2, -coordinate:2 -preferredBase:10
 
+## Display flashing cursor on given position
+CURSOR_FLASHING_SB, 0x3B24, 4, -game:FE8 -indexMode:8
+	0xFFFF, 2, 2, -fixed
+
 ## Display flashing cursor on unit corresponding to given character
 CURSOR_FLASHING, 0x3B25, 4, -game:FE8 -indexMode:8
 	CharId, 2, 2
@@ -673,6 +734,9 @@ GET_CURSOR, 0x3C20, 4, -game:FE8 -indexMode:8
 
 SET_CURSOR, 0x3C21, 4, -game:FE8 -indexMode:8
 	Position, 2, 2, -coordinate:2 -preferredBase:10
+
+SET_CURSOR_SB, 0x3C21, 4, -game:FE8 -indexMode:8
+	0xFFFF, 2, 2, -fixed
 
 DISABLEOPTIONS, 0x3D20, 4, -game:FE8 -indexMode:8
 	OptionBits, 2, 2, -preferredBase:2
@@ -710,8 +774,8 @@ WARPIN, 0x4121, 4, -game:FE8 -indexMode:8
 AWAIT_WARP, 0x412F, 4, -game:FE8 -indexMode:8
 
 EARTHQUAKE, 0x4220, 4, -game:FE8 -indexMode:8
-	ShakeDirection, 1, 1, -preferredBase:10
-	PlaySoundBool,  1, 1, -preferredBase:10
+	ShakeDirection, 2, 1, -preferredBase:10
+	PlaySoundBool,  3, 1, -preferredBase:10
 
 EARTHQUAKE_END, 0x422F, 4, -game:FE8 -indexMode:8
 
