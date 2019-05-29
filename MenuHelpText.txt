@@ -1,0 +1,68 @@
+
+FE8U
+Vec2 here means is a pair of shorts (typically [x, y] coords)
+
+HelpBox PROC LAYOUT (scr: 08A00A98):
+    +00 | header
+
+    +2C | word  | pointer to help text info (?)
+    +30 | Vec2  | ?
+    +34 | Vec2  | ?
+    +38 | Vec2  | cursor absolute display position?
+    +3C | Vec2  | box (content?) absolute display position?
+    +40 | Vec2  | ?
+    +44 | Vec2  | minimal box content size?
+    +48 | Vec2  | ?
+    +4C | short | displayed text id
+    +4E | short | item for which the info is displayed
+
+    +52 | byte  | bool: (don't?) play sfx
+
+MoveableHelpBox PROC LAYOUT (scr: 08A00AD0)
+    +00 | header
+
+    +2C | word  | pointer to help text info
+    +50 | short | 
+
+HelpBox text init PROC LAYOUT (scr: 08A01650):
+    +00 | header
+    +58 | word  | item
+    +5C | word  | text id
+    +64 | short | number of extra lines?/line number of actual help string
+
+    (this proc is responsible for drawing labels and item stats, and then starting the HelpBox text scroll proc)
+
+HelpBox text scroll PROC LAYOUT (scr: 08A01628)
+    +00 | header
+
+    +2C | word     | pointer to cstring
+    +30 | word     | pointer to font struct
+    +34 | word[3+] | pointer to text struct lines
+
+    +5C | short    | current line number
+    +5E | short    | frame count before next tick (counted down, then reset to +60 on tick)
+    +60 | short    | frame interval between ticks
+    +62 | short    | number of characters to display each tick
+
+    (this proc is responsible for displaying scrolling text)
+
+"HELP TEXT INFO":
+    may or may not be the same as the R-Text struct
+
+    +00 | word  | ?
+    +04 | word  | ?
+    +08 | word  | ?
+    +0C | word  | ?
+    +10 | byte  | x display
+    +11 | byte  | y display
+    +12 | short | text id
+    +14 | word  | void(*onInitMoveable)(MoveableHelpBox*)
+    +18 | word  | void(*onInit)(HelpBox*)
+
+0203E788 is a Vec2: it holds the tile-coordinates of the origin of all help box positions. It is typically (0, 0) for boxes at fixed positions, but somethings (such as the battle preview) require help box positions to have variable origin.
+
+080892D0 returns a number identifying the kind of help box based on the item it gets:
+    0 for regular items or monster weapons (no additional stuff)
+    1 for weapons
+    2 for staves
+    3 for non-items (item 0xFFFE/(-2) was given as argument) (displays "Base" & "LV", so it must have special meaning) (That's for the save screen help text rite?)

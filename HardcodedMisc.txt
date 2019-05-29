@@ -1,0 +1,4 @@
+08089DB4: text id 147 ("Base")
+08089DC6: text id 148 ("LV")
+
+0808A0A2: get text speed option
