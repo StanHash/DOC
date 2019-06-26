@@ -228,7 +228,7 @@ AI SCRIPTING:
         
         Exact same as $06, $0E and $14
     
-    INSTRUCTION $16: TODO
+    INSTRUCTION $16: Move randomly
         +00 | byte | fixed $16
     
     INSTRUCTION $17: Try move towards closest escape point
@@ -236,10 +236,10 @@ AI SCRIPTING:
         
         Sets unit Ai flag 3 (escape flag), which means that this command will only be called once; since the escape flag makes the specific escape handler take priority over script execution
     
-    INSTRUCTION $18: TODO
+    INSTRUCTION $18: Try attack or move towards obsacles (snags & walls)
         +00 | byte | fixed $18
     
-    INSTRUCTION $19: try move towards specified terrain tiles
+    INSTRUCTION $19: Try move towards specified terrain tiles
         +00 | byte   | fixed $19
         +03 | byte[] | null-terminated list of terrain ids
         
@@ -247,7 +247,7 @@ AI SCRIPTING:
         
         If can't reach terrain, sets [AiData+86] to 4
     
-    INSTRUCTION $1A: try move towards specified terrain tiles
+    INSTRUCTION $1A: Try move towards specified terrain tiles
         +00 | byte | fixed $1A
         +08 | word | pointer to null-terminated list of terrain ids
         
