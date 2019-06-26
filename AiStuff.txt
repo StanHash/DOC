@@ -43,11 +43,19 @@ AI Data:
     0203AA04 + 90 + 08 | byte | second x position ?
     0203AA04 + 90 + 09 | byte | second y position ?
     0203AA04 + 90 + 0A | byte | 1 if a decision has been taken, 0 otherwise.
-    
+
+Unit "ai3 and ai4":
+    +00bit | 3bit | healing threshold id (table at 085A8390, size = 4 and hold both the heal mode entry and exit thresholds)
+    +03bit | 5bit | battle decision weight table id
+    +08bit | ?bit | ?
+    +13bit | 1bit | guard/don't move ai flag
+
 AI Battle Decition Weight Table:
     This table is a list of bytes that play the role of multipliers combat prediction weights
     All weight values are summed up and compared to other possible combats for finding what is the best fight to pick.
-    
+
+    Tables are located at 
+
     An entry is 20 (0x14) bytes
     00 | byte | += this * (battleHit * (attack - defense) / 100) [max 40]
     01 | byte | += this * (20 - targetCurrentHp) [min 0]
@@ -70,25 +78,25 @@ AI SCRIPTING:
         +03 | byte | target label index (if 0, target is the start of the script)
         +04 | word | constant right operand
         +08 | word | pointer to left operand (byte)
-        
+
         Will jump to the instruction *after* the label (the label has no handler, so trying to execute that will fail)
-    
+
     INSTRUCTION $01: (ASM) Function Call
         +00 | byte | fixed $01
         +08 | word | function pointer (signature : int(int); result is bool that dictates whether the script ended)
         +0C | word | (fixed) function argument (r0)
-    
+
     INSTRUCTION $02: Change Unit AI script (and set script cursor to 0)
         +00 | byte | fixed $02
         +01 | byte | AI1 script identifier (0xFF for no change)
         +02 | byte | AI2 script identifier (0xFF for no change)
-    
+
     INSTRUCTION $03: Unconditional Goto
         +00 | byte | fixed $03
         +03 | byte | target label index
-        
+
         Follows same jump rules as $00
-    
+
     INSTRUCTION $04: Try Offensive Action on specific character
         +00 | byte | fixed $04
         +01 | byte | percentage chance of anything happening

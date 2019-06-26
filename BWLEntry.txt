@@ -6,11 +6,22 @@ Routines:
 	080A4A34:BWL_AddFavoritismValue | Arguments: r0 = Char Id, r1 = Value
 
 BWL Entry:
-	bits  8-24 (16) | "Favoritism Value"? (0x4000 cap)
-	bits 24-32 (8)  | Total amount of moves (200 cap)
-	bits 32-40 (8)  | Total stat screen views (200 cap)
-	bits 56-62 (6)  | 
-	bits 62-72 (10) | Total tiles moved? (1000 cap)
-	bits 76-88 (12) | Total exp gained?  (4000 cap)
-	
-	bits 112- | apparently I didn't care about finishing this
+	+00+00bit | 8bit  | Loss Count (200 cap)
+	+00+08bit | 16bit | "Favoritism Value"? (0x4000 cap)
+	+00+24bit | 8bit  | Total amount of moves (200 cap)
+	+04+00bit | 8bit  | Total stat screen views (200 cap)
+	+04+08bit | 6bit  | Death location id (if died in skirmish: wm location id, else chapter id)
+	+04+14bit | 10bit | Death turn number
+	+04+24bit | 6bit  | Deploy count (60 cap)
+	+04+30bit | 10bit | Total tiles moved? (1000 cap)
+	+08+08bit | 4bit  | Death cause id
+		2 : combat
+		3 : trap
+		4 : poison
+		6 : arena
+	+08+12bit | 12bit | Total exp gained?  (4000 cap)
+	+08+24bit | 10bit | Win count (1000 cap)
+	+0C+02bit | 12bit | Battle count (4000 cap)
+	+0C+14bit | 9bit  | Char id of killer (if killed through combat) (why 9 bits?)
+	+0C+23bit | 1bit  | (bool) died in skirmish
+	+0C+24bit | 8bit? | unused?
