@@ -1,4 +1,31 @@
 
+# FE6 Event Engine Internals
+
+```
+event engine proc layout:
+    +00 | <proc header, size: 0x29>
+    +2C | word  | pointer to first instruction
+    +30 | word  | pointer to next instruction
+    +34 | word  | on skip callback
+    +38 | word  | main loop callback
+    +40 | word  | text id to display using instruction 9
+    +44 | byte  | ?
+    +45 | byte  | ?
+    +46 | byte  | state bits
+    +48 | short | frame count before continuing script (counted down) (set by instruction 2 (SLEEP))
+```
+
+State bits
+---
+
+- bit `0`:
+- bit `1`: text-skipping bit
+- bit `2`: scene-skipping bit
+- bit `3`: no-scene-skip bit
+- bit `4`: no-text-skip bit
+
+# FE6 Event Script Instructions
+
 00: END
 ---
 
@@ -322,9 +349,30 @@ Gives item identified by `ItemId` to unit corresponding to character `CharId`.
 
 Givens amount of money corresponding to `Amount` **to the active unit's team**.
 
-29: MAPCHANGE
+29: MAPCHANGE (by identifier)
 ---
 
     MAPCHANGE MapChangeId
 
-TODO...
+Applies map change identified by `MapChangeId`.
+
+2A: MAPCHANGE (at position)
+---
+
+    MAPCHANGE [X, Y]
+
+Applies map change at position `[X, Y]`.
+
+2B: FACTION
+---
+
+    FACTION CharId Faction
+
+Changes faction of character `CharId`.
+
+Faction identifier reminder:
+
+- `0x00` is blue
+- `0x40` is green
+- `0x80` is red
+- `0xC0` is 4th link arena faction (don't use unless you know what you're doing)

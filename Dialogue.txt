@@ -1,3 +1,5 @@
+FE8U
+
 FE8U:030000D0 is an array of 3(?) Text Data for Dialogue Text (see Drawing Text Notes)
 FE8U:030000F0 is Font Data for Dialogue Text (see Drawing Text Notes)
 
@@ -20,21 +22,22 @@ Dialogue Struct Layout: (FE8U:03000048)
     +13 | byte    | delay between character display
     +14 | byte    | frame counted for character display
     +15 | byte    | set when text has been drawn?
-    +16 | byte    | 
-    +17 | byte    | 
+    +16 | byte    | "something about ToggleMouthMove" - Teq
+    +17 | byte    | "something about ToggleSmile (if set, sets bit 8 in FaceDisplayBits (word at 0x30 of FaceProc)" - Teq
     +18 | word[8] | Face proc pointer array (one for each possible face position?)
     +38 | word    | 
-    +3C | word    | a number
+    +3C | word    | a number (gold amount, apparently)
+    +40 | char[]  | string repr of [+3C], displayed with code '[0x80][0x05]'
     +60 | char[]  | string to be displays with text code '[0x80][0x06]' (?)
     +80 | short   | config bitfield/dialogue flags
-                & 0x001 | 
+                & 0x001 | don't scroll text lines up on clear
                 & 0x002 | 
                 & 0x004 | disallow skipping through user input
                 & 0x008 | disallow fast-forwarding through user input
-                & 0x010 | 
+                & 0x010 | puts faces on another sprite layer?
                 & 0x020 | don't do graphics automatically?
                 & 0x040 | no sounds?
-                & 0x080 | is some other kind of dialogue? Things are displayed differently and sounds change.
-                & 0x100 | 
+                & 0x080 | world map dialogue (a lot of things changes, most notably text is now displayed on sprites and sound changes).
+                & 0x100 | text boxes are flat (no transparency). Used in FE7 for the scene where Ephidel dies because there's already color effects (can't do more than one at a time).
     +82 | byte    | 
-    +83 | byte    | 
+    +83 | byte    | "0x1 is set if ToggleInvert is currently set, 0x2 is set if ToggleInvert is to be set (do the palette changes)" - Teq

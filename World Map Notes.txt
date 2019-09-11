@@ -1,87 +1,132 @@
 FE8U
 
 World Map Proc:
-    3E | byte | Current WM Location Id?
-    44 | word | Gmap Screen Proc
-    4C | word | Gmap Unit (Container) Proc (scr: 08A3DEFC)
-    50 | word | Gmap Cursor Proc
-    54 | word | Gmap MU Proc
+    +2C | word | set by event 80
+    +30 | ?
+    +3E | byte | Current WM node Id?
+    +44 | word | address of GmapScreen proc
+    +48 | word | address of GmNodeIconDisplay proc
+    +4C | word | address of Gmap Unit (Container) Proc (scr: 08A3DEFC)
+    +50 | word | address of Gmap Cursor Proc
+    +54 | word | address of Gmap MU Proc
 
-GmapScreen Proc:
-    29 | byte  | some bitfield
-    2A | byte  | (0 initially)
-    2B | byte  | (0 initially)
-    2C | byte  | (0 initially)
-    2D | byte  | (0 initially)
-    2E | byte  | (0 initially)
-    2F | byte  | (0 initially)
-    30 | byte  | (0 initially)
-    31 | byte  | (0 initially)
-    32 | byte  | (0 initially)
-    33 unused?
-    34 | short | (0 initially)
-    36 | short | (0 initially)
-    38 | short | (0 initially)
-    3A | short | (0 initially)
-    3C | word  | some pointer to ROM (8A83364 initially)
-    40 | word  | pointer to BG Tilemap buffer
-    44 | word  | pointer to some decompressed data (from 8A96064 initially)
-    4C | word  | GmapRoute 6C pointer
+GmapScreen Proc (Src: 08A3DE84): I think this one draws the World Map Background
+    +29 | byte  | some bitfield
+    +2A | byte  | (0 initially)
+    +2B | byte  | (0 initially)
+    +2C | byte  | (0 initially)
+    +2D | byte  | (0 initially)
+    +2E | byte  | (0 initially)
+    +2F | byte  | (0 initially)
+    +30 | byte  | (0 initially)
+    +31 | byte  | (0 initially)
+    +32 | byte  | (0 initially)
+    +33 unused?
+    +34 | short | (0 initially)
+    +36 | short | (0 initially)
+    +38 | short | (0 initially)
+    +3A | short | (0 initially)
+    +3C | word  | some pointer to ROM (8A83364 initially)
+    +40 | word  | pointer to BG Tilemap buffer
+    +44 | word  | pointer to some decompressed data (from 8A96064 initially)
+    +4C | word  | GmapRoute 6C pointer
+
+GmNodeIconDisplay (also named GmapScreen internally) Proc (Src: 08A3DF64): This one draws Node Icons
+    +2C | word     | node icon image tile origin
+    +30 | byte     | node icon image palette id
+    +32 | byte     | (bool?) if 0, do not display nodes
+    +33 | byte     | which location to display a flag onto
+    +34 | word[1?] | bitfield indexed by node id. Bit set = display node icon semi-transparent (?)
+    +38 | word     | address of flag Ap
+    +3C | word     | address of other GmapScreen proc
 
 GMapScreenVSync Proc:
-    2C | word  | GmapScreen.3C
-    30 | word  | GmapScreen.40
-    
+    +2C | word  | GmapScreen.3C
+    +30 | word  | GmapScreen.40
 
 GmapRoute Proc:
-    2C | word  | 0x5000
-    32 | byte  | bitfield?
-    34 | byte  | 
-    35 | byte  | transition effect bg index
-    3C | short | timing denominator factor?
-    3E | short | timing numerator factor?
-    40 | word  | pointer to 03005324 (displayed route id list thing)
+    +2C | word  | 0x5000
+    +32 | byte  | bitfield?
+    +34 | byte  | 
+    +35 | byte  | transition effect bg index
+    +3C | short | timing denominator factor?
+    +3E | short | timing numerator factor?
+    +40 | word  | pointer to 03005324 (displayed route id list thing)
 
 Gmap MU Proc:
-    2C | Array of 7 Gmap MU prim proc pointers
+    +2C | Array of 7 Gmap MU prim proc pointers
 
 Gmap MU prim Proc:
-    29 | byte  | idk ()
-    2A | byte  | Gmap MU prim index in the Gmap MU (<0 when unused)
-    2B | byte  | index of the linked Gmap Unit ((-1) at start)
-    2C | byte  | idk (0 initially)
-    40 | short | idk (0 initially)
+    +29 | byte  | idk ()
+    +2A | byte  | Gmap MU prim index in the Gmap MU (<0 when unused)
+    +2B | byte  | index of the linked Gmap Unit ((-1) at start)
+    +2C | byte  | idk (0 initially)
+    +2D | byte  | idk
+    +40 | short | idk (0 initially)
     
 
 At 03005290 (03005280+$10) seems to be an array of struct { byte; byte; short; } that's strongly tied to Gmap MUs (It's indexed the same way)
-    00 | byte  | some bitfield (&1 = set when linked Gmap MU prim is used?, &2 = Use class (char otherwise))
-    01 | byte  | Current WM Location Index?
-    02 | short | Char/Class ID
+    +00 | byte  | some bitfield (&1 = set when linked Gmap MU prim is used?, &2 = Use class (char otherwise))
+    +01 | byte  | Current WM Location Index?
+    +02 | short | Char/Class ID
 
 WM Location Entry (in RAM):
-    00 | byte | flags :: 1 = enabled, 2 = is story location
+    +00 | byte | flags :: 1 = enabled, 2 = is story location
 
 WM Location Static Data Entry: (in ROM)
-    00 | byte | type? :: 3 = dungeon
+    +00 | byte | type? :: 3 = dungeon
 
 GmapUnit (container) Proc (Scr at: 08A3DEFC):
-    2C | word    | something
-    34 | 7 words | pointers to GmapUnit 6C, all deleted when this one is deleted
+    +2C | word    | something
+    +34 | 7 words | pointers to GmapUnit 6C, all deleted when this one is deleted
 
 GmapUnit Proc (Scr at: 08A3DECC):
-    2A | short | bitfield (0 initially, &4 = ?)
-    2C | short | 8 initially (AP obj priority node)
-    2E | short | 0x100 initially
-    30 | word  | same as container:2C (base tile index for SMS gfx?)
-    34 | byte  | index within container
-    35 | byte  | Allegience color index
-    36 | byte  | Palette index
-    37 | byte  | current AP anim id (4 initially)
-    38 | short | class initially
-    3A | short | class initially
-    3C | short | X pos (0 initially)
-    3E | short | Y pos (0 initially)
-    40 | word  | AP pointer
+    +2A | short | bitfield (0 initially, &1 = do display?, &2 = ?, &4 = ?)
+    +2C | short | 8 initially (AP obj priority node)
+    +2E | short | 0x100 initially
+    +30 | word  | same as container:2C (base tile index for SMS gfx?)
+    +34 | byte  | index within container
+    +35 | byte  | Allegience color index
+    +36 | byte  | Palette index
+    +37 | byte  | current AP anim id (4 initially)
+    +38 | short | class initially
+    +3A | short | class initially
+    +3C | short | X pos (0 initially)
+    +3E | short | Y pos (0 initially)
+    +40 | word  | AP pointer
+
+GmScrollInfo struct: (pointer passed to StartGmScrollManage (FE8U:080BF370))
+    +00 | word  | pointer to ?
+    +04 | word  | some bits?
+    +08 | short | spline degree (?)
+    +0A | short | initial camera x (negative <=> current (for y too))
+    +0C | short | initial camera y (negative <=> current (for x too))
+    +0E | short | target camera x
+    +10 | short | target camera y
+    +14 | word  | duration
+    +18 | short | delay
+
+Gmap Scroll Manage (Src at: 08A3E52C):
+    +2C | word  | pointer to ?
+    +30 | word  | some set of bits?
+    +34 | short | spline degree (?)
+    +36 | short | initial camera x
+    +38 | short | initial camera y
+    +3A | short | target camera x
+    +3C | short | target camera y
+    +40 | word  | duration
+    +44 | word  | frame counter
+    +48 | short | start frame countdown (will only start once this reaches 0, else decrease this)
+
+WM Node Icon Data (Array at: 08205FA0):
+    +00 | short | sheet tile id
+    +04 | word  | address of Obj data to use for display
+    +08 | byte  | display origin x
+    +09 | byte  | display origin y
+    +0A | byte  | some x?
+    +0B | byte  | some y?
+    +0C | byte  | flag display origin x
+    +0D | byte  | flag display origin y
 
 WORD MAP EVENT CODES:
     80

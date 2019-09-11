@@ -1,7 +1,8 @@
+
 All offsets and routines are for FE8U
 
 E_Menu related routines:
-	0804ECB0 | NewMenu | Constructs Menu 6C
+	0804ECB0 | StartMenuExt | Starts Menu proc
 		Arguments:
 			r0     = pointer to Menu Definition
 			r1     = geometry
@@ -9,51 +10,51 @@ E_Menu related routines:
 			r3     = base tile index for UI tiles
 			[sp+0] = foreground BG index
 			[sp+4] = ? (stored to field 0x68)
-			[sp+8] = Parent 6C (0 is valid, and will make the E_Menu a toplevel thread 3 6C)
+			[sp+8] = Parent proc (0 is valid, and will make the E_Menu a toplevel thread 3 proc)
 		Returns:
-			r0 = E_Menu 6C pointer
-	
-	0804EBE4 | NewMenu_Default | Constructs Menu 6C, BG1 is background, BG0 is foreground, no parent 6C, default geometry, default everything
+			r0 = Menu proc pointer
+
+	0804EBE4 | StartMenu | Starts Menu proc, BG1 is background, BG0 is foreground, no parent proc, default geometry, default everything
 		Arguments:
 			r0 = pointer to Menu Definition
 		Returns:
-			r0 = E_Menu 6C pointer
-	
-	0804EB98 | NewMenu_DefaultAdjusted | Same as NewMenu_Default, except default geometry is adjusted given the parameters
+			r0 = Menu proc pointer
+
+	0804EB98 | StartMenuAdjusted | Same as StartMenu, except default geometry is adjusted given the parameters
 		Arguments:
 			r0 = pointer to Menu Definition
 			r1 = some x screen position ?
 			r2 = X tile position of menu on the left
 			r3 = X tile position of menu of the right
 		Returns:
-			r0 = E_Menu 6C pointer
+			r0 = E_Menu proc pointer
 	
-	0804EBC8 | NewMenu_DefaultChild | Same as NewMenu_Default, except the E_Menu has a parent
+	0804EBC8 | StartMenuChild | Same as StartMenu, except the proc has a parent
 		Arguments:
 			r0 = pointer to Menu Definition
-			r1 = Parent 6C
+			r1 = Parent proc
 		Returns:
-			r0 = E_Menu 6C pointer
-	
-	0804EC98 | NewMenu_BG0BG1 | Constructs Menu 6C, BG1 is background, BG0 is foreground
+			r0 = E_Menu proc pointer
+
+	0804EC98 | StartMenuAt | Starts Menu proc, BG1 is background, BG0 is foreground
 		Arguments:
 			r0 = pointer to Menu Definition
 			r1 = geometry
-			r2 = parent 6C
+			r2 = parent proc
 		Returns:
-			r0 = E_Menu 6C pointer
-	
+			r0 = E_Menu proc pointer
+
 	0804EF20 | EndAllMenus | Kills *all* the E_Menus
 		Arguments: nothing
 		Returns:   nothing
 
-MENU 6C CODE:
-	Note: the Menu 6C is quite more complex than the average 6C, it makes use of jumps and the code is scattered in more than one location.
-	
+MENU PROC CODE:
+	Note: the Menu proc is quite more complex than the average proc, it makes use of jumps and the code is scattered in more than one location.
+
 Start: (085B64D0)
 	SET_NAME "E_Menu"
 	SLEEP 0
-	WHILE_EXISTS GENS 6C (0859A548)
+	WHILE_EXISTS GENS PROC (0859A548)
 	CALL NewGreenTextColorManager (080049AC)
 	CALL 0804EF70 (Draws the Menu)
 	CALL 0804EF38 (Calls some routines in definitions)
@@ -67,7 +68,7 @@ Idle: (085B64B8)
 
 HelpTextCall: TODO
 
-6C_085B64D0 (E_Menu):
+PROC_085B64D0 (E_Menu):
 	2C | word  | geometry (4 bytes in order: x, y, w, h)
 	30 | word  | pointer to Menu definition
 	34 | n*4   | array of pointers to 6C_085B6510 (Menu Commands)
@@ -86,14 +87,14 @@ HelpTextCall: TODO
 	66 | short | base tile index for UI window tiles
 	68 | short | One of the construction arguments is stored here
 
-6C_085B6510 (E_Menu Command Child): // There is one per menu command, and there is no code (Or rather, the one code there is does nothing, forever)
+PROC_085B6510 (E_Menu Command Child): // There is one per menu command, and there is no code (Or rather, the one code there is does nothing, forever)
 	2A | short | tile x for drawing
 	2C | short | tile y for drawing
 	30 | word  | pointer to ROM command struct
 	34 | ----- | Text Struct
 	3C | byte  | index of command definition (aka index of command including the one not usable)
 	3D | byte  | result of usability routine
-	
+
 Menu definition:
 	00 | word  | default geometry settings (byte order: x, y, width, height)
 	04 | word  | first byte is window frame style
@@ -110,8 +111,8 @@ Command definition:
 	04 | short | Name Text Id
 	06 | short | RMenu Text Id
 	08 | byte  | color index
-	09 | byte  | ?? (Compared to short in list at 03001870 on Selection)
-	0A | short | ??
+	09 | byte  | command id (used for disabling commands through events)
+	0A | short | unused/padding?
 	0C | word  | Usability Routine
 	10 | word  | Draw Routine (if zero, default draw is called, which simply draws text)
 	14 | word  | Effect Routine
@@ -119,20 +120,23 @@ Command definition:
 	1C | word  | Hover Routine (Called when you get the cursor on this menu option)
 	20 | word  | Opposite of above (Called when you get the cursor out of this menu option)
 
-	Usability Routine Arguments:
+	Usability Arguments:
 		r0 = Pointer to Command definition
 		r1 = Command definition index
-	
-	Draw/Effect/Idle Routine Arguments:
-		r0 = E_Menu 6C Struct Pointer
-		r1 = relevant 6C_085B6510 Pointer
-	
+
+	Draw/Effect/Idle Arguments:
+		r0 = menu proc
+		r1 = relevant command proc
+
+	Usability Return Value:
+		1 for usable, 2 for grayed, 3 for non-usable
+
 	Effect/Idle Routine Return Value (r0 Bitfield):
-		& 0x01 | Does things? idunno
+		& 0x01 | Doesn't do things related to drawing the hand cursor?
 		& 0x02 | Ends the menu
-		& 0x04 | Plays the beep sound
-		& 0x08 | Plays the boop sound
+		& 0x04 | Plays beep sound
+		& 0x08 | Plays boop sound
 		& 0x10 | Clears menu graphics
-		& 0x20 | Deletes E_FACE #0
-		& 0x40 | Nothing (Not handled)
-		& 0x80 | Orrs 0x80 to E_Menu+0x63 bitfield (Ends the menu on next loop call (next frame))
+		& 0x20 | Ends Face #0
+		& 0x40 | - (Not handled)
+		& 0x80 | Orrs 0x80 to E_Menu+0x63 bitfield (Ends the menu on next proc cycle (next frame, unless the menu proc was blocked))

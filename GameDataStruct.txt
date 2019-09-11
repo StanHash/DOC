@@ -7,9 +7,9 @@ Battle Map Game State, Located at 0202BCB0 (FE8U):
     +04 | byte  | Battle Map State bitfield
         & 0x01 : something related to map displaying
         & 0x02 : cursor movement gets blocked by movement range edge
-        & 0x04 : cursor position updated this frame
+        & 0x04 : cursor movement sound played this frame (this is to make it play every other frame, I think)
         & 0x08 : danger zone? viewing attack range?
-        & 0x10 : prep screen?
+        & 0x10 : prep screen
         & 0x20 : something related to sound not playing during battle?
         & 0x40 : When set, prevents things like gaining wexp, leveling up or recieving support bonuses (Link Arena Flag Maybe?)
         & 0x80 : 
