@@ -47,8 +47,10 @@ TODO: more of this
 | Mode 7 style stuff (CHAX)   | `03003750`     | `0x208`+ | `0x140` + size of ram func (currently `0xC8`)
 | Improved Sound Mixer        | `03006CB0`     | `0x860`  | ram func (may free `0x400` bytes at `03002C60`?)
 | Improved Sound Mixer        | `03007510`     | `0x380`  | new mixing buffer
+| AutoNewline                 | `02026E30`     | variable | string buffer
 | FE8 Battle Transform        | `0203AABE`     | `2`      | unknown when used.
 | Battle Buffer ext (SkillSystem) | `0203AAC0` | `0xF8`+  | frees `0x1C` bytes at `0203A5EC`
+| ArenaLimits                 | `0203AAC0`     | variable | string buffer
 | HpBars (SkillSystem)        | `0203AE00`     | `0xC8`   | Warning cache. Uses 2, then indexes byte array by unit id (`0xC6` is past the last unit id).
 | 7743's unit select sfx      | `0203B1F0`     | `0x10`   | unknown when used.
 | break_save                  | `0203B200`     | `0x400`  | probably repointed convoy? (which would free `0xC8` bytes at `0203A81C`)
