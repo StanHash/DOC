@@ -45,13 +45,13 @@ TODO: more of this
 | Hack name                   | Start addr     | Size     | Notes
 | --------------------------- | -------------- | -------- | -----
 | Mode 7 style stuff (CHAX)   | `03003750`     | `0x208`+ | `0x140` + size of ram func (currently `0xC8`)
-| Improved Sound Mixer        | `03006CB0`     | ?        | ram func (may free `0x400` bytes at `03002C60`?)
-| Improved Sound Mixer        | `03007510`     | ?        | sound mixing buffer?
+| Improved Sound Mixer        | `03006CB0`     | `0x860`  | ram func (may free `0x400` bytes at `03002C60`?)
+| Improved Sound Mixer        | `03007510`     | `0x380`  | new mixing buffer
 | FE8 Battle Transform        | `0203AABE`     | `2`      | unknown when used.
 | Battle Buffer ext (SkillSystem) | `0203AAC0` | `0xF8`+  | frees `0x1C` bytes at `0203A5EC`
 | 7743's unit select sfx      | `0203B1F0`     | `0x10`   | unknown when used.
 | break_save                  | `0203B200`     | `0x400`  | probably repointed convoy? (which would free `0xC8` bytes at `0203A81C`)
-| Debuffs 'fix' (SkillSystem) | `0203ED40`(!!) | ?        | This conflicts with a bunch of things! (Including chapter completion stats).
+| Debuffs 'fix' (SkillSystem) | `0203ED40`(!!) | variable | This conflicts with a bunch of things! (Including chapter completion stats).
 | Gaiden-style Magic          | `0203F080`     | `4`      | Probably not used during unit loading so that's safe.
 | Debuffs (SkillSystem)       | `0203F100`(!)  | `0x900`  | array of 8 byte entries indexed by unit id leaves a bunch of holes.
 | Debuffs (VBA/make)          | `0203FBB8`     | `0x448`  | -
