@@ -12,11 +12,11 @@ Note: `sz` refers to the size of an area. `<addr>-sz` is used when `<addr>` refe
 | `030067A8` | -        | ?         | Untested. End of static IWRAM. May collide with stack.
 | `02026AD0` | `0x360`  | Using IconRework/CIconDisplay | Used by vanilla icon display system.
 | `02026E30` | `0x2028` | Not Using debug printing | Unused unless digging up leftover debug stuff.
-| `02040000-sz` | ~`0xC00` | -    | End of EWRAM. May collide with unit loading buffer (sizes of `0xC00` and less should leave enought room for 50+ units).
+| `02040000-sz` | ~`0xC00` | -    | End of EWRAM. May collide with unit loading buffer (sizes of `0xC00` and less should leave enough room for 50+ units).
 
 Note that `02026AD0+360` = `02026E30`, which is the start of another free block. Which means that `02026AD0` can be considered as being a single `0x2388` bytes long free block.
 
-## Smaller free area
+## Smaller free areas
 
 There exist a few more instances of free blocks that are used by unused/unreferenced functions (I only added in the big one which is the debug printing stuff).
 
