@@ -5,9 +5,9 @@ Note: `sz` refers to the size of an area. `<addr>-sz` is used when `<addr>` refe
 
 | Start addr | Size     | Condition | Notes
 | ---------- | -------- | --------- | -----
-| `03003750` | `0x268`  | -         | In area where ARM funcs gets copied. Unreferenced functions.
-| `03003B48` | `0xBC`   | -         | Untested. In area where ARM funcs gets copied. Unreferenced function.
-| `03003F48` | `0x208`  | -         | Untested. In area where ARM funcs gets copied. Past end of meaningful data.
+| `03003750` | `0x268`  | -         | In area where ARM funcs get copied. Unreferenced functions.
+| `03003B48` | `0xBC`   | -         | Untested. In area where ARM funcs get copied. Unreferenced function.
+| `03003F48` | `0x208`  | -         | Untested. In area where ARM funcs get copied. Past end of meaningful data.
 | `0300428C` | `0x6D4`  | -         | Untested. In area where Interrupt handler gets copied. Past end of meaningful data.
 | `030067A8` | -        | ?         | Untested. End of static IWRAM. May collide with stack.
 | `02026AD0` | `0x360`  | Using IconRework/CIconDisplay | Used by vanilla icon display system.
@@ -26,7 +26,7 @@ For example, there is `0x20` free bytes at `030005B0`, which is normally used to
 
 There exists numerous instances of small 1 or 2 byte blocks of free space that was caused by alignment requirements of certain objects.
 
-For example, at `03000006` are 2 free bytes caused by it immediately following a 3 short array and being immediately followed by a word that required to be aligned.
+For example, at `03000006` are 2 free bytes, being after a 3 short array (6 bytes), but before a word that needed to be 4-aligned.
 
 # SOMETIMES FREE RAM SPACE
 
@@ -49,6 +49,7 @@ TODO: more of this
 | Improved Sound Mixer        | `03007510`     | `0x380`  | new mixing buffer
 | FE8 Battle Transform        | `0203AABE`     | `2`      | unknown when used.
 | Battle Buffer ext (SkillSystem) | `0203AAC0` | `0xF8`+  | frees `0x1C` bytes at `0203A5EC`
+| HpBars (SkillSystem)        | `0203AE00`     | `0xC8`   | Warning cache. Uses 2, then indexes byte array by unit id (`0xC6` is past the last unit id).
 | 7743's unit select sfx      | `0203B1F0`     | `0x10`   | unknown when used.
 | break_save                  | `0203B200`     | `0x400`  | probably repointed convoy? (which would free `0xC8` bytes at `0203A81C`)
 | Debuffs 'fix' (SkillSystem) | `0203ED40`(!!) | variable | This conflicts with a bunch of things! (Including chapter completion stats).
