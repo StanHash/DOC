@@ -1,0 +1,71 @@
+FE8U
+
+This is probably known stuff but I don't have internet to check rn.
+
+Func at 0808371C: void StartSupportTalk(s8 charA, s8 charB, int level);
+Func at 08084748 gets SupportTalkInfo addr given character pair as args
+Func at 0808478C gets support song id given character pair and level as args
+
+SupportTalkInfo table at 089ED10C
+
+SupportTalkInfo:
+	+00       | short    | char id A
+	+02       | short    | char id B
+	+04       | short[3] | convo text ids
+	+0C+00bit | 5bit     | C convo song id(*)
+	+0C+05bit | 5bit     | B convo song id(*)
+	+0C+10bit | 5bit     | A convo song id(*)
+
+(*): song ids are not actual song ids! see func at 0808478C
+	id 1 => song 0x27
+	id 2 => song 0x4C
+	id 3 => song 0x6A
+	id 4 => song 0x6A
+	anything else => no song change (bgm gets quieter instead)
+
+Support Talk Events called with s2 = song id (or 0), s3 = text id (08591FF0):
+{
+	label_0 = 0
+	label_1 = 1
+
+	CONFIG_SKIP 3
+
+	BEQ label_0 s2 0x0
+
+	MUSIC_S2
+	GOTO label_1
+
+LABEL label_0
+	MUSIC_QUIET_T
+
+LABEL label_1
+	SADD s2 s3 s0
+
+	TEXT_S2
+	TEXTWAIT
+
+	TEXTCLEAR
+
+	POPUP $00C $05A // msg "Support Lv. increased.[X]", song 0x5A
+
+	NoFade
+	END
+}
+
+Support viewer talk events called with s2 = text id (08592030):
+{
+	CONFIG_SKIP 3
+
+	TEXTMODE 1 // talk with background
+	BACKGROUND 0x37 // Random background
+
+	FADEOUT 16
+
+	TEXT_S2
+	TEXTWAIT
+
+	TEXTCLEAR
+
+	FADEIN 16
+	END
+}
