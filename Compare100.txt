@@ -1,0 +1,90 @@
+Made this list mostly for convoy related things
+using Tools/Py/cmpfind.py
+
+instances of cmp rx, #99 :
+ 80142DC : display number
+ 8014390 : display number
+ 80172DC : range stuff
+ 8017360 : range stuff
+ 80173BC : GetConvoyItemCostSum
+ 801DFB2 : sub_801DF94 (supply usability)
+ 801E05A : sub_801E048 (idk but convoy)
+ 801E0EC : HandleNewItemGetFromDrop (convoy)
+ 802BA44 : exp
+ 803154C : ShrinkConvoyItemList
+ 80315BC : AddItemToConvoy
+ 803160C : GetConvoyItemSlot
+ 80368DC : battle unit hp display
+ 803698E : battle unit hp display
+ 8036AF2 : battle unit hp display
+ 8036B9C : battle unit hp display
+ 80380E0 : idk but probably not convoy
+ 8039508 : ^
+ 8050B44 : battle anims
+ 8050C14 : ^
+ 807BD68 : map anims
+ 807C10A : map anims exp bar
+ 807C21A : map anims lvup
+ 8083CA4 : SetPermanentFlag
+ 8083CDC : ClearPermanentFlag
+ 8083D82 : SetFlag
+ 8083D96 : ClearFlag
+ 8083DAA : CheckFlag
+ 8086F12 : unit hp display
+ 8086F6E : ^
+ 808C4A6 : ^^
+ 808C4D8 : ^^^
+ 808E282 : ^^^^
+ 808E2C0 : ^^^^^
+ 809828E : "SomethingPrepListRelated" (sorry) (yes convoy important here!)
+ 8098312 : unused func (asmc?) that fills convoy with items (not really related to convoy size)
+ 809A550 : yes
+ 809A56A : yes
+ 809DD10 : yes
+ 80A324A : convoy save!
+ 80A32D2 : convoy load!
+ 80A587E : unit exp
+ 80AA878 : clock display
+ 80B0472 : vcount lol
+ 80B0716 : vcount lol
+ 80B4738 : yes, sending items to convoy via shop
+ 80C0B68 : unit hp disp
+ 80C0BA0 : ^
+ 80C71EE : idk but not convoy
+
+instances of cmp rx, #100 :
+ 8004BB6 : display number
+ 800FB62 : max chance
+ 801D1F0 : item id switch
+ 802036A : disp
+ 802AC78 : hit rate cap
+ 802AE84 : crit rate cap
+ 802B9A4 : GetStatIncrease
+ 802B9AC : ^
+ 802C590 : exp
+ 802C692 : exp
+ 802CD56 : exp
+ 8036382 : idk something target related
+ 8036386 : ^
+ 80395A0 : disp
+ 805FF98 : battle anim
+ 80626FC : battle anim
+ 806DBF6 : battle anim
+ 8077878 : battle anim
+ 8083840 : flag 100 in AFEV always occurs apparently
+ 8083CA8 : SetPermanentFlag
+ 8083CE0 : ClearPermanentFlag
+ 8083D38 : CheckGlobalEventIdFrom
+ 808CA92 : wall hp display?
+ 809CB54 : item id switch
+ 809D676 : convoy item max! (for text color)
+ 809D73E : convoy item max!
+ 809E902 : convoy item max!
+ 80A103E : support completion percentage?
+ 80A1060 : support completion percentage?
+ 80A1076 : support completion percentage?
+ 80A3576 : support completion percentage?
+ 80AEC82 : ??? proc func? (unreferenced?)
+ 80AF4EA : ???
+ 80B1114 : convoy item max! (for text color)
+ 80B63B2 : percentages
