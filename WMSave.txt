@@ -1,0 +1,62 @@
+
+WM data is at FE8U:03005280 and is layed out as follows:
+    +00 | byte  | flags?
+    +01 | byte  | "display cursor"?
+    +02 | short | camera x (in what units?)
+    +04 | short | camera y (in what units?)
+    +08 | word  | cursor x (in what units?)
+    +0C | word  | cursor y (in what units?)
+    +10 | units[7], struct:
+        +00 | byte  | flags (&1 = enabled?, &2 = use class instead of char)
+        +01 | byte  | location id
+        +02 | short | character/class id
+    +30 | nodes[0x1C], struct:
+        +00 | byte  | flags (&1 = enabled?, &2 = is next story location?)
+    +A4 | byte[0x20] | enabled paths
+    +C4 | word | path count
+    +C8 | byte | entry node id?
+    +C9 | byte[3] | ?
+    +CC | byte | ?
+    +CD | byte | ?
+
+referencing FE8U:080A70B0 ("SaveWMStuff"), load func is FE8U:080A7138 ("LoadWMStuff")
+
+saves 0x24 bytes (writes to sp before calling the save writing function)
+
+bytes 0x00 to 0x07 are location/node data:
+    080A6DA0 saves for each location/node two bits of info, packed
+    Since there's room for 0x1C nodes, this means 0x38 bits = 7 bytes are used (one unused?)
+    
+    load func is 080A6E24
+
+bytes 0x08 to 0x0B are route/path data:
+    080A6EB0 saves a bitmap. Each bit represents a route id.
+    for ex: if route 2 and 3 are active, it will save (binary) 0...0110
+    there's 4 bytes, so max route id is 32
+    
+    load func is 080A6F0C
+
+bytes 0x0C to 0x19 are actor/unit data: (this is what's at 03005280+$10)
+    080A6F50 saves for each actor/unit a short (2 bytes), packed as follows:
+        +00bit | 1bit | flag 0 at actor+00 (enabled?)
+        +01bit | 6bit | location/node (actor+01)
+        +07bit | 1bit | flag 1 at actor+00 (use class instead of char)
+        +08bit | 8bit | character or class id (actor+02)
+    there's 14 bytes for 7 actors/units
+    
+    load func is 080A6FBC
+
+bytes 0x1A and 0x1B are saved cursor x and y, respectively
+
+byte 0x1C is as follows:
+    +00bit | 1bit | flag 1 (&2) of data+00
+    +01bit | 1bit | flag 2 (&4) of data+00
+    +02bit | 2bit | flags 4&5 (&0x30) of data+00
+    
+    I think, math is hard (I'm referencing 080A70F0~080A7124 if u don't trust me (you shouldn't))
+
+bytes 0x1D to 0x1F is the array at data+C9, copied verbatim (func 080A7034 saves, 080A7054 loads)
+
+byte 0x20 is byte at data+CC copied verbatim
+
+the last 3 bytes seem unused (padding?)
