@@ -1,23 +1,35 @@
 
 WM data is at FE8U:03005280 and is layed out as follows:
-    +00 | byte  | flags?
+    +00 | byte  | flags 
     +01 | byte  | "display cursor"?
     +02 | short | camera x (in what units?)
     +04 | short | camera y (in what units?)
-    +08 | word  | cursor x (in what units?)
-    +0C | word  | cursor y (in what units?)
+    +08 | word  | cursor x (pixels, increments by 0x10)
+    +0C | word  | cursor y (pixels, increments by 0x10)
     +10 | units[7], struct:
         +00 | byte  | flags (&1 = enabled?, &2 = use class instead of char)
         +01 | byte  | location id
         +02 | short | character/class id
     +30 | nodes[0x1C], struct:
-        +00 | byte  | flags (&1 = enabled?, &2 = is next story location?)
+        +00 | word  | flags (&1 = enabled, &2 = is next story location)
     +A4 | byte[0x20] | enabled paths
     +C4 | word | path count
     +C8 | byte | entry node id?
-    +C9 | byte[3] | ?
-    +CC | byte | ?
-    +CD | byte | ?
+    +C9 | byte[3] | List of active world map skirmishes
+    +CC | byte | used to determine which skirmish enemy block to load
+    +CD | byte | used for shops on the world map
+
+Flags at byte 00:
+    &01h = set if currently on world map (used with shop screens and item management screens to determine where to kick the player back to when backing out)
+    &02h = enable player control (unset when moving to the next story location and the cutscene plays)
+    &04h = minimap enabled (press Select to toggle)
+    &08h = hide map sprites
+    &10h = when set, moves the minimap to right of screen instead of left (used so that the minimap doesn't overlap the cursor, automatically set by the MoveCursor functions)
+    &20h = unknown
+    &40h = set by EventC1_SkipWM, probably skips drawing world map
+    &80h = unknown, set by EventC2_
+
+Nodes are saved as words, but only 2 bits are ever used. You could restructure these to be saved as shorts or even bytes with no ill effects, simply by changing the arguments of a few `lsl` and `add` opcodes.
 
 referencing FE8U:080A70B0 ("SaveWMStuff"), load func is FE8U:080A7138 ("LoadWMStuff")
 
@@ -55,8 +67,8 @@ byte 0x1C is as follows:
     
     I think, math is hard (I'm referencing 080A70F0~080A7124 if u don't trust me (you shouldn't))
 
-bytes 0x1D to 0x1F is the array at data+C9, copied verbatim (func 080A7034 saves, 080A7054 loads)
+bytes 0x1D to 0x1F is the skirmish array at data+C9, copied verbatim (func 080A7034 saves, 080A7054 loads)
 
-byte 0x20 is byte at data+CC copied verbatim
+byte 0x20 is skirmish state byte at data+CC copied verbatim
 
 the last 3 bytes seem unused (padding?)
