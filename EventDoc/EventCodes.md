@@ -1219,7 +1219,7 @@ Moves the unit identified through `CharId`.
 
 For non-`MOVEFORCED` variants, if speed is negative, movement is done instantly and isn't displayed. Otherwise it dicates the speed at which the unit is moving (0 means default). TODO: investigate speed more.
 
-If scene-skipping (evbit 2 set), movement is instant reguardless of the speed argument. Note that `MOVEFORCED` may not work properly when scene-skipping. (TODO: investigate).
+If scene-skipping (evbit 2 set), movement is instant reguardless of the speed argument. Note that `MOVEFORCED` and `MOVE_1STEP` do not work properly when scene-skipping. (TODO: investigate).
 
 Valid directions for `MOVE_1STEP` are:
 
