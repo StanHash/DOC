@@ -46,29 +46,32 @@ For ex, the table may look like this:
 0014 0018  0009 FFFF  0000 FFFF
 Here we have left unit initial hp to 0x14 (20) and right unit initial hp to 0x18 (24). But only the left unit's hp updates so we have the next two entries having "null" (0xFFFF) values for the right unit.
 
-///// Don't mind this that's from the teq doq:
-    Byte 0x0:
-        0x01 Critical
-        0x02 Miss
-        0x04 
-        0x08 
-        0x10 Brave
-        0x20 
-        0x40 Poison
-        0x80 Devil
-    Byte 0x1:
-        0x01 Steal HP
-        0x02 
-        0x04 Triangle attack
-        0x08 Lethality
-        0x10 
-        0x20 Petrified
-        0x40 Sure Shot
-        0x80 Great Shield
-    Byte 0x2:
-        0x01 Pierce
-        0x02 
-        0x04 
-        0x08 End Battle
-        0x10 
-        0x80 Which one of the guys is the initiator
+///// Don't mind this that's from the teq doq and also decomp:
+    Byte 0:
+        0x01 BATTLE_HIT_ATTR_CRIT
+        0x02 BATTLE_HIT_ATTR_MISS
+        0x04 BATTLE_HIT_ATTR_FOLLOWUP
+        0x08 BATTLE_HIT_ATTR_RETALIATE
+        0x10 BATTLE_HIT_ATTR_BRAVE
+        0x20 BATTLE_HIT_ATTR_5 (unused?)
+        0x40 BATTLE_HIT_ATTR_POISON
+        0x80 BATTLE_HIT_ATTR_DEVIL
+    Byte 1:
+        0x01 BATTLE_HIT_ATTR_HPSTEAL
+        0x02 BATTLE_HIT_ATTR_HPHALVE
+        0x04 BATTLE_HIT_ATTR_TATTACK (triangle attack!)
+        0x08 BATTLE_HIT_ATTR_SILENCER
+        0x10 BATTLE_HIT_ATTR_12 (unused?)
+        0x20 BATTLE_HIT_ATTR_PETRIFY
+        0x40 BATTLE_HIT_ATTR_SURESHOT
+        0x80 BATTLE_HIT_ATTR_GREATSHLD
+    Byte 2:
+        0x01 BATTLE_HIT_ATTR_PIERCE
+        0x02 BATTLE_HIT_ATTR_17 (unused?)
+        0x04 BATTLE_HIT_ATTR_18 (unused?)
+        0x08 BATTLE_HIT_INFO_BEGIN
+        0x10 BATTLE_HIT_INFO_FINISHES
+        0x20 BATTLE_HIT_INFO_KILLS_TARGET
+        0x40 BATTLE_HIT_INFO_RETALIATION
+        0x80 BATTLE_HIT_INFO_END
+    Byte 3: Hp Difference
