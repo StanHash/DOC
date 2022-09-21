@@ -13,10 +13,10 @@ at 0203E1F0 is the "master" map animation data struct:
         +04 | word  | another pointer to battle unit?
         +08 | word  | pointer to MU
         +0C | byte  | maximum Hp
-        +0D | byte  | current (displayed) Hp
-        +0E | short | ?
-        +10 | byte  | ?
-        +11 | byte  | ?
+        +0D | byte  | current (displayed) Hp, becomes final hp while hp bar is moving
+        +0E | short | currentHP << 4 of Hp bar 
+        +10 | byte  | x coord on screen of the window+hp bar in BG0 / BG1 
+        +11 | byte  | y coord 
         +12 | byte  | ?
         +13 | byte  | ?
     +50 | word  | pointer to next displayed round data
