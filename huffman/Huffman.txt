@@ -1,0 +1,44 @@
+
+GBAFE Huffman nodes are 32bit integers encoded as such:
+    for leaves:
+        bits 0~7   | first byte of atom
+        bits 8~15  | second byte of atom (if non zero)
+        bits 16~30 | unused in vanilla, but all set to 1
+        bit  31    | fixed 1 (used to determine that this is a leaf)
+    for inner nodes:
+        bits 0~15  | index of left ('0' path) child
+        bits 16~31 | index of right ('1' path) child. Note that in order to distinguish nodes from leaves, the top bit of this needs to be 0.
+
+Matching huffman compression:
+    huffman.py features the primitives that allow this
+
+    step 1: convert all raw strings into "atoms". those atoms are what are going to be huffman-coded
+        this is the atomize_string_vanilla function in huffman.py
+
+    step 2: make a big table that maps every atom to its number of occurrences
+        this is done using update_frequency_table in huffman.py
+        some atoms need to be "miscounted" in fe7_jp and fe8_jp to produce a matching huffman tree (see below)
+        the check_huffman.py program adjusts the table accordingly, but know this is kind of a hack
+
+    step 3: we can build the the tree using the base huffman algorithm. Except it only will produce a matching tree under some specific circumstances:
+        we need to use a sorted list as our priority queue. a min-heap seems to reorder nodes with equal frequencies in ways that doesn't match the goal
+            new elements gain priority over existing elements with the same frequency (they are inserted ahead, in python using bisect.insort_left)
+
+        the resulting tree is encoded as the list of nodes in allocation order. The very last node is the root node.
+            the initial set of nodes (leaves) need to be allocated in a specific order:
+                first all single byte atoms get their nodes in order
+                next all pairs with their second byte being exactly 1 get their nodes in order
+                every other pair get their nodes in "reversed lexicographical order" (?):
+                    for lo in range(0x100):
+                        for hi in range(2, 0x100):
+                            yield (hi << 8) | lo
+                    (see all_vanilla_atoms in huffman.py)
+
+    this should result in a matching tree
+
+fe6, fe7_us, fe7_eu (both variants), fe8_us, fe8_eu all work with no changes
+
+fe7_jp works if we assume atoms 0xB388 (CP932: '制') and 0xA790 (CP932: '圧') appear once less than they really do.
+fe8_jp works if we assume atom 0xDD82 (CP932: 'み') appears once less than it really does.
+
+there may be other ways of ajusting occurrences to make it work but those above are what I ended up with.
